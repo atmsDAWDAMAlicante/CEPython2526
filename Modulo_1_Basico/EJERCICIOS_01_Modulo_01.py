@@ -25,6 +25,22 @@ print(f"{linea}")
 
 #3. Solicita una cantidad a hipotecar y un interés anual (%), y calcula el pago anual con la fórmula: 
 # pago = cantidad * interés.
+"""
+NOTAS DEL PROFESOR: 
+# No se debe usar float con monedas. Se debe usar decimal
+from decimal import Decimal
+cantidad = Decimal(input("Ingrese la cantidad a hipotecar: "))
+interes = Decimal(input("Ingrese el interés anual: "))
+
+IMPORTANTE: 
+Repasar import
+import Math implica utilizar Math.sqrt()
+from decimal import Decimal implica no tener que utilizar decimal.Decimal(4.3)
+from math import sqrt 
+Importaría solo la función sqrt() y se podría llamar directamente sqrt(9)
+
+"""
+
 print(f"---Ejercicio nº 3: cuota de préstamo hipotecario")
 principal = float(input("Introduce la cantidad correspondiente al principal: "))
 interes = float(input("Introduce la cantidad correspondiente al interés %: "))
