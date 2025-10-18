@@ -8,7 +8,7 @@ print(f"{linea}\nInicio de los ejercicios de este bloque\n{linea}")
 
 
 #1. Pide al usuario su nombre completo y muestra el mensaje: Encantado de conocerte <nombre>
-print(f"---Ejercicio nº 1")
+print(f"---Ejercicio nº 1: saludo")
 nombre_completo = input("Introduce tu nombre completo: ")
 print(f'Encantado de conocerte, {nombre_completo}')
 print(f"{linea}")
@@ -16,7 +16,7 @@ print(f"{linea}")
 
 #2. Realiza un programa que introduciéndole los kilómetros/hora me calcule los metros/segundo.
 # Fórmula: hay que multiplicar por 1000 metros y dividir por 3600 segundos
-print(f"---Ejercicio nº 2")
+print(f"---Ejercicio nº 2: km/h a m/s")
 kilometros_hora = float(input("Introduce un número (Km/h): "))
 metros_segundo = ((kilometros_hora*1000)/(3600))
 print(f'{kilometros_hora} Km/h son {metros_segundo} Metros/segundo') # 45 Km/h = 12.5 m/s
@@ -25,7 +25,7 @@ print(f"{linea}")
 
 #3. Solicita una cantidad a hipotecar y un interés anual (%), y calcula el pago anual con la fórmula: 
 # pago = cantidad * interés.
-print(f"---Ejercicio nº 3")
+print(f"---Ejercicio nº 3: cuota de préstamo hipotecario")
 principal = float(input("Introduce la cantidad correspondiente al principal: "))
 interes = float(input("Introduce la cantidad correspondiente al interés %: "))
 pago_anual = principal * (interes/100)
@@ -43,7 +43,7 @@ x = (-b +/- RAIZ CUADRADA de b2 - 4ac ) /2a
 
 Leer los valores a, b y c. Aplicad la fórmula. Recordad que tiene dos soluciones.
 """
-print(f"---Ejercicio nº 4")
+print(f"---Ejercicio nº 4: polinomio de 2º grado (funciona con 1-9-6)")
 # Introducción de los coeficientes a, b, c
 print("Introduce tres números float")
 numero_a = float(input("Introduce el primer coeficiente 'a': "))
@@ -70,7 +70,7 @@ print(f"{linea}")
 ºCochinillos = ºC * 22 + 123 - 2 + ºC / ºK;
 ºAlubianos = (ºC - ºCochinillos + ºF) / ºK;
 """
-print(f"---Ejercicio nº 5")
+print(f"---Ejercicio nº 5: conversor de temperaturas Cº Fº Kº")
 grados_celsius = float(input("Introduce una temperatura en grados Celsius: "))
 grados_kelvin = grados_celsius + 273
 grados_farenheit = ((grados_celsius * 9) /5) + 32
@@ -91,7 +91,7 @@ indices = pulgadas * 0.85
 orejas = pulgadas * 0.99 + 2
 jamones = varas - 12 + (indices * orejas) / codos
 """
-print(f"---Ejercicio nº 6")
+print(f"---Ejercicio nº 6: conversor de medidas pulgadas")
 pulgadas = float(input("Introduce una medida en pulgadas: "))
 pies = pulgadas / 15
 codos = pies / 1.3
@@ -107,7 +107,7 @@ print(f"{linea}")
 
 
 #7. Realiza un programa que calcule el área de un triángulo y un cuadrado.
-print(f"---Ejercicio nº 7")
+print(f"---Ejercicio nº 7: área de un cuadrado y un triángulo")
 lado = float(input("Introduce un número que sea el lado de un cuadrado y de un triángulo equilátero: "))
 area_cuadrado = lado * lado # área del cuadrado = lado * lado
 # Área del triángulo 
@@ -120,7 +120,7 @@ print(f"{linea}")
 
 #8. Pide al usuario su peso (kg) y estatura (m), calcula el Índice de Masa Corporal (IMC = peso / estatura²) y muestra el resultado redondeado a 2 decimales en el formato:
 #Tu índice de masa corporal es <imc> redondeado con dos decimales.
-print(f"---Ejercicio nº 8")
+print(f"---Ejercicio nº 8: cálculo del IMC")
 peso = (float(input("Introduce tu peso en kg: ")))
 estatura = (float(input("Introduce tu altura en metros (p.e: 1.79): ")))
 imc = peso / pow(estatura,2)
@@ -131,8 +131,11 @@ print(f"{linea}")
 
 #9. Solicita dos números enteros al usuario y muestra el cociente y el resto de su división en el formato:
 #<n> entre <m> da un cociente <c> y un resto <r>.
-print(f"---Ejercicio nº 9")
-
+print(f"---Ejercicio nº 9: división entera")
+dividendo = int(input("Introduce el dividendo (número entero):"))
+divisor = int(input("Introduce el divisor (número entero):"))
+resultado_division_entera = divmod(dividendo, divisor)
+print(f'{resultado_division_entera}')
 
 print(f"{linea}")
 
@@ -140,7 +143,7 @@ print(f"{linea}")
 
 #10. Escribir un programa que muestre por pantalla el resultado de la siguiente operación aritmética:
 # ((3+2)/(2*5)) AL CUADRADO
-print(f"---Ejercicio nº 10")
+print(f"---Ejercicio nº 10: operación aritmética")
 
 
 
