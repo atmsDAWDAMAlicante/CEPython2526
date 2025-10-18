@@ -136,7 +136,6 @@ dividendo = int(input("Introduce el dividendo (número entero):"))
 divisor = int(input("Introduce el divisor (número entero):"))
 resultado_division_entera = divmod(dividendo, divisor)
 print(f'{resultado_division_entera}')
-
 print(f"{linea}")
 
 
@@ -144,11 +143,8 @@ print(f"{linea}")
 #10. Escribir un programa que muestre por pantalla el resultado de la siguiente operación aritmética:
 # ((3+2)/(2*5)) AL CUADRADO
 print(f"---Ejercicio nº 10: operación aritmética")
-
-
-
-print(f"{linea}")
-
-
+parentesis = ((3+2)/(2*5))
+resultado_potencia = pow(parentesis,2)
+print(f'El resultado del cuadrado de ((3+2)/(2*5)) es: {resultado_potencia}') # 0.25
 
 print(f"{linea}\nFin de los ejercicios de este bloque\n{linea}")
