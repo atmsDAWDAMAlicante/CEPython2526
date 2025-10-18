@@ -53,10 +53,18 @@ print(f'El número x2 es: {numero_x2}')
 ºCochinillos = ºC * 22 + 123 - 2 + ºC / ºK;
 ºAlubianos = (ºC - ºCochinillos + ºF) / ºK;
 """
+grados_celsius = float(input("Introduce una temperatura en grados Celsius: "))
+grados_kelvin = grados_celsius + 273
+grados_farenheit = ((grados_celsius * 9) /5) + 32
+grados_cochinillos =  ((grados_celsius * 22) + 123) - (2 + (grados_celsius / grados_farenheit))
+grados_alubianos = (grados_celsius - grados_cochinillos - grados_farenheit) / grados_kelvin
+print(f'A {grados_celsius}º corresponden:')
+print(f'{grados_farenheit:.2f}º F {grados_kelvin:<5.2f}º K')
+print(f'{grados_cochinillos:.2f}º Cochinillos {grados_alubianos:<5.2f}º Alubianos')
 
-#6. Realiza un programa que lea pulgadas y pase a pies, codos, varas, índices, orejas y jamones.
+#6. Realiza un programa que lea pulgadas y pase a pies, codos, varas, índi es, orejas y jamones.
 """
-pies = pulgadas /15 
+pies = pulgadas/15 
 codos = pies/1.3 
 varas = codos/1.23
 índices = pulgadas* 0.85 
