@@ -1,0 +1,2 @@
+import pytest
+import ejercicios.EJERCICIOS_02_Modulo_02_Diccionarios as mod2_eje2
