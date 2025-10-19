@@ -8,10 +8,14 @@ print(f"{linea}\nInicio de los ejercicios de este bloque\n{linea}")
 
 
 #1. Pide al usuario su nombre completo y muestra el mensaje: Encantado de conocerte <nombre>
-print(f"---Ejercicio nº 1: saludo")
-nombre_completo = input("Introduce tu nombre completo: ")
-print(f'Encantado de conocerte, {nombre_completo}')
-print(f"{linea}")
+def ejercicio1(nombre_completo):
+    print(f"---Ejercicio nº 1: saludo")
+    #nombre_completo = input("Introduce tu nombre completo: ")
+    resultado_saludo = f'Encantado de conocerte, {nombre_completo}.'
+    print(resultado_saludo)
+    print(f"{linea}")
+    return resultado_saludo
+
 
 
 #2. Realiza un programa que introduciéndole los kilómetros/hora me calcule los metros/segundo.
@@ -164,3 +168,4 @@ resultado_potencia = pow(parentesis,2)
 print(f'El resultado del cuadrado de ((3+2)/(2*5)) es: {resultado_potencia}') # 0.25
 
 print(f"{linea}\nFin de los ejercicios de este bloque\n{linea}")
+
