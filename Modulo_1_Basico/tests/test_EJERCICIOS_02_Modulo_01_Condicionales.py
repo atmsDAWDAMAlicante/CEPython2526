@@ -4,7 +4,7 @@ import ejercicios.EJERCICIOS_02_Modulo_01_Condicionales as mod2_eje1
 
 def test_ejercicio_01():
     pass
-    #assert mod2_eje1.ejercicio_01("Angel") == "Encantado de conocerte, Angel."
+    assert mod2_eje1.ejercicio_01("Angel") == ["ANGEL", "angel", "Angel"]
 
 
 def test_ejercicio_02():

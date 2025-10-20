@@ -13,12 +13,17 @@ print(f"{linea}\nInicio de los ejercicios de este bloque\n{linea}")
 # una con todas las letras minúsculas, otra con todas las letras mayúsculas 
 # y otra solo con la primera letra del nombre y de los apellidos en mayúscula. 
 # El usuario puede introducir su nombre combinando mayúsculas y minúsculas como quiera.
-def ejercicio_01():
-    print(f"---Ejercicio nº 1: xxx")
-
-
-
+def ejercicio_01(nombre):
+    print(f"---Ejercicio nº 1: Nombre en mayúsculas, minúsculas y la primera en mayúsuculas")
+    resultado = []
+    mayusculas = nombre.upper()
+    minusculas = nombre.lower()
+    tercera_opcion = minusculas[0].upper() + minusculas[1:]
+    
+    resultado.extend([mayusculas, minusculas, tercera_opcion])
+    print(resultado)
     print(f"{linea}")
+    return resultado
 
 
 #2. Los teléfonos de una empresa tienen el siguiente formato prefijo-número-extensión 
@@ -76,10 +81,6 @@ def ejercicio_05():
 # y muestre por pantalla el grupo que le corresponde.
 def ejercicio_06():
     print(f"---Ejercicio nº 6: xxx")
-
-
-
-
 
 
 print(f"{linea}\nFin de los ejercicios de este bloque\n{linea}")
