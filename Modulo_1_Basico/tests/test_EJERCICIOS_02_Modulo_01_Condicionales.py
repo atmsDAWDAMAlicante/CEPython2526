@@ -8,7 +8,7 @@ def test_ejercicio_01():
 
 
 def test_ejercicio_02():
-    pass
+    assert mod2_eje1.ejercicio_02("+34-913724710-56") == "913724710"
 
 def test_ejercicio_03():
     pass

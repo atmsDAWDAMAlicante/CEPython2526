@@ -31,12 +31,14 @@ def ejercicio_01(nombre):
 # (por ejemplo +34-913724710-56). 
 # Escribir un programa que pregunte por un número de teléfono con este formato 
 # y muestre por pantalla el número de teléfono sin el prefijo y la extensión.
-def ejercicio_02():
-    print(f"---Ejercicio nº 2: xxx")
+def ejercicio_02(tfno):
+    print(f"---Ejercicio nº 2: Teléfono sin prefijo")
 
-
-
+    #resultado = tfno[4:13]
+    resultado = tfno[4:-3]
+    print(resultado)
     print(f"{linea}")
+    return resultado
 
 
 #3. Escribir un programa que pregunte al usuario la fecha de su nacimiento en formato dd/mm/aaaa 
@@ -81,6 +83,6 @@ def ejercicio_05():
 # y muestre por pantalla el grupo que le corresponde.
 def ejercicio_06():
     print(f"---Ejercicio nº 6: xxx")
-
-
+ejercicio_01("aDoLfO")
+ejercicio_02("+34-913724710-56")
 print(f"{linea}\nFin de los ejercicios de este bloque\n{linea}")
