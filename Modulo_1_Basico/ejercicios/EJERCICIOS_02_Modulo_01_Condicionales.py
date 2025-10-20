@@ -114,12 +114,16 @@ def devuelveMesLan(num, lengua):
 # pregunte al usuario por la contraseña e imprima por pantalla 
 # si la contraseña introducida por el usuario coincide con la guardada en la variable 
 # sin tener en cuenta mayúsculas y minúsculas.
-def ejercicio_05():
+def ejercicio_05(passwordPropuesta):
     print(f"---Ejercicio nº 5: Password")
+    passwordUsuario = "VACACIONES"
+    if (passwordPropuesta.upper() == passwordUsuario):
+        return "Acceso permitido"
+    else:
+        return "Acceso denegado"
 
 
-
-    print(f"{linea}")
+print(f"{linea}")
 
 
 #6. Los alumnos de un curso se han dividido en dos grupos A y B 

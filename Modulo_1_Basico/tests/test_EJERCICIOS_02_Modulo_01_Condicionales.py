@@ -16,7 +16,8 @@ def test_ejercicio_04():
     assert mod2_eje1.ejercicio_04("09/07/1970",1) == "09 de July de 1970"
 
 def test_ejercicio_05():
-    pass
+    assert mod2_eje1.ejercicio_05("VaCaCiOnEs") == "Acceso permitido"
+    assert mod2_eje1.ejercicio_05("examenes") == "Acceso denegado"
 
 def test_ejercicio_06():
     pass
