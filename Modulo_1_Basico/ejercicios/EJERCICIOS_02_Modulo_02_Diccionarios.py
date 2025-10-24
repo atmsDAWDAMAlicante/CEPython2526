@@ -1,4 +1,4 @@
-# EJERCICIOS - 02 - Modulo - 01 - Diccionarios
+# EJERCICIOS - 02 - Modulo - 02 - Diccionarios
 # Diccionarios: Bloque de ejercicios progresivos. Es obligatorio incluir comentarios en todos ellos.
 
 import os
@@ -64,7 +64,7 @@ print(f"---Ejercicio nº 7: xxx")
 print(f"{linea}")
 
 
-#8. Enunciado
+#8. ENTREGABLE - Enunciado
 print(f"---Ejercicio nº 8: xxx")
 
 
@@ -72,7 +72,7 @@ print(f"---Ejercicio nº 8: xxx")
 print(f"{linea}")
 
 
-#9. Enunciado
+#9. ENTREGABLE - Enunciado
 print(f"---Ejercicio nº 9: xxx")
 
 
@@ -80,7 +80,9 @@ print(f"---Ejercicio nº 9: xxx")
 print(f"{linea}")
 
 
-#10. Enunciado
+
+
+#10. ENTREGABLE - Enunciado
 print(f"---Ejercicio nº 10: xxx")
 
 
