@@ -134,9 +134,15 @@ print(f"{linea}")
 # y # el grupo B por el resto. 
 # Escribir un programa que pregunte al usuario su nombre y edad, 
 # y muestre por pantalla el grupo que le corresponde.
-def ejercicio_06():
+def ejercicio_06(nombre, edad):
     print(f"---Ejercicio nº 6: Grupos de alumnos")
-
+    letra = nombre[:1]
+    edad = int(edad)
+    grupos = ("Grupo A", "Grupo B")
+    if ((edad < 18) and (letra < "N")) or ((edad >=18) and (letra >= "N")):
+        return "Grupo A" #grupos[0]
+    else:
+        return "Grupo B" #grupos[1]
 
 #Prueba de los ejercicios
 ejercicio_01("aDoLfO")

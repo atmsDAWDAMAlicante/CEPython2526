@@ -20,4 +20,7 @@ def test_ejercicio_05():
     assert mod2_eje0.ejercicio_05("examenes") == "Acceso denegado"
 
 def test_ejercicio_06():
-    pass
+    assert mod2_eje0.ejercicio_06("Angel", 55) == "Grupo B"
+    assert mod2_eje0.ejercicio_06("Angel", 16) == "Grupo A"
+    assert mod2_eje0.ejercicio_06("Pepe", 55) == "Grupo A"
+    assert mod2_eje0.ejercicio_06("Pepe", 16) == "Grupo B"
