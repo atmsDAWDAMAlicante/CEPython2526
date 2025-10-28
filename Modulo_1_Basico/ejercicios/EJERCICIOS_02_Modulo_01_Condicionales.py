@@ -45,9 +45,20 @@ print(f"{linea}")
 
 #2. Enunciado: Escribe un programa que pida por teclado dos números y que indique cuál de ellos es el menor
 #y cuál el mayor o bien si ambos números son iguales.
-print(f"---Ejercicio nº 2: xxx")
+print(f"---Ejercicio nº 2: Mayor o menor que o iguales")
+def ejercicio_02(num1, num2):
+    num1=float(num1)
+    num2=float(num2)
+    resultado = ""
+    #Se encadenan las tres posibilidades con elif
+    if (num1 == num2):
+        resultado = "Los dos números son iguales"
+    elif(num1 < num2):
+        resultado = f"Menor: {num1}; Mayor: {num2}"
+    else:
+        resultado = f"Menor: {num2}; Mayor: {num1}"
 
-
+    return resultado
 
 print(f"{linea}")
 

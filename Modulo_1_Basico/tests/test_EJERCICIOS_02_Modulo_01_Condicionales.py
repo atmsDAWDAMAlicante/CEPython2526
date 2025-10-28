@@ -7,7 +7,8 @@ def test_ejercicio01():
     assert mod2_eje1.ejercicio_01(20,4) == "La división es exacta. Cociente: 5.0"
     assert mod2_eje1.ejercicio_01(20,0) == "No se puede dividir por 0"
 def test_ejercicio02():
-    pass
+    assert mod2_eje1.ejercicio_02(23,14.5) == "Menor: 14.5; Mayor: 23.0"
+    assert mod2_eje1.ejercicio_02(5.0,5) == "Los dos números son iguales"
 
 def test_ejercicio03():
     pass
