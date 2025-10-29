@@ -7,7 +7,6 @@ linea = "===================================="
 os.system('cls')
 print(f"{linea}\nInicio de los ejercicios de este bloque\n{linea}")
 
-
 #1. Pide al usuario su nombre completo y muestra el mensaje: Encantado de conocerte <nombre>
 def ejercicio_01(nombre_completo):
     print(f"---Ejercicio nº 1: saludo")
