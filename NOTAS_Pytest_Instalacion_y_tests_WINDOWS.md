@@ -1,4 +1,5 @@
 # NOTAS para instalar y usar PYTEST en Visual Studio Code
+# *Instalación de pytest en VSC* en **WINDOWS**
 
 ## 1º Instalación: 
 - en la terminal ejecutar: **pip install pytest**
