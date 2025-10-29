@@ -1,9 +1,19 @@
 # NOTAS para instalar y usar PYTEST en __Visual Studio Code__
 # *Instalación de pytest en VSC* en **UBUNTU**
 
-## 1º Crear un proyecto, abrir uno existente o clonar un repositorio
+## 1º ## 1º- En una terminal instalar
 
-## 2º Abrirlo en VSC y una terminal y navegar hasta el directorio donde estarán los ejercicios y los tests con __cd__
+```
+sudo apt install python3.13-venv
+
+```
+__alternativa si da error__
+
+```
+sudo apt install python3-venv
+```
+
+## 2º- Crear un proyecto, abrir uno existente o clonar un repositorio y abrirlo en VSC y una terminal y navegar hasta el directorio donde estarán los ejercicios y los tests con __cd__
 
 ## 3º Ejecutar el comando para **crear un entorno virtual**
 ```
