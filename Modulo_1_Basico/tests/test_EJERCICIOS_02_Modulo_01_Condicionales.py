@@ -11,7 +11,10 @@ def test_ejercicio02():
     assert mod2_eje1.ejercicio_02(5.0,5) == "Los dos números son iguales"
 
 def test_ejercicio03():
-    pass
+    assert mod2_eje1.ejercicio_03(1970,2025) == "Faltan 55 años para llegar"
+    assert mod2_eje1.ejercicio_03(2025,1970) == "Han pasado 55 años"
+    assert mod2_eje1.ejercicio_03(1970,1971) == "Falta 1 año para llegar"
+    assert mod2_eje1.ejercicio_03(1971,1970) == "Ha pasado 1 año"
 
 
 def test_ejercicio04():

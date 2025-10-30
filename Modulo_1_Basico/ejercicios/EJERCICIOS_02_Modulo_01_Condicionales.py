@@ -66,11 +66,36 @@ print(f"{linea}")
 #3. Enunciado: Escribe un programa que pida por teclado en primer lugar el año actual y después un año
 #cualquiera. A continuación, el programa ha de indicar cuántos años faltan para llegar o
 #cuantos años han pasado al/desde ese segundo año.
-#Nota: Se puede mejorar el programa haciendo que cuando la diferencia sea
-#exactamente un año escriba la frase en singular.
-print(f"---Ejercicio nº 3: xxx")
+#Nota: Se puede mejorar el programa haciendo que cuando la diferencia sea exactamente un año escriba la frase en singular.
+print(f"---Ejercicio nº 3: Distancia entre años")
+def ejercicio_03(anyo1,anyo2):
+    resultado = ""
+    diferencia = anyo1 - anyo2
+    plural = "año"
+    verbo_Faltar = "Falta"
+    verbo_Haber = "Ha"
 
+    if (diferencia < -1) or (diferencia > 1):
+        plural = "años"
+        verbo_Faltar = "Faltan"
+        verbo_Haber = "Han"
+    else:
+        plural = "año"
+        verbo_Faltar = "Falta"
+        verbo_Haber = "Ha"
 
+    if (diferencia <=0):
+        diferencia = diferencia * -1 
+        resultado = f'{verbo_Faltar} {diferencia} {plural} para llegar'
+
+    elif (diferencia > 0):
+        resultado = f'{verbo_Haber} pasado {diferencia} {plural}'
+    else:
+        resultado = ""
+
+    return resultado
+def plural(anyo):
+    pass
 
 print(f"{linea}")
 
