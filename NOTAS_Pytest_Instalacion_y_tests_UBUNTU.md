@@ -74,3 +74,11 @@ pytest -v
 deactivate
 ```
 _... y desaparecerá el prefijo (.venv) de la terminal._
+
+# CADA VEZ QUE SE ABRA EL PROYECTO
+## Dentro del directorio donde esté el archivo _requiurements.txt_ EJECUTAR en la terminal:
+```
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
