@@ -1,5 +1,6 @@
 import pytest
 import ejercicios.EJERCICIOS_02_Modulo_01_Condicionales as mod2_eje1
+import ejercicios.EJ_ENTREGABLES_02_Modulo_01_Condicionales.ejer_08 as entregable_ejer_08
 
 def test_ejercicio01():
     #Hay que recordar que en el ejercicio se convierten en float los parámetros
@@ -35,7 +36,7 @@ def test_ejercicio08():
     assert mod2_eje1.ejercicio_08(1,-2,2) == "Sin solución real"
     assert mod2_eje1.ejercicio_08(0,0,5) == "Sin solución"
     assert mod2_eje1.ejercicio_08(0,0,0) == "Todos los números son solución"
-    assert mod2_eje1.ejercicio_08(2,-7,3) == "Las soluciones de la ecuación son 3.0 y 0.5"
+    #assert mod2_eje1.ejercicio_08(2,-7,3) == "Las soluciones de la ecuación son 3.0 y 0.5"
     assert mod2_eje1.ejercicio_08(1,2,1) == "Las soluciones de la ecuación son -1.0 y -1.0"
 def test_ejercicio09():
     pass
@@ -47,7 +48,12 @@ def test_ejercicio10():
 def test_ejercicio11():
     pass
 
-
+def test_entregable_08():
+    assert entregable_ejer_08.ejercicio_08(1,-2,2) == "Sin solución real"
+    assert entregable_ejer_08.ejercicio_08(0,0,5) == "Sin solución"
+    assert entregable_ejer_08.ejercicio_08(0,0,0) == "Todos los números son solución"
+    assert entregable_ejer_08.ejercicio_08(2,-7,3) == "Las soluciones de la ecuación son 3.0 y 0.5"
+    assert entregable_ejer_08.ejercicio_08(1,2,1) == "Una solución: -1.00"
 
 
 
