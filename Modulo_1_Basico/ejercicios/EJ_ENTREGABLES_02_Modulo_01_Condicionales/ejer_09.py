@@ -25,9 +25,47 @@ Cálculo de áreas - Elige una figura geométrica:
         Un círculo de radio 2.0 tiene un área de 12.566370614359172
 '''
 
+print(f"---Ejercicio nº 9: ENTREGABLE: Áreas de Triángulos y Círuclos")
+import math #NECESARIO PARA HACER LA RAIZ CUADRADA
+area = 0 
+resultado = ""
+
+# INPUT para recoger la figura
+figura = input("Introduce la figura cuya área hay que calcular\n[C - Círculo]\[T - Triángulo] ")
+figura = figura.lower()
+
+
+# Función que evalúa la figura
+def figura_Area(figura):
+    if (figura =="c"):
+        resultado = circulo()
+    elif (figura == "t"):
+        resultado = triangulo()
+    else:
+        resultado = "Entrada no válida"
+    return resultado
+
+# Definción de de las funciones que calculan las áreas
+
+# Función para calcular el área del círuclo
+# recoge el radio de un input y retorna el string a imprimir por consola
+def circulo():
+    radio = float(input("Introduce el radio del círculo: "))
+    area = math.pi * pow(radio,2)
+    return f'Un círculo de radio {radio} tiene un área de {area}'
+
+# Función para calcular el área del triángulo
+# recoge la base y la altura de dos inputs y retorna el string a imprimir por consola
+def triangulo():
+    base = float(input("Introduce la base del trinángulo: "))
+    altura = float(input("Introduce la altura del triángulo: "))
+    area = (base*altura)/2
+    return f'Un triángulo de base {base:.1f} y altura {altura:.1f} tiene un área de {area:.2f}'
 
 
 
+resultado = figura_Area(figura)
+print(resultado)
 
 
 

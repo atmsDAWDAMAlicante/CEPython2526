@@ -39,12 +39,14 @@ print(f"---Ejercicio nº 8: ENTREGABLE: Ecuación de segundo grado")
 import math #NECESARIO PARA HACER LA RAIZ CUADRADA
 
 # INPUTS
+
 numero_a = input("Introduce un primer número: ")
 numero_b = input("Introduce un segundo número: ")
 numero_c = input("Introduce un tercero número: ")
 numero_a = float(numero_a)
 numero_b = float(numero_b)
 numero_c = float(numero_c)
+
 # Función que evalúa los datos introducidos
 
 def ejercicio_08(numero_a, numero_b, numero_c):
@@ -85,7 +87,7 @@ def test_entregable_08():
     assert entregable_ejer_08.ejercicio_08(0,0,0) == "Todos los números son solución"
     assert entregable_ejer_08.ejercicio_08(2,-7,3) == "Las soluciones de la ecuación son 3.0 y 0.5"
     assert entregable_ejer_08.ejercicio_08(1,2,1) == "Una solución: -1.00"
-
+    assert entregable_ejer_08.ejercicio_08(0,3,2) == "¿DIVISÓN POR CERO?"
 '''
 
 
