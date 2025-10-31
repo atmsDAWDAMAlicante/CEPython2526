@@ -26,22 +26,30 @@ Cálculo de áreas - Elige una figura geométrica:
 '''
 
 print(f"---Ejercicio nº 9: ENTREGABLE: Áreas de Triángulos y Círuclos")
-import math #NECESARIO PARA HACER LA RAIZ CUADRADA
+import math #Necesario para utilizar el número pi
 area = 0 
 resultado = ""
 
 # INPUT para recoger la figura
 figura = input("Introduce la figura cuya área hay que calcular\n[C - Círculo]\[T - Triángulo] ")
-figura = figura.lower()
 
-
-# Función que evalúa la figura
+# Función principal
 def figura_Area(figura):
+    figura = figura.lower() # pone en minúsuculas la letra introducida
+    # Supuesto del círculo
     if (figura =="c"):
-        resultado = circulo()
+        # Recoge el valor del radio
+        radio = float(input("Introduce el radio del círculo: "))
+        resultado = circulo(radio)
+
+    # Supuesto del triángulo
     elif (figura == "t"):
-        resultado = triangulo()
-    else:
+        # Recoge los valores de la base y la altura
+        base = float(input("Introduce la base del trinángulo: "))
+        altura = float(input("Introduce la altura del triángulo: "))
+        resultado = triangulo(base, altura)
+
+    else: # da respuesta a la introducción de una letra errónea
         resultado = "Entrada no válida"
     return resultado
 
@@ -49,20 +57,15 @@ def figura_Area(figura):
 
 # Función para calcular el área del círuclo
 # recoge el radio de un input y retorna el string a imprimir por consola
-def circulo():
-    radio = float(input("Introduce el radio del círculo: "))
+def circulo(radio):
     area = math.pi * pow(radio,2)
     return f'Un círculo de radio {radio} tiene un área de {area}'
 
 # Función para calcular el área del triángulo
 # recoge la base y la altura de dos inputs y retorna el string a imprimir por consola
-def triangulo():
-    base = float(input("Introduce la base del trinángulo: "))
-    altura = float(input("Introduce la altura del triángulo: "))
+def triangulo(base, altura):
     area = (base*(altura/2))
     return f'Un triángulo de base {base:.1f} y altura {altura:.1f} tiene un área de {area:.2f}'
-
-
 
 resultado = figura_Area(figura)
 print(resultado)
