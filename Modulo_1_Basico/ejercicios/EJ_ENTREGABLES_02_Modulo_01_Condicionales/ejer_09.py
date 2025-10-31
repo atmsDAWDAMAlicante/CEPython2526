@@ -59,7 +59,7 @@ def circulo():
 def triangulo():
     base = float(input("Introduce la base del trinángulo: "))
     altura = float(input("Introduce la altura del triángulo: "))
-    area = (base*altura)/2
+    area = (base*(altura/2))
     return f'Un triángulo de base {base:.1f} y altura {altura:.1f} tiene un área de {area:.2f}'
 
 
@@ -75,7 +75,5 @@ print(resultado)
 '''
 Código del test con pytest:
 def test_entregable_09():
-    assert entregable_ejer_09.ejercicio_09(1,-2,2) == "Sin solución real"
-
-
+    pass
 '''
