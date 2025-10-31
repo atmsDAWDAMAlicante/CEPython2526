@@ -65,12 +65,12 @@ def test_entregable_08():
 
 
 def test_entregable_09():
-    pass
     '''
-    assert entregable_ejer_09.figura_Area("lñjñL") == "Entrada no válida"
-    assert entregable_ejer_09.circulo(2) == "Un círculo de radio 2.00 tiene un área de 12.566370614359172"
+    #assert entregable_ejer_09.figura_Area("lñjñL") == "Entrada no válida"
+    assert entregable_ejer_09.circulo(2.0) == "Un círculo de radio 2.0 tiene un área de 12.566370614359172"
     assert entregable_ejer_09.triangulo(3,5.5) == "Un triángulo de base 3.0 y altura 5.5 tiene un área de 8.25"
     '''
+
 def test_entregable_11():
     pass
 

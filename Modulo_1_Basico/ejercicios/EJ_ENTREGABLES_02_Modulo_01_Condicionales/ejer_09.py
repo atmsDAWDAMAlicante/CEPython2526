@@ -59,7 +59,7 @@ def figura_Area(figura):
 # recoge el radio de un input y retorna el string a imprimir por consola
 def circulo(radio):
     area = math.pi * pow(radio,2)
-    return f'Un círculo de radio {radio} tiene un área de {area}'
+    return f'Un círculo de radio {radio:.1f} tiene un área de {area}'
 
 # Función para calcular el área del triángulo
 # recoge la base y la altura de dos inputs y retorna el string a imprimir por consola
@@ -71,12 +71,9 @@ resultado = figura_Area(figura)
 print(resultado)
 
 
-
-
-
-
 '''
 Código del test con pytest:
 def test_entregable_09():
-    pass
+    base = float(input("Introduce la base del trinángulo: "))
+    altura = float(input("Introduce la altura del triángulo: "))   
 '''
