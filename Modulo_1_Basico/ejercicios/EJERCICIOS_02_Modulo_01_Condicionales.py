@@ -159,8 +159,27 @@ a b c Solución
 0 3 2 Una solución: -0.666…
 '''
 
-print(f"---Ejercicio nº 8: xxx")
+print(f"---Ejercicio nº 8: ENTREGABLE: Ecuación de segundo grado")
+import math
+def ejercicio_08(numero_a, numero_b, numero_c):
+    resultado = ""
 
+    if (numero_a > numero_b) and (numero_b < numero_c):
+        resultado = "Sin solución real"
+    elif (numero_a == numero_b) and (numero_b < numero_c):
+        resultado = "Sin solución"
+    elif (numero_a == numero_b == numero_c):
+        resultado = "Todos los números son solución"
+    else: # Ahora se calcula la ecuación
+        para_calcular_en_la_raiz = (pow(numero_b,2))- 4 * numero_a * numero_c
+        divisor = 2 * numero_a
+        numero_x1 = (((numero_b * -1) + math.sqrt(para_calcular_en_la_raiz)) / divisor)
+        numero_x2 = (((numero_b * -1) - math.sqrt(para_calcular_en_la_raiz)) / divisor)
+        
+        resultado = f'Las soluciones de la ecuación son {numero_x1:.1f} y {numero_x2:.1f}'
+
+
+    return resultado
 
 
 print(f"{linea}")

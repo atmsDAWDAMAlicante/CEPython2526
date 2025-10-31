@@ -32,8 +32,11 @@ def test_ejercicio07():
 
 
 def test_ejercicio08():
-    pass
-
+    assert mod2_eje1.ejercicio_08(1,-2,2) == "Sin solución real"
+    assert mod2_eje1.ejercicio_08(0,0,5) == "Sin solución"
+    assert mod2_eje1.ejercicio_08(0,0,0) == "Todos los números son solución"
+    assert mod2_eje1.ejercicio_08(2,-7,3) == "Las soluciones de la ecuación son 3.0 y 0.5"
+    assert mod2_eje1.ejercicio_08(1,2,1) == "Las soluciones de la ecuación son -1.0 y -1.0"
 def test_ejercicio09():
     pass
 
