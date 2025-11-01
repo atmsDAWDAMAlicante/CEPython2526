@@ -1,5 +1,5 @@
 import pytest
-import ejercicios.EJERCICIOS_02_Modulo_02_Diccionarios as mod2_eje2
+#import ejercicios.EJERCICIOS_02_Modulo_02_Diccionarios as mod2_eje2
 
 def test_ejercicio01():
     pass
