@@ -79,10 +79,16 @@ print(f"{linea}")
 #4. Enunciado: Añade al ejercicio anterior el código necesario mostrar una lista con todos los índices
 #utilizados en la biblioteca y otra lista con todos los valores almacenados en ella (utiliza
 #los métodos Name.keys() y Name.values())
-print(f"---Ejercicio nº 4: xxx")
+print(f"---Ejercicio nº 4: Formando una lista de dorsales y otra de jugadores")
+lista_claves = []
+for claves in titulares.keys():
+    lista_claves.append(claves)
+print(lista_claves)
 
-
-
+lista_valores = []
+for nombres in titulares.values():
+    lista_valores.append(nombres)
+print(lista_valores)
 print(f"{linea}")
 
 
@@ -90,8 +96,8 @@ print(f"{linea}")
 #copia de la biblioteca “titulares” y asígnale el nombre plantilla. Muestra por pantalla el
 #contenido de plantilla con el mismo formato que el indicado en el ejercicio 2.
 print(f"---Ejercicio nº 5: Copia de la biblioteca titulares")
-
-
+plantilla = sorted(titulares.keys)
+print(plantilla)
 
 print(f"{linea}")
 
@@ -100,7 +106,7 @@ print(f"{linea}")
 #dicho diccionario serán los once jugadores suplentes el día del partido, siendo el número
 #de su dorsal el índice y su nombre el valor asociado. Muestra como resultado el
 #contenido de los dos diccionarios siguiendo el mismo formato que en los ejercicios 2 y 5.
-print(f"---Ejercicio nº 6: xxx")
+print(f"---Ejercicio nº 6: Suplentes")
 
 
 
@@ -109,7 +115,7 @@ print(f"{linea}")
 
 #7. Enunciado: A partir del anterior añade los elementos del diccionario suplentes al diccionario plantilla
 #y muestra el contenido actualizado del diccionario plantilla siguiendo el formato de los ejercicios anteriores.
-print(f"---Ejercicio nº 7: xxx")
+print(f"---Ejercicio nº 7: Unir plantilla y suplentes")
 
 
 
@@ -123,7 +129,7 @@ print(f"{linea}")
 #pop(key), elimina del diccionario final a los tres jugadores que fueron sustituidos y añade
 #a los que se incorporaron. Muestra al final del ejercicio el contenido del diccionario final
 #con el formato de los ejercicios anteriores.
-print(f"---Ejercicio nº 8: xxx")
+print(f"---Ejercicio nº 8: Cambios de los titulares")
 
 
 
