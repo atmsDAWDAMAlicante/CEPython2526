@@ -65,9 +65,13 @@ print(f"{linea}")
 #3. Enunciado: Modifica el ejercicio anterior para que programa lea el número de elementos incluidos en
 #el diccionario titulares, mostrando ese valor mediante la expresión ‘Iniciaron el partido XX
 #jugadores’, siendo XX el número de elementos incluidos en el diccionario.
-print(f"---Ejercicio nº 3: xxx")
-
-
+'''
+¡¡¡Este ejercicio no lo entieno!!!
+'''
+print(f"---Ejercicio nº 3: Recuento general")
+titulares_De_La_Seleccion = len(titulares)
+titulares_Del_Diccionario = len(titulares)
+print(f'‘Iniciaron el partido {titulares_De_La_Seleccion} jugadores, siendo {titulares_Del_Diccionario} el número de elementos incluidos en el diccionario')
 
 print(f"{linea}")
 
