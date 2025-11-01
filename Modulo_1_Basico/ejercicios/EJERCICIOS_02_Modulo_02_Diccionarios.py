@@ -50,11 +50,14 @@ print(f"{linea}")
 #2. Enunciado: Utilizando la función get() muestra de forma tabulada y ordenados por su número dorsal
 #de menor a mayor los nombres de los once jugadores (el menor dorsal posible es el 1 y
 #nunca podrá tener más de dos cifras.
+os.system("clear")
 print(f"---Ejercicio nº 2: Mostrar tabulada la Selección Nacional")
-resultado = ""
-for i in range(len(titulares)):
-    resultado += f'{titulares.get(i)}\n'
 
+resultado_ordenado = sorted(titulares.items())
+print (resultado_ordenado)
+for dorsal, jugador in sorted(titulares.items()):
+    #print(f'{dorsal} - {jugador}')
+    print(dorsal, jugador, sep = " - ")
 
 print(f"{linea}")
 
