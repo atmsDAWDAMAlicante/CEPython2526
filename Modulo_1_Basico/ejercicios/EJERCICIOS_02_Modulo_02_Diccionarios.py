@@ -161,6 +161,28 @@ print(f"{linea}")
 print(f"---Ejercicio nº 8: Cambios de los titulares")
 
 
+# Comienza la final
+#final = titulares #esto copia la referencia en memoria
+final = titulares.copy() # esto crea una copia independiente
+print (len(final))
+# Dorsales de 14: Xabi Alonso, 18: Pedrito y 7: Villa
+# Sale Xabi Alonso
+sale = final.pop(14)
+print (f'Sale {sale}')
+# Sale Pedrito
+del final[18]
+print (len(final))
+# Sale Villa
+sale = final.pop(7)
+print (f'Sale {sale}')
+# Entran 22: Navas, 10: Fàbregas y 9: Torres 
+final.setdefault(22,"Navas")
+final.setdefault(10,"Fàbregas")
+final.setdefault(9,"Torres")
+# Imprimir resultado
+for dorsal, jugador in sorted(final.items()):
+    print (dorsal, jugador, sep = " ******** ")
+
 
 print(f"{linea}")
 
