@@ -121,14 +121,16 @@ suplentes = {
     9: "Fernando Torres",
     19: "F. Llorente" 
 }
-plantilla_Suplentes = sorted(suplentes.items())
+plantilla_Suplentes = sorted(suplentes.items()) # esto es una lista
 
 print("Titulares:")
 for dorsal, jugador in sorted(titulares.items()):
     print(dorsal, jugador, sep = " - ")
 
 print("Suplentes")
-for dorsal_sup, suplente in sorted(suplentes.items()):
+# plantilla_Suplentes es una lista ya que recoge el resultado de sorted
+# para recorrerla con el bucle la reconvierto en diccionario con dict()
+for dorsal_sup, suplente in sorted(dict(plantilla_Suplentes).items()):
     print(dorsal_sup, suplente, sep = " _ ")
 
 print(f"{linea}")
@@ -139,6 +141,12 @@ print(f"{linea}")
 print(f"---Ejercicio nº 7: Unir plantilla y suplentes")
 
 
+# Voy a poner toda la seleccion en un único diccionario
+seleccion = {}
+seleccion.update(titulares)
+seleccion.update(suplentes)
+for dorsal, jugador in sorted(seleccion.items()):
+    print (dorsal, jugador, sep = " == ")
 
 print(f"{linea}")
 
