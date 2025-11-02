@@ -96,7 +96,7 @@ print(f"{linea}")
 #copia de la biblioteca “titulares” y asígnale el nombre plantilla. Muestra por pantalla el
 #contenido de plantilla con el mismo formato que el indicado en el ejercicio 2.
 print(f"---Ejercicio nº 5: Copia de la biblioteca titulares")
-plantilla = sorted(titulares.keys)
+plantilla = sorted(titulares.keys())
 print(plantilla)
 
 print(f"{linea}")
@@ -107,8 +107,29 @@ print(f"{linea}")
 #de su dorsal el índice y su nombre el valor asociado. Muestra como resultado el
 #contenido de los dos diccionarios siguiendo el mismo formato que en los ejercicios 2 y 5.
 print(f"---Ejercicio nº 6: Suplentes")
+suplentes = {
+    23: "Pepe Reina",
+    12: "Víctor Valdés",
+    4: "Marchena",
+    17: "Arbeloa",
+    20: "J. Martínez",
+    22: "Jesús Navas",
+    2: "Raúl Albiol",
+    21: "David Silva",
+    10: "Cesc Fàbregas",
+    13: "J.Mata",
+    9: "Fernando Torres",
+    19: "F. Llorente" 
+}
+plantilla_Suplentes = sorted(suplentes.items())
 
+print("Titulares:")
+for dorsal, jugador in sorted(titulares.items()):
+    print(dorsal, jugador, sep = " - ")
 
+print("Suplentes")
+for dorsal_sup, suplente in sorted(suplentes.items()):
+    print(dorsal_sup, suplente, sep = " _ ")
 
 print(f"{linea}")
 
