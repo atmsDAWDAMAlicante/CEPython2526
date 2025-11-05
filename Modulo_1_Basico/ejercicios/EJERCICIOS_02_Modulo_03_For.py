@@ -58,12 +58,46 @@ print(mensaje_ej_1)
 
 #2. Enunciado: Crea un programa que muestre el mismo resultado que en el ejercicio anterior, pero
 #utilizando ahora bucles tipo for con tipos range() de dos argumentos.
-print(f"---Ejercicio nº 2: Dxxx")
+print(f"---Ejercicio nº 2: Range con dos argumentos")
 
 
+mensaje_ej_2 = "" #Aquí se recogerá el string que se imprimirá por pantalla
 
+#1º Bucle: incremento +1
+for i in range(1,11):
+    mensaje_ej_2 += f"{i:<3}"
 
+mensaje_ej_2 += "\n"
 
+#2º Bucle, incremento +2
+for i in range(2,21,2):
+    #mensaje_ej_2 += f"{i:<3}"
+    pass
+
+mensaje_ej_2 += "\n"
+
+#3º Bucle, incremento +3 desde 20
+for i in range(20,48,3):
+    #mensaje_ej_2 += f"{i:<3}"
+    pass
+
+mensaje_ej_2 += "\n"
+
+#4º Bucle: incremento +4 desde 10
+for i in range (10,31,4):
+    #mensaje_ej_2 += f"{i:<3}"
+    pass
+
+mensaje_ej_2 += "\n"
+
+#5º Bucle: decremento -5 desde 40 hasta 0
+#HAY QUE USAR REVERSED
+for i in reversed(range(0,41)):
+    if(i%5==0):
+        mensaje_ej_2 += f"{i:<3}"
+
+#Salida final
+print(mensaje_ej_2)    
 
 #3. Enunciado: Crea un programa que muestre la tabla del ejercicio número 1, utilizando bucles tipo for
 #con tipos range() que tengan solamente un argumento.
