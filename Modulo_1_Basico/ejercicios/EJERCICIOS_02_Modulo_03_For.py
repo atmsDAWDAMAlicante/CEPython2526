@@ -113,11 +113,56 @@ def ejercicio_02():
 
 #3. Enunciado: Crea un programa que muestre la tabla del ejercicio número 1, utilizando bucles tipo for
 #con tipos range() que tengan solamente un argumento.
-print(f"---Ejercicio nº 3: Dxxx")
 
 
+# En este caso la cuestión está en que el condicional evalúe el punto de partida
 def ejercicio_03():
-    pass
+    print(f"---Ejercicio nº 3: Range con un argumento")
+    mensaje_ej_3 = "" #Aquí se recogerá el string que se imprimirá por pantalla
+
+    #1º Bucle: incremento +1
+    for i in range(11):
+        if (i > 0):
+            mensaje_ej_3 += f"{i:<3}"
+
+    mensaje_ej_3 += "\n"
+
+    #2º Bucle, incremento +2
+    for i in range(21):
+        if (i > 0) and (i%2 == 0):
+            mensaje_ej_3 += f"{i:<3}"
+        
+    mensaje_ej_3 += "\n"
+
+    #3º Bucle, incremento +3 desde 20
+    j = 17  # La variable j comprobará que i contiene un incremento de +3 dentro del bucle
+    # Por eso j debe comenzar por i -3
+    for i in range(20,48):
+        if (i > 19) and ((i - 3) == j):
+            mensaje_ej_3 += f"{i:<3}"
+            j = i # Se actualiza j para la siguiente vuelta del bucle
+    
+    mensaje_ej_3 += "\n"
+
+    #4º Bucle: incremento +4 desde 10
+    j = 6 # La idea es la misma que la del bucle anterior
+    # Aquí j debe comenzar por i - 4
+    for i in range (31):
+        if (i > 9) and ((i - 4) == j):
+            mensaje_ej_3 += f"{i:<3}"
+            j = i # se actualiza j para la siguiente vuelta del bucle
+
+    mensaje_ej_3 += "\n"
+
+    #5º Bucle: decremento -5 desde 40 hasta 0
+    #HAY QUE USAR REVERSED
+    for i in reversed(range(41)): #Atención al parámetro de reversed(range(n))
+        if (i < 41) and (i%5==0):
+            mensaje_ej_3 += f"{i:<3}"
+    
+    #Salida final
+    print(mensaje_ej_3)
+    return mensaje_ej_3
 
 
 #4. Enunciado: Escribe el código necesario para generar las siguientes siete secuencias de números
