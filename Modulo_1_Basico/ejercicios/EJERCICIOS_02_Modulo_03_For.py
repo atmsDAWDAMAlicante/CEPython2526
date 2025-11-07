@@ -176,11 +176,42 @@ def ejercicio_03():
 1.0 0.1 0.01 0.001 0.0001
 1 -1 1 -1 1 -1 1 -1
 '''
-print(f"---Ejercicio nº 4: Dxxx")
+def ejercicio_04():
+    print(f"---Ejercicio nº 4: Dxxx")
+
+    mensaje_ej_4 = "" #Aquí se recogerá el string que se imprimirá por pantalla
+
+    #1º Bucle: incremento +1
+    pass
 
 
+    #2º Bucle: incremento +1
+    pass
 
 
+    #3º Bucle: incremento +1
+    pass
+
+
+    #4º Bucle: incremento +1
+    pass
+
+
+    #5º Bucle: incremento +1
+    pass
+
+
+    #6º Bucle: incremento +1
+    pass
+
+
+    #7º Bucle: incremento +1
+    pass
+
+    
+    #Salida final
+    print(mensaje_ej_4)
+    return mensaje_ej_4
 
 
 #5. Enunciado: Haz que se pidan dos números enteros, siendo el segundo mayor o igual al primero.
@@ -204,12 +235,16 @@ Escribe un número entero mayor o igual que 5: 5
 El número 5 es impar
 '''
 
-
-print(f"---Ejercicio nº 5: Dxxx")
-
-
+def ejercicio_05(num1, num2):
+    print(f"---Ejercicio nº 5: Pares e impares")
 
 
+    mensaje_ej_5 = "" #Aquí se recogerá el string que se imprimirá por pantalla
+
+    
+    #Salida final
+    print(mensaje_ej_5)
+    return mensaje_ej_5
 
 
 #6. Enunciado: Escribe un programa que pida dos números enteros, el segundo ha de ser mayor o igual
@@ -227,12 +262,17 @@ Escribe un número entero mayor que 30: 32
 La suma desde 30 hasta 32 es 93
 30 + 31 + 32 = 93
 '''
-print(f"---Ejercicio nº 6: Dxxx")
+def ejercicio_06(num1, num2):
+    print(f"---Ejercicio nº 6: Sumatorio")
 
 
+    mensaje_ej_6 = "" #Aquí se recogerá el string que se imprimirá por pantalla
 
 
-
+    
+    #Salida final
+    print(mensaje_ej_6)
+    return mensaje_ej_6
 
 #7. Enunciado: Escribe un programa que pida por pantalla un número entero y que a continuación calcule
 #su factorial. En número ha de ser mayor que cero.
@@ -247,7 +287,8 @@ El factorial de un entero n (n!) es el producto de los enteros desde el 1 hasta 
 Escribe un número entero mayor que cero: 5
 El factorial de 5 es: 120
 '''
-print(f"---Ejercicio nº 7: Dxxx")
+def ejercicio_07():
+    print(f"---Ejercicio nº 7: Dxxx")
 
 
 
@@ -274,10 +315,14 @@ Número mayor: 30.00 Número Menor: 10.50
 La suma de los números que has escrito es 102.50
 La media de los números que has escrito es 20.50
 '''
-print(f"---Ejercicio nº 8: Dxxx")
+def ejercicio_08(i):
+    print(f"---Ejercicio nº 8: Dxxx")
+    j = i + 4
+    return prueba_08(j)
 
-
-
+def prueba_08(j):
+    k = 1 + j
+    return k
 
 
 
@@ -305,7 +350,9 @@ Escribe el número 4: -30
 Escribe el número 5: -30
 Has escrito 3 números negativos.
 '''
-print(f"---Ejercicio nº 9: Dxxx")
+
+def ejercicio_09():
+    print(f"---Ejercicio nº 9: Dxxx")
 
 
 
@@ -318,7 +365,9 @@ Escribe un número entero mayor que cero: -5
 Escribe un número entero mayor que cero: 200
 Los 12 divisores de 200 son 1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100 y 200.
 '''
-print(f"---Ejercicio nº 10: Dxxx")
+
+def ejercicio_10():
+    print(f"---Ejercicio nº 10: Dxxx")
 
 
 #11. Enunciado: Tomando como punto de partida el programa anterior, escribe el código necesario para
@@ -334,7 +383,8 @@ Los 12 divisores de 200 son 1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100 y 200.
 Escribe un número entero mayor que cero: 7
 7 es un número primo.
 '''
-print(f"---Ejercicio nº 11: Dxxx")
+def ejercicio_11():
+    print(f"---Ejercicio nº 11: Dxxx")
 
 
 
@@ -367,7 +417,8 @@ Suma de divisores: 284
 El número 220 es AMIGO del número 284.
 '''
 
-print(f"---Ejercicio nº 12: Dxxx")
+def ejercicio_12():
+    print(f"---Ejercicio nº 12: Dxxx")
 
 
 
