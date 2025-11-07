@@ -17,8 +17,9 @@ print(f"{linea}\nInicio de los ejercicios de este bloque\n{linea}")
 10 14 18 22 26 30
 40 35 30 25 20 15 10 5 0
 '''
-print(f"---Ejercicio nº 1: Cinco bucles para cinco operaciones")
+
 def ejercicio_01():
+    print(f"---Ejercicio nº 1: Cinco bucles para cinco operaciones")
     mensaje_ej_1 = "" #Aquí se recogerá el string que se imprimirá por pantalla
 
     #1º Bucle: incremento +1
@@ -60,54 +61,63 @@ def ejercicio_01():
 
 #2. Enunciado: Crea un programa que muestre el mismo resultado que en el ejercicio anterior, pero
 #utilizando ahora bucles tipo for con tipos range() de dos argumentos.
-print(f"---Ejercicio nº 2: Range con dos argumentos")
 
 
-mensaje_ej_2 = "" #Aquí se recogerá el string que se imprimirá por pantalla
+def ejercicio_02():
+    print(f"---Ejercicio nº 2: Range con dos argumentos")
+    mensaje_ej_2 = "" #Aquí se recogerá el string que se imprimirá por pantalla
 
-#1º Bucle: incremento +1
-for i in range(1,11):
-    mensaje_ej_2 += f"{i:<3}"
-
-mensaje_ej_2 += "\n"
-
-#2º Bucle, incremento +2
-for i in range(2,21,2):
-    #mensaje_ej_2 += f"{i:<3}"
-    pass
-
-mensaje_ej_2 += "\n"
-
-#3º Bucle, incremento +3 desde 20
-for i in range(20,48,3):
-    #mensaje_ej_2 += f"{i:<3}"
-    pass
-
-mensaje_ej_2 += "\n"
-
-#4º Bucle: incremento +4 desde 10
-for i in range (10,31,4):
-    #mensaje_ej_2 += f"{i:<3}"
-    pass
-
-mensaje_ej_2 += "\n"
-
-#5º Bucle: decremento -5 desde 40 hasta 0
-#HAY QUE USAR REVERSED
-for i in reversed(range(0,41)):
-    if(i%5==0):
+    #1º Bucle: incremento +1
+    for i in range(1,11):
         mensaje_ej_2 += f"{i:<3}"
 
-#Salida final
-print(mensaje_ej_2)    
+    mensaje_ej_2 += "\n"
+
+    #2º Bucle, incremento +2
+    for i in range(2,21):
+        if (i%2 == 0):
+            mensaje_ej_2 += f"{i:<3}"
+        
+
+    mensaje_ej_2 += "\n"
+
+    #3º Bucle, incremento +3 desde 20
+    j = 17  # La variable j comprobará que i contiene un incremento de +3 dentro del bucle
+    # Por eso j debe comenzar por i -3
+    for i in range(20,48):
+        if (i - 3) == j:
+            mensaje_ej_2 += f"{i:<3}"
+            j = i # Se actualiza j para la siguiente vuelta del bucle
+    
+    mensaje_ej_2 += "\n"
+
+    #4º Bucle: incremento +4 desde 10
+    j = 6 # La idea es la misma que la del bucle anterior
+    # Aquí j debe comenzar por i - 4
+    for i in range (10,31):
+        if (i - 4) == j:
+            mensaje_ej_2 += f"{i:<3}"
+            j = i # se actualiza j para la siguiente vuelta del bucle
+
+    mensaje_ej_2 += "\n"
+
+    #5º Bucle: decremento -5 desde 40 hasta 0
+    #HAY QUE USAR REVERSED
+    for i in reversed(range(0,41)):
+        if(i%5==0):
+            mensaje_ej_2 += f"{i:<3}"
+    
+    #Salida final
+    print(mensaje_ej_2)
+    return mensaje_ej_2
 
 #3. Enunciado: Crea un programa que muestre la tabla del ejercicio número 1, utilizando bucles tipo for
 #con tipos range() que tengan solamente un argumento.
 print(f"---Ejercicio nº 3: Dxxx")
 
 
-
-
+def ejercicio_03():
+    pass
 
 
 #4. Enunciado: Escribe el código necesario para generar las siguientes siete secuencias de números
@@ -316,6 +326,12 @@ print(f"---Ejercicio nº 12: Dxxx")
 
 
 
+
+
+#EJECUCIÓN
+ejercicio_01()
+ejercicio_02()
+ejercicio_03()
 
 
 
