@@ -18,39 +18,41 @@ print(f"{linea}\nInicio de los ejercicios de este bloque\n{linea}")
 40 35 30 25 20 15 10 5 0
 '''
 print(f"---Ejercicio nº 1: Cinco bucles para cinco operaciones")
-mensaje_ej_1 = "" #Aquí se recogerá el string que se imprimirá por pantalla
+def ejercicio_01():
+    mensaje_ej_1 = "" #Aquí se recogerá el string que se imprimirá por pantalla
 
-#1º Bucle: incremento +1
-for i in range(1,11,1):
-    mensaje_ej_1 += f"{i:<3}"
+    #1º Bucle: incremento +1
+    for i in range(1,11,1):
+        mensaje_ej_1 += f"{i:<3}"
 
-mensaje_ej_1 += "\n"
+    mensaje_ej_1 += "\n"
 
-#2º Bucle, incremento +2
-for i in range(2,21,2):
-    mensaje_ej_1 += f"{i:<3}"
+    #2º Bucle, incremento +2
+    for i in range(2,21,2):
+        mensaje_ej_1 += f"{i:<3}"
 
-mensaje_ej_1 += "\n"
+    mensaje_ej_1 += "\n"
 
-#3º Bucle, incremento +3 desde 20
-for i in range(20,48,3):
-    mensaje_ej_1 += f"{i:<3}"
+    #3º Bucle, incremento +3 desde 20
+    for i in range(20,48,3):
+        mensaje_ej_1 += f"{i:<3}"
 
-mensaje_ej_1 += "\n"
+    mensaje_ej_1 += "\n"
 
-#4º Bucle: incremento +4 desde 10
-for i in range (10,31,4):
-    mensaje_ej_1 += f"{i:<3}"
+    #4º Bucle: incremento +4 desde 10
+    for i in range (10,31,4):
+        mensaje_ej_1 += f"{i:<3}"
 
-mensaje_ej_1 += "\n"
+    mensaje_ej_1 += "\n"
 
-#5º Bucle: decremento -5 desde 40 hasta 0
-for i in range(40,-1,-5):
-    mensaje_ej_1 += f"{i:<3}"
+    #5º Bucle: decremento -5 desde 40 hasta 0
+    for i in range(40,-1,-5):
+        mensaje_ej_1 += f"{i:<3}"
 
 
-#Salida final
-print(mensaje_ej_1)    
+    #Salida final
+    print(mensaje_ej_1)
+    return mensaje_ej_1
 
 
 
