@@ -352,6 +352,16 @@ La suma desde 30 hasta 32 es 93
 def ejercicio_06(num1, num2):
     print(f"---Ejercicio nº 6: Sumatorio")
 
+    #para el supuesto que los números entraran a traǘes de un input()
+    num1 = int(num1)
+    num2 = int(num2)
+    cadenaPar = ""
+
+    if (num1 > num2): #Mensaje si el segundo número es menor que el primero
+        mensaje_ej_5 =  f"¡Te he pedido un número entero mayor que {num1}!"
+    else:
+        pass
+
 
     mensaje_ej_6 = "" #Aquí se recogerá el string que se imprimirá por pantalla
 
@@ -374,8 +384,8 @@ El factorial de un entero n (n!) es el producto de los enteros desde el 1 hasta 
 Escribe un número entero mayor que cero: 5
 El factorial de 5 es: 120
 '''
-def ejercicio_07():
-    print(f"---Ejercicio nº 7: Dxxx")
+def ejercicio_07(num):
+    print(f"---Ejercicio nº 7: Factorial")
     pass
 
 
@@ -405,7 +415,7 @@ La media de los números que has escrito es 20.50
 '''
 
 def ejercicio_08(i):
-    print(f"---Ejercicio nº 8: Dxxx")
+    print(f"---Ejercicio nº 8: xxx")
 '''   
     j = i + 4
     return prueba_08(j)
@@ -442,7 +452,7 @@ Has escrito 3 números negativos.
 '''
 
 def ejercicio_09():
-    print(f"---Ejercicio nº 9: Dxxx")
+    print(f"---Ejercicio nº 9: xxx")
     pass
 
 
@@ -457,8 +467,8 @@ Escribe un número entero mayor que cero: 200
 Los 12 divisores de 200 son 1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100 y 200.
 '''
 
-def ejercicio_10():
-    print(f"---Ejercicio nº 10: Dxxx")
+def ejercicio_10(num):
+    print(f"---Ejercicio nº 10: Divisores")
     pass
 
 
@@ -476,7 +486,7 @@ Escribe un número entero mayor que cero: 7
 7 es un número primo.
 '''
 def ejercicio_11():
-    print(f"---Ejercicio nº 11: Dxxx")
+    print(f"---Ejercicio nº 11: Numeros primos y divisores")
     pass
 
 
@@ -510,8 +520,8 @@ Suma de divisores: 284
 El número 220 es AMIGO del número 284.
 '''
 
-def ejercicio_12():
-    print(f"---Ejercicio nº 12: Dxxx")
+def ejercicio_12(num):
+    print(f"---Ejercicio nº 12: Entregable:")
     pass
 
 

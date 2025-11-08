@@ -22,25 +22,37 @@ def test_ejercicio05():
     assert mod2_eje3.ejercicio_05(4,8) == "El número 4 es par\nEl número 5 es impar\nEl número 6 es par\nEl número 7 es impar\nEl número 8 es par\n"
     assert mod2_eje3.ejercicio_05(5,5) == "El número 5 es impar"
 
-'''
+
 def test_ejercicio06():
     assert mod2_eje3.ejercicio_05(7,7) == "¡Te he pedido un número entero mayor que 7!"
     assert mod2_eje3.ejercicio_05(30,32) == "La suma desde 30 hasta 32 es 93\n30 + 31 + 32 = 93"
 
 
 def test_ejercicio07():
-    pass
+    assert mod2_eje3.ejercicio_06(-5) == "¡Le he pedido un número entero mayor que cero!"
+    assert mod2_eje3.ejercicio_06(5) == "El factorial de 5 es: 120"
 
-
+'''
 def test_ejercicio08():
     assert mod2_eje3.ejercicio_08(5) == 10
 
 def test_ejercicio09():
     pass
+    assert mod2_eje3.ejercicio_9(-5) == "¡Le he pedido un número entero mayor que cero!"pass
 '''
 
 def test_ejercicio10():
-    pass
+    assert mod2_eje3.ejercicio_10(-5) == "¡El número introducido debe ser un entero mayor de cero!"
+    assert mod2_eje3.ejercicio_10(200) == "Los 12 divisores de 200 son 1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100 y 200."
 
+def test_ejercicio11():
+    assert mod2_eje3.ejercicio_11(-5) == "¡Le he pedido un número entero mayor que cero!"
+    assert mod2_eje3.ejercicio_11(200) == "200 no es un número primo.\nLos 12 divisores de 200 son 1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100 y 200."
+    assert mod2_eje3.ejercicio_11(7) == "7 es un número primo."
+
+def test_ejercicio12():
+    assert mod2_eje3.ejercicio_12(28) == "Divisores propios: [1, 2, 4, 7, 14]\nSuma de divisores: 28\nEl número 28 es PERFECTO."
+    assert mod2_eje3.ejercicio_12(16) == "Divisores propios: [1, 2, 3, 4, 6]\nSuma de divisores: 16\nEl número 12 es ABUNDANTE."
+    assert mod2_eje3.ejercicio_12(284) == "Divisores propios: [1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110]\nSuma de divisores: 284\nEl número 220 es AMIGO del número 284."
 
 
