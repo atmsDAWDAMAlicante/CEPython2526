@@ -29,15 +29,15 @@ def test_ejercicio05():
     assert mod2_eje3.ejercicio_05(4,8) == "El número 4 es par\nEl número 5 es impar\nEl número 6 es par\nEl número 7 es impar\nEl número 8 es par\n"
     assert mod2_eje3.ejercicio_05(5,5) == "El número 5 es impar"
 
-'''
+
 def test_ejercicio06():
-    assert mod2_eje3.ejercicio_05(7,7) == "¡Te he pedido un número entero mayor que 7!"
-    assert mod2_eje3.ejercicio_05(30,32) == "La suma desde 30 hasta 32 es 93\n30 + 31 + 32 = 93"
+    assert mod2_eje3.ejercicio_06(7,7) == "¡Te he pedido un número entero mayor que 7!"
+    assert mod2_eje3.ejercicio_06(30,32) == "La suma desde 30 hasta 32 es 93\n30 + 31 + 32 = 93"
 
-
+'''
 def test_ejercicio07():
-    assert mod2_eje3.ejercicio_06(-5) == "¡Le he pedido un número entero mayor que cero!"
-    assert mod2_eje3.ejercicio_06(5) == "El factorial de 5 es: 120"
+    assert mod2_eje3.ejercicio_07(-5) == "¡Le he pedido un número entero mayor que cero!"
+    assert mod2_eje3.ejercicio_07(5) == "El factorial de 5 es: 120"
 '''
 
 
@@ -47,7 +47,7 @@ def test_ejercicio08():
 
 def test_ejercicio09():
     pass
-    assert mod2_eje3.ejercicio_9(-5) == "¡Le he pedido un número entero mayor que cero!"pass
+    assert mod2_eje3.ejercicio_09(-5) == "¡Le he pedido un número entero mayor que cero!"pass
 '''
 
 '''

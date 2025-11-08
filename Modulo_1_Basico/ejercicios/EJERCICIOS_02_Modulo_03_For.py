@@ -327,7 +327,6 @@ def ejercicio_05(num1, num2):
     #para el supuesto que los números entraran a traǘes de un input()
     num1 = int(num1)
     num2 = int(num2)
-    cadenaPar = ""
 
     if (num1 > num2): #Mensaje si el segundo número es menor que el primero
         mensaje_ej_5 =  f"¡Te he pedido un número entero mayor que {num1}!"
@@ -375,16 +374,34 @@ def ejercicio_06(num1, num2):
     #para el supuesto que los números entraran a traǘes de un input()
     num1 = int(num1)
     num2 = int(num2)
-    cadenaPar = ""
+    cadena1 = "" # Cadena con el resultado con palabras
+    cadena2 = "" # El string que recogerá los números y el +
+    sumatorio = 0 # variable que recogerá el sumatorio
 
-    if (num1 > num2): #Mensaje si el segundo número es menor que el primero
-        mensaje_ej_5 =  f"¡Te he pedido un número entero mayor que {num1}!"
-    else:
-        pass
+    if (num1 < num2):
+        
+        for i in range(num1, num2 + 1):
+            signo = ""
+            sumatorio += i
+            if (i < num2):
+                signo = "+"
+            
+            else:
+                signo = "="
+
+            cadena2 += f"{i} {signo} "
+
+        # Elaboración del fstring resultado
+        cadena1 = f"La suma desde {num1} hasta {num2} es {sumatorio}"
+        cadena2 += f"{sumatorio}"
+        mensaje_ej_6 = f"{cadena1}\n{cadena2}" #Aquí se recogerá el string que se imprimirá por pantalla            
+
+    else: #Mensaje si el segundo número es menor que el primero
+        mensaje_ej_6 =  f"¡Te he pedido un número entero mayor que {num1}!"
 
 
-    mensaje_ej_6 = "" #Aquí se recogerá el string que se imprimirá por pantalla
-
+    print(mensaje_ej_6)
+    return mensaje_ej_6
 
     
     #Salida final
@@ -562,7 +579,8 @@ ejercicio_04(7)
 ejercicio_05(6,2)
 ejercicio_05(4,8)
 ejercicio_05(5,5)
-#ejercicio_06()
+ejercicio_06(7,7)
+ejercicio_06(30,32)
 #ejercicio_07()
 #ejercicio_08()
 #ejercicio_09()
