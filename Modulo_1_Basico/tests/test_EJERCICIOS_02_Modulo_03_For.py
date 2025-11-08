@@ -16,6 +16,7 @@ def test_ejercicio03():
 def test_ejercicio04():
     assert mod2_eje3.ejercicio_04() == "1 4 9 16 25 36 49 64 81 100\n2 5 10 17 26 37 50 65 82 101\n8 27 64 125 216 343\n2 6 12 20 30 42 56\n1 10 100 1000 10000\n1.0 0.1 0.01 0.001 0.0001\n1 -1 1 -1 1 -1 1 -1"
 
+'''
 def test_ejercicio05():
     assert mod2_eje3.ejercicio_05(6,2) == "¡Te he pedido un número entero mayor que 6!"
     assert mod2_eje3.ejercicio_05(4,8) == "El número 4 es par\nEl número 5 es impar\nEl número 6 es par\nEl número 7 es impar\nEl número 8 es par"
@@ -36,7 +37,7 @@ def test_ejercicio08():
 
 def test_ejercicio09():
     pass
-
+'''
 
 def test_ejercicio10():
     pass

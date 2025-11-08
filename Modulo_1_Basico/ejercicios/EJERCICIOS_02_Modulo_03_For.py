@@ -177,35 +177,51 @@ def ejercicio_03():
 1 -1 1 -1 1 -1 1 -1
 '''
 def ejercicio_04():
-    print(f"---Ejercicio nº 4: Dxxx")
+    print(f"---Ejercicio nº 4: Bucles variados")
 
     mensaje_ej_4 = "" #Aquí se recogerá el string que se imprimirá por pantalla
 
-    #1º Bucle: incremento +1
+    #1º Bucle: 1 4 9 16 25 36 49 64 81 100
+    # Explicación del bucle: cada vuelta se le suma un número que se incrementa +2
+    # 1 + x = 4 por tanto x = 3
+    # 4 + x = 9 por tanto X = 5
+    # 9 + x = 16 por tanto x = 7
+    numero_base = 1 # esta variable se incrementa a cada vuelta y se añade al string
+    numero_incremento = 3 # esta variable es la que se incrementa cada vuelta en 2 para sumarla a la base
+    espacio_plus = "" # esta cadena posibilitará que se muestre el espacio añadido al fstring sin modificar el 3 de formato
+    for i in range(10): 
+        if (numero_base >= 100):
+            espacio_plus = " "
+        mensaje_ej_4 += f"{espacio_plus}{numero_base:>3}"
+        numero_base += numero_incremento
+        numero_incremento += 2
+        print(numero_base)
+
+    print(mensaje_ej_4)
+    print("--------------")
+    mensaje_ej_4 += "\n"
+
+    #2º Bucle: 2 5 10 17 26 37 50 65 82 101
     pass
 
 
-    #2º Bucle: incremento +1
+    #3º Bucle:8 27 64 125 216 343
     pass
 
 
-    #3º Bucle: incremento +1
+    #4º Bucle: 2 6 12 20 30 42 56
     pass
 
 
-    #4º Bucle: incremento +1
+    #5º Bucle: 1 10 100 1000 10000
     pass
 
 
-    #5º Bucle: incremento +1
+    #6º Bucle: 1.0 0.1 0.01 0.001 0.0001
     pass
 
 
-    #6º Bucle: incremento +1
-    pass
-
-
-    #7º Bucle: incremento +1
+    #7º Bucle: 1 -1 1 -1 1 -1 1 -1
     pass
 
     
@@ -289,6 +305,7 @@ El factorial de 5 es: 120
 '''
 def ejercicio_07():
     print(f"---Ejercicio nº 7: Dxxx")
+    pass
 
 
 
@@ -353,6 +370,7 @@ Has escrito 3 números negativos.
 
 def ejercicio_09():
     print(f"---Ejercicio nº 9: Dxxx")
+    pass
 
 
 
@@ -368,6 +386,7 @@ Los 12 divisores de 200 son 1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100 y 200.
 
 def ejercicio_10():
     print(f"---Ejercicio nº 10: Dxxx")
+    pass
 
 
 #11. Enunciado: Tomando como punto de partida el programa anterior, escribe el código necesario para
@@ -385,6 +404,7 @@ Escribe un número entero mayor que cero: 7
 '''
 def ejercicio_11():
     print(f"---Ejercicio nº 11: Dxxx")
+    pass
 
 
 
@@ -419,6 +439,7 @@ El número 220 es AMIGO del número 284.
 
 def ejercicio_12():
     print(f"---Ejercicio nº 12: Dxxx")
+    pass
 
 
 
@@ -428,6 +449,15 @@ def ejercicio_12():
 ejercicio_01()
 ejercicio_02()
 ejercicio_03()
+ejercicio_04()
+#ejercicio_05()
+#ejercicio_06()
+ejercicio_07()
+ejercicio_08()
+ejercicio_09()
+ejercicio_10()
+ejercicio_11()
+ejercicio_12()
 
 
 
