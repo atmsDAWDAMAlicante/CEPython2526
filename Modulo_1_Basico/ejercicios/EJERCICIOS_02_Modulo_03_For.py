@@ -176,101 +176,121 @@ def ejercicio_03():
 1.0 0.1 0.01 0.001 0.0001
 1 -1 1 -1 1 -1 1 -1
 '''
-def ejercicio_04():
+
+def ejercicio_04(num):
     print(f"---Ejercicio nº 4: Bucles variados")
-
     mensaje_ej_4 = "" #Aquí se recogerá el string que se imprimirá por pantalla
-
-    #1º Bucle: 1 4 9 16 25 36 49 64 81 100
-    # Explicación del bucle: cada vuelta se le suma un número que se incrementa +2
-    # 1 + x = 4 por tanto x = 3
-    # 4 + x = 9 por tanto X = 5
-    # 9 + x = 16 por tanto x = 7
-    numero_base = 1 # esta variable se incrementa a cada vuelta y se añade al string
-    numero_incremento = 3 # esta variable es la que se incrementa cada vuelta en 2 para sumarla a la base
-    espacio_plus = "" # esta cadena posibilitará que se muestre el espacio añadido al fstring sin modificar el 3 de formato
-    for i in range(10): 
-        if (numero_base >= 100):
-            espacio_plus = ""
-        mensaje_ej_4 += f"{espacio_plus}{numero_base:<3}"
-        numero_base += numero_incremento
-        numero_incremento += 2
-
-    print(mensaje_ej_4)
-    print("--------------")
-    mensaje_ej_4 += "\n"
+    if (num == 1):
 
 
-    #2º Bucle: 2 5 10 17 26 37 50 65 82 101
-    # El número base se incrementa cada vuelta con el número impar siguiente al que se le suma 2
-    numero_base = 2 # variable que se inrementa a cada vuelta con un número impar + 2
-    numero_incremento = 3 # cada vuelta se incrementará + 2
-    espacio_plus = "" #para mostrar el espacio en el número mayor que 100
+        #1º Bucle: 1 4 9 16 25 36 49 64 81 100
+        # Explicación del bucle: cada vuelta se le suma un número que se incrementa +2
+        # 1 + x = 4 por tanto x = 3
+        # 4 + x = 9 por tanto X = 5
+        # 9 + x = 16 por tanto x = 7
+        numero_base = 1 # esta variable se incrementa a cada vuelta y se añade al string
+        numero_incremento = 3 # esta variable es la que se incrementa cada vuelta en 2 para sumarla a la base
+        espacio_plus = "" # esta cadena posibilitará que se muestre el espacio añadido al fstring sin modificar el 3 de formato
+        for i in range(10): 
+            if (numero_base >= 100):
+                espacio_plus = ""
+            mensaje_ej_4 += f"{espacio_plus}{numero_base:<3}"
+            numero_base += numero_incremento
+            numero_incremento += 2
 
-    for i in range(10):
-        if (numero_base > 100):
-            espacio_plus = ""
-        mensaje_ej_4 += f"{espacio_plus}{numero_base:<3}"
-        numero_base += numero_incremento
-        numero_incremento += 2
-
-    print(mensaje_ej_4)
-    print("--------------")
-    mensaje_ej_4 += "\n"
+        print(mensaje_ej_4)
+        print("--------------")
+        return mensaje_ej_4
 
 
-    #3º Bucle:8 27 64 125 216 343
-    # Números elevados a la tercera potencia 
-    import math #para utilizar Pow
-    resultado = 0
+    elif (num == 2):
 
-    for i in range(2,8):
-        resultado = pow(i,3)
+        #2º Bucle: 2 5 10 17 26 37 50 65 82 101
+        # El número base se incrementa cada vuelta con el número impar siguiente al que se le suma 2
+        numero_base = 2 # variable que se inrementa a cada vuelta con un número impar + 2
+        numero_incremento = 3 # cada vuelta se incrementará + 2
+        espacio_plus = "" #para mostrar el espacio en el número mayor que 100
 
-        if (resultado >= 100): # Condicional que cambia los espacios del fstring en función del resultado de la potencia
-            mensaje_ej_4 += f"{resultado:<4}"
-        else: 
-            mensaje_ej_4 += f"{resultado:<3}"
+        for i in range(10):
+            if (numero_base > 100):
+                espacio_plus = ""
+            mensaje_ej_4 += f"{espacio_plus}{numero_base:<3}"
+            numero_base += numero_incremento
+            numero_incremento += 2
 
-    print(mensaje_ej_4)
-    print("--------------")
-    mensaje_ej_4 += "\n"
+        print(mensaje_ej_4)
+        print("--------------")
 
-    #4º Bucle: 2 6 12 20 30 42 56
-    #2*1 = 2
-    #2*(1+2)= 6
-    #2*(1+2+3) = 12
-    #2*(1+2+3+4) = 20
-    #2*(1+2+3+4+5) = 30
-    #2*(1+2+3+4+5+6) = 42
-    #2*(1+2+3+4+5+6+7) = 56
+        return mensaje_ej_4
 
-    for i in range(1,8):
-        multiplicador = 0 # Esta variable contador recogerá las sumas para multiplicarlas por 2
-        for j in range(1,i+1): # Segundo bucle anidado: genera el multiplicador con las sumas 1+2+3+ etc
-            multiplicador += j
-        mensaje_ej_4 += f"{2 * multiplicador:<3}"
+    elif (num == 3):
+
+        #3º Bucle:8 27 64 125 216 343
+        # Números elevados a la tercera potencia 
+        import math #para utilizar Pow
+        resultado = 0
+
+        for i in range(2,8):
+            resultado = pow(i,3)
+
+            if (resultado >= 100): # Condicional que cambia los espacios del fstring en función del resultado de la potencia
+                mensaje_ej_4 += f"{resultado:<4}"
+            else: 
+                mensaje_ej_4 += f"{resultado:<3}"
+
+        print(mensaje_ej_4)
+        print("--------------")
+
+
+        return mensaje_ej_4.strip() # strip() para eliminar el último espacio que no sé cómo se ha colado
+
+    elif (num == 4):
+        #4º Bucle: 2 6 12 20 30 42 56
+        #2*1 = 2
+        #2*(1+2)= 6
+        #2*(1+2+3) = 12
+        #2*(1+2+3+4) = 20
+        #2*(1+2+3+4+5) = 30
+        #2*(1+2+3+4+5+6) = 42
+        #2*(1+2+3+4+5+6+7) = 56
+
+        for i in range(1,8):
+            multiplicador = 0 # Esta variable contador recogerá las sumas para multiplicarlas por 2
+            for j in range(1,i+1): # Segundo bucle anidado: genera el multiplicador con las sumas 1+2+3+ etc
+                multiplicador += j
+            mensaje_ej_4 += f"{2 * multiplicador:<3}"
+        
+        print(mensaje_ej_4)
+        print("--------------")
+
+        return mensaje_ej_4.strip() # strip() para eliminar el último espacio que no sé cómo se ha colado
     
-    print(mensaje_ej_4)
-    print("--------------")
-    mensaje_ej_4 += "\n"
+    else:
+        mensaje_ej_4 = ""
+        return mensaje_ej_4
 
-    #5º Bucle: 1 10 100 1000 10000
-    pass
+    '''
+    elif (num == 5):
 
-    mensaje_ej_4 += "\n"
-    #6º Bucle: 1.0 0.1 0.01 0.001 0.0001
-    pass
+        #5º Bucle: 1 10 100 1000 10000
+        pass
 
-    mensaje_ej_4 += "\n"
-    #7º Bucle: 1 -1 1 -1 1 -1 1 -1
-    pass
+        return mensaje_ej_4
+    '''
+    '''
+    elif (num == 6):
+        #6º Bucle: 1.0 0.1 0.01 0.001 0.0001
+        pass
 
-    
-    #Salida final
-    print(mensaje_ej_4)
-    return mensaje_ej_4
+        return mensaje_ej_4
+    '''
+    '''
+    elif (num == 7):
+        #7º Bucle: 1 -1 1 -1 1 -1 1 -1
+        pass
+    '''
 
+        
 
 #5. Enunciado: Haz que se pidan dos números enteros, siendo el segundo mayor o igual al primero.
 #Muestra por pantalla todos los números enteros comprendidos entre los números
@@ -532,17 +552,23 @@ def ejercicio_12(num):
 ejercicio_01()
 ejercicio_02()
 ejercicio_03()
-ejercicio_04()
+ejercicio_04(1)
+ejercicio_04(2)
+ejercicio_04(3)
+ejercicio_04(4)
+ejercicio_04(5)
+ejercicio_04(6)
+ejercicio_04(7)
 ejercicio_05(6,2)
 ejercicio_05(4,8)
 ejercicio_05(5,5)
 #ejercicio_06()
-ejercicio_07()
+#ejercicio_07()
 #ejercicio_08()
-ejercicio_09()
-ejercicio_10()
-ejercicio_11()
-ejercicio_12()
+#ejercicio_09()
+#ejercicio_10()
+#ejercicio_11()
+#ejercicio_12()
 
 
 
