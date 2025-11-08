@@ -371,6 +371,8 @@ La suma desde 30 hasta 32 es 93
 def ejercicio_06(num1, num2):
     print(f"---Ejercicio nº 6: Sumatorio")
 
+    mensaje_ej_6 = "" #Aquí se recogerá el string que se imprimirá por pantalla    
+
     #para el supuesto que los números entraran a traǘes de un input()
     num1 = int(num1)
     num2 = int(num2)
@@ -423,11 +425,17 @@ El factorial de 5 es: 120
 '''
 def ejercicio_07(num):
     print(f"---Ejercicio nº 7: Factorial")
-    pass
+    mensaje_ej_7 = "" #Aquí se recogerá el string que se imprimirá por pantalla    pass
 
-
-
-
+    if (num < 1):
+        mensaje_ej_7 = "¡Le he pedido un número entero mayor que cero!"
+    else:
+        factorial = 1
+        for i in range(1, num+1):
+            factorial *= i
+        mensaje_ej_7 = f"El factorial de {num} es: {factorial}" 
+    print(mensaje_ej_7)
+    return mensaje_ej_7
 
 
 #8. Enunciado: Escribe un programa que permita sumar números, la aplicación debe funcionar de la siguiente forma:
@@ -581,7 +589,8 @@ ejercicio_05(4,8)
 ejercicio_05(5,5)
 ejercicio_06(7,7)
 ejercicio_06(30,32)
-#ejercicio_07()
+ejercicio_07(-5)
+ejercicio_07(5)
 #ejercicio_08()
 #ejercicio_09()
 #ejercicio_10()

@@ -34,11 +34,10 @@ def test_ejercicio06():
     assert mod2_eje3.ejercicio_06(7,7) == "¡Te he pedido un número entero mayor que 7!"
     assert mod2_eje3.ejercicio_06(30,32) == "La suma desde 30 hasta 32 es 93\n30 + 31 + 32 = 93"
 
-'''
+
 def test_ejercicio07():
     assert mod2_eje3.ejercicio_07(-5) == "¡Le he pedido un número entero mayor que cero!"
     assert mod2_eje3.ejercicio_07(5) == "El factorial de 5 es: 120"
-'''
 
 
 '''
