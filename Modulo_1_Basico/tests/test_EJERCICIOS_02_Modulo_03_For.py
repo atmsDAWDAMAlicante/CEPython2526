@@ -49,11 +49,11 @@ def test_ejercicio09():
     assert mod2_eje3.ejercicio_09(-5) == "¡Le he pedido un número entero mayor que cero!"pass
 '''
 
-'''
+
 def test_ejercicio10():
     assert mod2_eje3.ejercicio_10(-5) == "¡El número introducido debe ser un entero mayor de cero!"
     assert mod2_eje3.ejercicio_10(200) == "Los 12 divisores de 200 son 1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100 y 200."
-
+'''
 def test_ejercicio11():
     assert mod2_eje3.ejercicio_11(-5) == "¡Le he pedido un número entero mayor que cero!"
     assert mod2_eje3.ejercicio_11(200) == "200 no es un número primo.\nLos 12 divisores de 200 son 1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100 y 200."

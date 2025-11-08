@@ -425,7 +425,7 @@ El factorial de 5 es: 120
 '''
 def ejercicio_07(num):
     print(f"---Ejercicio nº 7: Factorial")
-    mensaje_ej_7 = "" #Aquí se recogerá el string que se imprimirá por pantalla    pass
+    mensaje_ej_7 = "" #Aquí se recogerá el string que se imprimirá por pantalla 
 
     if (num < 1):
         mensaje_ej_7 = "¡Le he pedido un número entero mayor que cero!"
@@ -462,6 +462,14 @@ La media de los números que has escrito es 20.50
 def ejercicio_08(i):
     print(f"---Ejercicio nº 8: xxx")
 '''   
+
+    mensaje_ej_08 = "" #Aquí se recogerá el string que se imprimirá por pantalla 
+
+
+    print(mensaje_ej_08)
+    return mensaje_ej_08
+
+
     j = i + 4
     return prueba_08(j)
 
@@ -500,6 +508,14 @@ def ejercicio_09():
     print(f"---Ejercicio nº 9: xxx")
     pass
 
+'''
+    mensaje_ej_09 = "" #Aquí se recogerá el string que se imprimirá por pantalla 
+
+
+    print(mensaje_ej_09)
+    return mensaje_ej_09
+'''
+
 
 
 #10. Enunciado: Crea un programa que pida un valor entero mayor que cero y calcule todos sus divisores,
@@ -514,7 +530,37 @@ Los 12 divisores de 200 son 1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100 y 200.
 
 def ejercicio_10(num):
     print(f"---Ejercicio nº 10: Divisores")
-    pass
+    mensaje_ej_10 = "" #Aquí se recogerá el string que se imprimirá por pantalla 
+    divisores = 0
+    cadena_de_divisores = f"Los 12 divisores de {num} son "
+    lista_de_divisores = []
+    coma_espacio = ", "
+    if (num < 1):
+        mensaje_ej_10 = "¡El número introducido debe ser un entero mayor de cero!"
+
+    else:
+        for i in range(1, num+1):
+            if (num%i == 0):
+                divisores += 1
+                lista_de_divisores.append(i)
+            else: 
+                pass
+        for indice, elemento in enumerate(lista_de_divisores):
+            
+            if (indice == len(lista_de_divisores)-2):
+                coma_espacio = " y "
+            elif (indice < len(lista_de_divisores)):
+                coma_espacio = ", "
+
+            cadena_de_divisores += f"{elemento}{coma_espacio}"
+
+        #A borrar la coma
+        cadena_de_divisores = cadena_de_divisores[:-2]
+        cadena_de_divisores += "." #y se le añade un punto
+        mensaje_ej_10 = cadena_de_divisores
+
+    print(mensaje_ej_10)
+    return mensaje_ej_10
 
 
 #11. Enunciado: Tomando como punto de partida el programa anterior, escribe el código necesario para
@@ -530,9 +576,14 @@ Los 12 divisores de 200 son 1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100 y 200.
 Escribe un número entero mayor que cero: 7
 7 es un número primo.
 '''
-def ejercicio_11():
+def ejercicio_11(num):
     print(f"---Ejercicio nº 11: Numeros primos y divisores")
-    pass
+    mensaje_ej_11 = "" #Aquí se recogerá el string que se imprimirá por pantalla 
+    if (num < 1):
+        mensaje_ej_11 = "¡El número introducido debe ser un entero mayor de cero!"
+
+    print(mensaje_ej_11)
+    return mensaje_ej_11
 
 
 
@@ -569,7 +620,11 @@ def ejercicio_12(num):
     print(f"---Ejercicio nº 12: Entregable:")
     pass
 
+    mensaje_ej_12 = "" #Aquí se recogerá el string que se imprimirá por pantalla 
 
+
+    print(mensaje_ej_12)
+    return mensaje_ej_12
 
 
 
@@ -593,8 +648,11 @@ ejercicio_07(-5)
 ejercicio_07(5)
 #ejercicio_08()
 #ejercicio_09()
-#ejercicio_10()
-#ejercicio_11()
+ejercicio_10(-5)
+ejercicio_10(200)
+ejercicio_11(-5)
+ejercicio_11(200)
+ejercicio_11(7)
 #ejercicio_12()
 
 
