@@ -201,40 +201,49 @@ def ejercicio_04():
     mensaje_ej_4 += "\n"
 
 
-
-
     #2º Bucle: 2 5 10 17 26 37 50 65 82 101
     # El número base se incrementa cada vuelta con el número impar siguiente al que se le suma 2
     numero_base = 2 # variable que se inrementa a cada vuelta con un número impar + 2
     numero_incremento = 3 # cada vuelta se incrementará + 2
     espacio_plus = "" #para mostrar el espacio en el número mayor que 100
 
-    
     for i in range(10):
         if (numero_base > 100):
             espacio_plus = " "
         mensaje_ej_4 += f"{espacio_plus}{numero_base:>3}"
-        print(f"Num base: {numero_base} y Num incremento {numero_incremento}")
         numero_base += numero_incremento
         numero_incremento += 2
 
+    print(mensaje_ej_4)
+    print("--------------")
+    mensaje_ej_4 += "\n"
+
 
     #3º Bucle:8 27 64 125 216 343
-    pass
+    # Números elevados a la tercera potencia 
+    import math #para utilizar Pow
+    resultado = 0
+    espacio_plus = ""
+    for i in range(2,8):
+        resultado = pow(i,3)
+        if (resultado >= 100):
+            espacio_plus = " "
+        mensaje_ej_4 += f"{espacio_plus}{resultado:>3}"
 
+    mensaje_ej_4 += "\n"
 
     #4º Bucle: 2 6 12 20 30 42 56
     pass
 
-
+    mensaje_ej_4 += "\n"
     #5º Bucle: 1 10 100 1000 10000
     pass
 
-
+    mensaje_ej_4 += "\n"
     #6º Bucle: 1.0 0.1 0.01 0.001 0.0001
     pass
 
-
+    mensaje_ej_4 += "\n"
     #7º Bucle: 1 -1 1 -1 1 -1 1 -1
     pass
 
@@ -298,7 +307,7 @@ def ejercicio_05(num1, num2):
                 mensaje_ej_5 += f"El número {i} es par\n"
             else:
                 mensaje_ej_5 += f"El número {i} es impar\n"
-                
+
     #Igual debería haber montado los strings en otra función
 
     #Salida final
