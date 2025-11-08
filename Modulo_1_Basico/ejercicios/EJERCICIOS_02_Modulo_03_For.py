@@ -195,14 +195,28 @@ def ejercicio_04():
         mensaje_ej_4 += f"{espacio_plus}{numero_base:>3}"
         numero_base += numero_incremento
         numero_incremento += 2
-        print(numero_base)
 
     print(mensaje_ej_4)
     print("--------------")
     mensaje_ej_4 += "\n"
 
+
+
+
     #2º Bucle: 2 5 10 17 26 37 50 65 82 101
-    pass
+    # El número base se incrementa cada vuelta con el número impar siguiente al que se le suma 2
+    numero_base = 2 # variable que se inrementa a cada vuelta con un número impar + 2
+    numero_incremento = 3 # cada vuelta se incrementará + 2
+    espacio_plus = "" #para mostrar el espacio en el número mayor que 100
+
+    
+    for i in range(10):
+        if (numero_base > 100):
+            espacio_plus = " "
+        mensaje_ej_4 += f"{espacio_plus}{numero_base:>3}"
+        print(f"Num base: {numero_base} y Num incremento {numero_incremento}")
+        numero_base += numero_incremento
+        numero_incremento += 2
 
 
     #3º Bucle:8 27 64 125 216 343
@@ -332,8 +346,10 @@ Número mayor: 30.00 Número Menor: 10.50
 La suma de los números que has escrito es 102.50
 La media de los números que has escrito es 20.50
 '''
+
 def ejercicio_08(i):
     print(f"---Ejercicio nº 8: Dxxx")
+'''   
     j = i + 4
     return prueba_08(j)
 
@@ -341,7 +357,7 @@ def prueba_08(j):
     k = 1 + j
     return k
 
-
+'''
 
 
 #9. Enunciado: Diseña un programa que detecte números negativos, la aplicación debe funcionar de la siguiente forma:
@@ -453,7 +469,7 @@ ejercicio_04()
 #ejercicio_05()
 #ejercicio_06()
 ejercicio_07()
-ejercicio_08()
+#ejercicio_08()
 ejercicio_09()
 ejercicio_10()
 ejercicio_11()
