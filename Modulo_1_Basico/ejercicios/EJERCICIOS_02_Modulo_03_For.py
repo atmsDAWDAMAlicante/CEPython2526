@@ -265,13 +265,42 @@ Escribe un número entero mayor o igual que 5: 5
 El número 5 es impar
 '''
 
+def parImpar(num): # Monto una función para saber si es par/impar, que me hará falta seguro
+    if (num%2==0):
+        return True
+    else:
+        return False
+
 def ejercicio_05(num1, num2):
     print(f"---Ejercicio nº 5: Pares e impares")
 
-
     mensaje_ej_5 = "" #Aquí se recogerá el string que se imprimirá por pantalla
 
-    
+    #para el supuesto que los números entraran a traǘes de un input()
+    num1 = int(num1)
+    num2 = int(num2)
+    cadenaPar = ""
+
+    if (num1 > num2): #Mensaje si el segundo número es menor que el primero
+        mensaje_ej_5 =  f"¡Te he pedido un número entero mayor que {num1}!"
+
+    elif (num1 == num2): #Supuesto para el caso que los números sean iguales
+        esPar = parImpar(num1)
+        if (esPar):
+            mensaje_ej_5 = f"El número {num1} es par"
+        else:
+            mensaje_ej_5 = f"El número {num1} es impar"
+
+    else: # El resto de casos se forma el fstring dentro de un bucle
+        for i in range(num1,num2+1):
+            esPar = parImpar(i)
+            if (esPar):
+                mensaje_ej_5 += f"El número {i} es par\n"
+            else:
+                mensaje_ej_5 += f"El número {i} es impar\n"
+                
+    #Igual debería haber montado los strings en otra función
+
     #Salida final
     print(mensaje_ej_5)
     return mensaje_ej_5
@@ -466,7 +495,9 @@ ejercicio_01()
 ejercicio_02()
 ejercicio_03()
 ejercicio_04()
-#ejercicio_05()
+ejercicio_05(6,2)
+ejercicio_05(4,8)
+ejercicio_05(5,5)
 #ejercicio_06()
 ejercicio_07()
 #ejercicio_08()
