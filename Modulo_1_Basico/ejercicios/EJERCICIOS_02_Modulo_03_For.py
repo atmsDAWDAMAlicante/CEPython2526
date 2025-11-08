@@ -191,8 +191,8 @@ def ejercicio_04():
     espacio_plus = "" # esta cadena posibilitará que se muestre el espacio añadido al fstring sin modificar el 3 de formato
     for i in range(10): 
         if (numero_base >= 100):
-            espacio_plus = " "
-        mensaje_ej_4 += f"{espacio_plus}{numero_base:>3}"
+            espacio_plus = ""
+        mensaje_ej_4 += f"{espacio_plus}{numero_base:<3}"
         numero_base += numero_incremento
         numero_incremento += 2
 
@@ -209,8 +209,8 @@ def ejercicio_04():
 
     for i in range(10):
         if (numero_base > 100):
-            espacio_plus = " "
-        mensaje_ej_4 += f"{espacio_plus}{numero_base:>3}"
+            espacio_plus = ""
+        mensaje_ej_4 += f"{espacio_plus}{numero_base:<3}"
         numero_base += numero_incremento
         numero_incremento += 2
 
@@ -223,19 +223,38 @@ def ejercicio_04():
     # Números elevados a la tercera potencia 
     import math #para utilizar Pow
     resultado = 0
-    espacio_plus = ""
+
     for i in range(2,8):
         resultado = pow(i,3)
-        if (resultado >= 100):
-            espacio_plus = " "
-        mensaje_ej_4 += f"{espacio_plus}{resultado:>3}"
 
+        if (resultado >= 100): # Condicional que cambia los espacios del fstring en función del resultado de la potencia
+            mensaje_ej_4 += f"{resultado:<4}"
+        else: 
+            mensaje_ej_4 += f"{resultado:<3}"
+
+    print(mensaje_ej_4)
+    print("--------------")
     mensaje_ej_4 += "\n"
 
     #4º Bucle: 2 6 12 20 30 42 56
-    pass
+    #2*1 = 2
+    #2*(1+2)= 6
+    #2*(1+2+3) = 12
+    #2*(1+2+3+4) = 20
+    #2*(1+2+3+4+5) = 30
+    #2*(1+2+3+4+5+6) = 42
+    #2*(1+2+3+4+5+6+7) = 56
 
+    for i in range(1,8):
+        multiplicador = 0 # Esta variable contador recogerá las sumas para multiplicarlas por 2
+        for j in range(1,i+1): # Segundo bucle anidado: genera el multiplicador con las sumas 1+2+3+ etc
+            multiplicador += j
+        mensaje_ej_4 += f"{2 * multiplicador:<3}"
+    
+    print(mensaje_ej_4)
+    print("--------------")
     mensaje_ej_4 += "\n"
+
     #5º Bucle: 1 10 100 1000 10000
     pass
 
