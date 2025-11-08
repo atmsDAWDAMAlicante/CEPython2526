@@ -65,6 +65,8 @@ pytest
 o, para tener más detalle en la terminal
 ```
 pytest -v
+
+pytest -vv
 ```
 
 ### *NOTA:* _es necesario tener el entorno virtual activo para lanzar los tests, si no dará errores de tipo "pytest: command not found" u otros mensajes de error_
