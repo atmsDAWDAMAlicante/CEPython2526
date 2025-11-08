@@ -579,8 +579,41 @@ Escribe un número entero mayor que cero: 7
 def ejercicio_11(num):
     print(f"---Ejercicio nº 11: Numeros primos y divisores")
     mensaje_ej_11 = "" #Aquí se recogerá el string que se imprimirá por pantalla 
+    divisores = 0
+    cadena_de_divisores = f"{num} no es un número primo.\nLos 12 divisores de {num} son " #AÑADIDO A ESTE EJERCICIO
+    lista_de_divisores = []
+    coma_espacio = ", "
+
+    cadena_primo = " es un número primo."
+
     if (num < 1):
         mensaje_ej_11 = "¡El número introducido debe ser un entero mayor de cero!"
+
+    else:
+        for i in range(1, num+1):
+            if (num%i == 0):
+                divisores += 1
+                lista_de_divisores.append(i)
+            else: 
+                pass
+        for indice, elemento in enumerate(lista_de_divisores):
+            
+            if (indice == len(lista_de_divisores)-2):
+                coma_espacio = " y "
+            elif (indice < len(lista_de_divisores)):
+                coma_espacio = ", "
+
+            cadena_de_divisores += f"{elemento}{coma_espacio}"
+
+        #A borrar la coma
+        cadena_de_divisores = cadena_de_divisores[:-2]
+        cadena_de_divisores += "." #y se le añade un punto
+
+        # AÑADIDO PARA ESTE EJERCICIO: NUMERO PRIMO
+        if (divisores > 2): # MÁS DE DOS DIVISORES NO ES PRIMO
+            mensaje_ej_11 = cadena_de_divisores
+        else: # MENOS DE DOS DIVISORES SÍ ES PRIMO
+            mensaje_ej_11 = f"{num}{cadena_primo}"
 
     print(mensaje_ej_11)
     return mensaje_ej_11
@@ -653,6 +686,8 @@ ejercicio_10(200)
 ejercicio_11(-5)
 ejercicio_11(200)
 ejercicio_11(7)
+ejercicio_11(19)
+ejercicio_11(13)
 #ejercicio_12()
 
 
