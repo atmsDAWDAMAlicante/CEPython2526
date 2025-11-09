@@ -191,7 +191,7 @@ Has superado el límite. La suma de los números introducidos es 7.2.
 Programa finalizado
 '''
 
-
+'''
 print(f"---Ejercicio nº 5: Sumatorio comparado con el número inicial")
 
 
@@ -206,6 +206,8 @@ while (sumatorio < num5e1): # Segundo bucle: se repite hasta que la suma de los 
     sumatorio += num5e2
 
 print(f"Has superado el límite. La suma de los números introducidos es {sumatorio}.{fin}")
+'''
+
 
 #6. Enunciado: Crea un programa que debe comenzar pidiendo dos números enteros (mínimo y máximo).
 #A continuación, el programa debe ir pidiendo números enteros situados entre esos valores
@@ -226,7 +228,7 @@ Programa terminado
 Escribe un número: 8
 Escribe un número mayor que 8: 20
 Escribe un número entre 8 y 20: 45
-No has escrito ningún número entre 6 y 50.
+No has escrito ningún número entre 8 y 20.
 Programa terminado
 
 Escribe un número: -10
@@ -238,12 +240,27 @@ Programa terminado
 '''
 
 
-def ejercicio_06(num):
-    print(f"---Ejercicio nº 6: Dxxx")
+print(f"---Ejercicio nº 6: Máximo, mínimo e intervalo")
 
+num6e1 = int(input("Escribe un número: "))
+num6e2 = int(input(f"Escribe un número mayor que {num6e1}: "))
+contador = 0
 
+while (num6e2 < num6e1): # Primer bucle para manejar que se introduce un segundo número mayor al primero
+    num6e2 = int(input(f"{num6e2} no es mayor que {num6e1}. Inténtalo de nuevo: "))
 
+num6e3 = int(input(f"Escribe un número entre {num6e1} y {num6e2}: "))
 
+while ((num6e3 >= num6e1) and (num6e3 <= num6e2)):
+    contador += 1
+    num6e3 = int(input(f"Escribe un número entre {num6e1} y {num6e2}: "))
+
+if (contador == 0):
+    print (f"No has escrito ningún número entre {num6e1} y {num6e2}.")
+else:
+    print(f"Ha escrito {contador} número entre {num6e1} y {num6e2}.")
+
+print("Programa terminado")
 
 
 #7. Enunciado: Escribe el código que pida números múltiplos de cinco mientras el usuario indique que
