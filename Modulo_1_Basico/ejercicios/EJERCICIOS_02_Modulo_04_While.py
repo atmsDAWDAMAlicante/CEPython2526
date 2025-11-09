@@ -96,7 +96,7 @@ Escribe el primer número: 1
 Has escrito 1 número positivo. Programa finalizado.
 '''
 
-
+'''
 print(f"---Ejercicio nº 3: Contador de números positivos introducidos")
 
 num3e1 = int(input("¿Cuántos números positivos vas a introducir?: "))
@@ -137,6 +137,7 @@ while (contador < num3e1+1):
 
 
 print(f"Has escrito {numeros_positivos} número positivo.{fin}")
+'''
 
 #4. Enunciado: Escribe un programa que pida números positivos. El programa debe finalizar cuando el
 #usuario introduzca un número negativo, en ese momento se debe mostrar la suma de todos
@@ -154,13 +155,18 @@ Escribe un número: -9
 Los números positivos introducidos suman 0.
 Programa terminado
 '''
-def ejercicio_04(num):
-    print(f"---Ejercicio nº 4: Dxxx")
+
+print(f"---Ejercicio nº 4: Suma de números positivos")
+
+num4e1 = int(input("Escribe un número: "))
+resultado = 0
+
+while (num4e1 > 0):
+    resultado += num4e1
+    num4e1 = int(input("Escribe un número: "))
 
 
-
-
-
+print(f"Los números positivos introducidos suman {resultado}. Programa terminado")
 
 #5. Enunciado: Escribe un programa que pida por pantalla un valor positivo. A continuación, el programa
 #pedirá números hasta que la suma de todos los números introducidos supere el valor del
