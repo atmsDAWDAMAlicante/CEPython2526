@@ -1,4 +1,4 @@
-# EJERCICIOS - 02 - Modulo - 03 - Bucle For
+# EJERCICIOS - 02 - Modulo - 04 - While
 
 import os
 
@@ -6,7 +6,7 @@ linea = "===================================="
 os.system('cls')
 print(f"{linea}\nInicio de los ejercicios de este bloque\n{linea}")
 
-
+fin = "\nPrograma finalizado"
 #1. Enunciado: Escribe un programa que pida dos números enteros. El segundo número ha de ser mayor
 #que el primero. En caso de no serlo, el programa volverá a solicitar el segundo número
 #hasta que se cumpla la condición. Para terminar el programa debe mostrar los dos números
@@ -20,10 +20,21 @@ Escribe un número entero mayor que 6: 6
 Los números que has introducido son el 6 y el 8.
 Programa finalizado
 '''
-def ejercicio_01(num):
-    print(f"---Ejercicio nº 1: Dxxx")
 
+print(f"---Ejercicio nº 1: Dos enteros desiguales")
+num1 = int(input("Escribe un número entero: "))
 
+seguir = True # Variable de control
+
+while (seguir != False):
+    num2 = int(input(f"Escribe un número entero mayor que {num1}: ")) # Se repite el input hasta que se cumpla la condición
+    if (num1 >= num2):
+        print(f"{num2} no es mayor que {num1}. Vuelve a intentarlo")
+        seguir = True
+    else:
+        seguir = False #Cambio en la variable de control
+
+print(f"Los números que has introducido son el {num1} y el {num2}.{fin}")
 
 
 
