@@ -650,22 +650,24 @@ El número 220 es AMIGO del número 284.
 '''
 
 def ejercicio_12(num):
-    print(f"---Ejercicio nº 12: Entregable:")
-    pass
+    print(f"---Ejercicio nº 12: Entregable: numeros Perfectos, Deficientes, Abundantes o Amigos")
+
     #Variables globales
     mensaje_ej_12 = "" #Aquí se recogerá el string que se imprimirá por pantalla 
-    divisores = 0 # int encargado de sumar los divisores
+    suma_divisores = 0 # int encargado de sumar los divisores
     lista_de_divisores = [] #Esta lista recoge individualmente los divisores
     tipo_numero = ("PERFECTO", "DEFICIENTE", "ABUNDANTE", "AMIGO") #Tupla con los nombres de los tipos de números
     num_amigo = 0 # Numero amigo pendiente de calcular
+ 
+    #Primero el bucle que identifica los divisores, los introduce en la lista y los suma
 
-    #fstrings que muestran los resultados
-    cadena_de_divisores = f"Divisores propios: {lista_de_divisores}" # string que muestra la lista de divisores
-    cadena_suma = f"Suma de divisores: {divisores}"
-    cadena_identifica_numero = f"El número {num} es {tipo_numero}"
-    cadena_plus_amigo = f"del número {num_amigo}"
+    for i in range(1, num+1): #Bucle desde 1 (para evitar la división por 0) hasta el número pasado +1
+        if (num%i == 0) and (i < num): # Evalúa que no haya resto Y que el contador sea menor al número pasado
+            suma_divisores += i # Se suma i que es el divisor que cumple la condición
+            lista_de_divisores.append(i) # y se añade a la lista de divisores
 
-
+    #Aquí se genera la primera parte del fstring que se mostrará como resultado
+    mensaje_ej_12 = f"Divisores propios: {lista_de_divisores}\nSuma de divisores: {suma_divisores}"
 
     print(mensaje_ej_12)
     return mensaje_ej_12
@@ -699,8 +701,8 @@ ejercicio_11(200)
 ejercicio_11(7)
 ejercicio_11(19)
 ejercicio_11(13)
-#ejercicio_12()
-
-
+ejercicio_12(28)
+ejercicio_12(12)
+ejercicio_12(220)
 
 print(f"{linea}\nFin de los ejercicios de este bloque\n{linea}")
