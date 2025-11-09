@@ -652,8 +652,19 @@ El número 220 es AMIGO del número 284.
 def ejercicio_12(num):
     print(f"---Ejercicio nº 12: Entregable:")
     pass
-
+    #Variables globales
     mensaje_ej_12 = "" #Aquí se recogerá el string que se imprimirá por pantalla 
+    divisores = 0 # int encargado de sumar los divisores
+    lista_de_divisores = [] #Esta lista recoge individualmente los divisores
+    tipo_numero = ("PERFECTO", "DEFICIENTE", "ABUNDANTE", "AMIGO") #Tupla con los nombres de los tipos de números
+    num_amigo = 0 # Numero amigo pendiente de calcular
+
+    #fstrings que muestran los resultados
+    cadena_de_divisores = f"Divisores propios: {lista_de_divisores}" # string que muestra la lista de divisores
+    cadena_suma = f"Suma de divisores: {divisores}"
+    cadena_identifica_numero = f"El número {num} es {tipo_numero}"
+    cadena_plus_amigo = f"del número {num_amigo}"
+
 
 
     print(mensaje_ej_12)
