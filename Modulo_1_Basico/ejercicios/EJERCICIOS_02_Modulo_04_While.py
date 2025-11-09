@@ -51,6 +51,7 @@ Escribe otro número mayor que 4.5: 2
 Programa finalizado
 '''
 
+'''
 print(f"---Ejercicio nº 2: Número menor que el inicial")
 num2e1 = float(input("Escribe un número: "))
 seguir = True #Variable de control del bucle While
@@ -71,7 +72,7 @@ while (seguir != False):
 
 print (f"{num2e2} es menor que {num2e1}.{fin}")
 
-
+'''
 
 
 
@@ -96,13 +97,46 @@ Has escrito 1 número positivo. Programa finalizado.
 '''
 
 
-def ejercicio_03(num):
-    print(f"---Ejercicio nº 3: Dxxx")
+print(f"---Ejercicio nº 3: Contador de números positivos introducidos")
+
+num3e1 = int(input("¿Cuántos números positivos vas a introducir?: "))
+
+while (num3e1 <=0): #primer bucle: controla que el primer número es superior a 0
+    num3e1 = int(input("La cantidad debe ser mayor que 0. Inténtalo de nuevo: "))
+
+# Se ha salido del bucle porque se ha introducido un número mayor que 0
+
+# Variables necesarias
+contador = 0 # contará las vueltas que se dan hasta alcanzar el número introducido
+numeros_positivos = 0
+primera_vez_string = " el primer"
+primera_vez = True
+
+# Se entra en el segundo bucle que pide los números
+
+while (contador < num3e1+1):
+
+    # Primero: ver si es la primera vuelta para controlar el string "uno"/"otro"
+    if (primera_vez == False):
+        primera_vez_string = " otro"
+
+    # Segundo: se recoge el primer número
+    num3e2 = int(input(f"Escribe{primera_vez_string} número: "))
+
+    if (num3e2 > 0): # Condicional que contiene el contador de números positivos introducidos
+        numeros_positivos += 1
+
+    #Tercero: actualización de variables:
+    #Actualización de la variable que controla las vueltas
+    if (num3e1 == 1): # Si el número introducido es 1, el bucle sólo dará una vuelta
+        contador = num3e1+1
+    else: # en caso contrario dará tantas vueltas como sea el número 1 introducido
+        contador += 1 
+
+    primera_vez = False #Se actualiza la variable que controla el string "un"/"otro"
 
 
-
-
-
+print(f"Has escrito {numeros_positivos} número positivo.{fin}")
 
 #4. Enunciado: Escribe un programa que pida números positivos. El programa debe finalizar cuando el
 #usuario introduzca un número negativo, en ese momento se debe mostrar la suma de todos
