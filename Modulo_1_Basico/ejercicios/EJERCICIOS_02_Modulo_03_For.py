@@ -673,16 +673,31 @@ def ejercicio_12(num):
 
     if (num == suma_divisores):
         mensaje_ej_12 += f"\nEl número {num} es {tipo_numero[0]}."
-    # AQUÍ HAY QUE INTRODUCIR OTRO IF QUE CALCULE SI EL NÚMERO ES AMIGO
-    # luego lo haré y lo de abajo se irá al else de ese if
-    elif (num > suma_divisores):
-        mensaje_ej_12 += f"\nEl número {num} es {tipo_numero[1]}."
-    else:
-        mensaje_ej_12 += f"\nEl número {num} es {tipo_numero[2]}."
+
+    # Para identificar sólo si es deficiente o abundante, basta con anidar un elif num > suma_divisores = deficiente y else = abundante
+    
+    else: #Para saber si es amigo hay que añadir un else y dentro introducir otro condicional if
+        # Primero un bucle para obtener la suma de los divisores del número que es la suma de los divisores del número original
+        # defino una variable que contendrá la suma de divisores del numero divisor: suma_divisores_del_divisor
+        suma_divisores_del_divisor = 0
+        # Copio el anterior bucle y cambio la i por j y el número introducido por la suma de divisores de este (calculado antes)
+        for j in range(1, suma_divisores+1): #Bucle desde 1 (para evitar la división por 0) hasta el número pasado +1
+            if (suma_divisores%j == 0) and (j < suma_divisores): # Evalúa que no haya resto Y que el contador sea menor al número pasado
+                suma_divisores_del_divisor += j # Se suma j que es el divisor que cumple la condición
+
+        # Ahora se puede evaluar si el número es amigo y, en caso contrario ver si es deficiente o abundante.
+        # El if evalúa primero si el número es amigo
+        if (num == suma_divisores_del_divisor):
+            mensaje_ej_12 += f"\nEl número {num} es {tipo_numero[3]} del número {suma_divisores}."
+        # En caso contrario... se introduce un nuevo condicional que, ahora sí discrimina si es deficiente o abundante
+        else:
+            if (num > suma_divisores):
+                mensaje_ej_12 += f"\nEl número {num} es {tipo_numero[1]}."
+            else:
+                mensaje_ej_12 += f"\nEl número {num} es {tipo_numero[2]}."
 
 
     # SALIDA FINAL
-
     print(mensaje_ej_12)
     return mensaje_ej_12
 
