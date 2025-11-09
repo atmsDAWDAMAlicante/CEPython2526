@@ -1,4 +1,4 @@
-#NOMBRE DEL PDF DE EJERCICIOS
+# EJERCICIOS - 02 - Modulo - 0X - XX
 
 import os
 
@@ -7,80 +7,137 @@ os.system('cls')
 print(f"{linea}\nInicio de los ejercicios de este bloque\n{linea}")
 
 
-#1. Enunciado
-print(f"---Ejercicio nº 1: xxx")
+#1. Enunciado: 
+
+
+def ejercicio_01():
+    print(f"---Ejercicio nº 1: Dxxx")
 
 
 
-print(f"{linea}")
 
 
-#2. Enunciado
-print(f"---Ejercicio nº 2: xxx")
+#2. Enunciado: 
 
 
-
-print(f"{linea}")
-
-
-#3. Enunciado
-print(f"---Ejercicio nº 3: xxx")
+def ejercicio_02():
+    print(f"---Ejercicio nº 2: Dxxx")
 
 
 
-print(f"{linea}")
 
 
-#4. Enunciado
-print(f"---Ejercicio nº 4: xxx")
+#3. Enunciado: 
 
 
-
-print(f"{linea}")
-
-
-#5. Enunciado
-print(f"---Ejercicio nº 5: xxx")
+def ejercicio_03():
+    print(f"---Ejercicio nº 3: Dxxx")
 
 
 
-print(f"{linea}")
 
 
-#6. Enunciado
-print(f"---Ejercicio nº 6: xxx")
+#4. Enunciado: 
 
 
-
-print(f"{linea}")
-
-
-#7. Enunciado
-print(f"---Ejercicio nº 7: xxx")
+def ejercicio_04():
+    print(f"---Ejercicio nº 4: Dxxx")
 
 
 
-print(f"{linea}")
-
-
-#8. Enunciado
-print(f"---Ejercicio nº 8: xxx")
 
 
 
-print(f"{linea}")
+#5. Enunciado: 
 
 
-#9. Enunciado
-print(f"---Ejercicio nº 9: xxx")
+def ejercicio_05():
+    print(f"---Ejercicio nº 5: Dxxx")
 
 
 
-print(f"{linea}")
 
 
-#10. Enunciado
-print(f"---Ejercicio nº 10: xxx")
+
+#6. Enunciado: 
+
+
+def ejercicio_06():
+    print(f"---Ejercicio nº 6: Dxxx")
+
+
+
+
+
+
+#7. Enunciado: 
+
+
+def ejercicio_07():
+    print(f"---Ejercicio nº 7: Dxxx")
+
+
+
+
+
+
+#8. Enunciado: 
+
+
+def ejercicio_08():
+    print(f"---Ejercicio nº 8: Dxxx")
+
+
+
+
+
+
+#9. Enunciado: 
+
+
+def ejercicio_09():
+    print(f"---Ejercicio nº 9: Dxxx")
+
+
+
+#10. Enunciado: 
+
+
+def ejercicio_10():
+    print(f"---Ejercicio nº 10: Dxxx")
+
+
+#11. Enunciado: 
+
+
+def ejercicio_11():
+    print(f"---Ejercicio nº 11: Dxxx")
+
+
+
+#12. Enunciado: 
+
+
+def ejercicio_12():
+    print(f"---Ejercicio nº 12: Dxxx")
+
+
+
+
+
+#13. Enunciado: 
+
+
+def ejercicio_13():
+    print(f"---Ejercicio nº 13: Dxxx")
+
+
+
+#14. ENTREGABLE - Enunciado: 
+
+
+def ejercicio_14():
+    print(f"---Ejercicio nº 14: Dxxx")
 
 
 
