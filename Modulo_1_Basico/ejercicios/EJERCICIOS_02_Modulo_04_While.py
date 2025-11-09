@@ -239,7 +239,7 @@ Ha escrito 1 número entre -10 y -5.
 Programa terminado
 '''
 
-
+'''
 print(f"---Ejercicio nº 6: Máximo, mínimo e intervalo")
 
 num6e1 = int(input("Escribe un número: "))
@@ -261,7 +261,7 @@ else:
     print(f"Ha escrito {contador} número entre {num6e1} y {num6e2}.")
 
 print("Programa terminado")
-
+'''
 
 #7. Enunciado: Escribe el código que pida números múltiplos de cinco mientras el usuario indique que
 #quiere seguir introduciendo números. Para indicar que queremos introducir un nuevo
@@ -283,13 +283,29 @@ Programa terminado
 '''
 
 
-def ejercicio_07(num):
-    print(f"---Ejercicio nº 7: Dxxx")
 
+print(f"---Ejercicio nº 7: Múltiplos de 5")
 
+# Variables
+num7e1 = int(input("Escribe un número múltiplo de 5: ")) # Pide el prime número múltiplo de 5
+num7e2 = 0 # El número que se pide sucesivamente
+contador = 0 # Cuenta el número de múltiplos de 5 introducidos
+salir = False # Variable de control para pedir un nuevo múltiplo de 5
 
+while (num7e1%5 != 0):
+    num7e1 = int(input(f"{num7e1} no es un número múltiplo de 5. Inténtalo de nuevo: "))
 
+contador += 1
 
+while (salir !=True):
+    otro = input("¿Quieres escribir otro número múltiplo de 5? (S/N) ").lower()
+    if (otro == "s"):
+        num7e1 = int(input("Escribe otro número múltiplo de 5: "))
+        contador += 1
+    else: 
+        salir = True
+
+print(f"Has escrito {contador} número múltiplo de 5.\nPrograma terminado")
 
 #8. Enunciado: Realiza la descomposición en factores primos de un número dado por teclado.
 
