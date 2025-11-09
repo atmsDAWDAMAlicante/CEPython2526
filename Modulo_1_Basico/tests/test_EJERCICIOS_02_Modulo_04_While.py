@@ -38,3 +38,17 @@ def test_ejercicio10():
 
 
 
+def test_ejercicio11():
+    pass
+
+
+def test_ejercicio12():
+    pass
+
+def test_ejercicio13():
+    pass
+
+
+def test_ejercicio14():
+    pass
+
