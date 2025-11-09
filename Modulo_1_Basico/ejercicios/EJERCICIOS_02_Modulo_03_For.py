@@ -659,7 +659,7 @@ def ejercicio_12(num):
     tipo_numero = ("PERFECTO", "DEFICIENTE", "ABUNDANTE", "AMIGO") #Tupla con los nombres de los tipos de números
     num_amigo = 0 # Numero amigo pendiente de calcular
  
-    #Primero el bucle que identifica los divisores, los introduce en la lista y los suma
+    #A) PRIMERA PARTE: el bucle que identifica los divisores, los introduce en la lista y los suma
 
     for i in range(1, num+1): #Bucle desde 1 (para evitar la división por 0) hasta el número pasado +1
         if (num%i == 0) and (i < num): # Evalúa que no haya resto Y que el contador sea menor al número pasado
@@ -668,6 +668,20 @@ def ejercicio_12(num):
 
     #Aquí se genera la primera parte del fstring que se mostrará como resultado
     mensaje_ej_12 = f"Divisores propios: {lista_de_divisores}\nSuma de divisores: {suma_divisores}"
+
+    #B) SEGUNDA PARTE: El tipo de número 
+
+    if (num == suma_divisores):
+        mensaje_ej_12 += f"\nEl número {num} es {tipo_numero[0]}."
+    # AQUÍ HAY QUE INTRODUCIR OTRO IF QUE CALCULE SI EL NÚMERO ES AMIGO
+    # luego lo haré y lo de abajo se irá al else de ese if
+    elif (num > suma_divisores):
+        mensaje_ej_12 += f"\nEl número {num} es {tipo_numero[1]}."
+    else:
+        mensaje_ej_12 += f"\nEl número {num} es {tipo_numero[2]}."
+
+
+    # SALIDA FINAL
 
     print(mensaje_ej_12)
     return mensaje_ej_12

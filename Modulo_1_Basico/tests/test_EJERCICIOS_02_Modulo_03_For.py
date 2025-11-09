@@ -59,19 +59,17 @@ def test_ejercicio11():
     assert mod2_eje3.ejercicio_11(200) == "200 no es un número primo.\nLos 12 divisores de 200 son 1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100 y 200."
     assert mod2_eje3.ejercicio_11(7) == "7 es un número primo."
 
-    
-
+#Para la realización de la primera parte del ejercicio 12
+'''
 def test_ejercicio12():
     assert mod2_eje3.ejercicio_12(28) == "Divisores propios: [1, 2, 4, 7, 14]\nSuma de divisores: 28"
     assert mod2_eje3.ejercicio_12(12) == "Divisores propios: [1, 2, 3, 4, 6]\nSuma de divisores: 16"
     assert mod2_eje3.ejercicio_12(220) == "Divisores propios: [1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110]\nSuma de divisores: 284"
-
-
-
 '''
+#Para la realización del ejercicio 12 completo
 def test_ejercicio12():
     assert mod2_eje3.ejercicio_12(28) == "Divisores propios: [1, 2, 4, 7, 14]\nSuma de divisores: 28\nEl número 28 es PERFECTO."
     assert mod2_eje3.ejercicio_12(12) == "Divisores propios: [1, 2, 3, 4, 6]\nSuma de divisores: 16\nEl número 12 es ABUNDANTE."
     assert mod2_eje3.ejercicio_12(220) == "Divisores propios: [1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110]\nSuma de divisores: 284\nEl número 220 es AMIGO del número 284."
 
-'''
+
