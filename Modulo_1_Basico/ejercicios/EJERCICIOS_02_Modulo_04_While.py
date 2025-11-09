@@ -20,8 +20,8 @@ Escribe un número entero mayor que 6: 6
 Los números que has introducido son el 6 y el 8.
 Programa finalizado
 '''
-
-print(f"---Ejercicio nº 1: Dxxx")
+def ejercicio_01(num):
+    print(f"---Ejercicio nº 1: Dxxx")
 
 
 
@@ -39,7 +39,8 @@ Escribe otro número mayor que 4.5: 2
 2.0 es menor que 4.5.
 Programa finalizado
 '''
-print(f"---Ejercicio nº 2: Dxxx")
+def ejercicio_02(num):
+    print(f"---Ejercicio nº 2: Dxxx")
 
 
 
@@ -66,7 +67,8 @@ Has escrito 1 número positivo. Programa finalizado.
 '''
 
 
-print(f"---Ejercicio nº 3: Dxxx")
+def ejercicio_03(num):
+    print(f"---Ejercicio nº 3: Dxxx")
 
 
 
@@ -89,7 +91,8 @@ Escribe un número: -9
 Los números positivos introducidos suman 0.
 Programa terminado
 '''
-print(f"---Ejercicio nº 4: Dxxx")
+def ejercicio_04(num):
+    print(f"---Ejercicio nº 4: Dxxx")
 
 
 
@@ -116,7 +119,8 @@ Has superado el límite. La suma de los números introducidos es 7.2.
 Programa finalizado
 '''
 
-print(f"---Ejercicio nº 5: Dxxx")
+def ejercicio_05(num):
+    print(f"---Ejercicio nº 5: Dxxx")
 
 
 
@@ -154,7 +158,8 @@ Programa terminado
 '''
 
 
-print(f"---Ejercicio nº 6: Dxxx")
+def ejercicio_06(num):
+    print(f"---Ejercicio nº 6: Dxxx")
 
 
 
@@ -181,7 +186,8 @@ Programa terminado
 '''
 
 
-print(f"---Ejercicio nº 7: Dxxx")
+def ejercicio_07(num):
+    print(f"---Ejercicio nº 7: Dxxx")
 
 
 
@@ -201,7 +207,8 @@ Descomposición en factores primos: 2 2 2 2 3 3 5
 '''
 
 
-print(f"---Ejercicio nº 8: Dxxx")
+def ejercicio_08(num):
+    print(f"---Ejercicio nº 8: Dxxx")
 
 
 
@@ -223,7 +230,8 @@ Para generar un nuevo número pulsa S o s, otra tecla para terminar: n
 Programa terminado.
 '''
 
-print(f"---Ejercicio nº 9: Dxxx")
+def ejercicio_09(num):
+    print(f"---Ejercicio nº 9: Dxxx")
 
 
 
@@ -242,7 +250,8 @@ Puntuación final: 10 - Programa terminado
 '''
 
 
-print(f"---Ejercicio nº 10: Dxxx")
+def ejercicio_10(num):
+    print(f"---Ejercicio nº 10: Dxxx")
 
 
 #11. Enunciado: Modifica el programa anterior para que ahora se muestren dos números al azar (dos
@@ -278,7 +287,8 @@ Vencedor: Segundo jugador. Resultado final: Jugador1: 9 - Jugador2: 10
 '''
 
 
-print(f"---Ejercicio nº 11: Dxxx")
+def ejercicio_11(num):
+    print(f"---Ejercicio nº 11: Dxxx")
 
 
 
@@ -307,7 +317,8 @@ Jugador 2: Para lanzar el dado pulsa S o s, otra tecla para terminar: n
 Vencedor: Segundo jugador. Resultado final: Jugador1: 6 – Jugador2: 9
 ****************************************************************
 '''
-print(f"---Ejercicio nº 12: Dxxx")
+def ejercicio_12(num):
+    print(f"---Ejercicio nº 12: Dxxx")
 
 
 
@@ -340,7 +351,8 @@ Jugador 2: Para lanzar el dado pulsa S o s, otra tecla para terminar: n
 Vencedor: Segundo jugador. Resultado final: Jugador1: 9 - Jugador2: 10
 ****************************************************************
 '''
-print(f"---Ejercicio nº 13: Dxxx")
+def ejercicio_13(num):
+    print(f"---Ejercicio nº 13: Dxxx")
 
 
 
@@ -379,7 +391,8 @@ Vencedor: Segundo jugador. El primer jugador sobrepasó los 21 puntos
 
 
 
-print(f"---Ejercicio nº 14: Dxxx")
+def ejercicio_14(num):
+    print(f"---Ejercicio nº 14: Dxxx")
 
 
 
