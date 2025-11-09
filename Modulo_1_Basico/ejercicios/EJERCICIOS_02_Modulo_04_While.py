@@ -156,6 +156,7 @@ Los números positivos introducidos suman 0.
 Programa terminado
 '''
 
+'''
 print(f"---Ejercicio nº 4: Suma de números positivos")
 
 num4e1 = int(input("Escribe un número: "))
@@ -167,6 +168,8 @@ while (num4e1 > 0):
 
 
 print(f"Los números positivos introducidos suman {resultado}. Programa terminado")
+'''
+
 
 #5. Enunciado: Escribe un programa que pida por pantalla un valor positivo. A continuación, el programa
 #pedirá números hasta que la suma de todos los números introducidos supere el valor del
@@ -188,13 +191,21 @@ Has superado el límite. La suma de los números introducidos es 7.2.
 Programa finalizado
 '''
 
-def ejercicio_05(num):
-    print(f"---Ejercicio nº 5: Dxxx")
+
+print(f"---Ejercicio nº 5: Sumatorio comparado con el número inicial")
 
 
+num5e1 = float(input("Escribe la cantidad límite: "))
+sumatorio = 0 # Esta variable recogerá la suma total
 
+while (num5e1 <=0): # Primer bucle: controla que el número introducido es mayor que 0 
+    num5e1 = float(input("El número debe ser mayor que 0. Inténtalo de nuevo: ")) #y, en caso contrario vuelve a pedir un número
 
+while (sumatorio < num5e1): # Segundo bucle: se repite hasta que la suma de los números introducidos superen el primer número
+    num5e2 = float(input("Escribe un número: "))
+    sumatorio += num5e2
 
+print(f"Has superado el límite. La suma de los números introducidos es {sumatorio}.{fin}")
 
 #6. Enunciado: Crea un programa que debe comenzar pidiendo dos números enteros (mínimo y máximo).
 #A continuación, el programa debe ir pidiendo números enteros situados entre esos valores
