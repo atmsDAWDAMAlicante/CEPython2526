@@ -20,7 +20,7 @@ Escribe un número entero mayor que 6: 6
 Los números que has introducido son el 6 y el 8.
 Programa finalizado
 '''
-
+'''
 print(f"---Ejercicio nº 1: Dos enteros desiguales")
 num1 = int(input("Escribe un número entero: "))
 
@@ -36,7 +36,7 @@ while (seguir != False):
 
 print(f"Los números que has introducido son el {num1} y el {num2}.{fin}")
 
-
+'''
 
 
 #2. Enunciado: Escribe un programa que pida un primer número. A partir de entonces el programa
@@ -50,8 +50,26 @@ Escribe otro número mayor que 4.5: 2
 2.0 es menor que 4.5.
 Programa finalizado
 '''
-def ejercicio_02(num):
-    print(f"---Ejercicio nº 2: Dxxx")
+
+print(f"---Ejercicio nº 2: Número menor que el inicial")
+num2e1 = float(input("Escribe un número: "))
+seguir = True #Variable de control del bucle While
+
+primera_vez = True
+primera_vez_string = " un"
+
+while (seguir != False):
+    if (primera_vez == False): #Primer condicional maneja el string "uno"/"otro"
+        primera_vez_string = " otro"
+    #Ahora se introduce el número 2º
+
+    num2e2 = float(input(f"Escribe{primera_vez_string} número mayor que {num2e1}: "))
+    if (num2e2 < num2e1): #Si se introduce un segundo número menor que el primero, se debe interrumpir el bucle
+        seguir = False #Aquí cambia la variable de control para salir del bucle
+    #Seguimos dentro del bucle
+    primera_vez = False #Se actualiza la variable que controla el string primera_vez = "otro"/"un" número
+
+print (f"{num2e2} es menor que {num2e1}.{fin}")
 
 
 
