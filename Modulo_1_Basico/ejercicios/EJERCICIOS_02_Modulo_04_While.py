@@ -404,21 +404,21 @@ Para generar un nuevo número pulsa S o s, otra tecla para terminar: n
 Puntuación final: 10 - Programa terminado
 '''
 
-
+'''
 print(f"---Ejercicio nº 10: Lanzando un dado")
 
 
 otro_numero_10e = "s" # Variable para mantenerse en el juego
-puntuacion = 0 # Variable que acumula la puntuación. 
+puntuacion10e = 0 # Variable que acumula la puntuación. 
 
 while (otro_numero_10e == "s"):
     num10e1 = random.randint(1,6) # Aquí se generan las tiradas aleatorias de los dados
-    puntuacion += num10e1 # Se acumula la tirada a la puntuación de la partida
-    print(f"Tirada actual: {num10e1} Total acumulado: {puntuacion}")
+    puntuacion10e += num10e1 # Se acumula la tirada a la puntuación de la partida
+    print(f"Tirada actual: {num10e1} Total acumulado: {puntuacion10e}")
     otro_numero_10e = input("Para generar un nuevo número pulsa S o s, otra tecla para terminar: ").lower() # s/n para seguir o salir
 
-print(f"Puntuación final: {puntuacion} - Programa terminado")
-
+print(f"Puntuación final: {puntuacion10e} - Programa terminado")
+'''
 
 #11. Enunciado: Modifica el programa anterior para que ahora se muestren dos números al azar (dos
 #jugadores) entre 1 y 6. Al terminar el juego el programa debe declarar ganador al jugador
@@ -453,9 +453,9 @@ Vencedor: Segundo jugador. Resultado final: Jugador1: 9 - Jugador2: 10
 '''
 
 
-def ejercicio_11(num):
-    print(f"---Ejercicio nº 11: Dxxx")
-
+print(f"---Ejercicio nº 11: Dados: dos jugadores")
+otro_numero_11e = "s" # Variable para mantenerse en el juego
+puntuacion11e = 0 # Variable que acumula la puntuación. 
 
 
 #12. Enunciado: Escribe un programa que simule un juego en el que dos jugadores lanzan su propio dado.
