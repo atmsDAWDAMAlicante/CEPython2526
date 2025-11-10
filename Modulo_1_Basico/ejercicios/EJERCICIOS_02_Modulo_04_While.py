@@ -450,7 +450,7 @@ Para generar un nuevo número pulsa S o s, otra tecla para terminar: n
 Vencedor: Segundo jugador. Resultado final: Jugador1: 9 - Jugador2: 10
 '''
 
-
+'''
 print(f"---Ejercicio nº 11: Dados: dos jugadores")
 otro_numero_11e = "s" # Variable para mantenerse en el juego
 
@@ -488,7 +488,7 @@ elif (puntuacion_11e_Jugador1 > puntuacion_11e_Jugador2):
     print(f"Vencedor: {vencedor11e[0]}. Resultado final: Jugador1: {puntuacion_11e_Jugador1} - Jugador2: {puntuacion_11e_Jugador2}")
 else: 
     print(f"Vencedor: {vencedor11e[1]}. Resultado final: Jugador1: {puntuacion_11e_Jugador1} - Jugador2: {puntuacion_11e_Jugador2}")
-
+'''
 
 
 #12. Enunciado: Escribe un programa que simule un juego en el que dos jugadores lanzan su propio dado.
@@ -516,9 +516,45 @@ Jugador 2: Para lanzar el dado pulsa S o s, otra tecla para terminar: n
 Vencedor: Segundo jugador. Resultado final: Jugador1: 6 – Jugador2: 9
 ****************************************************************
 '''
-def ejercicio_12(num):
-    print(f"---Ejercicio nº 12: Dxxx")
 
+print(f"---Ejercicio nº 12: Dos jugadores tiradas independientes")
+
+otro_numero_12e = "s" # Variable para mantenerse en el juego
+
+# Variables de los dados inicializadas a 0
+dado_12e_Jugador1 = 0
+dado_12e_Jugador2 = 0
+puntuacion_12e_Jugador1 = 0 # Variable que acumula la puntuación del jugador 1
+puntuacion_12e_Jugador2 = 0 # Variable que acumula la puntuación del jugador 1
+sigue_jugando_12e_Jugador1 = True
+sigue_jugando_12e_Jugador2 = True
+
+# Variables de los strings
+nueva_tirada = "Para generar un nuevo número pulsa S o s, otra tecla para terminar: "
+vencedor12e = ["Primer jugador", "Segundo jugador"]
+linea12e = "****************************************************************" 
+otro_numero_12e = "s" # Variable para mantenerse en el juego
+while (sigue_jugando_12e_Jugador1 == True) or (sigue_jugando_12e_Jugador2 == True):
+
+    # Bloque de preguntas a los jugadores
+    # Jugador 1
+    if (sigue_jugando_12e_Jugador1 == True):
+        otro_numero_12e = input(f"{nueva_tirada}").lower()
+        if (otro_numero_12e != "s"):
+            print("Sale el Jugador 1")
+            sigue_jugando_12e_Jugador1 = False
+        else:
+            print("Nueva tirada del jugador 1")
+
+            
+    # Jugador 2
+    if (sigue_jugando_12e_Jugador2 == True):
+        otro_numero_12e = input(f"{nueva_tirada}").lower()
+        if (otro_numero_12e != "s"):
+            print("Sale el jugador 2")
+            sigue_jugando_12e_Jugador2 = False
+        else:
+            print("Nueva tirada del jugador 2")
 
 
 
