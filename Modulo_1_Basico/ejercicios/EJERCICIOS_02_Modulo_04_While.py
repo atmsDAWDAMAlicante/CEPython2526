@@ -373,11 +373,18 @@ Para generar un nuevo número pulsa S o s, otra tecla para terminar: n
 Programa terminado.
 '''
 
-def ejercicio_09(num):
-    print(f"---Ejercicio nº 9: Dxxx")
 
+print(f"---Ejercicio nº 9: Número aleatorio")
 
-
+import random # Para generar númreos aleatorios
+num9e1 = random.randint(1,6) # Entero entre 1 y 6 incluidos
+otro_numero_9e = "s"
+while (otro_numero_9e == "s"):
+    num9e1 = random.randint(1,6) # Entero entre 1 y 6 incluidos
+    print(f"{num9e1}")
+    otro_numero_9e = input("Para generar un nuevo número pulsa S o s, otra tecla para terminar: ").lower()
+    
+print("Programa terminado.")
 #10. Enunciado: Modifica el programa anterior de tal forma que tras cada lanzamiento del dado elprograma
 #también muestre la suma conseguida en todos los lanzamientos.
 
