@@ -463,9 +463,7 @@ puntuacion_11e_Jugador2 = 0 # Variable que acumula la puntuación del jugador 1
 # Variables de los strings
 nueva_tirada = "Para generar un nuevo número pulsa S o s, otra tecla para terminar: "
 vencedor11e = ["Primer jugador", "Segundo jugador"]
-string_empate_11e = f"Primer jugador y segundo jugador han empatado a {puntuacion_11e_Jugador1} puntos"
-id_el_vencedor_11e = 0
-string_un_vencedor = f"Vencedor: {vencedor11e[id_el_vencedor_11e]}. Resultado final: Jugador1: {puntuacion_11e_Jugador1} - Jugador2: {puntuacion_11e_Jugador2}"
+linea11e = "****************************************************************" 
 
 # Bucle principal del juego
 while (otro_numero_11e == "s"):
@@ -480,6 +478,16 @@ while (otro_numero_11e == "s"):
     print(f"Segundo jugador: Tirada actual: {dado_11e_Jugador2} Total acumulado: {puntuacion_11e_Jugador2}")
     # Pregunta por otra tirada
     otro_numero_11e = input(f"{nueva_tirada}").lower()
+
+# El resultado: una vez se sale del bucle
+print(f"{linea}")
+# Evaluación del empate o un vencedor
+if (puntuacion_11e_Jugador1 == puntuacion_11e_Jugador2):
+    print(f"Primer jugador y segundo jugador han empatado a {puntuacion_11e_Jugador1} puntos")
+elif (puntuacion_11e_Jugador1 > puntuacion_11e_Jugador2):
+    print(f"Vencedor: {vencedor11e[0]}. Resultado final: Jugador1: {puntuacion_11e_Jugador1} - Jugador2: {puntuacion_11e_Jugador2}")
+else: 
+    print(f"Vencedor: {vencedor11e[1]}. Resultado final: Jugador1: {puntuacion_11e_Jugador1} - Jugador2: {puntuacion_11e_Jugador2}")
 
 
 
