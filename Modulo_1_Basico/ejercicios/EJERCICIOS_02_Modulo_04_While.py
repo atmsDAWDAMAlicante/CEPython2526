@@ -3,7 +3,7 @@
 import os
 
 linea = "===================================="
-os.system('cls')
+os.system('clear')
 print(f"{linea}\nInicio de los ejercicios de este bloque\n{linea}")
 
 fin = "\nPrograma finalizado"
@@ -283,7 +283,7 @@ Programa terminado
 '''
 
 
-
+'''
 print(f"---Ejercicio nº 7: Múltiplos de 5")
 
 # Variables
@@ -306,6 +306,8 @@ while (salir !=True):
         salir = True
 
 print(f"Has escrito {contador} número múltiplo de 5.\nPrograma terminado")
+'''
+
 
 #8. Enunciado: Realiza la descomposición en factores primos de un número dado por teclado.
 
@@ -320,12 +322,40 @@ Descomposición en factores primos: 2 2 2 2 3 3 5
 '''
 
 
-def ejercicio_08(num):
-    print(f"---Ejercicio nº 8: Dxxx")
+
+print(f"---Ejercicio nº 8: Descomponsición en factores primos")
+
+num8e1 = int(input("Escribe un número mayor que 1: "))
+
+while(num8e1 <= 1): # Primer bucle que comprueba que el número introducido es mayor que 1, si no pideo otro
+    num8e1 = int(input(f"{num8e1} no es un número mayor que 1. Inténtalo de nuevo: "))
+
+# Si el número introducido es mayor que 1 continúa el programa
+# Variables listas
+numeros_primos = []
+factores_primos = []
+resto_cero = 0
+
+# Primero hay que rellenar la lista de números primos menores que el número introducido
+variable_control = 2 # valor 2 para saltar el 1
+while (variable_control <= num8e1): # mientras sea menor o igual que el número introducido
+    resto_cero = 0 # Esta variable se actualiza para cada vuelta para comprobar en el siguient bucle los restos = 0
+    for i in range(1,variable_control): # En este condicional se calcula el número de veces que el resto es 0
+        if (variable_control%i==0):
+            resto_cero += 1
+    if (resto_cero < 2): # En este condicional se añade a la lista el número primo (antes ha tenido menos de dos veces un resto 0)
+        numeros_primos.append(variable_control)
+    variable_control +=1 # Se incrementa la variable de control para acercarse al num8e1 y salir del bucle
+print(f"Números primos: {numeros_primos}") # Muestra los números primos
+
+# Segundo: las divisiones para obtener los valores primos
+
+variable_control = 2 # Vuelvo a utilizar la misma variable
 
 
 
 
+print(f"{fin}")
 
 
 
