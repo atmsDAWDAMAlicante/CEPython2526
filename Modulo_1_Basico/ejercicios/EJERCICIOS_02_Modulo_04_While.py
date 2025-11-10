@@ -1,6 +1,8 @@
 # EJERCICIOS - 02 - Modulo - 04 - While
 
 import os
+import math
+import random # Para generar númreos aleatorios
 
 linea = "===================================="
 os.system('clear')
@@ -375,16 +377,19 @@ Programa terminado.
 
 
 print(f"---Ejercicio nº 9: Número aleatorio")
-
-import random # Para generar númreos aleatorios
+'''
+# import random está arriba del todo
 num9e1 = random.randint(1,6) # Entero entre 1 y 6 incluidos
 otro_numero_9e = "s"
 while (otro_numero_9e == "s"):
     num9e1 = random.randint(1,6) # Entero entre 1 y 6 incluidos
     print(f"{num9e1}")
     otro_numero_9e = input("Para generar un nuevo número pulsa S o s, otra tecla para terminar: ").lower()
-    
+
 print("Programa terminado.")
+'''
+
+
 #10. Enunciado: Modifica el programa anterior de tal forma que tras cada lanzamiento del dado elprograma
 #también muestre la suma conseguida en todos los lanzamientos.
 
@@ -400,8 +405,19 @@ Puntuación final: 10 - Programa terminado
 '''
 
 
-def ejercicio_10(num):
-    print(f"---Ejercicio nº 10: Dxxx")
+print(f"---Ejercicio nº 10: Lanzando un dado")
+
+
+otro_numero_10e = "s" # Variable para mantenerse en el juego
+puntuacion = 0 # Variable que acumula la puntuación. 
+
+while (otro_numero_10e == "s"):
+    num10e1 = random.randint(1,6) # Aquí se generan las tiradas aleatorias de los dados
+    puntuacion += num10e1 # Se acumula la tirada a la puntuación de la partida
+    print(f"Tirada actual: {num10e1} Total acumulado: {puntuacion}")
+    otro_numero_10e = input("Para generar un nuevo número pulsa S o s, otra tecla para terminar: ").lower() # s/n para seguir o salir
+
+print(f"Puntuación final: {puntuacion} - Programa terminado")
 
 
 #11. Enunciado: Modifica el programa anterior para que ahora se muestren dos números al azar (dos
