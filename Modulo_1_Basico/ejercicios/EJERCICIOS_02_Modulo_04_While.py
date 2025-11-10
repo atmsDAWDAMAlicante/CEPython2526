@@ -440,10 +440,8 @@ Primer jugador y segundo jugador han empatado a 6 puntos
 
 
 LANZANDO DOS DADOS
-Primer jugador: Tirada actual: 5
-Segundo jugador: Tirada actual: 5
-Total acumulado: 5
-Total acumulado: 5
+Primer jugador: Tirada actual: 5 Total acumulado: 5
+Segundo jugador: Tirada actual: 5 Total acumulado: 5
 Para generar un nuevo número pulsa S o s, otra tecla para terminar: s
 Primer jugador: Tirada actual: 4 Total acumulado: 9
 Segundo jugador: Tirada actual: 5 Total acumulado: 10
@@ -455,7 +453,34 @@ Vencedor: Segundo jugador. Resultado final: Jugador1: 9 - Jugador2: 10
 
 print(f"---Ejercicio nº 11: Dados: dos jugadores")
 otro_numero_11e = "s" # Variable para mantenerse en el juego
-puntuacion11e = 0 # Variable que acumula la puntuación. 
+
+# Variables de los dados inicializadas a 0
+dado_11e_Jugador1 = 0
+dado_11e_Jugador2 = 0
+puntuacion_11e_Jugador1 = 0 # Variable que acumula la puntuación del jugador 1
+puntuacion_11e_Jugador2 = 0 # Variable que acumula la puntuación del jugador 1
+
+# Variables de los strings
+nueva_tirada = "Para generar un nuevo número pulsa S o s, otra tecla para terminar: "
+vencedor11e = ["Primer jugador", "Segundo jugador"]
+string_empate_11e = f"Primer jugador y segundo jugador han empatado a {puntuacion_11e_Jugador1} puntos"
+id_el_vencedor_11e = 0
+string_un_vencedor = f"Vencedor: {vencedor11e[id_el_vencedor_11e]}. Resultado final: Jugador1: {puntuacion_11e_Jugador1} - Jugador2: {puntuacion_11e_Jugador2}"
+
+# Bucle principal del juego
+while (otro_numero_11e == "s"):
+    # Lanzamiento de los dados
+    dado_11e_Jugador1 = random.randint(1,6)
+    dado_11e_Jugador2 = random.randint(1,6)
+    # Acumulación de las tiradas a la puntuación
+    puntuacion_11e_Jugador1 += dado_11e_Jugador1
+    puntuacion_11e_Jugador2 += dado_11e_Jugador2
+    # Imprime por pantalla el resultado de las tiradas en dos líneas
+    print(f"Primer jugador: Tirada actual: {dado_11e_Jugador1} Total acumulado: {puntuacion_11e_Jugador1}")
+    print(f"Segundo jugador: Tirada actual: {dado_11e_Jugador2} Total acumulado: {puntuacion_11e_Jugador2}")
+    # Pregunta por otra tirada
+    otro_numero_11e = input(f"{nueva_tirada}").lower()
+
 
 
 #12. Enunciado: Escribe un programa que simule un juego en el que dos jugadores lanzan su propio dado.
