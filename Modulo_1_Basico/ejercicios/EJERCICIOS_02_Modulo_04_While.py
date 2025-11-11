@@ -499,10 +499,8 @@ else:
 #preguntarle.
 '''
 LANZANDO DOS DADOS II
-Primer jugador: Tirada actual: 4
-Segundo jugador: Tirada actual: 4
-Total acumulado: 4
-Total acumulado: 4
+Primer jugador: Tirada actual: 4 Total acumulado: 4
+Segundo jugador: Tirada actual: 4 Total acumulado: 4
 Jugador 1: Para lanzar el dado pulsa S o s, otra tecla para terminar: s
 Jugador 2: Para lanzar el dado pulsa S o s, otra tecla para terminar: s
 Primer jugador: Tirada actual: 2 Total acumulado: 6
@@ -531,33 +529,49 @@ sigue_jugando_12e_Jugador2 = True
 
 # Variables de los strings
 nueva_tirada = "Para generar un nuevo número pulsa S o s, otra tecla para terminar: "
-vencedor12e = ["Primer jugador", "Segundo jugador"]
+vencedor12e = ""
 linea12e = "****************************************************************" 
 otro_numero_12e = "s" # Variable para mantenerse en el juego
-while (sigue_jugando_12e_Jugador1 == True) or (sigue_jugando_12e_Jugador2 == True):
+while (sigue_jugando_12e_Jugador1 == True) or (sigue_jugando_12e_Jugador2 == True): 
+    # Bucle que se repite mientras no abandonan los dos jugadores
 
     # Bloque de preguntas a los jugadores
     # Jugador 1
     if (sigue_jugando_12e_Jugador1 == True):
-        otro_numero_12e = input(f"{nueva_tirada}").lower()
+        otro_numero_12e = input(f"Jugador 1: {nueva_tirada}").lower()
         if (otro_numero_12e != "s"):
             print("Sale el Jugador 1")
             sigue_jugando_12e_Jugador1 = False
         else:
             print("Nueva tirada del jugador 1")
+            # Se genera la tirada de los dados del jugador 1: número aleatorio
+            dado_12e_Jugador1 = random.randint(1,6)
+            # Se actualiza la puntuación del jugador 1
+            puntuacion_12e_Jugador1 += dado_12e_Jugador1
+            # Se muestra la puntuación del jugador 1
+            print(f"Primer jugador: Tirada actual: {dado_12e_Jugador1} Total acumulado: {puntuacion_12e_Jugador1}")
 
-            
     # Jugador 2
     if (sigue_jugando_12e_Jugador2 == True):
-        otro_numero_12e = input(f"{nueva_tirada}").lower()
+        otro_numero_12e = input(f"Jugador 2: {nueva_tirada}").lower()
         if (otro_numero_12e != "s"):
             print("Sale el jugador 2")
             sigue_jugando_12e_Jugador2 = False
         else:
             print("Nueva tirada del jugador 2")
+            # Se genera la tirada de los dados del jugador 2: número aleatorio
+            dado_12e_Jugador2 = random.randint(1,6)
+            # Se actualiza la puntuación del jugador 2
+            puntuacion_12e_Jugador2 += dado_12e_Jugador2
+            # Se muestra la puntuación del jugador 12
+            print(f"Segundo jugador: Tirada actual: {dado_12e_Jugador2} Total acumulado: {puntuacion_12e_Jugador2}")
 
-
-
+#Cuando salen se hace el recuento final
+if (puntuacion_12e_Jugador1 > puntuacion_12e_Jugador2):
+    vencedor12e = "Primer jugador"
+else:
+    vencedor12e = "Segundo jugador"
+print(f"Vencedor: {vencedor12e}. Resultado final: Jugador1: {puntuacion_12e_Jugador1} – Jugador2: {puntuacion_12e_Jugador2}")
 
 #13. Enunciado: Modifica el programa anterior para que el programa declare como ganador al jugador
 #que haya obtenido más puntos sin superar los 21 puntos.
