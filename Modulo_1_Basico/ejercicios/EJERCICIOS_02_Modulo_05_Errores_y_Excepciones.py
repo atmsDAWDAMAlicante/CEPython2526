@@ -42,10 +42,15 @@ pato
 # y solución.
 
 
-def ejercicio_02(num):
-    print(f"---Ejercicio nº 2: Dxxx")
-
-
+def ejercicio_02(animal):
+    print(f"---Ejercicio nº 2: Lista de animales")
+    lista=['gato', 'perro', 'ratón', 'pato', 'elefante']
+    try:
+        return lista[animal]
+    except IndexError:
+            return "El índice se encuentra fuera del rango.\nDebes utilizar un número mayor o igual que cero y menor que la longitud de la lista."
+print(ejercicio_02(3)) #pato
+print(ejercicio_02(6)) # Error
 
 
 
