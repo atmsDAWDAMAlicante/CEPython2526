@@ -56,7 +56,7 @@ print(ejercicio_02(6)) # Error
 
 #3. ENTREGABLE - Enunciado: Partimos del siguiente diccionario:
 '''
-colores = { 'rojo':'red', 'verde':'green', 'azul':'blue', 'negro':'black' }
+colores = { 'rojo':'red', 'verde':'green', 'azul':'blue', 'negro':'black'}
 '''
 # Crea un programa que solicite un término del diccionario para mostrar su valor asociado por
 # pantalla:
@@ -74,12 +74,16 @@ Error: El término amarillo no se encuentra en este diccionario, debes probar co
 otro que sí exista.
 '''
 
-def ejercicio_03(num):
-    print(f"---Ejercicio nº 3: Dxxx")
-
-
-
-
+def ejercicio_03(color):
+    print(f"---Ejercicio nº 3: Diccionario de colores")
+    colores = {'rojo':'red', 'verde':'green', 'azul':'blue', 'negro':'black'}
+    try:
+        colores.get(color) # esto no hace nada
+        return f'{color} en inglés se dice {colores[color]}'
+    except KeyError:
+        return f'Error: El término {color} no se encuentra en este diccionario, debes probar con otro que sí exista.'
+print(ejercicio_03("azul"))
+print(ejercicio_03("amarillo"))
 
 #4. Enunciado: Crea un programa que solicite dos números enteros por pantalla y muestre el resultado de
 # su suma. En caso de que uno de los valores introducidos sea una cadena de caracteres el
