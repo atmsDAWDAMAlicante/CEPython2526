@@ -19,7 +19,15 @@ def test_ejercicio04():
     assert mod2_eje5.ejercicio_04(3,"Hola") == "El valor introducido no es un número entero"
 
 def test_ejercicio05():
-    pass
+    assert mod2_eje5.agregar_una_vez([1, 'pie', -2], 10) == "La lista actual es: [1, 'pie', -2]\nValor que quieres añadir a la lista: 10\nLa lista actual es: [1, 'pie', -2, 10]"
+    assert mod2_eje5.agregar_una_vez([1, 'pie', -2], 'pie') == "La lista actual es: [1, 'pie', -2]\nValor que quieres añadir a la lista: pie\nError: Imposible añadir elementos duplicados => pie\nLa lista actual es: [1, 'pie', -2]"
+    assert mod2_eje5.agregar_una_vez([1, 'pie', -2], "Hola") == "La lista actual es: [1, 'pie', -2]\nValor que quieres añadir a la lista: Hola\nLa lista actual es: [1, 'pie', -2, 'Hola']"
+
+'''
+    assert mod2_eje5.agregar_una_vez([1, 'pie', -2], 10) == "La lista actual es: [1, 'pie', -2]\nValor que quieres añadir a la lista: 10\nLa lista actual es: [1, 'pie', -2, 10]"
+    assert mod2_eje5.agregar_una_vez([1, 'pie', -2], 'pie') == "La lista actual es: [1, 'pie', -2]\nValor que quieres añadir a la lista: pie\nError: Imposible añadir elementos duplicados => pie\nLa lista actual es: [1, 'pie', -2, '10']"
+    assert mod2_eje5.agregar_una_vez([1, 'pie', -2], "Hola") == "La lista actual es: [1, 'pie', -2]\nValor que quieres añadir a la lista: Hola\nLa lista actual es: [1, 'pie', -2, '10', 'Hola']"
+'''
 
 
 def test_ejercicio06():
@@ -31,27 +39,3 @@ def test_ejercicio07():
 
 def test_ejercicio08():
     pass
-
-def test_ejercicio09():
-    pass
-
-
-def test_ejercicio10():
-    pass
-
-
-
-def test_ejercicio11():
-    pass
-
-
-def test_ejercicio12():
-    pass
-
-def test_ejercicio13():
-    pass
-
-
-def test_ejercicio14():
-    pass
-
