@@ -16,6 +16,7 @@ def test_ejercicio03():
 def test_ejercicio04():
     assert mod2_eje5.ejercicio_04(5,4) == "5 + 4 = 9"
     assert mod2_eje5.ejercicio_04(3,2.5) == "El valor introducido no es un número entero"
+    assert mod2_eje5.ejercicio_04(3,"Hola") == "El valor introducido no es un número entero"
 
 def test_ejercicio05():
     pass

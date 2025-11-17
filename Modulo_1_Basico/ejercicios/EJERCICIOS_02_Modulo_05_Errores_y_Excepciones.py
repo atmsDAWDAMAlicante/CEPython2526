@@ -100,13 +100,21 @@ El valor introducido no es un número entero
 '''
 
 
-def ejercicio_04(num):
-    print(f"---Ejercicio nº 4: Dxxx")
+def ejercicio_04(num1, num2): #ESTO NECESITA UNA SEGUNDA LECTURA CON isinstance()
+    print(f"---Ejercicio nº 4: Operaciones con enteros")
+    try:
+            #num1 = int(num1)
+            #num2 = int(num2)
+        if (type(num1)!=int):
+            raise ValueError ("El valor introducido no es un número entero")
+        elif (type(num2)!=int):
+            raise ValueError("El valor introducido no es un número entero")
+        else:
+            return (f'{num1} + {num2} = {num1+num2}')
+    except ValueError:
+        return "El valor introducido no es un número entero"
 
-
-
-
-
+print(ejercicio_04(5,4.5))
 
 #5. ENTREGABLE - Enunciado: Partiremos de la siguiente lista:
 '''
