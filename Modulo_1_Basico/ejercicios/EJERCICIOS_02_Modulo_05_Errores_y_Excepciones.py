@@ -15,8 +15,12 @@ resultado = 10/0
 No es posible dividir entre cero, debes introducir un número distinto.
 '''
 
-def ejercicio_01(num):
-    print(f"---Ejercicio nº 1: Dxxx")
+def ejercicio_01(num1, num2):
+    print(f"---Ejercicio nº 1: División por cero")
+    try:
+        return int(num1)/int(num2)
+    except ZeroDivisionError:
+        return "No es posible dividir entre cero, debes introducir un número distinto."
 
 
 

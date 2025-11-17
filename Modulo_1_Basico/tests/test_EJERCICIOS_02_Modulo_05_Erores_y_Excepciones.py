@@ -1,9 +1,9 @@
 import pytest
-#import ejercicios.EJERCICIOS_02_Modulo_05_Erores_y_Excepciones as mod2_eje5
+import ejercicios.EJERCICIOS_02_Modulo_05_Errores_y_Excepciones as mod2_eje5
 
 def test_ejercicio01():
-    pass
-    #assert mod2_eje5.ejercicio_01() == ""
+    assert mod2_eje5.ejercicio_01(10,5) == 2
+    assert mod2_eje5.ejercicio_01(10,0) == "No es posible dividir entre cero, debes introducir un número distinto."
 
 def test_ejercicio02():
     pass
