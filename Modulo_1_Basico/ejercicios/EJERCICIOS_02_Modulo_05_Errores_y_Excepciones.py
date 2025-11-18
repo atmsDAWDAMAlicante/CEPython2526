@@ -175,8 +175,30 @@ print(agregar_una_vez([1, 'pie', -2], 'pie'))
 
 
 def ejercicio_06(num):
-    print(f"---Ejercicio nº 6: Dxxx")
+    print(f"---Ejercicio nº 6: Sólo enteros positivos")
+    try:
+        if (isinstance(num,int) and (num >= 0)):
+            return num
+        elif(isinstance(num,int) and (num < 0)):
+            return "Introduce un número positivo"
+        else:
+            if (isinstance(num,float)):
+                raise Exception("No es un entero, es un float") 
+            elif (isinstance(num,type(None))):
+                raise Exception("No has introducido nada")
+            elif (isinstance(num,str)):
+                raise Exception("Has introducido un string")
 
+    except Exception as ErrorDelPrograma: 
+        return str(ErrorDelPrograma) 
+
+
+print(ejercicio_06(1))
+print(ejercicio_06(23.2))
+print(ejercicio_06("Hola"))
+print(ejercicio_06(None))
+print(ejercicio_06(-1))
+        
 
 
 

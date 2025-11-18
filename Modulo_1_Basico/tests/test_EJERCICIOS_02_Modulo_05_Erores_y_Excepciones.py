@@ -31,7 +31,13 @@ def test_ejercicio05():
 
 
 def test_ejercicio06():
-    pass
+    assert mod2_eje5.ejercicio_06(3) == 3
+    assert mod2_eje5.ejercicio_06(-3) == "Introduce un número positivo"
+    #with pytest.raises(Exception, match="No es un entero, es un float"):
+     #   mod2_eje5.ejercicio_06(3.4)
+    assert mod2_eje5.ejercicio_06(3.5) == "No es un entero, es un float"
+    #assert mod2_eje5.ejercicio_06(None) == "No has introducido nada"
+    #assert mod2_eje5.ejercicio_06("Hola") == "Has introducido un string"
 
 def test_ejercicio07():
     pass
