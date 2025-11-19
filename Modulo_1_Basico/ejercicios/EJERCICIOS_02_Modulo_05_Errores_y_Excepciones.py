@@ -281,14 +281,34 @@ Solución: Asegúrate de que el producto existe en el inventario.
 Operación finalizada.
 '''
 
-def ejercicio_08(num):
-    print(f"---Ejercicio nº 8: Dxxx")
+
+def validar_opcion(opcion):
+    print(f'Usted ha seleccionado {opcion}')
+
+def ejercicio_08():
+    print(f"---Ejercicio nº 8: Gestor de inventario")
+
+    # Pide una opción al usuario
+    menu_lista= ["GESTOR DE INVENTARIO", "1. Añadir producto", "2. Consultar cantidad", 
+             "3. Modificar cantidad", "4. Eliminar producto", "5. Mostrar inventario completo", 
+             "6. Salir"]
+    menu_string = ""
+    for elemento_menu in menu_lista:
+        menu_string += f'{elemento_menu}\n'
+    
+    try:
+        validar_opcion(int(input(menu_string)))
+    except:
+        print("Opcion no permitida")
+
+    # Productos - Diccionario: nombre clave y valor el stock
+    productos = {"teclado": 4, "ratón": 5, "impresora": 1, "pendrive": 10, "monitor": 3}
 
 
 
 
 
-
+ejercicio_08()
 #9. Enunciado: 
 
 
