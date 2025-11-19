@@ -309,52 +309,6 @@ def ejercicio_08():
 
 
 ejercicio_08()
-#9. Enunciado: 
-
-
-def ejercicio_09(num):
-    print(f"---Ejercicio nº 9: Dxxx")
-
-
-
-#10. Enunciado: 
-
-
-def ejercicio_10(num):
-    print(f"---Ejercicio nº 10: Dxxx")
-
-
-#11. Enunciado: 
-
-
-def ejercicio_11(num):
-    print(f"---Ejercicio nº 11: Dxxx")
-
-
-
-#12. Enunciado: 
-
-
-def ejercicio_12(num):
-    print(f"---Ejercicio nº 12: Dxxx")
-
-
-
-
-
-#13. Enunciado: 
-
-
-def ejercicio_13(num):
-    print(f"---Ejercicio nº 13: Dxxx")
-
-
-
-#14. ENTREGABLE - Enunciado: 
-
-
-def ejercicio_14(num):
-    print(f"---Ejercicio nº 14: Dxxx")
 
 
 
