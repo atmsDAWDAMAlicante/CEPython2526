@@ -72,48 +72,51 @@ for elemento_menu in menu_lista:
 
 # Formación del stock al iniciarse el programa
 productos = {"teclado": 4, "ratón": 5, "impresora": 1, "pendrive": 10, "monitor": 3}
+linea = "-----------------------------"
 
 # 1ª Función: la función principal
+def main():
+    while True:
+        print(f'{linea}{menu}{linea}')
+        opcion_del_usuario = validar_opcion(input("Seleccione su opción: "))
 
-
+        if opcion_del_usuario == 6:
+            print(f"Usted ha seleccionado: {menu_lista[6]}\nAdiós. Vuelva pronto.")
+            break
+        else:
+            operaciones(opcion_del_usuario)
 
 # 2º Función: encargada de validar que se selecciona una de las opciones del menú
-def validar_opcion():
-    opcion = 0
-    opcion_correcta = False
-    while (opcion_correcta != True): # Bucle que mantiene la petición de un entero del 1 al 6
+class NumeroFueraRango(Exception):
+    pass
+
+
+def validar_opcion(num):
+    while True:
         try:
-            opcion = int(input("Seleccione su opción: "))
-            if (opcion > 6) or (opcion < 1):
-                raise ValueError
-            opcion_correcta = True
+            opcion = int(num)
+            if opcion < 1 or opcion > 6:
+                raise NumeroFueraRango
+            return opcion
         except ValueError:
-            print("Opcion del menú no permitida\nIntroduzca un número del 1 al 6")
-    return opcion 
+            print("Error: Debes introducir un número entero.")
+        except NumeroFueraRango:
+            print("Error: Introduce un número del 1 al 6.")
+        
+        # si llegamos aquí significa que hubo un error, pedimos de nuevo
+        num = input("Seleccione su opción: ")
+
+
 
 def operaciones(num):
-    if (num == 1):
-        print(num)
-    elif (num == 2):
-        print(num)
-    elif (num == 3):
-        print(num)
-    elif (num == 4):
-        print (num)
-    else:
-        print(num)
+    print(f'Vd. ha seleccionado: {menu_lista[num]}')
+    print(f'{linea}\n¿Otra operación?\n{linea}')
 
 
 # Comienzo del programa
 print(f"---Ejercicio nº 8: Gestor de inventario")
-print(menu)
-opcion = validar_opcion()
-print(f'Vd. ha seleccionado: {menu_lista[opcion]}')
-while (opcion != 6):
-    operaciones(opcion)
-    opcion = validar_opcion()
-else:
-    print("Encantados de servirle. Vuelva pronto.")
+main()
+    
 
     
     
