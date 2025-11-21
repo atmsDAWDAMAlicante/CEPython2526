@@ -62,7 +62,9 @@ import os
 
 os.system('cls')
 
-# Formación del menú principal del programa:
+# 1. BLOQUE DE VARIABLES GLOBALES
+
+# 1.1 - Formación del menú principal del programa:
 menu_lista= ["GESTOR DE INVENTARIO", "1. Añadir producto", "2. Consultar cantidad", 
             "3. Modificar cantidad", "4. Eliminar producto", "5. Mostrar inventario completo", 
             "6. Salir"]
@@ -70,11 +72,13 @@ menu = ""
 for elemento_menu in menu_lista:
     menu += f'{elemento_menu}\n'
 
-# Formación del stock al iniciarse el programa
+# 1.2 - Formación del stock al iniciarse el programa
 productos = {"teclado": 4, "ratón": 5, "impresora": 1, "pendrive": 10, "monitor": 3}
 linea = "-----------------------------"
 
-# 1ª Función: la función principal
+# 2. BLOQUE DE LAS FUNCIONES DEL MENÚ PRINCIPAL
+
+# 2.1ª Función: la función principal
 def main():
     while True: # Bucle que se repite para que el usuario elija qué hacer tras cada operación
         print(f'{linea}\n{menu}{linea}') # Imprime las 6 opciones; el fstring se forma fuera
@@ -88,7 +92,7 @@ def main():
         else: # Si es una opción de 1 a 5 se envía ese entero a la función operaciones()
             operaciones(opcion_del_usuario)
 
-# 2º Función: encargada de validar que se selecciona una de las opciones del menú
+# 2.2º Función: encargada de validar que se selecciona una de las opciones del menú
 
 # Antes, se crea una clase de excepcion. Lo que está en paréntesis es que hereda de Exception
 class ExcepcionPersonalizada(Exception): #esto es complicado
@@ -113,6 +117,10 @@ def validar_opcion(num):
         num = input("Seleccione su opción: ") # Con esto se arregla el menú principal
         
 
+# 3. BLOQUE DE FUNCIONES DE LAS OPERACIONES 
+
+# 3.1 - Funcion que distribuye la operación pasada por parámetro
+# Nota: la 5, inventario, no llama a ninguna función.
 def operaciones(num):
     print(f'Vd. ha seleccionado: {menu_lista[num]}') # Un print con información
     if (num == 1): # Añadir producto
@@ -128,9 +136,10 @@ def operaciones(num):
         print(f'{linea}\nINVENTARIO COMPLETO:')
         for elemento, cantidad in productos.items():
             print(f'- {elemento} - Cantidad: {cantidad}')
+        print(f'---Total de productos: {len(productos)}')
     print(f'{linea}\n¿Otra operación?\n{linea}')
 
-
+# 3.2 - Función: añadir producto (añadir elemento y su cantidad) - Parámetro: 1
 
 def añadir_producto():
     elemento = pide_elemento()
@@ -144,11 +153,22 @@ def añadir_producto():
     else:
         print(f'>>>No podemos atender su petición, "{elemento}" ya existe en el inventario.')
 
+# 3.3 - Función: consultar cantidad - Parámetro: 2
+
 def consultar_cantidad():
     pass
+
+# 3.4 - Funcion: modificar cantidad - Parámetro: 3
+
 def modificar_cantidad():
     pass
+
+# 3.5 - Función: eliminar producto - Parámetro: 4
+
 def eliminar_producto():
+    '''
+    Función que elimina un producto del inventario que se le pasa por parámetro.
+    '''
     elemento = pide_elemento()
     try:
         productos.pop(elemento)
@@ -157,6 +177,10 @@ def eliminar_producto():
     except KeyError:
         print(f'>>>No podemos atender su petición ya que "{elemento}" no existe en el inventario.')
 
+
+# 4. BLOQUE DE FUNCIONES QUE VALIDAN LO QUE INTRODUCE EL USUARIO (en operaciones)
+
+# 4.1 - Funcion que comprueba que no se introduce un elemento vacío
 def pide_elemento():
     while True:
         try:
@@ -168,7 +192,8 @@ def pide_elemento():
         except ValueError:
             print(">>>El nombre del producto no puede estar vacío.")
         elemento = input("Introduzca el nombre del producto (esta vez, correctamente): ").strip()
-        
+
+# 4.2 - Funcion que comprueba que si el elemento existe
 def comprobar_elemento(elemento):
     try:
         existe = productos[elemento]
@@ -176,6 +201,7 @@ def comprobar_elemento(elemento):
     except KeyError:
         print(f">>>'{elemento}' no existe en el inventario.")
 
+# 4.3 - Funcion que comprueba que la cantidad introducida es un entero mayor que 0
 def pide_cantidad(num):
     while True:
         try:
@@ -192,6 +218,7 @@ def pide_cantidad(num):
 
 # Comienzo del programa
 print(f"---Ejercicio nº 8: Gestor de inventario")
+#help(eliminar_producto)
 main()
     
 
