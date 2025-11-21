@@ -76,40 +76,58 @@ linea = "-----------------------------"
 
 # 1ª Función: la función principal
 def main():
-    while True:
-        print(f'{linea}{menu}{linea}')
+    while True: # Bucle que se repite para que el usuario elija qué hacer tras cada operación
+        print(f'{linea}\n{menu}{linea}') # Imprime las 6 opciones; el fstring se forma fuera
+        # Llamada a la función que valida la opción del usuario
         opcion_del_usuario = validar_opcion(input("Seleccione su opción: "))
-
+        # Sólo retorna un valor válido entre 1 y 6
+        # Si es 6, se termina el programa
         if opcion_del_usuario == 6:
             print(f"Usted ha seleccionado: {menu_lista[6]}\nAdiós. Vuelva pronto.")
             break
-        else:
+        else: # Si es una opción de 1 a 5 se envía ese entero a la función operaciones()
             operaciones(opcion_del_usuario)
 
 # 2º Función: encargada de validar que se selecciona una de las opciones del menú
-class NumeroFueraRango(Exception):
+
+# Antes, se crea una clase de excepcion. Lo que está en paréntesis es que hereda de Exception
+class NumeroFueraRango(Exception): #esto es complicado
     pass
 
 
 def validar_opcion(num):
-    while True:
+    while True: # Aquí se vuelve a repetir un bucle hasta que el usuario introduce un numero válido
         try:
-            opcion = int(num)
-            if opcion < 1 or opcion > 6:
-                raise NumeroFueraRango
-            return opcion
-        except ValueError:
+            opcion = int(num) # Intenta convertirlo a entero
+            if ((opcion < 1) or (opcion > 6)): # Si es un entero pero no está entre 1 y 6
+                raise NumeroFueraRango # Lanza la excepción personalizada
+            return opcion # Si es un número de 1 al 6, lo devuelve (el 6 sale del programa)
+        # Si han habido problemas saltan las excepciones
+        except ValueError: # si no se ha introducido un número entero
             print("Error: Debes introducir un número entero.")
-        except NumeroFueraRango:
+        except NumeroFueraRango: # si el número no está entre 1 y 6
             print("Error: Introduce un número del 1 al 6.")
         
-        # si llegamos aquí significa que hubo un error, pedimos de nuevo
-        num = input("Seleccione su opción: ")
-
-
+        # Este input se repite con el bucle hasta que se introduce un número del 1 al 6
+        # porque, si es del 1 al 6 se sale con el return
+        num = input("Seleccione su opción: ") # Con esto se arregla el menú principal
+        
 
 def operaciones(num):
-    print(f'Vd. ha seleccionado: {menu_lista[num]}')
+    print(f'Vd. ha seleccionado: {menu_lista[num]}') # Un print con información
+    if (num == 1): # Añadir producto
+        añadir_producto()
+    elif (num == 2): # Consultar cantidad
+        consultar_cantidad()
+    elif (num == 3): # Modificar cantidad
+        modificar_cantidad()
+    elif (num == 4): # Eliminar producto
+        eliminar_producto()
+    else: # Mostrar el inventario
+    # Aquí no hace falta hacer nada excepcional
+        print(f'{linea}\nINVENTARIO COMPLETO:')
+        for elemento, cantidad in productos.items():
+            print(f'- {elemento} - Cantidad: {cantidad}')
     print(f'{linea}\n¿Otra operación?\n{linea}')
 
 
