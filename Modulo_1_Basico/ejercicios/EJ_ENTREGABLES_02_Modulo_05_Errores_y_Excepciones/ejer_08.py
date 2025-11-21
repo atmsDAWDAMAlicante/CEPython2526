@@ -91,7 +91,7 @@ def main():
 # 2º Función: encargada de validar que se selecciona una de las opciones del menú
 
 # Antes, se crea una clase de excepcion. Lo que está en paréntesis es que hereda de Exception
-class NumeroFueraRango(Exception): #esto es complicado
+class ExcepcionPersonalizada(Exception): #esto es complicado
     pass
 
 
@@ -100,13 +100,13 @@ def validar_opcion(num):
         try:
             opcion = int(num) # Intenta convertirlo a entero
             if ((opcion < 1) or (opcion > 6)): # Si es un entero pero no está entre 1 y 6
-                raise NumeroFueraRango # Lanza la excepción personalizada
+                raise ExcepcionPersonalizada # Lanza la excepción personalizada
             return opcion # Si es un número de 1 al 6, lo devuelve (el 6 sale del programa)
         # Si han habido problemas saltan las excepciones
         except ValueError: # si no se ha introducido un número entero
-            print("Error: Debes introducir un número entero.")
-        except NumeroFueraRango: # si el número no está entre 1 y 6
-            print("Error: Introduce un número del 1 al 6.")
+            print(">>>Debes introducir un número entero.")
+        except ExcepcionPersonalizada: # si el número no está entre 1 y 6
+            print(">>>Introduce un número del 1 al 6.")
         
         # Este input se repite con el bucle hasta que se introduce un número del 1 al 6
         # porque, si es del 1 al 6 se sale con el return
@@ -129,6 +129,65 @@ def operaciones(num):
         for elemento, cantidad in productos.items():
             print(f'- {elemento} - Cantidad: {cantidad}')
     print(f'{linea}\n¿Otra operación?\n{linea}')
+
+
+
+def añadir_producto():
+    elemento = pide_elemento()
+    cantidad = pide_cantidad(input("Introduzca cuantos productos entran en el stock: "))
+    try:
+        productos[elemento]
+    except KeyError:
+        productos[elemento] = cantidad
+        print(f'+++NUEVO INVENTARIO')
+        operaciones(5)
+    else:
+        print(f'>>>No podemos atender su petición, "{elemento}" ya existe en el inventario.')
+
+def consultar_cantidad():
+    pass
+def modificar_cantidad():
+    pass
+def eliminar_producto():
+    elemento = pide_elemento()
+    try:
+        productos.pop(elemento)
+        print(f'---NUEVO INVENTARIO')
+        operaciones(5)
+    except KeyError:
+        print(f'>>>No podemos atender su petición ya que "{elemento}" no existe en el inventario.')
+
+def pide_elemento():
+    while True:
+        try:
+            elemento = input("Introduzca el nombre del producto: ").strip()
+            if elemento == "":
+                raise ValueError
+            else:
+                return elemento
+        except ValueError:
+            print(">>>El nombre del producto no puede estar vacío.")
+        elemento = input("Introduzca el nombre del producto (esta vez, correctamente): ").strip()
+        
+def comprobar_elemento(elemento):
+    try:
+        existe = productos[elemento]
+        return existe
+    except KeyError:
+        print(f">>>'{elemento}' no existe en el inventario.")
+
+def pide_cantidad(num):
+    while True:
+        try:
+            cantidad = int(num)
+            if (cantidad <= 0):
+                raise ExcepcionPersonalizada
+            return cantidad
+        except ValueError: # si no se ha introducido un número entero
+            print(">>>La cantidad debe ser un número entero.")
+        except ExcepcionPersonalizada: # si el número no es positivo    
+            print(">>>La cantiad debe ser un número positivo.")
+        num = input("Reintroduzca la cantidad (esta vez, correctamente): ")
 
 
 # Comienzo del programa
