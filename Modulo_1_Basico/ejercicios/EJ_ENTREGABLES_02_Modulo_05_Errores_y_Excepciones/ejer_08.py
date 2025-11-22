@@ -1,6 +1,6 @@
-#EJERCICIOS NTREGABLES UD 02 - Modulo 05 - Errores y excepciones
+#EJERCICIOS ENTREGABLES UD 02 - Modulo 05 - Errores y excepciones
 #Ejercicio nº 8
-# ALUMNO: ANGEL TOMÁS MORENO SENÉN# 
+#ALUMNO: ANGEL TOMÁS MORENO SENÉN
 
 #Enunciado: Enunciado: Crea un programa llamado “Gestor de inventario” que combine
 # todos los conceptos de gestión de errores vistos en clase.

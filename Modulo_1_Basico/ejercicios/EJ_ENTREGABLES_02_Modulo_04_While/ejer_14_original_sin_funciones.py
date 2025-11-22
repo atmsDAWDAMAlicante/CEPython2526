@@ -5,12 +5,12 @@
 #Enunciado: Modifica el programa anterior de tal forma que cuando uno o los dos
 #jugadores supere los 21 puntos, el juego de la partida por terminada y muestre el resultado final.
 
+
 import os
 # para limpiar la terminal
 os.system('cls')
 
 import random
-
 
 print(f"---Ejercicio nº 14: Juego de Dados entregable")
 
