@@ -26,40 +26,9 @@
     #tenemos que controlarlo con try/except.
     #− Debe usarse try, except, else y finally al menos una vez en el código.
 
-'''
-GESTOR DE INVENTARIO
-1. Añadir producto
-2. Consultar cantidad
-3. Modificar cantidad
-4. Eliminar producto
-5. Mostrar inventario completo
-6. Salir
-
-Selecciona una opción (1-6): 1
-Introduce el nombre del producto: ratón
-Introduce la cantidad: -5
-Error: Debe ser un número positivo.
-Introduce un número válido.
-
-Introduce la cantidad: diez
-Error: invalid literal for int() with base 10: 'diez'
-Introduce un número válido.
-
-Introduce el nombre del producto: ratón
-Introduce la cantidad: 10
-Producto 'ratón' añadido correctamente.
-Operación finalizada.
-
-Selecciona una opción (1-6): 2
-Producto que consultar: monitor
-Error: 'monitor'
-Solución: Asegúrate de que el producto existe en el inventario.
-Operación finalizada.
-'''
 
 import os
-
-
+# para limpiar la terminal
 os.system('cls')
 
 # 1. BLOQUE DE VARIABLES GLOBALES
@@ -111,7 +80,8 @@ def validar_opcion(num):
             print(">>>Debes introducir un número entero.")
         except ExcepcionPersonalizada: # si el número no está entre 1 y 6
             print(">>>Introduce un número del 1 al 6.")
-        
+        finally: # Siempre muestra el total de productos a modo de info 
+            print(f'**---INFO: Total de productos: {len(productos)}')
         # Este input se repite con el bucle hasta que se introduce un número del 1 al 6
         # porque, si es del 1 al 6 se sale con el return
         num = input("Seleccione su opción: ") # Con esto se arregla el menú principal
@@ -137,31 +107,43 @@ def operaciones(num):
         for elemento, cantidad in productos.items():
             print(f'- {elemento} - Cantidad: {cantidad}')
         print(f'---Total de productos: {len(productos)}')
+    # Después de cada operación, se imprime esta línea para ofrecer hacer otra
     print(f'{linea}\n¿Otra operación?\n{linea}')
 
 # 3.2 - Función: añadir producto (añadir elemento y su cantidad) - Parámetro: 1
 
 def añadir_producto():
+    # Primero llama a a la función que pide el nombre del producto
     elemento = pide_elemento()
-    cantidad = pide_cantidad(input("Introduzca cuantos productos entran en el stock: "))
     try:
         productos[elemento]
-    except KeyError:
+    except KeyError: # si salta es porque el producto no existe, entonces pide cantidad y lo añade
+        cantidad = pide_cantidad(input("Introduzca cuantos productos entran en el stock: "))
         productos[elemento] = cantidad
-        print(f'+++NUEVO INVENTARIO')
-        operaciones(5)
-    else:
+        #print(f'+++NUEVO INVENTARIO')
+        #operaciones(5)
+    else: # como no se produce la excepcoión, y el producto existe, entronces muestra el mensaje
         print(f'>>>No podemos atender su petición, "{elemento}" ya existe en el inventario.')
 
 # 3.3 - Función: consultar cantidad - Parámetro: 2
 
 def consultar_cantidad():
-    pass
+    elemento = pide_elemento()
+    if (productos.get(elemento) is None): # Si no hay elementos del tipo introducido avisa
+        print(f'>>>No podemos atender su petición ya que "{elemento}" no existe en el inventario.')
+    else: # Cuando sí que hay elementos, entonces da la información sobre la cantidad
+        print(f'Disponemos de {productos[elemento]} unidades de "{elemento}" en el inventario.')
 
 # 3.4 - Funcion: modificar cantidad - Parámetro: 3
 
 def modificar_cantidad():
-    pass
+    elemento = pide_elemento()
+    if (productos.get(elemento) is None): # Si no hay elementos del tipo introducido avisa
+        print(f'>>>No podemos atender su petición ya que "{elemento}" no existe en el inventario.')
+    else: # Si hay elementos entonces pide la cantidad y la actualiza y, al final, informa
+        cantidad = pide_cantidad(input(f"Introduzca la nueva cantidad de {elemento}: "))
+        productos[elemento] = cantidad
+        print(f'Inventario actualizado: {productos[elemento]} unidades de "{elemento}".')
 
 # 3.5 - Función: eliminar producto - Parámetro: 4
 
@@ -170,11 +152,11 @@ def eliminar_producto():
     Función que elimina un producto del inventario que se le pasa por parámetro.
     '''
     elemento = pide_elemento()
-    try:
+    try: # intenta eliminar el elemento que introduce el usuario
         productos.pop(elemento)
-        print(f'---NUEVO INVENTARIO')
-        operaciones(5)
-    except KeyError:
+        #print(f'---NUEVO INVENTARIO')
+        #operaciones(5)
+    except KeyError: # si salta es porque el producto no existe, entonces avisa que no lo puede eliminar
         print(f'>>>No podemos atender su petición ya que "{elemento}" no existe en el inventario.')
 
 
@@ -184,13 +166,14 @@ def eliminar_producto():
 def pide_elemento():
     while True:
         try:
-            elemento = input("Introduzca el nombre del producto: ").strip()
-            if elemento == "":
+            elemento = input("Introduzca el nombre del producto: ").strip() #elimina los espacios
+            if elemento == "": # Si no se introduce nada, lanza la excepción
                 raise ValueError
-            else:
+            else: # Si se introduce un string, lo devuelve
                 return elemento
         except ValueError:
             print(">>>El nombre del producto no puede estar vacío.")
+        # Repite la petición de un elemento hasta que se introduzca uno, con un aviso
         elemento = input("Introduzca el nombre del producto (esta vez, correctamente): ").strip()
 
 # 4.2 - Funcion que comprueba que si el elemento existe
@@ -203,16 +186,17 @@ def comprobar_elemento(elemento):
 
 # 4.3 - Funcion que comprueba que la cantidad introducida es un entero mayor que 0
 def pide_cantidad(num):
-    while True:
+    while True: # El bucle se repite hasta que se introduce un número válido
         try:
-            cantidad = int(num)
-            if (cantidad <= 0):
+            cantidad = int(num) # Se intenta convertir lo que ha introducido el usuario a un entero
+            if (cantidad <= 0): # Si es negativo o cero lanza la excepción personalizada
                 raise ExcepcionPersonalizada
             return cantidad
         except ValueError: # si no se ha introducido un número entero
             print(">>>La cantidad debe ser un número entero.")
         except ExcepcionPersonalizada: # si el número no es positivo    
             print(">>>La cantiad debe ser un número positivo.")
+        # Repite la petición de un numero hasta que se introduzca un entero positivo, con un aviso
         num = input("Reintroduzca la cantidad (esta vez, correctamente): ")
 
 
