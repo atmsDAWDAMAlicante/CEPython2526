@@ -3,8 +3,17 @@
 
 import os
 
+class ErrorPersonalizado(Exception):
+    pass
+
 linea = "===================================="
-os.system('cls')
+def limpiar_consola():
+    try:
+        os.system('cls')
+    except ErrorPersonalizado:
+        os.system('clear')   
+
+limpiar_consola()
 print(f"{linea}\nInicio de los ejercicios de este bloque\n{linea}")
 
 
@@ -43,16 +52,24 @@ titulares = {
 6: "Andrés Iniesta",
 7: "David Villa"
 }
+try:
+    print(titulares["2"]) # el 2 no está aún
+except KeyError:
+    print("El dorsal 2 no está en el diccionario de titulares")
 print(f"{linea}")
 
-
+titulares["100"] = "Manolo el del Bombo"
+print(titulares)
+titulares.pop("100")
+print(titulares.get("100","Manolo el del Bombo no es un titutlar")) # con get no da error si no existe la clave
 #2. Enunciado: Utilizando la función get() muestra de forma tabulada y ordenados por su número dorsal
 #de menor a mayor los nombres de los once jugadores (el menor dorsal posible es el 1 y
 #nunca podrá tener más de dos cifras.
-os.system("clear")
-print(f"---Ejercicio nº 2: Mostrar tabulada la Selección Nacional")
 
-
+#print(f"---Ejercicio nº 2: Mostrar tabulada la Selección Nacional")
+titulares_ordenados = dict(sorted(titulares.items()))
+print (type(titulares_ordenados))
+print ("Titulares: ", id(titulares_ordenados))
 
 
 #3. Enunciado: Modifica el ejercicio anterior para que programa lea el número de elementos incluidos en
@@ -61,27 +78,27 @@ print(f"---Ejercicio nº 2: Mostrar tabulada la Selección Nacional")
 '''
 ¡¡¡Este ejercicio no lo entieno!!!
 '''
-print(f"---Ejercicio nº 3: Recuento general")
+#print(f"---Ejercicio nº 3: Recuento general")
 
 
 #4. Enunciado: Añade al ejercicio anterior el código necesario mostrar una lista con todos los índices
 #utilizados en la biblioteca y otra lista con todos los valores almacenados en ella (utiliza
 #los métodos Name.keys() y Name.values())
-print(f"---Ejercicio nº 4: Formando una lista de dorsales y otra de jugadores")
+#print(f"---Ejercicio nº 4: Formando una lista de dorsales y otra de jugadores")
 
 
 
 #5. Enunciado: Partimos ahora del ejercicio 1. Añade el código necesario para que el programa cree una
 #copia de la biblioteca “titulares” y asígnale el nombre plantilla. Muestra por pantalla el
 #contenido de plantilla con el mismo formato que el indicado en el ejercicio 2.
-print(f"---Ejercicio nº 5: Copia de la biblioteca titulares")
+#print(f"---Ejercicio nº 5: Copia de la biblioteca titulares")
 
 
 #6. Enunciado: Añade al programa un nuevo diccionario al que llamaremos suplentes. Los elementos de
 #dicho diccionario serán los once jugadores suplentes el día del partido, siendo el número
 #de su dorsal el índice y su nombre el valor asociado. Muestra como resultado el
 #contenido de los dos diccionarios siguiendo el mismo formato que en los ejercicios 2 y 5.
-print(f"---Ejercicio nº 6: Suplentes")
+#print(f"---Ejercicio nº 6: Suplentes")
 suplentes = {
     23: "Pepe Reina",
     12: "Víctor Valdés",
@@ -103,7 +120,7 @@ print(f"{linea}")
 
 #7. Enunciado: A partir del anterior añade los elementos del diccionario suplentes al diccionario plantilla
 #y muestra el contenido actualizado del diccionario plantilla siguiendo el formato de los ejercicios anteriores.
-print(f"---Ejercicio nº 7: Unir plantilla y suplentes")
+#print(f"---Ejercicio nº 7: Unir plantilla y suplentes")
 
 
 # Voy a poner toda la seleccion en un único diccionario
@@ -119,7 +136,7 @@ print(f"{linea}")
 #pop(key), elimina del diccionario final a los tres jugadores que fueron sustituidos y añade
 #a los que se incorporaron. Muestra al final del ejercicio el contenido del diccionario final
 #con el formato de los ejercicios anteriores.
-print(f"---Ejercicio nº 8: Cambios de los titulares")
+#print(f"---Ejercicio nº 8: Cambios de los titulares")
 
 
 
@@ -139,7 +156,7 @@ print(f"{linea}")
 '''
 #Si el nombre coincide con alguno en la plantilla, se mostrará el dorsal y si fue titular, suplente o jugó la final.
 #Si se introduce una opción distinta de 1 o 2, el programa mostrará el mensaje "Opción no válida."
-print(f"---Ejercicio nº 9: xxx")
+#print(f"---Ejercicio nº 9: xxx")
 
 
 
@@ -155,7 +172,7 @@ print(f"{linea}")
 #del jugador que quieres que entre en su lugar. Ten en cuenta que el jugador
 #que ha sido sustituido no puede volver a entrar al campo. A continuación se
 #mostrarán los contenidos actualizados de los dos diccionarios. Ten en cuenta que podemos hacer un máximo de tres cambios
-print(f"---Ejercicio nº 10: xxx")
+#print(f"---Ejercicio nº 10: xxx")
 
 
 
