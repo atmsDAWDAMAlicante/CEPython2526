@@ -199,24 +199,47 @@ print(f"{linea}")
 print(f"---Ejercicio nº 9: Buscar por dorsal o por nombre")
 
 def menu_busqueda():
-    mneu = input("Introduce 1 para dorsal, 2 para nombre otro para salir: ")
+    menu = input("Introduce: 1 dorsal, 2 nombre, 3 salir\n")
     while True:
         try:
-            opcion = int(mneu)
+            opcion = int(menu)
             if opcion == 1:
-                    pass
-                    #operacion(1)
+                    porDorsal()
             elif opcion == 2:
-                    pass
-                    #operacion(2)
-            else:
-                    print("Salida.")
+                    porNombre()
+            elif opcion == 3:
+                    print("Adiós.")
                     break
                     
         except ValueError:
             print("Saliendo de la búsqueda.")
-        mneu = input("Introduce BIEN 1 para dorsal, 2 para nombre otro para salir: ")
-       
+            menu = input("Ahora introducelo bien: 1 dorsal, 2 nombre, 3 salir:\n")
+        menu = input("¿otra operación? Introduce: 1 dorsal, 2 nombre, 3 salir:\n")   
+
+def porDorsal():
+     try:
+          resultado = ""
+          dorsal = int(input("Introduce el dorsal del jugador a buscar: "))
+          if dorsal in titulares:
+            resultado += f'El jugador con dorsal {dorsal} es {titulares[dorsal]} y fue TITULAR.\n'
+          if dorsal in suplentes:
+            resultado += f'El jugador con dorsal {dorsal} es {suplentes[dorsal]} y fue SUPLENTE.\n'
+          if dorsal in final:
+             resultado += f'El jugador con dorsal {dorsal} es {final[dorsal]} y jugó la FINAL.\n'
+         
+     except ValueError:
+        print("Dorsal inválido. Debe ser un número entero.")
+     print(resultado)
+
+
+
+def porNombre():    
+     pass
+
+
+
+
+
 menu_busqueda()
 print(f"{linea}")
 
@@ -229,9 +252,7 @@ print(f"{linea}")
 #que ha sido sustituido no puede volver a entrar al campo. A continuación se
 #mostrarán los contenidos actualizados de los dos diccionarios. Ten en cuenta que podemos hacer un máximo de tres cambios
 #print(f"---Ejercicio nº 10: xxx")
-print(titulares)
-print(suplentes)
-print(plantilla)
+
 
 
 print(f"{linea}\nFin de los ejercicios de este bloque\n{linea}")
