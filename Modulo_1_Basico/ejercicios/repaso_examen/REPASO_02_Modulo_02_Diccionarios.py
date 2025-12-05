@@ -253,6 +253,13 @@ print(f"{linea}")
 #mostrarán los contenidos actualizados de los dos diccionarios. Ten en cuenta que podemos hacer un máximo de tres cambios
 #print(f"---Ejercicio nº 10: xxx")
 
-
+for i, nombre in enumerate(final.values()):
+    print(i, nombre)
+print("Convertir un diccionario nuevo de jugadores")
+jugadores2 = dict(enumerate(final.values(), start=1)) #esto me creará un diccionario nuevo
+print(jugadores2)
+t = [1,2,3,4,5]
+t1, t2, t3, t4 ,t5 = t 
+print(t1,t2,t3,t4,t5)
 
 print(f"{linea}\nFin de los ejercicios de este bloque\n{linea}")
