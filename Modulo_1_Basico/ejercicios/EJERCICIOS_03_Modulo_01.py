@@ -118,15 +118,18 @@ print(linea)
 
 #8. Enunciado: Escribe una función repite_hola que reciba como parámetro un número entero n y
 #escriba por pantalla el mensaje "Hola"nveces.
-print(f"---Ejercicio nº 8: XX")
-
+print(f"---Ejercicio nº 8: Recibe int y devuelve saludos")
+def ejercicio08(num):
+    return
 
 print(linea)
 
 #9. Enunciado: Escribe una función repite_saludo que reciba como parámetro un número entero n y una
 #cadena saludo y escriba por pantalla el valor de saludo n veces.
-print(f"---Ejercicio nº 9: XX")
-
+print(f"---Ejercicio nº 9: Recibe int y string y devuelve saludos")
+def ejercicio09(num,frase):
+    
+    return
 
 print(linea)
 
@@ -135,7 +138,16 @@ print(linea)
 #10. Enunciado: Define la función print_asegundos(horas, minutos, segundos) con tres parámetros (horas,
 #minutos y segundos) que imprima por pantalla la transformación a segundos de una
 #medida de tiempo expresada en horas, minutos y segundos:
-print(f"---Ejercicio nº 10: XX")
-
+print(f"---Ejercicio nº 10: Devuelve segundos")
+def ejercicio10(horas,minutos,segundos):
+    horas=int(horas)
+    minutos=int(minutos)
+    segundos=int(segundos)
+    horasAminutos = horas * 60 # 120 minutos
+    horasAsegundos = horasAminutos * 60 # 7200 segundos
+    minutosAsegundos = minutos * 60 # 300 segundos
+    # 7 segundos
+    
+    return segundos + horasAsegundos + minutosAsegundos
 
 print(linea)
