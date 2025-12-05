@@ -79,14 +79,38 @@ print(d)
 print(linea)
 
 #6. Enunciado: Añade los comentarios necesarios para explicar el funcionamiento del código:
-print(f"---Ejercicio nº 6: XX")
-
+print(f"---Ejercicio nº 6: Explicar código")
+def subrutina_1():
+    f = 20
+    print(f)
+    return
+def subrutina_2():
+    global f
+    f = 30
+    print(f)
+    return
+f = 10
+subrutina_1()
+print(f)
+subrutina_2()
+print(f)
 
 print(linea)
 
 #7. Enunciado: Añade los comentarios necesarios para explicar el funcionamiento del código:
-print(f"---Ejercicio nº 7: XX")
-
+print(f"---Ejercicio nº 7: Explicar código")
+def subrutina():
+    def sub_subrutina():
+        g = 5
+        print(g)
+        return
+    g = 4
+    sub_subrutina()
+    print(g)
+    return
+g = 3
+subrutina()
+print(g)
 
 print(linea)
 
