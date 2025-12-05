@@ -109,10 +109,11 @@ def subrutina():
     sub_subrutina()
     print(g)
     return
-g = 3
-subrutina()
-print(g)
 
+g = 3
+subrutina() # Una llamada a dos funciones que no modifican la variable global g=3
+print(g) # por eso imprime 3
+# Las variables locales se imprimen en sus respectivos ámbitos: por tanto imprime 5,4,3
 print(linea)
 
 #8. Enunciado: Escribe una función repite_hola que reciba como parámetro un número entero n y
