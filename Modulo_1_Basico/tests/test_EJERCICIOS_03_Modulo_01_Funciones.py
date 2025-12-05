@@ -6,7 +6,7 @@ def test_ejercicio08():
     assert mod1_eje3.ejercicio08(2) == "hola\nhola\n"
 
 def test_ejercicio09():
-    assert mod1_eje3.ejercicio09(2,"Buenos días") == "Buenos días\nBuenos días\n"
+    assert mod1_eje3.ejercicio09(2,"Buenos días\n") == "Buenos días\nBuenos días\n"
 
 def test_ejercicio10():
     #pass

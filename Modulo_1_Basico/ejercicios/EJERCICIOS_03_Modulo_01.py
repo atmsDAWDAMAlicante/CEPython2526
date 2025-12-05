@@ -120,7 +120,11 @@ print(linea)
 #escriba por pantalla el mensaje "Hola"nveces.
 print(f"---Ejercicio nº 8: Recibe int y devuelve saludos")
 def ejercicio08(num):
-    return
+    mensaje = "hola\n"
+    resultado = ""
+    for i in range(num):
+        resultado += mensaje
+    return resultado
 
 print(linea)
 
@@ -128,8 +132,10 @@ print(linea)
 #cadena saludo y escriba por pantalla el valor de saludo n veces.
 print(f"---Ejercicio nº 9: Recibe int y string y devuelve saludos")
 def ejercicio09(num,frase):
-    
-    return
+    resultado = ""
+    for i in range(num):
+        resultado += frase
+    return resultado
 
 print(linea)
 
