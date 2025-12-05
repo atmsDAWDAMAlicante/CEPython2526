@@ -86,14 +86,15 @@ def subrutina_1():
     return
 def subrutina_2():
     global f
-    f = 30
+    f += 30 # le añadido la suma para ver si creaba una local
     print(f)
     return
-f = 10
-subrutina_1()
-print(f)
-subrutina_2()
-print(f)
+
+f = 10 # comienza el programa con f valiendo 10
+subrutina_1() # esta funcion crea una variable local f con valor 20 que imprime
+print(f) # de regreso de la función, la f global no se ha modificado e imprime 10
+subrutina_2() #Esta función sí modifica la variable global y la imprime en la función
+print(f) # finalmente imprime la variable global con su valor modificado en la función
 
 print(linea)
 
