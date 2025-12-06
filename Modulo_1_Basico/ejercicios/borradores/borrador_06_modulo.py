@@ -9,7 +9,10 @@ def dividir(a,b):
     try:
         if (b == 0):
             raise miExcepcion
-        else:
-            return a/b
+        
     except miExcepcion:
         return "División por cero"
+    else:
+        return a/b
+    finally:
+        print("¿otra?")
