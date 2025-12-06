@@ -16,3 +16,10 @@ def dividir(a,b):
         return a/b
     finally:
         print("¿otra?")
+
+def sumatorio(*numeros):
+    resultado = 0
+    for i in numeros:
+        resultado += i
+    return resultado
+
