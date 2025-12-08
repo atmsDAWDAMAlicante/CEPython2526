@@ -109,10 +109,46 @@ def mayor(*args):
 
 mayor(1,3,4,5,34,523,423,4,456,234,234,3,800)
 #2.2  Crea una función convertir_en_lista(*args) que retorne una lista con los argumentos recibidos.
+print(f"{linea}\n2.2  Crea una función convertir_en_lista(*args) que retorne una lista con los argumentos recibidos.")
+def convertir_en_lista(*args):
+    return list(args)
+lista_resultado = convertir_en_lista(1,3,4,5,34,523,423,4,456,234,234,3,800)
+print(f'{type(lista_resultado)} - {lista_resultado}')
+
 
 #2.3  Crea concatenar_strings(*args) que reciba un número indeterminado de strings y los una en uno solo separados por espacios.
+print(f"{linea}\n2.3  Crea concatenar_strings(*args) que reciba un número indeterminado de strings y los una en uno solo separados por espacios.")
+def concatenar_strings(*args):
+    resultado = ""
+    for i in args:
+        resultado += f'{i} '
+    return resultado
 
-#2.4  Llama a concatenar_strings pasando un string solo, luego un string con *, y luego un string con .split(). Explica la diferencia.
+resultado_string = concatenar_strings("Hola","Don","Pepito","Hola","Don","José")
+
+#2.4  Llama a concatenar_strings pasando un string solo, luego un string con *, y luego un string con .split(). 
+# Explica la diferencia.
+print(f"{linea}\n2.4.1 string solo")
+def concatenar_strings2(args):
+    resultado = ""
+    for i in args:
+        resultado += f'{i} '
+    return resultado
+resultado_string2 = concatenar_strings2(resultado_string)
+print(resultado_string2)
+# RESULTADO 2.4.1 : H o l a   D o n   P e p i t o   H o l a   D o n   J o s é
+
+
+print(f"{linea}\n2.4.2 string con *")
+
+resultado_string3 = concatenar_strings(*resultado_string)
+print(resultado_string3)
+# RESULTADO 2.4.2 : Hola Don Pepito Hola Don José
+
+print(f"{linea}\n2.4.3 string con .split()")
+resultado_string4 = concatenar_strings(resultado_string.split())
+print(resultado_string4)
+# RESULTADO 2.4.3 : ['Hola', 'Don', 'Pepito', 'Hola', 'Don', 'José']
 
 
 #🔵 Nivel 3 – Avanzado
