@@ -1,24 +1,24 @@
 import os
 os.system("cls")
-
+linea = "==========================================="
 #Parametros args
 # se paga con un arterisco
 # args captura posiciones
 
 def captura_args(*args):
+    print(type(args))
     for i in args:
-        print(i)
-        print(type(args))
+        print(f'{i} - {type(args)}')
+    # Termina el bucle y se convierte en lista    
     args = list(args)
     print(type(args))
-    args.append("Federico")
+    args.append("Federico") #Como lista, se le añade otro
     print(args)
-lista = ["Pepe", "Juan", "Antonio", "Loli", "Paca"]
-for i in lista:
-    captura_args(i)
+captura_args("Pepe", "Juan", "Antonio", "Loli", "Paca")
 
-    '''
-    Ejemplo 3: Crear un string antes y luego pasarlo como *args
+'''
+Explicación del ChatGPT
+Ejemplo 3: Crear un string antes y luego pasarlo como *args
 
 Esto solo tiene sentido si quieres dividirlo por algo.
 Si lo pasas tal cual, será un único argumento:
@@ -26,48 +26,52 @@ Si lo pasas tal cual, será un único argumento:
 cad = "uno dos tres"
 unir(*cad.split())
 
-
 Salida:
-
 uno dos tres
-
 
 .split() separa por espacios → devuelve lista → * la despliega en argumentos.
 
 Entonces, respondiendo tu pregunta:
 ✔ ¿Se puede formar un string y pasarlo como *args?
-
 Sí, siempre que lo desempaquetes o lo transformes adecuadamente:
 
 funcion(*mi_string) → pasa cada carácter como argumento
-
 funcion(*mi_string.split()) → pasa cada palabra
 
 funcion(mi_string) → pasa un único argumento, el string completo
-
 Mini resumen
 Lo que haces	Lo que recibe *args
 funcion("hola")	("hola",)
 funcion(*"hola")	('h','o','l','a')
 funcion(*"hola mundo".split())	("hola","mundo")
     
-    '''
+'''
 
-    '''EJERCICIOS DEL CHATGPT
-    
-    Ejercicios con *args
-🟢 Nivel 1 – Básico
+#EJERCICIOS DEL CHATGPT
+# Ejercicios con *args
+#🟢 Nivel 1 – Básico
+os.system("cls")
+print(f"NIVEL 1 - BÁSICO\n{linea}")
+#1.1 - Crea una función mostrar_args que reciba *args y muestre cada elemento en una línea.
+print("1.1 - Crea una función mostrar_args que reciba *args y muestre cada elemento en una línea.")
+def uno_uno_basico(*args):
+    for i in args:
+        print(i)
+uno_uno_basico("Lunes", "Martes", "Miércoles", "Jueves", "Viernes")
+#1.2 - Crea una función contar_args que devuelva cuántos argumentos recibió.
+print(f"{linea}\n1.2 - Crea una función contar_args que devuelva cuántos argumentos recibió.")
+def uno_dos_basico(*args):
+    print(len(args))
 
-Crea una función mostrar_args que reciba *args y muestre cada elemento en una línea.
+uno_dos_basico("a","e","i","o","u")
+#1.3 - Haz una función sumar_todos que reciba números y devuelva su suma.
 
-Crea una función contar_args que devuelva cuántos argumentos recibió.
+#1.4 - Llama a cualquiera de ellas pasando una lista, sin *, y observa qué ocurre.
 
-Haz una función sumar_todos que reciba números y devuelva su suma.
+#1.5  Repite llamándola con *lista y compara los resultados.
 
-Llama a cualquiera de ellas pasando una lista, sin *, y observa qué ocurre.
 
-Repite llamándola con *lista y compara los resultados.
-
+'''
 🟡 Nivel 2 – Medio
 
 Crea una función mayor(*args) que devuelva el mayor número recibido.
