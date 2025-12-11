@@ -15,12 +15,18 @@ print(f"{linea}\nInicio de los ejercicios del bloque Funciones 2\n{linea}")
 # valores a segundos. El programa mostrará como resultado la suma de los tres valores en
 # formato de segundos.
 print(f"---Ejercicio nº 1: Convertir tiempo en segundos")
-print(aSegundos())
-
+resultado = pedirNumeros(3)
+print(f'TOTAL: {convertir_a_segundos(resultado)} segundos')
 print(linea)
 
-#2. Enunciado: 
-print(f"---Ejercicio nº 2: XX")
+#2. Enunciado: Modifica el programa anterior para conseguir que el resultado de la 
+# suma de los tres tiempos se muestre en formato de h:m:s
+print(f"---Ejercicio nº 2: Suma total de tiempo")
+tiempos = []
+for i in range (3):
+    tiempos.append(pedirNumeros(3))
+print(tiempos)
+
 
 
 print(linea)
