@@ -1,19 +1,16 @@
+#PARA EJECUTAR SIN PROBLEMA, desde el directorio del módulo:
+#python -m ejercicios.EJERCICIOS_03_Agenda
+
 
 from ejercicios.EJERCICIOS_03_Agenda_Modulo import *
 import os
 os.system("cls")
 
-# Menú principal
+
+
+# Función principal: muestra y llama al menú
 def main():
-    operacion = validar_menu(input("Introduce una operacion: "))
-    while True:
-        if (operacion == -1):
-           operacion = validar_menu(input("Introduce una operacion, PERO AHORA HAZLO BIEN: "))
-        else:
-            print(f'Has elegido: {operacion}')
-            a = ejecutar_operacion(operacion)
-            print(a)
-            formar_diccionario()
-            break
-        
+    operacion = validar_menu()
+    if (type(operacion) == int):
+        ejecutar_operacion(operacion)
 main()
