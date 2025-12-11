@@ -55,3 +55,6 @@ def acumular_excesos(tiempo):
         tiempo_final[0]+= minutos//60
         tiempo_final[1]+= minutos%60
     print(f'Tiempo total: {tiempo_final[0]} h: {tiempo_final[1]} m: {tiempo_final[2]} s')
+
+    #Ejercicio 3
+    
