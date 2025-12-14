@@ -43,27 +43,38 @@ except IndexError:
 
 if "Pepe" not in lista:
     print("Pepe está fuera")
-lista = (sorted(lista))
-print(lista)
-
+#lista = (sorted(lista))
+sorted(lista)
+try:
+    print(lista.index("María"))
+except ValueError:
+    print("Maria is fuera de servicio")
 #2 - LAS TUPLAS
+os.system("cls")
 print(f'{linea}\n{"LAS TUPLAS":>15}\n{linea}')
-
-
-
-
-
+print(tupla)
+print(sum(tupla))
+tupla2 = (1,2,3,4,5)
+tupla2 = list((1,2,3,4,5,6))
+aa,bb,cc,dd,ee,ff = tupla2
+print(aa,bb,cc,ee,dd,ee)
 
 
 
 
 #3 - LOS CONJUNTOS
 print(f'{linea}\n{"LOS CONJUNTOS SET":>15}\n{linea}')
-
-
-
-
-
+conjunto1 = {
+    "coche", "barco", "moto", "avion", "satelite"
+}
+print(conjunto1)
+conjunto2 = ["coche", "barco", "moto", "avion", "satelite", "moto"]
+conjunto2 = set(conjunto2)
+print(conjunto2)
+conjunto2.add("moto")
+print(conjunto2)
+conjunto2.add("ciclomotor")
+print(conjunto2)
 
 
 
