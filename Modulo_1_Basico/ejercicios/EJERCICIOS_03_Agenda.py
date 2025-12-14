@@ -15,7 +15,11 @@ def main():
         print(f"Hasta pronto\n{fin}")
         return
     elif (operacion == 5):
-        print(agenda)
+        #print(agenda)
+        for clave,valor in agenda.items():
+            print(clave)
+            for clave, valor in valor.items():
+                print(f'Clave: {clave} - valor {valor}')
     elif (operacion == 1):
         anadir_contacto()
     elif (operacion == 2):
