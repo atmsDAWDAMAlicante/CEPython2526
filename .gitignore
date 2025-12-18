@@ -1,3 +1,13 @@
+# Míos
+borrador/
+borradores/
+_borrador/
+_borradores/
+repaso/
+repaso_examen/
+_repaso/
+_repaso_examen/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
