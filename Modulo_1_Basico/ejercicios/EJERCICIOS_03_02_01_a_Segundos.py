@@ -19,12 +19,14 @@ print(f"{linea}\nInicio de los ejercicios del bloque Funciones 2\nPRIMERA PARTE 
 # horas, m minutos y s segundos. A través de una función se debe convertir cada uno de estos
 # valores a segundos. El programa mostrará como resultado la suma de los tres valores en
 # formato de segundos.
-'''
+
+# 2, 5, 7 devuelve 7507 segundos
+
 print(f"---Ejercicio nº 1: Convertir tiempo en segundos")
 resultado = pedirNumeros(3)
 print(f'TOTAL: {convertir_a_segundos(resultado)} segundos')
 print(linea)
-'''
+
 #2. Enunciado: Modifica el programa anterior para conseguir que el resultado de la 
 # suma de los tres tiempos se muestre en formato de h:m:s
 '''
@@ -55,7 +57,3 @@ suma_tiempos(tiempos)
 print(linea)
 
 
-
-
-
-print(linea)
