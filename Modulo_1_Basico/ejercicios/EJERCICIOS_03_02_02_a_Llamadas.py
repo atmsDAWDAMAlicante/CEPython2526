@@ -4,7 +4,7 @@
 
 #from Modulo_1_Basico.ejercicios.EJERCICIOS_03_02_01_b_funciones import *
 import os
-import EJERCICIOS_03_02_02_b_funciones
+from EJERCICIOS_03_02_02_b_funciones import *
 
 # EJECUCIÓN: desde el directorio raiz
 # python -m ejercicios.EJERCICIO_03_Modulo_02
@@ -35,8 +35,14 @@ Duración: 70 segundos. Coste: 14.0 c€.
 ¿Cuántos segundos?: 5
 Duración: 125 segundos. Coste: 25.0 c€.
 '''
-print(f"---Ejercicio nº 3: Coste llamadas en céntimos")
+print(f"---Ejercicio nº 3: Coste llamadas en céntimos: 1 segundo cuesta 0.2 céntimos")
 
+# Pedir número de llamadas a facturar 
+def main():
+    numero_llamadas = input("Introduzca nº de llamadas a facturar: ")
+    pedir_numero_llamadas(numero_llamadas)
+
+main()
 
 print(linea)
 
