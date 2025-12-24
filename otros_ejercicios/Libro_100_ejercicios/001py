@@ -4,24 +4,36 @@
 # valores 1,  'Francia' y 36,2, 
 # y luego mostrar los valores de estas variables en la consola.
 
-import os
-os.system("cls")  
+import os, modulo as md
+os.system("cls")
+num_programa = 1
 
-# Modelo  
+
+# Modelo
 def declarar_variables():
     a, b, c = 1, 'Francia', 36.2 # Asignación de valores a las variables
     return (a, b, c) # Retorna las variables por separado
 
-# Vista  
+
+# Vista
+def mostrar_inicio():
+    md.mostrar_inicio(num_programa)
+def mostrar_final():
+    md.mostrar_final()
+
+
 def mostrar_variables(*variables):
     a, b, c = variables # Desempaqueta las variables
     print("Ejercicio 1:")
     print(f'a: {a}, b: {b}, c: {c}')
 
+
 # Controlador 
 def main():
+    mostrar_inicio()
     a, b, c = declarar_variables() # Asigna las variables
     mostrar_variables(a, b, c) # Envía las variables a la vista como args
+    mostrar_final()
 
 if __name__ == "__main__":
     main()

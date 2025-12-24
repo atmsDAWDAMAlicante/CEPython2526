@@ -3,11 +3,10 @@
 # almacene en una variable, El programa debe mostrar al final el peso
 # introducido por el usuario.
 
-import os
+import os, modulo as md
 os.system("cls")
 num_programa = 4
-inicio = f'=== INICIO DEL EJERCICIO nº {num_programa} ===\n'
-fin = f'\n=== FIN DEL PROGRAMA ==='
+
 
 # Modelo 
 def validar_peso(peso):
@@ -21,14 +20,16 @@ def validar_peso(peso):
     
 # Vista
 def mostrar_inicio():
-    print(inicio)
+    md.mostrar_inicio(num_programa)
+def mostrar_final():
+    md.mostrar_final()
 
 def obtener_peso():
     peso = input("Introduce tu peso en kg: ")
     return peso
 
 def mostrar_peso(peso):
-    print(f"Tu peso es: {peso} kg{fin}")
+    print(f"Tu peso es: {peso} kg")
 
 def mostrar_error(): # IMPORTANTE: la vista NO vuelve a pedir el dato
     print("Error: Introduce tu peso con un número válido.")
@@ -46,7 +47,7 @@ def main():
         else: # En caso de error, se llama a la vista para mostrar el error
             mostrar_error() # No se añade nada más, el bucle se repite, no lleva 
             # ni break ni main() ni nada por el estilo, se repite el bucle
- 
+    mostrar_final()
 
 if __name__ == "__main__":
     main()
