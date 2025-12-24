@@ -1,0 +1,26 @@
+#ENUNCIADO: 
+# 1. Escribir una secuencia de instrucciones de Python que permita 
+# declarar 3 variables a, b y c asignándoles respectivamente los 
+# valores 1,  'Francia' y 36,2, 
+# y luego mostrar los valores de estas variables en la consola.
+
+import os
+os.system("cls")  
+
+# Modelo  
+def declarar_variables():
+    a, b, c = 1, 'Francia', 36.2 # Asignación de valores a las variables
+    return (a, b, c) # Retorna las variables por separado
+
+# Vista  
+def mostrar_variables(*variables):
+    a, b, c = variables # Desempaqueta las variables
+    print(f'a: {a}, b: {b}, c: {c}')
+
+# Controlador 
+def main():
+    a, b, c = declarar_variables() # Asigna las variables
+    mostrar_variables(a, b, c) # Envía las variables a la vista como args
+
+if __name__ == "__main__":
+    main()
