@@ -17,7 +17,7 @@ def modificar_variable(ch):
 # Vista
 def mostrar_variable(ch):
     print("Ejercicio 2:")
-    print(f"Contenido de la variable 'ch' después de la modificación: {ch}")
+    print(f"Contenido de la variable 'ch' después de la modificación: '{ch}'")
 
 # Controlador
 def main():

@@ -1,5 +1,5 @@
-#ENUNCIADO: 
-# 1. Escribir una secuencia de instrucciones de Python que permita 
+# ENUNCIADO Ejercicio 1: 
+# Escribir una secuencia de instrucciones de Python que permita 
 # declarar 3 variables a, b y c asignándoles respectivamente los 
 # valores 1,  'Francia' y 36,2, 
 # y luego mostrar los valores de estas variables en la consola.
@@ -15,6 +15,7 @@ def declarar_variables():
 # Vista  
 def mostrar_variables(*variables):
     a, b, c = variables # Desempaqueta las variables
+    print("Ejercicio 1:")
     print(f'a: {a}, b: {b}, c: {c}')
 
 # Controlador 
