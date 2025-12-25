@@ -6,11 +6,15 @@ MVC aplicado muy concreto y simple, sin framework ni florituras.
 ### 📁 Estructura mínima recomendada
 proyecto/
 │
+|
 ├── main.py              # Controlador principal (bucle)
+|
 │
 ├── modelo.py            # Datos y lógica (CRUD)
+|
 │
 ├── vista.py             # Prints, inputs, menús
+|
 │
 └── datos.py             # Datos iniciales
 
@@ -42,14 +46,11 @@ Tu idea es acertada, pero con una corrección sobre la validación:
     Tu planteamiento: Es correcto. En aplicaciones de consola, la Vista contiene los print() y los input().
 
 Resumen de responsabilidades para que lo visualices mejor en tus ejercicios, aquí tienes el flujo ideal:
-| Componente  | Responsabilidad Principal  | Ejemplo en Consola
-              |
-|-------------|----------------------------|------------------------------------------------------------|
-| Vista       | Interacción con el usuario | input("Dame un número"), print(resultado) |
-| Controlador | Lógica de control y flujo  | Captura el input,lo convierte a int, 
-llama a Modelo|
-| Modelo      | Datos y reglas de cálculo  | def sumar(a, b): 
-return a + b  |
+| Componente  | Responsabilidad Principal  | Ejemplo en Consola                                    |   |   |
+|-------------|----------------------------|-------------------------------------------------------|---|---|
+| Vista       | Interacción con el usuario | input("Dame un número"), print(resultado)             |   |   |
+| Controlador | Lógica de control y flujo  | Captura el input, lo convierte a int, llama al Modelo |   |   |
+| Modelo      | Datos y reglas de cálculo  | def sumar(a, b): return a + b                         |   |   |
 
 
 ## Consejo de DeepSeek
