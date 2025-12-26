@@ -18,6 +18,38 @@ proyecto/
 │
 └── datos.py             # Datos iniciales
 
+### Más consejos del ChatGPT
+
+1️⃣ Respuesta corta (tu intuición es correcta)
+👉 Sí, tu razonamiento es acertado:
+🔁 El while infinito (o bucle de control del flujo) → Controlador
+✅ La validación de datos (incluido S/N) → Modelo
+🖥️ Pedir datos y mostrar resultados → Vista
+Esto es MVC bien entendido, incluso para consola.
+
+2️⃣ Regla mental de oro para MVC (guárdala)
+Quien decide “qué pasa después” es el Controlador.
+Quien decide “si algo es válido” es el Modelo.
+
+Por eso:
+El bucle que decide si se repite el programa → Controlador
+La función que valida "S" / "N" → Modelo
+
+3️⃣ Dónde NO debe ir el while
+❌ No en la Vista
+La vista no decide el flujo
+Solo pregunta y muestra
+
+❌ No en el Modelo
+El modelo no pregunta ni repite
+Solo calcula y valida
+
+✔️ Sí en el Controlador
+Orquesta todo
+Llama a vista y modelo
+Decide cuándo terminar
+
+
 ## Consejo de Gemini
 
 Es una idea excelente empezar con MVC desde el principio. Aunque parezca "demasiada ingeniería" para programas sencillas, te dará una estructura mental que te facilitará muchísimo el salto a frameworks profesionales como Django (Python) o Spring (Java).
