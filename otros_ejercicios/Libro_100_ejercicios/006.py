@@ -28,6 +28,14 @@ def verificar_numero(num):
         return "Negativa"
     else:
         return "Error"
+    
+def otra_vez(respuesta):
+    if respuesta.lower() == 's':
+        return True
+    elif respuesta.lower() == 'n':
+        return False
+    else:
+        return None
 
 # Vista
 def mostrar_inicio():
@@ -37,16 +45,29 @@ def mostrar_final():
 def pide_numero():
     num = input("Introduce un número entero: ")
     return num
+def pide_otro_numero():
+    respuesta = input("¿Quieres introducir otro número? (s/n): ")
+    return respuesta
 def imprimir_resultado(resultado):
     print(resultado)
 
 # Controlador
 def main():
     mostrar_inicio()
-    num = pide_numero()
-    resultado = verificar_numero(num)
-    imprimir_resultado(resultado)
-    mostrar_final()
+    while True:
+        num = pide_numero()
+        resultado = verificar_numero(num)
+        imprimir_resultado(resultado)
+        otro = pide_otro_numero()
+        
+        # A ver, esto debe ir aquí porque influye en el flujo del programa
+        if otra_vez(otro) == False:
+            mostrar_final()
+            break
+        elif otra_vez(otro) == None:
+            print("Respuesta no válida.")
+            otro = pide_otro_numero()
+                
 
 if __name__ == "__main__":
     main()  
