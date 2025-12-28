@@ -1,0 +1,1 @@
+# Ejercicios del módulo 1: Entornos y sintaxis en Python
