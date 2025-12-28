@@ -26,8 +26,15 @@ class Triangulo:
         self.altura = altura
 
 
-
-
+def obtener_ordinal(lista):
+    if (len(lista) == 1):
+        return "primero"
+    elif (len(lista) == 2):
+        return "segundo"
+    elif (len(lista) == 3):
+        return "tercero"
+    else:
+        return f"{len(lista)}º"
 
 # Ejercicio 4 - ENUNCIADO: Partiendo del programa anterior crea un segundo 
 # objeto triángulo y muestra las propiedadesde los dos objetos por pantalla. 
@@ -90,18 +97,27 @@ os.system('cls')
 
 
 # Vista
-def mostrar_triangulo(triangulo):
-    print("-------- Propiedades del triángulo--------")
-    print(f'{triangulo.lados}')
-    print(f'{triangulo.tipo}')
-    print(f'{triangulo.base}')
-    print(f'{triangulo.altura}')
+def mostrar_triangulo(triangulo,ordinal):
+    print(f'-------- Propiedades del {ordinal} triángulo--------')
+    print(f'Número de lados: {triangulo.lados}')
+    print(f'Tipo de polígono:{triangulo.tipo}')
+    print(f'Base:{triangulo.base}')
+    print(f'Altura: {triangulo.altura}')
+
 # Controlador
 def main():
-    triangulo = Triangulo(3,0,0)
-    mostrar_triangulo(triangulo)
+    lista_triangulos = []
+    triangulo1 = Triangulo(3,0,0)
+    lista_triangulos.append(triangulo1)
+    ordinal = obtener_ordinal(lista_triangulos)
+    mostrar_triangulo(triangulo1,ordinal)
 
+    triangulo2 = Triangulo(3,0,0)
+    lista_triangulos.append(triangulo2)
+    ordinal = obtener_ordinal(lista_triangulos)
+    mostrar_triangulo(triangulo2,ordinal)
 
+datos_actualizados = "*************** DATOS ACTUALIZADOS ******************"
 
 if __name__ == "__main__":
     main()
