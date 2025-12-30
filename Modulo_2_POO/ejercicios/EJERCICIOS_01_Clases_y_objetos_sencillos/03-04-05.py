@@ -25,16 +25,16 @@ class Triangulo:
         self.base = base
         self.altura = altura
 
-
-def obtener_ordinal(lista):
-    if (len(lista) == 1):
-        return "primero"
-    elif (len(lista) == 2):
+# Funcion que devuelve el string número ordinal para identificar el triángulo
+def obtener_ordinal(lista_triangulos, tri):
+    if (lista_triangulos.index(tri) == 0): #OJO, el primer índice es 0
+        return "primer"
+    elif (lista_triangulos.index(tri) == 1):
         return "segundo"
-    elif (len(lista) == 3):
+    elif (lista_triangulos.index(tri) == 2):
         return "tercero"
-    else:
-        return f"{len(lista)}º"
+    else: # A partir del tercero se le pone un º y no se redacta
+        return f"{len(lista_triangulos)}º"
 
 # Ejercicio 4 - ENUNCIADO: Partiendo del programa anterior crea un segundo 
 # objeto triángulo y muestra las propiedadesde los dos objetos por pantalla. 
@@ -97,27 +97,46 @@ os.system('cls')
 
 
 # Vista
-def mostrar_triangulo(triangulo,ordinal):
+def mostrar_triangulo(triangulo, ordinal):
     print(f'-------- Propiedades del {ordinal} triángulo--------')
     print(f'Número de lados: {triangulo.lados}')
-    print(f'Tipo de polígono:{triangulo.tipo}')
-    print(f'Base:{triangulo.base}')
+    print(f'Tipo de polígono: {triangulo.tipo}')
+    print(f'Base: {triangulo.base}')
     print(f'Altura: {triangulo.altura}')
 
 # Controlador
-def main():
-    lista_triangulos = []
-    triangulo1 = Triangulo(3,0,0)
-    lista_triangulos.append(triangulo1)
-    ordinal = obtener_ordinal(lista_triangulos)
-    mostrar_triangulo(triangulo1,ordinal)
 
-    triangulo2 = Triangulo(3,0,0)
-    lista_triangulos.append(triangulo2)
-    ordinal = obtener_ordinal(lista_triangulos)
-    mostrar_triangulo(triangulo2,ordinal)
+# Función que obtiene el ordinal de cada triángulo y llama a la vista para su impresión
 
 datos_actualizados = "*************** DATOS ACTUALIZADOS ******************"
+
+def impresion_triangulos(lista_triangulos):
+    for triangulo in lista_triangulos:
+      #print(triangulo)
+      ordinal = obtener_ordinal(lista_triangulos, triangulo)
+      mostrar_triangulo(triangulo,ordinal)
+
+def main():
+    lista_triangulos = [] # Lista que recoge los objetos triángulo
+    # Se crea el primer objeto
+    triangulo1 = Triangulo(3,0,0)
+    lista_triangulos.append(triangulo1) # Se añade a la lista
+    triangulo2 = Triangulo(3,0,1)
+    lista_triangulos.append(triangulo2)
+    impresion_triangulos(lista_triangulos)
+    
+    # Modificación de los valores del primer triángulo
+    triangulo1.base = 5
+    #lista_triangulos[0].base = 5
+    triangulo1.altura = 4
+    #lista_triangulos[0].altura = 4
+    print(datos_actualizados)
+    impresion_triangulos(lista_triangulos)
+
+
+
+
+
 
 if __name__ == "__main__":
     main()
