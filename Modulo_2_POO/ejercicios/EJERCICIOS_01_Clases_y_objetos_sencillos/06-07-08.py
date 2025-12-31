@@ -33,6 +33,40 @@ Base: 5.4
 Altura: 3.27
 '''
 
+import os
+os.system('cls')
+
+# Modelo
+class Triangulo:
+    def __init__(self, lados = 3, base = 0, altura = 0):
+        self.tipo = "Triángulo"
+        self.lados = lados
+        self.base = base
+        self.altura = altura
+        self.superficie_tri = 0#self.superficie()
+    def superficie(self):
+        self.superficie_tri =  (float(self.base) * float(self.altura) / 2)
+        return self.superficie_tri
+
+def nombrar_ordinal(lista, tri):
+    if lista.index(tri) == 0:
+        return "primer"
+    elif lista.index(tri) == 1:
+        return "segundo"
+    elif lista.index(tri) == 2:
+        return "tercer"
+    else:
+        return f"{lista.index(tri)+1}º"
+    
+def comparar_superficies(lista_triangulos):
+    mayor = 0
+    for triangulo in lista_triangulos:
+        if triangulo.superficie_tri > mayor:
+            mayor = triangulo.superficie_tri
+    
+    for triangulo in lista_triangulos:
+        if triangulo.superficie_tri == mayor:
+            return(nombrar_ordinal(lista_triangulos, triangulo))
 
 
 # Ejercicio 7 - ENUNCIADO: Partimos del ejercicio anterior. 
@@ -101,3 +135,45 @@ El área del segundo triángulo es: 10.00
 Los dos triángulos tienen la misma superficie.
 
 '''
+
+
+
+# Vista
+def mostrar_triangulo(triangulo, ordinal):
+    print(f'-------- Propiedades del {ordinal} triángulo--------')
+    print(f'Número de lados: {triangulo.lados}')
+    print(f'Tipo de polígono: Triángulo')
+    print(f'Base:  {triangulo.base}')
+    print(f'Altura:  {triangulo.altura}')
+    print(f'Superficie:  {triangulo.superficie():.2f}')
+
+def listar_triangulos(lista_triangulos):
+    for triangulo in lista_triangulos:
+        ordinal = nombrar_ordinal(lista_triangulos, triangulo)
+        mostrar_triangulo(triangulo, ordinal)
+
+
+def crear_triangulo():
+    print("---- Datos segundo triángulo ----")
+    base = input("Introduce la longitud de la base: ")
+    altura = input("Introduce la longitud de la altura: ")
+    return base, altura
+
+def mostrar_mayor(ordinal):
+    print(f'El {ordinal} triángulo tiene una superficie mayor que el primero.')
+
+# Controlador 
+def main():
+    lista_triangulos = []
+    triangulo1 = Triangulo(base=5, altura=4)
+    lista_triangulos.append(triangulo1)
+    
+    base_nueva, altura_nueva = crear_triangulo()
+    triangulo2 = Triangulo(base=base_nueva, altura=altura_nueva)
+    lista_triangulos.append(triangulo2)
+
+    listar_triangulos(lista_triangulos)
+    mostrar_mayor(comparar_superficies(lista_triangulos))
+
+if __name__ == "__main__":
+    main()
