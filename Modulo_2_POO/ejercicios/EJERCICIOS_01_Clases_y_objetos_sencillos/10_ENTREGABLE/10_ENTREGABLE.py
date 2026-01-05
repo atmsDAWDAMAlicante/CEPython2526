@@ -42,7 +42,69 @@
         # todos hacen más de 40 horas menos el jefazo. Inventa las horas totales 
         # trabajadas de cada uno. Muestra los nombres y sueldos de los que 
         # su salario es diferente al sueldo base.
+import decimal
+import os
+os.system('cls')
+
+# Modelo
+class Empleado:
+    def __init__ (self, id, nombre, sueldo, departamento):
+        self.id = id
+        self.nombre = nombre
+        self.sueldo = sueldo
+        self.departamento = departamento
+
+    def calcular_salario(self, horas_trabajadas):
+        paga_extra = 0
+        if (horas_trabajadas > 40):
+            horas_extra = horas_trabajadas - 40
+            paga_extra = (horas_extra * (self.sueldo / 40))
+        
+        return self.sueldo + paga_extra
+
+    def modificar_departamento(self, nuevo_departamento):
+        self.departamento = nuevo_departamento
+        print(f'{self.nombre}: ahora forma parte de {self.departamento}')
+
+    def imprimir_info(self):
+        longitud = len(f'{self.nombre}: {self.id} {self.sueldo} € {self.departamento}')  + 1
+        lineas = "-" * longitud
+        print(lineas)
+        print(f'EMPLEADO: {self.nombre}\nCódigo: {self.id}\nSalario: {self.sueldo} €\nDepartamento: {self.departamento}')
+        print(lineas)
 
 
+empresa = []
+empresa.append(Empleado("E7876", "JABBA THE HUTT", 2000, "CONTABILIDAD"))
+empresa.append(Empleado("E7888", "PRINCESA LEIA", 4500, "JEFAZOS"))
+empresa.append(Empleado("E7845", "HAN SOLO", 1000, "VENTAS"))
+empresa.append(Empleado("E7822", "LUKE SKYWALKER", 1550, "OPERACIONES"))
+
+
+# VISTA
+def informe_empresa(empresa):
+    print(f'{"*" * 5} INFORME: PLANTILLA {"*" * 5}\n{"_" * 30}')
+    for elemento in empresa:
+        elemento.imprimir_info()
+
+def informe_salario(empresa):
+    print(f'{"*" * 5} INFORME: SALARIO {"*" * 5}\n{"_" * 30}')
+    for elemento in empresa:
+        if (elemento.departamento != "JEFAZOS"):
+            print(f'Empleado: {elemento.nombre}: {decimal.Decimal(elemento.calcular_salario(45))} €')
+
+# CONTROLADOR
+
+def main():
+    for nombre in empresa:
+        if nombre.nombre == "HAN SOLO":
+            nombre.modificar_departamento("RECURSOS HUMANOS")
+        elif nombre.nombre == "LUKE SKYWALKER":
+            nombre.modificar_departamento("CONTROL DE CALIDAD")
+    informe_empresa(empresa)
+    informe_salario(empresa)
+
+if __name__ == "__main__":
+    main()
 
 
