@@ -67,11 +67,8 @@ class Empleado:
         print(f'{self.nombre}: ahora forma parte de {self.departamento}')
 
     def imprimir_info(self):
-        longitud = len(f'{self.nombre}: {self.id} {self.sueldo} € {self.departamento}')  + 1
-        lineas = "-" * longitud
-        print(lineas)
-        print(f'EMPLEADO: {self.nombre}\nCódigo: {self.id}\nSalario: {self.sueldo} €\nDepartamento: {self.departamento}')
-        print(lineas)
+        print(f'EMPLEADO: {self.nombre}\nId/Código: {self.id}\nSalario: {self.sueldo} €\nDepartamento: {self.departamento}')
+        print("-" * 30)
 
 
 empresa = []
@@ -82,28 +79,41 @@ empresa.append(Empleado("E7822", "LUKE SKYWALKER", 1550, "OPERACIONES"))
 
 
 # VISTA
-def informe_empresa(empresa):
-    print(f'{"*" * 5} INFORME: PLANTILLA {"*" * 5}\n{"_" * 30}')
-    for elemento in empresa:
-        elemento.imprimir_info()
+class Informes():
+    @staticmethod
+    def informe_empresa(empresa):
+        print(f'{"*" * 5} INFORME: PLANTILLA {"*" * 5}')
+        for elemento in empresa:
+            elemento.imprimir_info()
+        print(f'\n{"_" * 30}')
 
-def informe_salario(empresa):
-    print(f'{"*" * 5} INFORME: SALARIO {"*" * 5}\n{"_" * 30}')
-    for elemento in empresa:
-        if (elemento.departamento != "JEFAZOS"):
-            print(f'Empleado: {elemento.nombre}: {decimal.Decimal(elemento.calcular_salario(45))} €')
+    @staticmethod
+    def informe_salario(empresa):
+        print(f'{"*" * 5} INFORME: SALARIO {"*" * 5}\n{"_" * 30}')
+        for elemento in empresa:
+            if (elemento.departamento != "JEFAZOS"):
+                print(f'Empleado: {elemento.nombre}: {decimal.Decimal(elemento.calcular_salario(45))} €')
+
+    @staticmethod
+    def info_modificar_departamento():
+        for i in empresa:
+            if i.nombre == "HAN SOLO":
+                print(i.departamento)
+
+
 
 # CONTROLADOR
 
 def main():
+    Informes.informe_empresa(empresa)
     for nombre in empresa:
         if nombre.nombre == "HAN SOLO":
             nombre.modificar_departamento("RECURSOS HUMANOS")
         elif nombre.nombre == "LUKE SKYWALKER":
             nombre.modificar_departamento("CONTROL DE CALIDAD")
-    informe_empresa(empresa)
-    informe_salario(empresa)
-
+    
+    Informes.informe_salario(empresa)
+    Informes.info_modificar_departamento()
 if __name__ == "__main__":
     main()
 
