@@ -23,7 +23,7 @@ def main(): # Inicio del programa: menú principal
                 Impresion.impresion_basica("Cambiar de departamento. Seleccione: ")
                 cambiar_departamento()
             elif (operacion == 2):
-                Impresion.impresion_basica("Calculo nomina")
+                calcular_salario()
             elif (operacion == 3):
                 Impresion.impresion_basica("Info")
             elif (operacion == 4):
@@ -36,7 +36,7 @@ def main(): # Inicio del programa: menú principal
 
 
 
-
+# MENÚS
 
 def formar_menu_empleados_rasos():
     menu_lista = ""
@@ -50,6 +50,8 @@ def formar_menu_empleados_rasos():
         menu += f'{num} - {elem}\n'
     total = len(menu_lista)
     return menu, total, menu_lista
+
+
 
 
 def cambiar_departamento():
@@ -72,8 +74,24 @@ def cambiar_departamento():
         Impresion.impresion_departamentos(empresa)
 
 def calcular_salario():
-    pass
+    nomina = 0
+    elemento = []
+    for empleado in empresa:
+        if (empleado.departamento != "JEFAZOS"):
+            elemento.append(empleado.nombre)
+            horas = Introduccion.introducir_operacion(f'¿Cuántas horas ha hecho {empleado.nombre}? --> ')
+            horas_num = Validaciones.validar_enteros(horas)
+            if (horas_num == -1):
+                calcular_salario()
+            else:
+                elemento.append(horas_num)
+                elemento.append(empleado.calcular_salario(horas_num))
+        else:
+            elemento.append(empleado.nombre)
+            elemento.append(0)
+            elemento.append(empleado.sueldo)
 
+        Impresion.mostrar_nomina_mes(elemento)
 def mostrar_info_individual():
     pass
 

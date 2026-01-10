@@ -32,3 +32,7 @@ class Impresion():
             print(f'Departamento: {elemento.departamento} / Salario base: {elemento.sueldo}')
         print("== Informe completado")
         print("=" * 25)
+
+    @staticmethod
+    def mostrar_nomina_mes(elemento):
+        print(elemento)
