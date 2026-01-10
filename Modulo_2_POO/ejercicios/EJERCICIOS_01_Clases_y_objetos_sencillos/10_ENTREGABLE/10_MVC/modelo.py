@@ -1,4 +1,4 @@
-from vista import Introduccion
+from vista import Introduccion, Impresion
 
 
 class Empleado:
@@ -42,7 +42,15 @@ class Validaciones():
         try:
             num = int(num)
         except ValueError:
-            print("Introduzca un entero positivo: ")
+            Impresion.impresion_basica("Introduzca un entero positivo: ")
             return -1
         else:
-            return num
+            return int(num)
+    
+    @staticmethod
+    def validar_rango(num,lim):
+        if (num <= lim) and (num >=0):
+            return int(num)
+        else:
+            Impresion.impresion_basica(f'Introduzca un entero entre 0 y {lim}')
+            return -1
