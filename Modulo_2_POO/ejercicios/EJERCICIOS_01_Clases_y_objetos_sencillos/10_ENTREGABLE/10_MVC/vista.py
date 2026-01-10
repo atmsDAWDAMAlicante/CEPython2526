@@ -5,8 +5,8 @@
 # Introducir opciones
 class Introduccion():
     @staticmethod
-    def introducir_operacion():
-        operacion = input(f'Introduzca una operacion: ')
+    def introducir_operacion(texto):
+        operacion = input(texto)
         #Validaciones.validar_enteros(operacion)
         return operacion
     
