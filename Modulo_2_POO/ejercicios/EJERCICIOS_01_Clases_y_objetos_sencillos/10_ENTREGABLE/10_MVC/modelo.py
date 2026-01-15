@@ -1,13 +1,16 @@
 from vista import Introduccion, Impresion
 
+# CLASE EMPLEADO EN LOS TÉRMINOS DEL ENUNCIADO DEL EJERCICIO
 
 class Empleado:
     def __init__ (self, id, nombre, sueldo, departamento):
+    # PROPIEDADES DE LA CLASE
         self.id = id
         self.nombre = nombre
         self.sueldo = sueldo
         self.departamento = departamento
 
+    # MÉTODOS DE LA CLASE
     def calcular_salario(self, horas_trabajadas):
         paga_extra = 0
         if (horas_trabajadas > 40):
@@ -28,7 +31,7 @@ class Empleado:
         print(lineas)
 
 
-# Creación de los empleados del ejercicio
+# Creación de los OBJETOS empleados conforme el enunciado del ejercicio
 empresa = []
 empresa.append(Empleado("E7876", "JABBA THE HUTT", 2000, "CONTABILIDAD"))
 empresa.append(Empleado("E7888", "PRINCESA LEIA", 4500, "JEFAZOS"))
@@ -36,9 +39,11 @@ empresa.append(Empleado("E7845", "HAN SOLO", 1000, "VENTAS"))
 empresa.append(Empleado("E7822", "LUKE SKYWALKER", 1550, "OPERACIONES"))
 
 
+# CLASE CON MÉTODOS ESTÁTICOS PARA REALIZAR VALIDACONES
+
 class Validaciones():
     @staticmethod
-    def validar_enteros(num):
+    def validar_enteros(num): # VALIDACIÓN QUE SE INTRODUCE UN NÚMERO ENTERO
         try:
             num = int(num)
         except ValueError:
@@ -48,7 +53,7 @@ class Validaciones():
             return int(num)
     
     @staticmethod
-    def validar_rango(num,lim):
+    def validar_rango(num,lim): # VALIDACIÓN QUE SE INTRODUCE UN NÚMERO DENTRO DE UN TOPE PASADO POR PARÁMETRO
         if (num <= lim) and (num >=0):
             return int(num)
         else:
