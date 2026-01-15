@@ -20,14 +20,13 @@ def main(): # Inicio del programa: menú principal
         operacion = Validaciones.validar_rango(operacion, 4)
         if (operacion != -1):
             if (operacion == 1):
-                Impresion.impresion_basica("Cambiar de departamento. Seleccione: ")
+                Impresion.impresion_basica("\nCambiar de departamento. Seleccione: ")
                 cambiar_departamento()
             elif (operacion == 2):
                 calcular_salario()
             elif (operacion == 3):
-                Impresion.impresion_basica("Seleccione el empleado/jefazo: ")
+                Impresion.impresion_basica("\nSeleccione el empleado/jefazo: ")
                 mostrar_info_individual()
-                Impresion.impresion_basica("== Informe completado\n")
             elif (operacion == 4):
                 Impresion.mostrar_info_toda_la_empresa(empresa)
             elif (operacion == 0):
@@ -86,9 +85,9 @@ def cambiar_departamento():
         Impresion.impresion_departamentos(empresa)
 
 def calcular_salario():
-    nomina = 0
-    elemento = []
+    plantilla = []
     for empleado in empresa:
+        elemento = []
         if (empleado.departamento != "JEFAZOS"):
             elemento.append(empleado.nombre)
             horas = Introduccion.introducir_operacion(f'¿Cuántas horas ha hecho {empleado.nombre}? --> ')
@@ -98,12 +97,14 @@ def calcular_salario():
             else:
                 elemento.append(horas_num)
                 elemento.append(empleado.calcular_salario(horas_num))
+                
         else:
             elemento.append(empleado.nombre)
             elemento.append(0)
             elemento.append(empleado.sueldo)
-
-        Impresion.mostrar_nomina_mes(elemento)
+        plantilla.append(elemento)
+    
+    Impresion.mostrar_nomina_mes(plantilla)
 
 def mostrar_info_individual():
     menu, lim, listado = formar_menu_plantilla()
@@ -120,9 +121,9 @@ def mostrar_info_individual():
                 
         for para_mostrar in empresa:
             if (para_mostrar.nombre == empleado):
-                Impresion.impresion_basica("\n== IMPRIMIENDO INFORME...")
+                Impresion.impresion_basica(f"\n== IMPRIMIENDO INFORME de {para_mostrar.nombre} ...")
                 para_mostrar.imprimir_info()
-        
+                Impresion.impresion_basica(f"== INFORME de {para_mostrar.nombre} COMPLETADO.\n")
 
 if __name__ == "__main__":
     main()
