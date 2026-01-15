@@ -25,7 +25,9 @@ def main(): # Inicio del programa: menú principal
             elif (operacion == 2):
                 calcular_salario()
             elif (operacion == 3):
+                Impresion.impresion_basica("Seleccione el empleado/jefazo: ")
                 mostrar_info_individual()
+                Impresion.impresion_basica("== Informe completado\n")
             elif (operacion == 4):
                 Impresion.mostrar_info_toda_la_empresa(empresa)
             elif (operacion == 0):
@@ -106,20 +108,21 @@ def calcular_salario():
 def mostrar_info_individual():
     menu, lim, listado = formar_menu_plantilla()
     empleado = ""
-    num = Introduccion.introducir_operacion(menu)
-    operacion = Validaciones.validar_enteros(num)
+    individuo = Introduccion.introducir_operacion(menu)
+    operacion = Validaciones.validar_enteros(individuo)
     operacion = Validaciones.validar_rango(operacion,lim)
     if (operacion == -1):
         mostrar_info_individual()
     else:
-        individuo = Introduccion.introducir_operacion("Introduce el número del empleado/jefazo: ")
-        for num, individuo in listado:
-            if (num == operacion):
-                empleado = individuo
+        for individuo in listado:
+            if (individuo[0] == operacion):
+                empleado = individuo[1]
+                
         for para_mostrar in empresa:
             if (para_mostrar.nombre == empleado):
+                Impresion.impresion_basica("\n== IMPRIMIENDO INFORME...")
                 para_mostrar.imprimir_info()
-        #Impresion.impresion_departamentos(empresa)
+        
 
 if __name__ == "__main__":
     main()
