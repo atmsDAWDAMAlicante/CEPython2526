@@ -1,0 +1,13 @@
+Id;Producto;Precio;Unidades;Descuento;Pagado;Observaciones
+1;Naranjas;10,15;200;1;Si;Muy buenas
+2;Manzanas;15;305;2,25;No;Si gusano
+3;Peras;11,14;148;0,1;Si;
+4;Plátanos;30;866;1;No;De Canarias
+5;Uva;20,5;235;2;Si;Nochevieja
+6;Mandarinas;12;413;;No;
+7;Limones;9,56;325;3,75;Si;Para zumos
+8;Kiwis;13;851;;No;De Nueva Zelanda
+9;Piña;19,99;156;2;Si;Colada
+10;Melocotón;18;368;1;No;
+11;Ciruelas;17,89;647;;Si;No pasas
+12;Cerezas;25,01;624;6,45;No;
