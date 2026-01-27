@@ -1,6 +1,6 @@
 #EJERCICIOS NTREGABLES UD 02 - Modulo 01 - Condicionales
 #Ejercicio nº 11 
-# ALUMNO: ANGEL TOMÁS MORENO SENÉN# 
+# ALUMNO: XX
 
 # Enunciado:
 '''

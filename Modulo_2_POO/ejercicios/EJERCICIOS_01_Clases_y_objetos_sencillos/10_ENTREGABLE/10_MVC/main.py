@@ -1,7 +1,7 @@
 #EJERCICIOS ENTREGABLES MÓDULO 2 - POO
 #UNIDAD 1 - Introducción a la POO en Python
 #Ejercicio nº 10
-#ALUMNO: ANGEL TOMÁS MORENO SENÉN
+# ALUMNO: XX
 
 import os
 import decimal # se importa para el cálculo de las nóminas

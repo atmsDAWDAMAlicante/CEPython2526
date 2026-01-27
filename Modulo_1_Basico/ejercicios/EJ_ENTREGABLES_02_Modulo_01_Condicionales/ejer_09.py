@@ -1,6 +1,6 @@
 #EJERCICIOS NTREGABLES UD 02 - Modulo 01 - Condicionales
 #Ejercicio nº 9
-# ALUMNO: ANGEL TOMÁS MORENO SENÉN
+# ALUMNO: XX
 
 #Enunciado: Escribe un programa que en primer lugar pregunte si se
 #quiere calcular el área de untriángulo o la de un círculo.

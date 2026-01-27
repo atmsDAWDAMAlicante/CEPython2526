@@ -1,6 +1,6 @@
 #EJERCICIOS ENTREGABLES UD 02 - Modulo 05 - Errores y excepciones
 #Ejercicio nº 5
-#ALUMNO: ANGEL TOMÁS MORENO SENÉN
+# ALUMNO: XX
 
 #Enunciado: Partiremos de la siguiente lista:
 

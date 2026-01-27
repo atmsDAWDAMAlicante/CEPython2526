@@ -1,6 +1,6 @@
 #EJERCICIOS ENTREGABLES UD 02 - Modulo 05 - Errores y excepciones
 #Ejercicio nº 3
-#ALUMNO: ANGEL TOMÁS MORENO SENÉN
+# ALUMNO: XX
 
 #Enunciado: Partimos del siguiente diccionario:
     #colores = { 'rojo':'red', 'verde':'green', 'azul':'blue', 'negro':'black'}

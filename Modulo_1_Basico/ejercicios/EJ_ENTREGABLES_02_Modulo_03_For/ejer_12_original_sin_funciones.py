@@ -1,6 +1,6 @@
 #EJERCICIOS ENTREGABLES UD 02 - Modulo 03 - For
 #Ejercicio nº 12
-#ALUMNO: ANGEL TOMÁS MORENO SENÉN
+# ALUMNO: XX
 
 #Enunciado: Escribe un programa que permita al usuario introducir un número entero positivo n.
 #El programa deberá:

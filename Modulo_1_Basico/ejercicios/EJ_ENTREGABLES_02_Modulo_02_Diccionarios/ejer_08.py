@@ -1,6 +1,6 @@
 #EJERCICIOS NTREGABLES UD 02 - Modulo 02 - Diccionarios
 #Ejercicio nº 8 
-# ALUMNO: ANGEL TOMÁS MORENO SENÉN# 
+# ALUMNO: XX
 
 # Enunciado: Una vez hecho todo lo anterior ten en cuenta que durante el
 #partido se produjeron tres sustituciones. Xabi Alonso, Pedrito y Villa abandonaron el

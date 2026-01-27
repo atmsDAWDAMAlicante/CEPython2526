@@ -1,6 +1,6 @@
 #EJERCICIOS NTREGABLES UD 02 - Modulo 01 - Condicionales
 #Ejercicio nº 8
-# ALUMNO: ANGEL TOMÁS MORENO SENÉN
+# ALUMNO: XX
 
 #Enunciado: Escribe un programa que pida los coeficientes de una ecuación de #segundo grado (a x² + b x+ c = 0) 
 # y que a continuación muestre la/s soluciones.

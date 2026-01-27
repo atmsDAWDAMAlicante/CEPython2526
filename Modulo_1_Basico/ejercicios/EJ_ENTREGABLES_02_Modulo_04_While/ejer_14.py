@@ -1,6 +1,6 @@
 #EJERCICIOS ENTREGABLES UD 02 - Modulo 04 - While
 #Ejercicio nº 14
-#ALUMNO: ANGEL TOMÁS MORENO SENÉN
+# ALUMNO: XX
 
 #Enunciado: Modifica el programa anterior de tal forma que cuando uno o los dos
 #jugadores supere los 21 puntos, el juego de la partida por terminada y muestre el resultado final.
