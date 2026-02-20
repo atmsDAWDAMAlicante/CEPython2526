@@ -15,7 +15,11 @@ from Modelo.Bebida import Bebida
 from Modelo.Comida import Comida
 
 
-
+class Estatico:
+    @staticmethod
+    def saludar():
+        print("Hola")
+        
 
 
 def main():
@@ -28,6 +32,7 @@ def main():
     print(pepe._id)
     print(paco._id) 
     print(luis._id)
+    Estatico.saludar()
 
 if __name__ == "__main__":
     main()
