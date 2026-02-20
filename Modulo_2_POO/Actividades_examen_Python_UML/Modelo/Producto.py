@@ -1,4 +1,7 @@
-# A) CLASE PADRE PRODUCTO Y CLASES HIJAS BEBIDA Y COMIDA
+
+
+# Clase Producto:
+    # Clases hijas: Comida y Bebida
 
 class Producto: # CLASE PADRE DE BEBIDA Y COMIDA
     def __init__(self, nombre, precio):
