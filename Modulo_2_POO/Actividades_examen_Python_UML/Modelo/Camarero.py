@@ -1,16 +1,11 @@
-from Modelo.Trabajador import Trabajador
+from Modelo.Trabajador import Trabajador # Ruta absoluta
 
 class Camarero(Trabajador):
     def __init__(self, nombre, dni, sueldo, lista_clientes):
         super().__init__(nombre, dni, sueldo)
-        self.__lista_clientes = lista_clientes
+        self.lista_clientes = lista_clientes # En el constructor SE ASIGNA el valor
     
-    # GETTERS Y SETTERS
-    def get_lista_clientes(self):
-        return self.__lista_clientes
-    def set_lista_clientes(self, lista_clientes):
-        self.__lista_clientes = lista_clientes
-
+    # Métodos propios de la clase Camarero
     def tomar_pedido(self):
         pass
 
