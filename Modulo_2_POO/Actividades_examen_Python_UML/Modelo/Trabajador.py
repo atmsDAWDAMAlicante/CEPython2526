@@ -1,14 +1,14 @@
-from abc import ABC, abstractmethod # ESTO ES PORQUE EN EL DIAGRAMA DE CLASES HAY UNA CLASE ABSTRACTA LLAMADA INTERFAZ
+from abc import ABC, abstractmethod # En el diagrama de clases del enunciado hay una CLASE ABSTRACTA llamada interfaz
 
 
 
 
-# CLASE TRABAJADOR:
-    # CLASE ABSTRACTA ESTADO (interfaz)
-    # CLASES HIJAS CAMARERO Y COCINERO
+# Clase Trabajador:
+    # Hereda de la clase abstracta Estado (interfaz)
+    # Clases hijas: Camarero y Cocinero
 
 
-class Estado(ABC): # CLASE ABSTRACTA (INTERFAZ)
+class Estado(ABC): # Clase abstracta (interfaz en el diagrama de clases)
     @abstractmethod
     def dar_de_alta(self):
         pass
@@ -16,19 +16,22 @@ class Estado(ABC): # CLASE ABSTRACTA (INTERFAZ)
         pass
 
 
-class Trabajador(Estado): # CLASE PADRE DE CAMARERO Y COCINERO 
-    _id_autoincremental = 0 # ATRIBUTO DE CLASE CON UNA _ porque pone el diagrama que es PROTECTED (Java)
-    # ESTE ATRIBUTO LO HEREDARÁN TODOS LOS TRABAJADORES, PERO SOLO SE USARÁ EN EL CONSTRUCTOR DE LA CLASE TRABAJADOR PARA ASIGNAR EL ID AUTOINCREMENTAL A CADA TRABAJADOR
+class Trabajador(Estado): # Hereda de la clase abstracta Estado
+
+    # Atributo de clase: se le pone una '_'. En el diagrama de clases del enunciado aparece como "protected" 
+    _id_autoincremental = 0 # Este atributo lo heredarán todas las clases hijas
+    # Pero sólo se ejecutará en el constructor de la clase Trabajador
+    # Asigna un id que se autoincrementa
     def __init__ (self, nombre, dni, sueldo):
         self.nombre = nombre
-        self.__dni = dni
-        self.__sueldo = sueldo
-        Trabajador._id_autoincremental += 1
-        self._id = Trabajador._id_autoincremental
+        self.__dni = dni # privado en el diagrama de clases del enunciado
+        self.__sueldo = sueldo # privado en el diagrama de clases del enunciado
+        Trabajador._id_autoincremental += 1 # 1º se incrementa
+        self._id = Trabajador._id_autoincremental # 2º se asigna
         
 
 
-    # GETTERS Y SETTERS
+    # GETTERS Y SETTERS de los dos atributos privados del diagrama de clases del enunciado
     
     def get_dni(self):
         return self.__dni
@@ -41,9 +44,7 @@ class Trabajador(Estado): # CLASE PADRE DE CAMARERO Y COCINERO
         self.__sueldo = sueldo
 
 
-
-    
-    # MÉTODOS DE LA CLASE ABSTRACTA ESTADO (INTERFAZ)
+    # Métodos de la clase abstracta
     def dar_de_alta(self):
         pass
     def dar_de_baja(self):
