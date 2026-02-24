@@ -1,30 +1,60 @@
 
+from Vista.Salidas import Menus_Salidas, Resultados
+from Vista.Entradas import Introducciones
+from Modelo.Validaciones import Validaciones
+from Modelo.Cliente import Cliente
+
+from Modelo.Trabajador import Trabajador
+from Modelo.Camarero import Camarero as Camarero
+from Modelo.Cocinero import Cocinero as Cocinero 
+
+from Modelo.Producto import Producto
+from Modelo.Bebida import Bebida
 
 class Controlador:
     @staticmethod
-    def flujo_menu_principal(opcion):
+    def flujo_menu_principal(opcion, plantilla, stock):
         if (opcion == 1):
-            print("")
+            print("1 - Crear trabajador")
         elif (opcion == 2):
-            print("")
+            print("2 - Crear producto")
         elif (opcion == 3):
-            print("")
+            print("3 - Asignar cliente a camarero")
         elif (opcion == 4):
-            print("")
+            print("4 - Modificar antigüedad")
         elif (opcion == 5):
-            print("")
+            print("5 - Realizar pedido")
         elif (opcion == 6):
-            print("")
+            print("6 - Tomar pedido")
         elif (opcion == 7):
-            print("")
+            print("7 - Entregar pedido")
         elif (opcion == 8):
-            print("")
+            print("8 - Preparar pedido")
         elif (opcion == 9):
-            print("")
+            print("9 - Inventario con __dict__")
+            Resultados.mostrar_listados(plantilla)
+            Resultados.mostrar_listados(stock)
         elif (opcion == 0):
             return 0
         else:
             print("Hay algo que no está funcionando como sería deseable.")
 
+        Menus_Salidas.borrado_vuelta_menu_principal()
 
+    @staticmethod
+    def crear_trabajador(tipo, trabajador):
 
+        dni_valido = Validaciones.validar_dni(trabajador["dni"])
+        print(dni_valido)
+        while (dni_valido == False):
+            trabajador["dni"] = Introducciones.reiterar_entrada()
+            dni_valido = Validaciones.validar_dni(trabajador["dni"])
+
+        if (tipo == 1):
+            nuevo_trabajador = Camarero(trabajador["nombre"], trabajador["dni"],trabajador["sueldo"], trabajador["lista_clientes"])
+        else:
+            nuevo_trabajador = Cocinero(trabajador["nombre"], trabajador["dni"],trabajador["sueldo"])
+
+        #plantilla.append(nuevo_trabajador)
+
+        return nuevo_trabajador

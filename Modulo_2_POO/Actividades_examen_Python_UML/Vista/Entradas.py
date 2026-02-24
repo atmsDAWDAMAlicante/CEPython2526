@@ -1,6 +1,11 @@
 class Introducciones:
+    # Plantilla
     @staticmethod
-    def crear_trabajador(tipo):
+    def seleccionar_tipo_trabajador():
+        return input("Introduce el tipo de trabajador: 1-Camarero / 2-Cocinero")
+
+    @staticmethod
+    def introducir_datos_trabajador(tipo):
         trabajador = {"nombre": "", "dni": "", "sueldo": ""}
         trabajador["nombre"] = input("Introduce el nombre: ")
         trabajador["dni"] = input("Introduce el DNI: ")
@@ -13,13 +18,11 @@ class Introducciones:
         
 
     @staticmethod
-    def reiterar_entrada():
-        dato = input("Introduce el dato correctamente: ")
+    def reiterar_entrada(tipo):
+        dato = input(f"Introduce el {tipo} correctamente: ")
         return dato
 
 class Menus_Entradas:
     @staticmethod
-    def mostrar_menu_principal(menu):
-        for i in menu:
-            print(i)
+    def optener_op_menu_principal(menu):
         return input("Seleccione una operación: ")

@@ -13,6 +13,19 @@ class Validaciones:
                 return -1
             else:
                 return int(num)
+            
+    @staticmethod
+    def validar_numero_en_rango(num, lim):
+        try:
+            int(num)
+        except ValueError:
+            return -1
+        else:
+            if ((int(num) > 0 ) and (int(num) <= lim)):
+                return int(num)
+            else:
+                return -1
+        
 
     @staticmethod
     def validar_dni(dni):
