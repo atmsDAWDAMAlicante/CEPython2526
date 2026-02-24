@@ -16,11 +16,23 @@ from Modelo.Comida import Comida
 
 from Modelo.Validaciones import Validaciones
 # Importar Vista
-from Vista.Entradas import Introducciones
+from Vista.Entradas import Introducciones, Menus_Entradas
 from Vista.Salidas import Menus, Resultados
 
 from Controlador import Controlador
 
+menu_principal = [
+    "1 - Crear trabajador",
+    "2 - Crear producto",
+    "3 - Asignar cliente a camarero",
+    "4 - Modificar antigüedad",
+    "5 - Realizar pedido",
+    "6 - Tomar pedido",
+    "7 - Entregar pedido",
+    "8 - Preparar pedido",
+    "9 - Inventario con __dict__",
+    "0 - Salir"
+]
 
 
 
@@ -34,27 +46,43 @@ class Estatico:
 def main():
     os.system("cls")
 
-    #while True:
-     #   opcion_principal = M
+    while True:
+        opcion_principal = Validaciones.validar_menu_principal(Menus_Entradas.mostrar_menu_principal(menu_principal))
+        if opcion_principal == 0:
+            print("="*5," Fin del programa")
+            break
+        elif (opcion_principal == -1):
+            print(f'MAL {opcion_principal}')
+        else:
+            Controlador.flujo_menu_principal(opcion_principal)
+        
+    # Camareros iniciales
+    camareros = []
 
+
+    #camareros.append(Camarero("Paco", "87654321B", 1500, ["Cliente1", "Cliente2"]))
+    camareros.append(Camarero("Pepe Pérez Pérez", "1111111A", 1205.32, []))
+    camareros.append(Camarero("Manolo Martínez Martínez", "22222222B", 1132.45, []))
+    camareros.append(Cocinero("Luisa López López", "11223344C", 1300.45))
+    #luis = Cocinero("Luis", "11223344C", 1300)
+    for i in camareros:
+        if isinstance(i,Camarero):
+            print(f'Camarero: {i.nombre}')
+        else:
+            print(f'{type(i).__name__}: {i.nombre}')
 
     Menus.principal()
     Resultados.principal()
-    Controlador.controleitor()
+
     plantilla = []
     cocacola = Bebida("Coca-Cola", "Grande", "Fria", 1.2)
     cocacola.informacion()
-    pepe = Trabajador("Pepe", "12345678A", 1200)
-    paco = Camarero("Paco", "87654321B", 1500, ["Cliente1", "Cliente2"])
-    luis = Cocinero("Luis", "11223344C", 1300)
-    print(pepe._id)
-    print(paco._id) 
-    print(luis._id)
+
+
     Estatico.saludar()
-    plantilla.append(pepe)
-    plantilla.append(paco)
-    plantilla.append(luis)
-    
+
+    #plantilla.append(luis)
+    '''
     trab1 = Introducciones.crear_trabajador(2)
     print(trab1)
     dni_valido = Validaciones.validar_dni(trab1["dni"])
@@ -65,8 +93,10 @@ def main():
     #nuevo_trab = Cocinero(trab1["nombre"], trab1["dni"],trab1["sueldo"])
     #print(nuevo_trab.__dict__)
     plantilla.append(Trabajador(trab1["nombre"], trab1["dni"],trab1["sueldo"]))
+    '''
     for i in plantilla:
         print(f'id: {i._id} - nombre: {i.nombre}')
         print(i.__dict__)
+
 if __name__ == "__main__":
     main()

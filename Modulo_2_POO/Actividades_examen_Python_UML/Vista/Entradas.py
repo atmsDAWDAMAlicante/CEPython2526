@@ -17,7 +17,9 @@ class Introducciones:
         dato = input("Introduce el dato correctamente: ")
         return dato
 
-
+class Menus_Entradas:
     @staticmethod
-    def menu_principal():
-        pass
+    def mostrar_menu_principal(menu):
+        for i in menu:
+            print(i)
+        return input("Seleccione una operación: ")
