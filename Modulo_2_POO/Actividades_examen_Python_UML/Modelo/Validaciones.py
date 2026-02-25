@@ -35,3 +35,7 @@ class Validaciones:
             return True
         else: 
             return False
+
+    @staticmethod
+    def validar_fecha(fecha):
+        pass

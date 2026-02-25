@@ -28,7 +28,9 @@ class Trabajador(Estado): # Hereda de la clase abstracta Estado
         self.__sueldo = sueldo # privado en el diagrama de clases del enunciado
         Trabajador._id_autoincremental += 1 # 1º se incrementa
         self._id = Trabajador._id_autoincremental # 2º se asigna
-        
+        self.password = "1Ab"
+        self.fecha_alta = "hoy"
+        self.fecha_baja = None
 
 
     # GETTERS Y SETTERS de los dos atributos privados del diagrama de clases del enunciado
