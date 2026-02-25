@@ -38,8 +38,25 @@ class Introducciones:
     def reiterar_entrada(tipo):
         dato = input(f"Introduce el {tipo} correctamente: ")
         return dato
+    
+
+    @staticmethod
+    def seleccionar_persona(lista, tipo):
+        print(f"Selecciona el {tipo}:")
+        contador = 1
+        for i in lista:
+            print(f'{contador} - {i.nombre}')
+            contador +=1
+        return (input(f'Seleccione el nº de {tipo}: '))
+
+
+
+
+
+
 
 class Menus_Entradas:
     @staticmethod
     def optener_op_menu_principal(menu):
         return input("Seleccione una operación: ")
+    

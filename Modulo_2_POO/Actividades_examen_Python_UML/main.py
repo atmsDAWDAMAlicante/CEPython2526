@@ -109,10 +109,10 @@ def flujo_menu_principal(opcion):
 
     elif (opcion == 3):
         print("3 - Baja/Antigüedad trabajador")
-        
+
     elif (opcion == 4):
         print("4 - Asignar cliente a camarero")
-
+        Controlador.asignar_cliente_a_camarero(clientes, plantilla)
 
 
     elif (opcion == 5):

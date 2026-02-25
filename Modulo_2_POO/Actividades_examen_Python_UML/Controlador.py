@@ -84,5 +84,21 @@ class Controlador:
             nuevo_producto = Bebida(producto["nombre"],producto["precio"],producto["tamanyo"],producto["temperatura"])
         return nuevo_producto
 
-    def asignar_cliente_a_camarero(cliente):
-        pass
+    def asignar_cliente_a_camarero(clientes, plantilla):
+        # Pedir y validar el cliente
+        num_cliente = Introducciones.seleccionar_persona(clientes, "Cliente")
+        num_cliente_validado = Validaciones.validar_numero_en_rango(num_cliente, len(clientes))
+        cliente_escogido = []
+        for i, objeto_cliente in enumerate(clientes):
+            if (i+1 == num_cliente_validado):
+                print(i+1, type(cliente_escogido), num_cliente_validado)
+                print(objeto_cliente.nombre)
+                cliente_escogido.append(objeto_cliente)
+        print(f' Ha escogido a {cliente_escogido[0].nombre} {type(cliente_escogido[0])}')
+        # Pedir y validar el camarero
+        # Formar lista camareros
+        plantilla_camareros = []
+        for camarero in plantilla:
+            if (type(camarero) == Camarero):
+                plantilla_camareros.append(camarero)
+        print(plantilla_camareros)

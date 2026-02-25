@@ -36,6 +36,8 @@ class Validaciones:
             return False
         else:
             return float(num)
+        
+        
 
 
     @staticmethod
