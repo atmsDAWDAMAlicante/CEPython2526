@@ -47,16 +47,26 @@ def constructor_inicial():
     Estatico.saludar()
     print("\n","-"*20,"A) CONSTRUCTOR TRABAJADORES")
     # Plantilla inicial
-    plantilla.append(Camarero("Pepe Pérez Pérez", "1111111A", 1205.32, []))
+    plantilla.append(Camarero("Pepe Pérez Pérez", "111111A", 1205.32, []))
     plantilla.append(Camarero("Manolo Martínez Martínez", "22222222B", 1132.45, []))
     plantilla.append(Cocinero("Luisa López López", "33333333C", 1300.45))
     plantilla.append(Cocinero("Francisca Fernández Fernández", "44444444D", 1700.20))
     Resultados.mostrar_listados(plantilla)
-    
+    print("Verificación DNI plantilla existente:")
+    Resultados.verificar_datos_objetos_creados(plantilla)
+    ''''
+    for i in plantilla:
+        if ((Validaciones.validar_dni(i.get_dni())) == False):
+            resultado = "INCORRECTO"
+        else:
+            resultado = "CORRECTO"
+
+        print(f'Trabajador {i.nombre} - DNI: {i.get_dni()} es: {resultado}')
+    '''
     print("-"*20,"B) CONSTRUCTOR STOCK")
     # Stock inicial
-    stock.append(Bebida("Coca Cola", "Grande", "Fria", 1.2))
-    stock.append(Bebida("Agua mineral", "Pequeña", "Natural", 0.5))
+    stock.append(Bebida("Coca Cola", 1.80, "Lata", 0.9))
+    stock.append(Bebida("Agua mineral", 0.5, "Botellín", 1.5))
     stock.append(Comida("Patatas fritas", 1.5, "Snack", "Patatas, aceite y sal"))
     stock.append(Comida("Nocilla", 3.4, "Postre", "Leche-cacao-avellanas-azucar"))
     Resultados.mostrar_listados(stock)

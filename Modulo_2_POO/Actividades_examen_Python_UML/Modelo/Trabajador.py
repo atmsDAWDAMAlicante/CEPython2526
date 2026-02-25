@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod # En el diagrama de clases del enunciado hay una CLASE ABSTRACTA llamada interfaz
-
+from datetime import date, timedelta, datetime
 
 
 
@@ -29,7 +29,18 @@ class Trabajador(Estado): # Hereda de la clase abstracta Estado
         Trabajador._id_autoincremental += 1 # 1º se incrementa
         self._id = Trabajador._id_autoincremental # 2º se asigna
         self.password = "1Ab"
-        self.fecha_alta = "hoy"
+        #self.fecha_alta = date.today()
+        fecha = "2024-01-01"
+        
+        try:
+            fecha_OK = datetime.strptime(fecha, "%Y-%m-%d").date()
+            print("OK")
+            self.fecha_alta = fecha_OK
+        except ValueError:
+            print("NOOOOOOOOOOOOOOOO")
+            self.fecha_alta = date.today()
+
+        #self.fecha_alta = date_object = date.strptime(date_object, "%Y-%m-%d")
         self.fecha_baja = None
 
 

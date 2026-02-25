@@ -1,5 +1,6 @@
 
 import os
+from Modelo.Validaciones import Validaciones
 
 class Menus_Salidas:
     @staticmethod
@@ -35,5 +36,16 @@ class Resultados:
         else:
             print(f'{type(i).__name__}: {i.nombre}')
         '''
+
+    @staticmethod
+    def verificar_datos_objetos_creados(grupo):
+        print("Verificación DNI plantilla existente:")
+        for i in grupo:
+            if ((Validaciones.validar_dni(i.get_dni())) == False):
+                resultado = "INCORRECTO"
+            else:
+                resultado = "CORRECTO"
+            print(f'Trabajador {i.nombre} - DNI: {i.get_dni()} es: {resultado}')
+            
 
     
