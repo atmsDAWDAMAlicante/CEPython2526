@@ -19,7 +19,11 @@ from Modelo.Validaciones import Validaciones
 from Vista.Entradas import Introducciones, Menus_Entradas
 from Vista.Salidas import Menus_Salidas, Resultados
 
+# Importar Controlador
 from Controlador import Controlador
+
+
+# Variables
 
 menu_principal = [
     "1 - Crear trabajador",
@@ -33,17 +37,34 @@ menu_principal = [
     "9 - Inventario con __dict__",
     "0 - Salir"
 ]
-
-# Plantilla inicial
 plantilla = []
-plantilla.append(Camarero("Pepe Pérez Pérez", "1111111A", 1205.32, []))
-plantilla.append(Camarero("Manolo Martínez Martínez", "22222222B", 1132.45, []))
-plantilla.append(Cocinero("Luisa López López", "11223344C", 1300.45))
-    
-# Stock inicial
 stock = []
-stock.append(Bebida("Coca-Cola", "Grande", "Fria", 1.2))
-stock.append(Comida("Nocilla", 3.4, "Comida basura", "Leche-cacao-avellanas-azucar"))
+clientes = []
+
+def constructor_inicial():
+    print("="*70,"\n","="*10,"GESTOR DE TRABAJADORES, STOCK Y CLIENTES","="*10,"\n","="*70)
+    print("Previo: ejecución del método estático saludar del enunciado Actividad 2")
+    Estatico.saludar()
+    print("\n","-"*20,"A) CONSTRUCTOR TRABAJADORES")
+    # Plantilla inicial
+    plantilla.append(Camarero("Pepe Pérez Pérez", "1111111A", 1205.32, []))
+    plantilla.append(Camarero("Manolo Martínez Martínez", "22222222B", 1132.45, []))
+    plantilla.append(Cocinero("Luisa López López", "33333333C", 1300.45))
+    plantilla.append(Cocinero("Francisca Fernández Fernández", "44444444D", 1700.20))
+    Resultados.mostrar_listados(plantilla)
+    
+    print("-"*20,"B) CONSTRUCTOR STOCK")
+    # Stock inicial
+    stock.append(Bebida("Coca Cola", "Grande", "Fria", 1.2))
+    stock.append(Bebida("Agua mineral", "Pequeña", "Natural", 0.5))
+    stock.append(Comida("Patatas fritas", 1.5, "Snack", "Patatas, aceite y sal"))
+    stock.append(Comida("Nocilla", 3.4, "Postre", "Leche-cacao-avellanas-azucar"))
+    Resultados.mostrar_listados(stock)
+    print("-"*20,"C) CONSTRUCTOR CLIENTES")
+    # Stock inicial
+    Resultados.mostrar_listados(clientes)
+
+    Menus_Salidas.borrado_vuelta_menu_principal()
 
 class Estatico:
     @staticmethod
@@ -93,6 +114,7 @@ def flujo_menu_principal(opcion):
 
 def main():
     os.system("cls")
+    constructor_inicial()
 
     while True:
         Menus_Salidas.mostrar_menu_principal(menu_principal)
@@ -117,7 +139,7 @@ def main():
 
 
 
-    Estatico.saludar()
+  
 
     #plantilla.append(luis)
     '''
