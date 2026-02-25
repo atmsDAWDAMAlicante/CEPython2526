@@ -112,8 +112,8 @@ def flujo_menu_principal(opcion):
 
     elif (opcion == 4):
         print("4 - Asignar cliente a camarero")
-        Controlador.asignar_cliente_a_camarero(clientes, plantilla)
-
+        cliente_seleccionado = Controlador.escoger_cliente(clientes)
+        print(f'CLIENTE {cliente_seleccionado.nombre}')
 
     elif (opcion == 5):
         print("5 - Realizar pedido")

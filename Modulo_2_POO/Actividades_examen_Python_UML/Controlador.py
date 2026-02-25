@@ -84,21 +84,40 @@ class Controlador:
             nuevo_producto = Bebida(producto["nombre"],producto["precio"],producto["tamanyo"],producto["temperatura"])
         return nuevo_producto
 
-    def asignar_cliente_a_camarero(clientes, plantilla):
+    def escoger_cliente(clientes):
         # Pedir y validar el cliente
         num_cliente = Introducciones.seleccionar_persona(clientes, "Cliente")
         num_cliente_validado = Validaciones.validar_numero_en_rango(num_cliente, len(clientes))
-        cliente_escogido = []
+        #cliente_escogido = []
         for i, objeto_cliente in enumerate(clientes):
             if (i+1 == num_cliente_validado):
-                print(i+1, type(cliente_escogido), num_cliente_validado)
+                #print(i+1, type(cliente_escogido), num_cliente_validado)
                 print(objeto_cliente.nombre)
-                cliente_escogido.append(objeto_cliente)
-        print(f' Ha escogido a {cliente_escogido[0].nombre} {type(cliente_escogido[0])}')
+                return objeto_cliente
+                #cliente_escogido.append(objeto_cliente)
+        #print(f' Ha escogido a {cliente_escogido[0].nombre} {type(cliente_escogido[0])}')
+        
+
+    def escoger_camarero(plantilla):
         # Pedir y validar el camarero
         # Formar lista camareros
         plantilla_camareros = []
         for camarero in plantilla:
             if (type(camarero) == Camarero):
                 plantilla_camareros.append(camarero)
-        print(plantilla_camareros)
+        num_camarero = Introducciones.seleccionar_persona(plantilla_camareros, "Camarero")
+
+        num_camarero_validado = Validaciones.validar_numero_en_rango(num_camarero, len(plantilla_camareros))
+        camarero_escogido = []
+        for i, objeto_camarero in enumerate(plantilla_camareros):
+            if (i+1 == num_camarero_validado):
+                #print(i+1, type(camarero_escogido), num_camarero_validado)
+                #print(objeto_camarero.nombre)
+                #camarero_escogido.append(objeto_camarero)
+                objeto_camarero.lista_clientes.append(cliente_escogido[0])
+        #print(f' Ha escogido a {camarero_escogido[0].nombre} {type(camarero_escogido[0])}')
+
+    def escoger_producto(stock):
+        pass
+
+
