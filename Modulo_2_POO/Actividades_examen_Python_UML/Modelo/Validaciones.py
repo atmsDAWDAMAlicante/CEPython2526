@@ -33,7 +33,7 @@ class Validaciones:
         try:
             float(num)
         except ValueError:
-            return -1
+            return False
         else:
             return float(num)
 

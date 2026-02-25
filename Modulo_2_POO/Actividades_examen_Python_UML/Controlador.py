@@ -47,7 +47,6 @@ class Controlador:
     def crear_trabajador(tipo, trabajador):
 
         dni_valido = Validaciones.validar_dni(trabajador["dni"])
-        print(dni_valido)
         while (dni_valido == False):
             trabajador["dni"] = Introducciones.reiterar_entrada("DNI")
             dni_valido = Validaciones.validar_dni(trabajador["dni"])
@@ -62,21 +61,28 @@ class Controlador:
         return nuevo_trabajador
     
     def crear_producto(tipo, producto):
-        '''
-        dni_valido = Validaciones.validar_dni(trabajador["dni"])
-        print(dni_valido)
-        while (dni_valido == False):
-            trabajador["dni"] = Introducciones.reiterar_entrada("DNI")
-            dni_valido = Validaciones.validar_dni(trabajador["dni"])
+        # Validar precio
+        precio_validado = Validaciones.validar_float(producto["precio"])
+        while (precio_validado == False):
+            producto["precio"] = Introducciones.reiterar_entrada("PRECIO")
+            precio_validado = Validaciones.validar_float(producto["precio"])
 
         if (tipo == 1):
-            nuevo_trabajador = Camarero(trabajador["nombre"], trabajador["dni"],trabajador["sueldo"], trabajador["lista_clientes"])
+            nuevo_producto = Comida(producto["nombre"],producto["precio"],producto["tipo"],producto["ingredientes"])
         else:
-            nuevo_trabajador = Cocinero(trabajador["nombre"], trabajador["dni"],trabajador["sueldo"])
+            # Validar tamaño
+            tamanyo_validado = Validaciones.validar_float(producto["tamanyo"])
+            while (tamanyo_validado == False):
+                producto["tamanyo"] = Introducciones.reiterar_entrada("TAMAÑO")
+                tamanyo_validado = Validaciones.validar_float(producto["tamanyo"])
 
-'''
-        nuevo_producto = Comida(producto["nombre"],producto["precio"],producto["tipo"],producto["ingredientes"])
+            # Validar temperatura
+            temperatura_validado = Validaciones.validar_float(producto["temperatura"])
+            while (temperatura_validado == False):
+                producto["temperatura"] = Introducciones.reiterar_entrada("TEMPERATURA")
+                temperatura_validado = Validaciones.validar_float(producto["temperatura"])
+            nuevo_producto = Bebida(producto["nombre"],producto["precio"],producto["tamanyo"],producto["temperatura"])
         return nuevo_producto
 
-    def crear_cliente(cliente):
+    def asignar_cliente_a_camarero(cliente):
         pass

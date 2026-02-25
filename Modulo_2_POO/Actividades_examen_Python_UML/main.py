@@ -28,8 +28,8 @@ from Controlador import Controlador
 menu_principal = [
     "1 - Crear trabajador",
     "2 - Crear producto",
-    "3 - Asignar cliente a camarero",
-    "4 - Modificar antigüedad",
+    "3 - Baja/Antigüedad trabajador",
+    "4 - Asignar cliente a camarero",
     "5 - Realizar pedido",
     "6 - Tomar pedido",
     "7 - Entregar pedido",
@@ -56,13 +56,16 @@ def constructor_inicial():
     Resultados.mostrar_listados(plantilla)
     print("-"*20,"B) CONSTRUCTOR STOCK")
     # Stock inicial
-    stock.append(Bebida("Coca Cola", 1.80, "Lata", 0.9))
-    stock.append(Bebida("Agua mineral", 0.5, "Botellín", 1.5))
+    stock.append(Bebida("Coca Cola", 1.80, 0.5, 0.9))
+    stock.append(Bebida("Agua mineral", 0.5, 0.33, 1.5))
     stock.append(Comida("Patatas fritas", 1.5, "Snack", "Patatas, aceite y sal"))
     stock.append(Comida("Nocilla", 3.4, "Postre", "Leche-cacao-avellanas-azucar"))
     Resultados.mostrar_listados(stock)
     print("-"*20,"C) CONSTRUCTOR CLIENTES")
-    # Stock inicial
+    # Clientes inicial
+    clientes.append(Cliente("Ana"))
+    clientes.append(Cliente("Juan"))
+    clientes.append(Cliente("Victor"))
     Resultados.mostrar_listados(clientes)
 
     Menus_Salidas.borrado_vuelta_menu_principal()
@@ -75,33 +78,43 @@ class Estatico:
 
 def flujo_menu_principal(opcion):
     if (opcion == 1):
+        # Selección del tipo de trabajador a introducir y validación
+        # 1-Camarero / 2-Cocinero
         tipo = Introducciones.seleccionar_tipo_trabajador()
         tipo_validado = Validaciones.validar_numero_en_rango(tipo, 2)
         while (tipo_validado == -1):
             tipo = Introducciones.reiterar_entrada("tipo de trabajador: 1-Camarero / 2-Cocinero:  ")
-            print(tipo_validado)
             tipo_validado = Validaciones.validar_numero_en_rango(tipo,2)
-        print(tipo_validado)
-        #plantilla.append(Introducciones.crear_trabajador(tipo_validado))
+
+        # Introducción de datos para crear el objeto del tipo de trabajador seleccionado
         trabajador = Introducciones.introducir_datos_trabajador(tipo_validado)
+
+        # Inclusión del objeto creado (se llama al Controlador) a la lista "plantilla"
         plantilla.append(Controlador.crear_trabajador(tipo_validado, trabajador))
 
 
     elif (opcion == 2):
+        # Selección del tipo de producto a introducir y validación
+        # 1-Comida / 2-Bebida
         tipo = Introducciones.seleccionar_tipo_producto()
         tipo_validado = Validaciones.validar_numero_en_rango(tipo, 2)
         while (tipo_validado == -1):
             tipo = Introducciones.reiterar_entrada("tipo de producto: 1-Comida / 2-Bebida:  ")
-            print(tipo_validado)
             tipo_validado = Validaciones.validar_numero_en_rango(tipo,2)
-        print(tipo_validado)
-        
+
+        # Introducción de datos para crear el objeto del tipo de producto seleccionado
         producto = Introducciones.introducir_datos_producto(tipo_validado)
+        # Inclusión del objeto creado (se llama al Controlador) a la lista "stock"
         stock.append(Controlador.crear_producto(tipo_validado, producto))
+
     elif (opcion == 3):
-        print("3 - Asignar cliente a camarero")
+        print("3 - Baja/Antigüedad trabajador")
+        
     elif (opcion == 4):
-        print("4 - Modificar antigüedad")
+        print("4 - Asignar cliente a camarero")
+
+
+
     elif (opcion == 5):
         print("5 - Realizar pedido")
     elif (opcion == 6):
@@ -137,36 +150,6 @@ def main():
         else:
             flujo_menu_principal(opcion_principal)
         
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-    #plantilla.append(luis)
-    '''
-    trab1 = Introducciones.crear_trabajador(2)
-    print(trab1)
-    dni_valido = Validaciones.validar_dni(trab1["dni"])
-    print(dni_valido)
-    while (dni_valido == False):
-        trab1["dni"] = Introducciones.reiterar_entrada()
-        dni_valido = Validaciones.validar_dni(trab1["dni"])
-    #nuevo_trab = Cocinero(trab1["nombre"], trab1["dni"],trab1["sueldo"])
-    #print(nuevo_trab.__dict__)
-    plantilla.append(Trabajador(trab1["nombre"], trab1["dni"],trab1["sueldo"]))
-    '''
-    for i in plantilla:
-        print(f'id: {i._id} - nombre: {i.nombre}')
-        print(i.__dict__)
 
 if __name__ == "__main__":
     main()
