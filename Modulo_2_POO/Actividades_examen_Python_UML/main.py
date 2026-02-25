@@ -124,6 +124,8 @@ def flujo_menu_principal(opcion):
         print("5 - Realizar pedido")
     elif (opcion == 6):
         print("6 - Tomar pedido")
+        mi_producto = Controlador.escoger_producto(stock)
+        print(mi_producto.__dict__)
     elif (opcion == 7):
         print("7 - Entregar pedido")
     elif (opcion == 8):

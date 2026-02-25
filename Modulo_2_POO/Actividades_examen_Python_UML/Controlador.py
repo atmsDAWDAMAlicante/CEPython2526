@@ -115,6 +115,13 @@ class Controlador:
 
 
     def escoger_producto(stock):
-        pass
+        # Pedir y validar el producto
+        num_producto = Introducciones.seleccionar_persona(stock, "Producto")
+        num_producto_validado = Validaciones.validar_numero_en_rango(num_producto, len(stock))
+        #cliente_escogido = []
+        for i, objeto_producto in enumerate(stock):
+            if (i+1 == num_producto_validado):
+                #print(objeto_cliente.nombre)
+                return objeto_producto
 
 
