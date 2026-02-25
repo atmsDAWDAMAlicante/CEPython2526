@@ -114,7 +114,12 @@ def flujo_menu_principal(opcion):
         print("4 - Asignar cliente a camarero")
         cliente_seleccionado = Controlador.escoger_cliente(clientes)
         print(f'CLIENTE {cliente_seleccionado.nombre}')
-
+        camarero_seleccionado = Controlador.escoger_camarero(plantilla)
+        camarero_seleccionado.lista_clientes.append(cliente_seleccionado)
+        print(f'Lista de clientes del camarero {camarero_seleccionado.nombre}: ')
+        for i in camarero_seleccionado.lista_clientes:
+            print(f'{i.nombre}')
+            pass
     elif (opcion == 5):
         print("5 - Realizar pedido")
     elif (opcion == 6):
