@@ -47,22 +47,13 @@ def constructor_inicial():
     Estatico.saludar()
     print("\n","-"*20,"A) CONSTRUCTOR TRABAJADORES")
     # Plantilla inicial
-    plantilla.append(Camarero("Pepe Pérez Pérez", "111111A", 1205.32, []))
-    plantilla.append(Camarero("Manolo Martínez Martínez", "22222222B", 1132.45, []))
-    plantilla.append(Cocinero("Luisa López López", "33333333C", 1300.45))
-    plantilla.append(Cocinero("Francisca Fernández Fernández", "44444444D", 1700.20))
-    Resultados.mostrar_listados(plantilla)
-    print("Verificación DNI plantilla existente:")
+    plantilla.append(Camarero("Pepe Pérez Pérez", "123456A", 1205.32, []))
+    plantilla.append(Camarero("Manolo Martínez Martínez", "12345678B", 1132.45, []))
+    plantilla.append(Cocinero("Luisa López López", "12345678C", 1300.45))
+    plantilla.append(Cocinero("Francisca Fernández Fernández", "12345678D", 1700.20))
+    plantilla[0].password = "abc"
     Resultados.verificar_datos_objetos_creados(plantilla)
-    ''''
-    for i in plantilla:
-        if ((Validaciones.validar_dni(i.get_dni())) == False):
-            resultado = "INCORRECTO"
-        else:
-            resultado = "CORRECTO"
-
-        print(f'Trabajador {i.nombre} - DNI: {i.get_dni()} es: {resultado}')
-    '''
+    Resultados.mostrar_listados(plantilla)
     print("-"*20,"B) CONSTRUCTOR STOCK")
     # Stock inicial
     stock.append(Bebida("Coca Cola", 1.80, "Lata", 0.9))
@@ -87,7 +78,7 @@ def flujo_menu_principal(opcion):
         tipo = Introducciones.seleccionar_tipo_trabajador()
         tipo_validado = Validaciones.validar_numero_en_rango(tipo, 2)
         while (tipo_validado == -1):
-            tipo = Introducciones.reiterar_entrada("tipo de trabajador: 1-Camarero / 2-Cocinero")
+            tipo = Introducciones.reiterar_entrada("tipo de trabajador: 1-Camarero / 2-Cocinero:  ")
             print(tipo_validado)
             tipo_validado = Validaciones.validar_numero_en_rango(tipo,2)
         print(tipo_validado)
@@ -97,7 +88,16 @@ def flujo_menu_principal(opcion):
 
 
     elif (opcion == 2):
-        print("2 - Crear producto")
+        tipo = Introducciones.seleccionar_tipo_producto()
+        tipo_validado = Validaciones.validar_numero_en_rango(tipo, 2)
+        while (tipo_validado == -1):
+            tipo = Introducciones.reiterar_entrada("tipo de producto: 1-Comida / 2-Bebida:  ")
+            print(tipo_validado)
+            tipo_validado = Validaciones.validar_numero_en_rango(tipo,2)
+        print(tipo_validado)
+        
+        producto = Introducciones.introducir_datos_producto(tipo_validado)
+        stock.append(Controlador.crear_producto(tipo_validado, producto))
     elif (opcion == 3):
         print("3 - Asignar cliente a camarero")
     elif (opcion == 4):

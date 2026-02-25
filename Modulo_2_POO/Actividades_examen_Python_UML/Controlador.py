@@ -9,7 +9,9 @@ from Modelo.Camarero import Camarero as Camarero
 from Modelo.Cocinero import Cocinero as Cocinero 
 
 from Modelo.Producto import Producto
+from Modelo.Comida import Comida
 from Modelo.Bebida import Bebida
+
 
 class Controlador:
     @staticmethod
@@ -47,7 +49,7 @@ class Controlador:
         dni_valido = Validaciones.validar_dni(trabajador["dni"])
         print(dni_valido)
         while (dni_valido == False):
-            trabajador["dni"] = Introducciones.reiterar_entrada()
+            trabajador["dni"] = Introducciones.reiterar_entrada("DNI")
             dni_valido = Validaciones.validar_dni(trabajador["dni"])
 
         if (tipo == 1):
@@ -58,3 +60,23 @@ class Controlador:
         #plantilla.append(nuevo_trabajador)
 
         return nuevo_trabajador
+    
+    def crear_producto(tipo, producto):
+        '''
+        dni_valido = Validaciones.validar_dni(trabajador["dni"])
+        print(dni_valido)
+        while (dni_valido == False):
+            trabajador["dni"] = Introducciones.reiterar_entrada("DNI")
+            dni_valido = Validaciones.validar_dni(trabajador["dni"])
+
+        if (tipo == 1):
+            nuevo_trabajador = Camarero(trabajador["nombre"], trabajador["dni"],trabajador["sueldo"], trabajador["lista_clientes"])
+        else:
+            nuevo_trabajador = Cocinero(trabajador["nombre"], trabajador["dni"],trabajador["sueldo"])
+
+'''
+        nuevo_producto = Comida(producto["nombre"],producto["precio"],producto["tipo"],producto["ingredientes"])
+        return nuevo_producto
+
+    def crear_cliente(cliente):
+        pass

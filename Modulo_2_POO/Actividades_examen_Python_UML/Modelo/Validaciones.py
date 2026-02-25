@@ -35,6 +35,14 @@ class Validaciones:
             return True
         else: 
             return False
+        
+    @staticmethod
+    def validar_password(password):
+        patron_password = r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$"
+        if (re.match(patron_password, password)):
+            return True
+        else: 
+            return False
 
     @staticmethod
     def validar_fecha(fecha):
