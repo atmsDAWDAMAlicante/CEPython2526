@@ -30,20 +30,14 @@ class Trabajador(Estado): # Hereda de la clase abstracta Estado
         Trabajador._id_autoincremental += 1 # 1º se incrementa
         self._id = Trabajador._id_autoincremental # 2º se asigna
         self.password = "1Ab"
-        #self.fecha_alta = date.today()
-        fecha = "2024-01-01"
         
+        fecha = "2024-01-01"
         try:
             fecha_OK = datetime.strptime(fecha, "%Y-%m-%d").date()
-            #print("OK")
             self.fecha_alta = fecha_OK
         except ValueError:
-            #print("NOOOOOOOOOOOOOOOO")
             self.fecha_alta = date.today()
-
-        #self.fecha_alta = date_object = date.strptime(date_object, "%Y-%m-%d")
         self.fecha_baja = None
-        #self.antiguedad = None
 
 
     # GETTERS Y SETTERS de los dos atributos privados del diagrama de clases del enunciado
@@ -68,7 +62,7 @@ class Trabajador(Estado): # Hereda de la clase abstracta Estado
             posible_fecha = Validaciones.validar_fecha(fecha_provisional)
         else:
             self.fecha_alta = posible_fecha
-            print(f' LA FECHA CORRECTA ES: {self.fecha_alta}')
+            print(f' La fecha de alta es: {self.fecha_alta}')
     def dar_de_baja(self):
         fecha_provisional = Introducciones.introducir_fecha()
         posible_fecha = Validaciones.validar_fecha(fecha_provisional)
@@ -77,13 +71,13 @@ class Trabajador(Estado): # Hereda de la clase abstracta Estado
             posible_fecha = Validaciones.validar_fecha(fecha_provisional)
         else:
             self.fecha_baja = posible_fecha
-            print(f' LA FECHA CORRECTA ES: {self.fecha_baja}')
+            print(f' La fecha de baja es: {self.fecha_baja}')
 
     def antiguedad(self):
         try: 
             (self.fecha_baja - self.fecha_alta).days
         except Exception:
-            print("Verifique que se han introducido correctamente las fechas de alta y baja")
+            print("Verifique que se han introducido correctamente las fechas de alta y baja.")
             print(self.__dict__)
         else:
             return (self.fecha_baja - self.fecha_alta).days
