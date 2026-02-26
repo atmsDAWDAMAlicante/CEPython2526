@@ -140,8 +140,6 @@ def flujo_menu_principal(opcion):
         Resultados.mostrar_listados(plantilla)
         Resultados.mostrar_listados(stock)
 
-    elif (opcion == 7):
-        constructor_inicial()
     #else:
      #   print("Hay algo que no está funcionando como sería deseable.")
 
