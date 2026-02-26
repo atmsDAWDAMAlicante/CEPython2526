@@ -48,6 +48,11 @@ class Introducciones:
             print(f'{contador} - {i.nombre}')
             contador +=1
         return (input(f'Seleccione el nº de {tipo}: '))
+    
+    @staticmethod
+    def introducir_fecha():
+        fecha = input("Introduce una fecha válida (aaaa-mm-dd): ")
+        return fecha 
 
 
 

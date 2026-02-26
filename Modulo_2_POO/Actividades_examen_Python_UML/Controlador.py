@@ -125,3 +125,7 @@ class Controlador:
                 return objeto_producto
 
 
+    def formar_fecha(persona):
+        fecha = Introducciones.introducir_fecha()
+        persona.fecha_alta = fecha
+        print(persona.fecha_alta)

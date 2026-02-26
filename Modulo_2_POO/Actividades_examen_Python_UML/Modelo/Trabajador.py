@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod # En el diagrama de clases del enunciado hay una CLASE ABSTRACTA llamada interfaz
 from datetime import date, timedelta, datetime
-
+from Vista.Entradas import Introducciones
+from Modelo.Validaciones import Validaciones
 
 
 # Clase Trabajador:
@@ -34,10 +35,10 @@ class Trabajador(Estado): # Hereda de la clase abstracta Estado
         
         try:
             fecha_OK = datetime.strptime(fecha, "%Y-%m-%d").date()
-            print("OK")
+            #print("OK")
             self.fecha_alta = fecha_OK
         except ValueError:
-            print("NOOOOOOOOOOOOOOOO")
+            #print("NOOOOOOOOOOOOOOOO")
             self.fecha_alta = date.today()
 
         #self.fecha_alta = date_object = date.strptime(date_object, "%Y-%m-%d")
@@ -53,13 +54,19 @@ class Trabajador(Estado): # Hereda de la clase abstracta Estado
 
     def get_sueldo(self):
         return self.__sueldo
-    def set_sueld(self, sueldo):
+    def set_sueldo(self, sueldo):
         self.__sueldo = sueldo
 
 
     # Métodos de la clase abstracta
     def dar_de_alta(self):
-        pass
+        fecha_provisional = Introducciones.introducir_fecha()
+        posible_fecha = Validaciones.validar_fecha(fecha_provisional)
+        if (posible_fecha == False):
+            print("ññklafjdsñkljfaldk")
+        else:
+            self.fecha_alta = posible_fecha
+            print(f' LA FECHA CORRECTA ES: {self.fecha_alta}')
     def dar_de_baja(self):
         pass
 

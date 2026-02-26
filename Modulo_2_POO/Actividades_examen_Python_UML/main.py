@@ -28,7 +28,7 @@ from Controlador import Controlador
 menu_principal = [
     "1 - Crear trabajador",
     "2 - Crear producto",
-    "3 - Baja/Antigüedad trabajador",
+    "3 - Fechas: altas, bajas, antigüedad",
     "4 - Asignar cliente a camarero",
     "5 - Realizar pedido",
     "6 - Tomar pedido",
@@ -108,7 +108,10 @@ def flujo_menu_principal(opcion):
         stock.append(Controlador.crear_producto(tipo_validado, producto))
 
     elif (opcion == 3):
-        print("3 - Baja/Antigüedad trabajador")
+        #3 - Fechas: altas, bajas, antigüedad
+        persona = Controlador.escoger_camarero(plantilla)
+        #fecha = Controlador.formar_fecha(persona)
+        print(persona.dar_de_alta())
 
     elif (opcion == 4):
         print("4 - Asignar cliente a camarero")

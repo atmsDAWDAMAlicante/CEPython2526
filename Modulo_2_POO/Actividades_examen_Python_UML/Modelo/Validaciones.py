@@ -1,4 +1,5 @@
 import re 
+from datetime import date, timedelta, datetime
 
 class Validaciones:
 
@@ -60,4 +61,11 @@ class Validaciones:
 
     @staticmethod
     def validar_fecha(fecha): # Validar que se ha introducido una fecha correcta
-        pass
+        try:
+            fecha_OK = datetime.strptime(fecha, "%Y-%m-%d").date()
+            #print(f"OK --- {fecha_OK}-- {type(fecha_OK)--{fecha_OK.today()}}")
+            return fecha_OK
+        except ValueError:
+            print("NOOOOOOOOOOOOOOOO")
+            #fecha_alta = date.today()
+            return False
