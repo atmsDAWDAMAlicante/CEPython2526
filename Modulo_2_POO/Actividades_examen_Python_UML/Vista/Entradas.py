@@ -15,7 +15,8 @@ class Introducciones:
         else: # Cocinero
             pass
         return trabajador
-        
+    
+    # Productos
     @staticmethod
     def seleccionar_tipo_producto():
         return input("Introduce el tipo de trabajador: 1-Comida / 2-Bebida:  ")
@@ -34,12 +35,18 @@ class Introducciones:
         return producto
 
 
+    # Para validaciones
     @staticmethod
     def reiterar_entrada(tipo):
         dato = input(f"Introduce el {tipo} correctamente: ")
         return dato
+        
+    @staticmethod
+    def introducir_fecha():
+        fecha = input("Introduce una fecha válida (aaaa-mm-dd): ")
+        return fecha 
     
-
+    # Otros
     @staticmethod
     def seleccionar_persona(lista, tipo):
         print(f"Selecciona el {tipo}:")
@@ -48,11 +55,9 @@ class Introducciones:
             print(f'{contador} - {i.nombre}')
             contador +=1
         return (input(f'Seleccione el nº de {tipo}: '))
-    
-    @staticmethod
-    def introducir_fecha():
-        fecha = input("Introduce una fecha válida (aaaa-mm-dd): ")
-        return fecha 
+
+    def seleccionar_grupo():
+        return input(f'Seleccione: 1 - Trabajador / 2 - Cliente')
 
 
 

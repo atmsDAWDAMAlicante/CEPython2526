@@ -109,7 +109,15 @@ def flujo_menu_principal(opcion):
 
     elif (opcion == 3):
         #3 - Fechas: altas, bajas, antigüedad
-        persona = Controlador.escoger_camarero(plantilla)
+        tipo = Introducciones.seleccionar_grupo()
+        tipo_validado = Validaciones.validar_numero_en_rango(tipo, 2)
+        while (tipo_validado == -1):
+            tipo = Introducciones.reiterar_entrada("Seleccione correctamente: 1 - Trabajador / 2 - Cliente: ")
+            tipo_validado = Validaciones.validar_numero_en_rango(tipo,2)
+        if (tipo_validado == 1):
+            persona = Controlador.escoger_individuo(plantilla)
+        else:
+            persona = Controlador.escoger_individuo(clientes)
         #fecha = Controlador.formar_fecha(persona)
         print(persona.dar_de_alta())
 

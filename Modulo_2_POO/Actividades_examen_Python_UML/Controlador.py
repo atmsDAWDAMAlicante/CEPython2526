@@ -124,6 +124,17 @@ class Controlador:
                 #print(objeto_cliente.nombre)
                 return objeto_producto
 
+    def escoger_individuo(grupo):
+        # Pedir y validar el individuo
+        num_individuo = Introducciones.seleccionar_persona(grupo, f'{type(grupo)}')
+        num_individuo_validado = Validaciones.validar_numero_en_rango(num_individuo, len(grupo))
+        #individuo_escogido = []
+        for i, objeto_individuo in enumerate(grupo):
+            if (i+1 == num_individuo_validado):
+                print(f'ESCOGIDO: {objeto_individuo.nombre}')
+                return objeto_individuo
+
+
 
     def formar_fecha(persona):
         fecha = Introducciones.introducir_fecha()
