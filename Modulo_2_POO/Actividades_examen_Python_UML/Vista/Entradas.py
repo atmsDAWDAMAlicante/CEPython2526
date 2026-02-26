@@ -46,6 +46,11 @@ class Introducciones:
         fecha = input("Introduce una fecha válida (aaaa-mm-dd): ")
         return fecha 
     
+    @staticmethod
+    def introducir_entero(algo_mas):
+        numero = input(f"Introduce un número entero{algo_mas}: ")
+        return numero
+
     # Otros
     @staticmethod
     def seleccionar_persona(lista, tipo):

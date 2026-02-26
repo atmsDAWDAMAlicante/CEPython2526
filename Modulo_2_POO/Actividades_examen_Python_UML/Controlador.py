@@ -146,3 +146,11 @@ class Controlador:
         elif(operacion == 3):
             antiguedad = persona.antiguedad()
             print (f'La antiguedad de {persona.nombre} es de {antiguedad} días')
+
+    def preparar_pedido():
+        unidades = Introducciones.introducir_entero(" de unidades")
+        unidades_validadas = Validaciones.validar_numero_en_rango(unidades,100)
+        while (unidades_validadas == -1):
+            unidades = Introducciones.reiterar_entrada("numero entero de unidades inferior a 101")
+            unidades_validadas = Validaciones.validar_numero_en_rango(unidades,100)
+        return unidades_validadas

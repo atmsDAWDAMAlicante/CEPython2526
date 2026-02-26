@@ -136,6 +136,17 @@ def flujo_menu_principal(opcion):
             pass
     elif (opcion == 5):
         print("5 - Realizar pedido")
+        cliente_seleccionado = Controlador.escoger_cliente(clientes)
+        print(f'CLIENTE {cliente_seleccionado.nombre}')
+        camarero_seleccionado = Controlador.escoger_camarero(plantilla)
+        producto_seleccionado = Controlador.escoger_producto(stock)
+        unidades = Controlador.preparar_pedido()
+        
+        # Método de la clase Cliente para realizar el pedido
+        cliente_seleccionado.realizar_pedido(producto_seleccionado, camarero_seleccionado, unidades)
+        
+
+
     elif (opcion == 6):
         Resultados.mostrar_listados(plantilla)
         Resultados.mostrar_listados(stock)
