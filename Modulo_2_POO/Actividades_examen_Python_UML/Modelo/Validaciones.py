@@ -10,7 +10,7 @@ class Validaciones:
         except ValueError:
             return -1
         else:
-            if ((int(num) < 0) or (int(num) > 10)):
+            if ((int(num) < 1) or (int(num) > 7)):
                 return -1
             else:
                 return int(num)

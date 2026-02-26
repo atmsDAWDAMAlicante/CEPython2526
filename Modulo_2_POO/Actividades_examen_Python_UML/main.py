@@ -31,11 +31,8 @@ menu_principal = [
     "3 - Fechas: altas, bajas, antigüedad",
     "4 - Asignar cliente a camarero",
     "5 - Realizar pedido",
-    "6 - Tomar pedido",
-    "7 - Entregar pedido",
-    "8 - Preparar pedido",
-    "9 - Inventario con __dict__",
-    "0 - Salir"
+    "6 - Inventario con __dict__",
+    "7 - Salir"
 ]
 plantilla = []
 stock = []
@@ -140,18 +137,10 @@ def flujo_menu_principal(opcion):
     elif (opcion == 5):
         print("5 - Realizar pedido")
     elif (opcion == 6):
-        print("6 - Tomar pedido")
-        mi_producto = Controlador.escoger_producto(stock)
-        print(mi_producto.__dict__)
-    elif (opcion == 7):
-        print("7 - Entregar pedido")
-    elif (opcion == 8):
-        print("8 - Preparar pedido")
-    elif (opcion == 9):
         Resultados.mostrar_listados(plantilla)
         Resultados.mostrar_listados(stock)
-    else:
-        print("Hay algo que no está funcionando como sería deseable.")
+    #else:
+     #   print("Hay algo que no está funcionando como sería deseable.")
 
     Menus_Salidas.borrado_vuelta_menu_principal()
 
@@ -166,11 +155,12 @@ def main():
     while True:
         Menus_Salidas.mostrar_menu_principal(menu_principal)
         opcion_principal = Validaciones.validar_menu_principal(Menus_Entradas.optener_op_menu_principal(menu_principal))
-        if opcion_principal == 0:
+        if opcion_principal == 7:
             Menus_Salidas.fin_del_programa()
             break
         elif (opcion_principal == -1):
-            print(f'MAL {opcion_principal}')
+            print(f'MAL {opcion_principal}- Introduce un número entre 1 y 7')
+            #opcion_principal = Validaciones.validar_menu_principal(Menus_Entradas.optener_op_menu_principal(menu_principal))
         else:
             flujo_menu_principal(opcion_principal)
         
