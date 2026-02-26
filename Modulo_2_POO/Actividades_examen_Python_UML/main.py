@@ -118,8 +118,14 @@ def flujo_menu_principal(opcion):
             persona = Controlador.escoger_individuo(plantilla)
         else:
             persona = Controlador.escoger_individuo(clientes)
-        #fecha = Controlador.formar_fecha(persona)
-        print(persona.dar_de_alta())
+        
+        tipo_operacion = Introducciones.reiterar_entrada("Seleccione: 1 - Alta / 2 - Baja / 3 - Ver antigüedad: ")
+        tipo_operacion_validado = Validaciones.validar_numero_en_rango(tipo_operacion,3)
+        while (tipo_operacion_validado == -1):
+            tipo_operacion = Introducciones.reiterar_entrada("Seleccione correctamente: 1 - Alta / 2 - Baja / 3 - Ver antigüedad: ")
+            tipo_operacion_validado = Validaciones.validar_numero_en_rango(tipo_operacion,3)
+
+        Controlador.ejecutar_cambio_fecha(tipo_operacion_validado, persona)
 
     elif (opcion == 4):
         print("4 - Asignar cliente a camarero")

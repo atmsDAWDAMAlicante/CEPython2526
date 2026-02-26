@@ -57,7 +57,7 @@ class Introducciones:
         return (input(f'Seleccione el nº de {tipo}: '))
 
     def seleccionar_grupo():
-        return input(f'Seleccione: 1 - Trabajador / 2 - Cliente')
+        return input(f'Seleccione: 1 - Trabajador / 2 - Cliente: ')
 
 
 

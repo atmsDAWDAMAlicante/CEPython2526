@@ -126,7 +126,7 @@ class Controlador:
 
     def escoger_individuo(grupo):
         # Pedir y validar el individuo
-        num_individuo = Introducciones.seleccionar_persona(grupo, f'{type(grupo)}')
+        num_individuo = Introducciones.seleccionar_persona(grupo, 'uno de la lista: ')
         num_individuo_validado = Validaciones.validar_numero_en_rango(num_individuo, len(grupo))
         #individuo_escogido = []
         for i, objeto_individuo in enumerate(grupo):
@@ -136,7 +136,13 @@ class Controlador:
 
 
 
-    def formar_fecha(persona):
-        fecha = Introducciones.introducir_fecha()
-        persona.fecha_alta = fecha
-        print(persona.fecha_alta)
+    def ejecutar_cambio_fecha(operacion, persona):
+        if (operacion == 1):
+            print(f'ALTA: {persona.nombre}')
+            persona.dar_de_alta()
+        elif (operacion == 2):
+            print(f'BAJA: {persona.nombre}')
+            persona.dar_de_baja()
+        elif(operacion == 3):
+            antiguedad = persona.antiguedad()
+            print (f'La antiguedad de {persona.nombre} es de {antiguedad}')
