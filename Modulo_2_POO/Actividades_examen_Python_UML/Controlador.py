@@ -60,6 +60,7 @@ class Controlador:
 
         return nuevo_trabajador
     
+
     def crear_producto(tipo, producto):
         # Validar precio
         precio_validado = Validaciones.validar_float(producto["precio"])
@@ -84,6 +85,7 @@ class Controlador:
             nuevo_producto = Bebida(producto["nombre"],producto["precio"],producto["tamanyo"],producto["temperatura"])
         return nuevo_producto
 
+
     def escoger_cliente(clientes):
         # Pedir y validar el cliente
         num_cliente = Introducciones.seleccionar_persona(clientes, "Cliente")
@@ -95,9 +97,7 @@ class Controlador:
                 return objeto_cliente
 
         
-
     def escoger_camarero(plantilla):
-        
         # Formar lista camareros
         plantilla_camareros = []
         for camarero in plantilla:
@@ -124,6 +124,7 @@ class Controlador:
                 #print(objeto_cliente.nombre)
                 return objeto_producto
 
+
     def escoger_individuo(grupo):
         # Pedir y validar el individuo
         num_individuo = Introducciones.seleccionar_persona(grupo, 'uno de la lista: ')
@@ -133,7 +134,6 @@ class Controlador:
             if (i+1 == num_individuo_validado):
                 #print(f'ESCOGIDO: {objeto_individuo.nombre}')
                 return objeto_individuo
-
 
 
     def ejecutar_cambio_fecha(operacion, persona):
@@ -146,6 +146,7 @@ class Controlador:
         elif(operacion == 3):
             antiguedad = persona.antiguedad()
             print (f'La antiguedad de {persona.nombre} es de {antiguedad} días')
+
 
     def preparar_pedido():
         unidades = Introducciones.introducir_entero(" de unidades")

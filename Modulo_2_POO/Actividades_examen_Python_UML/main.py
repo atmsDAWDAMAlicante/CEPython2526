@@ -104,6 +104,8 @@ def flujo_menu_principal(opcion):
         # Inclusión del objeto creado (se llama al Controlador) a la lista "stock"
         stock.append(Controlador.crear_producto(tipo_validado, producto))
 
+
+
     elif (opcion == 3):
         #3 - Fechas: altas, bajas, antigüedad
         tipo = Introducciones.seleccionar_grupo()
@@ -124,16 +126,20 @@ def flujo_menu_principal(opcion):
 
         Controlador.ejecutar_cambio_fecha(tipo_operacion_validado, persona)
 
+
+
     elif (opcion == 4):
         print("4 - Asignar cliente a camarero")
         cliente_seleccionado = Controlador.escoger_cliente(clientes)
         print(f'CLIENTE {cliente_seleccionado.nombre}')
         camarero_seleccionado = Controlador.escoger_camarero(plantilla)
-        camarero_seleccionado.lista_clientes.append(cliente_seleccionado)
+        camarero_seleccionado.lista_clientes.append(cliente_seleccionado.nombre)
         print(f'Lista de clientes del camarero {camarero_seleccionado.nombre}: ')
         for i in camarero_seleccionado.lista_clientes:
-            print(f'{i.nombre}')
+            print(f'{i}')
             pass
+
+
     elif (opcion == 5):
         print("5 - Realizar pedido")
         cliente_seleccionado = Controlador.escoger_cliente(clientes)
