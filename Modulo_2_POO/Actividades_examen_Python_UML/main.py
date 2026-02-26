@@ -156,6 +156,7 @@ def flujo_menu_principal(opcion):
     elif (opcion == 6):
         Resultados.mostrar_listados(plantilla)
         Resultados.mostrar_listados(stock)
+        Resultados.mostrar_listados(clientes)
 
     #else:
      #   print("Hay algo que no está funcionando como sería deseable.")
