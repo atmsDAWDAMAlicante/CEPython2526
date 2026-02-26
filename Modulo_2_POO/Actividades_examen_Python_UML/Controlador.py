@@ -131,18 +131,18 @@ class Controlador:
         #individuo_escogido = []
         for i, objeto_individuo in enumerate(grupo):
             if (i+1 == num_individuo_validado):
-                print(f'ESCOGIDO: {objeto_individuo.nombre}')
+                #print(f'ESCOGIDO: {objeto_individuo.nombre}')
                 return objeto_individuo
 
 
 
     def ejecutar_cambio_fecha(operacion, persona):
         if (operacion == 1):
-            print(f'ALTA: {persona.nombre}')
+            #print(f'ALTA: {persona.nombre}')
             persona.dar_de_alta()
         elif (operacion == 2):
-            print(f'BAJA: {persona.nombre}')
+            #print(f'BAJA: {persona.nombre}')
             persona.dar_de_baja()
         elif(operacion == 3):
             antiguedad = persona.antiguedad()
-            print (f'La antiguedad de {persona.nombre} es de {antiguedad}')
+            print (f'La antiguedad de {persona.nombre} es de {antiguedad} días')
