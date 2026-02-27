@@ -111,6 +111,9 @@ class Controlador:
         num_camarero = Introducciones.seleccionar_persona(plantilla_camareros, "Camarero")
 
         num_camarero_validado = Validaciones.validar_numero_en_rango(num_camarero, len(plantilla_camareros))
+        while (num_camarero_validado == -1):
+            num_camarero = Introducciones.reiterar_entrada("número de camarero")
+            num_camarero_validado = Validaciones.validar_numero_en_rango(num_camarero, len(plantilla_camareros))
         #camarero_escogido = []
         for i, objeto_camarero in enumerate(plantilla_camareros):
             if (i+1 == num_camarero_validado):
