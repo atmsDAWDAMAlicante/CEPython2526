@@ -93,6 +93,10 @@ class Controlador:
         # Pedir y validar el cliente
         num_cliente = Introducciones.seleccionar_persona(clientes, "Cliente")
         num_cliente_validado = Validaciones.validar_numero_en_rango(num_cliente, len(clientes))
+        while (num_cliente_validado == -1):
+            num_cliente = Introducciones.reiterar_entrada("número de cliente")
+            num_cliente_validado = Validaciones.validar_numero_en_rango(num_cliente, len(clientes))
+
         #cliente_escogido = []
         for i, objeto_cliente in enumerate(clientes):
             if (i+1 == num_cliente_validado):
