@@ -37,7 +37,7 @@ class Trabajador(Estado): # Hereda de la clase abstracta Estado
             self.fecha_alta = fecha_OK
         except ValueError:
             self.fecha_alta = date.today()
-        self.fecha_baja = None
+        self.fecha_baja = datetime.strptime("2025-01-01", "%Y-%m-%d").date()
 
 
     # GETTERS Y SETTERS de los dos atributos privados del diagrama de clases del enunciado

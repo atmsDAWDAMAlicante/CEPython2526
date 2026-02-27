@@ -40,31 +40,56 @@ clientes = []
 
 def constructor_inicial():
     print("="*70,"\n","="*10,"GESTOR DE TRABAJADORES, STOCK Y CLIENTES","="*10,"\n","="*70)
+
+    # PRIMERA ACTIVIDAD: MÉTODO ESTÁTICO SALUDAR
     print("Previo: ejecución del método estático saludar del enunciado Actividad 2")
     Estatico.saludar()
-    print("\n","-"*20,"A) CONSTRUCTOR TRABAJADORES")
+
+    # CREAR Y MOSTRAR LOS OBJETOS TRABAJADOR, LA VALIDACION DE LOS ATRIBUTOS DNI y PASSWORD y MOSTRAR ANTIGÜEDAD
+    print("\n","-"*20,"A) CONSTRUCTOR TRABAJADORES:")
     # Plantilla inicial
     plantilla.append(Camarero("Pepe Pérez Pérez", "123456A", 1205.32, []))
     plantilla.append(Camarero("Manolo Martínez Martínez", "12345678B", 1132.45, []))
     plantilla.append(Cocinero("Luisa López López", "12345678C", 1300.45))
     plantilla.append(Cocinero("Francisca Fernández Fernández", "12345678D", 1700.20))
     plantilla[0].password = "abc"
+    print("A.1 - Impresión del resultado de la verificación de los campos DNI y password:")
     Resultados.verificar_datos_objetos_creados(plantilla)
+    # Se muestra la antigüedad de los trabajadores, calculada por un método de la clase padre (no es un atributo)
+    print("-"*50,"\nA.2 - Se muestra la antigüedad de cada uno calculada (no es un atributo de la clase):")
+    for i in plantilla:
+        print(f'Antigüedad del {type(i)} {i.nombre}: {i.antiguedad()} días (alta: {i.fecha_alta} / baja: {i.fecha_baja})')
+
+    print("-"*50,"\nA.3 - RESULTADO: detalle de los objetos trabajador (CAMARERO y COCINERO) y sus atributos modificados:")
     Resultados.mostrar_listados(plantilla)
-    print("-"*20,"B) CONSTRUCTOR STOCK")
+
+    # CREAR Y MOSTRAR LOS OBJETOS PRODUCTO
+    print("-"*20,"B) CONSTRUCTOR STOCK:")
     # Stock inicial
     stock.append(Bebida("Coca Cola", 1.80, 0.5, 0.9))
     stock.append(Bebida("Agua mineral", 0.5, 0.33, 1.5))
     stock.append(Comida("Patatas fritas", 1.5, "Snack", "Patatas, aceite y sal"))
     stock.append(Comida("Nocilla", 3.4, "Postre", "Leche-cacao-avellanas-azucar"))
     Resultados.mostrar_listados(stock)
-    print("-"*20,"C) CONSTRUCTOR CLIENTES")
+
+    # CREAR Y MOSTRAR LOS OBJETOS CLIENTE
+    print("-"*20,"C) CONSTRUCTOR CLIENTES:")
     # Clientes inicial
     clientes.append(Cliente("Ana"))
     clientes.append(Cliente("Juan"))
     clientes.append(Cliente("Victor"))
     Resultados.mostrar_listados(clientes)
 
+
+    # CREAR Y MOSTRAR LOS OBJETOS CLIENTE
+    print("-"*20,"D) PEDIDOS: realización y resultados:")
+    # Realización de los pedidos
+    # Pedido específico: cliente 3 a camarero 2
+    print(f"D.1 - Pedido específico: cliente 3 '{clientes[2].nombre}' hace pedido (Coca cola) a camarero 2 '{plantilla[1].nombre}'")
+    plantilla[1].lista_clientes.append(clientes[2].nombre)
+    clientes[2].realizar_pedido(stock[0],plantilla[1],5)
+    print(plantilla[1].__dict__)
+    print(clientes[2].__dict__)
     Menus_Salidas.borrado_vuelta_menu_principal()
 
 class Estatico:
