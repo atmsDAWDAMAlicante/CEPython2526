@@ -14,8 +14,10 @@ from Modelo.Bebida import Bebida
 
 
 class Controlador:
+    '''
     @staticmethod
     def flujo_menu_principal(opcion, plantilla, stock):
+        
         if (opcion == 1):
             print("1 - Crear trabajador")
         elif (opcion == 2):
@@ -40,9 +42,9 @@ class Controlador:
             return 0
         else:
             print("Hay algo que no está funcionando como sería deseable.")
-
+        
         Menus_Salidas.borrado_vuelta_menu_principal()
-
+        '''
     @staticmethod
     def crear_trabajador(tipo, trabajador):
 
@@ -154,8 +156,8 @@ class Controlador:
             #print(f'BAJA: {persona.nombre}')
             persona.dar_de_baja()
         elif(operacion == 3):
-            antiguedad = persona.antiguedad()
-            print (f'La antiguedad de {persona.nombre} es de {antiguedad} días')
+            antiguedad = persona.tiempo_trabajado()
+            print (f'El tiempo trabajado de {persona.nombre} es de {antiguedad} días')
 
 
     def preparar_pedido():

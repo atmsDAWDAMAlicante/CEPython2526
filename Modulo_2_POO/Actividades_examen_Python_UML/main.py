@@ -58,7 +58,7 @@ def constructor_inicial():
     # Se muestra la antigüedad de los trabajadores, calculada por un método de la clase padre (no es un atributo)
     print("-"*50,"\nA.2 - Se muestra la antigüedad de cada uno calculada (no es un atributo de la clase):")
     for i in plantilla:
-        print(f'Antigüedad del {type(i)} {i.nombre}: {i.antiguedad()} días (alta: {i.fecha_alta} / baja: {i.fecha_baja})')
+        print(f'Antigüedad del {type(i)} {i.nombre}: {i.tiempo_trabajado()} días (alta: {i.fecha_alta} / baja: {i.fecha_baja})')
 
     print("-"*50,"\nA.3 - RESULTADO: detalle de los objetos trabajador (CAMARERO y COCINERO) y sus atributos modificados:")
     Resultados.mostrar_listados(plantilla)

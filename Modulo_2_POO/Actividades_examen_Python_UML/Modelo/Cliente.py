@@ -52,7 +52,7 @@ class Cliente:
             self.fecha_baja = posible_fecha
             print(f' La fecha de baja es: {self.fecha_baja}')
 
-    def antiguedad(self):
+    def tiempo_trabajado(self):
         try: 
             (self.fecha_baja - self.fecha_alta).days
         except Exception:
