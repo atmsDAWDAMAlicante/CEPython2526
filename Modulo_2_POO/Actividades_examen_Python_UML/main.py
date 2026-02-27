@@ -3,7 +3,9 @@
 
 from abc import ABC, abstractmethod # ESTO ES PORQUE EN EL DIAGRAMA DE CLASES HAY UNA CLASE ABSTRACTA LLAMADA INTERFAZ
 import os
+from datetime import date, timedelta, datetime
 
+# Importar Modelo
 from Modelo.Cliente import Cliente
 
 from Modelo.Trabajador import Trabajador
@@ -15,6 +17,7 @@ from Modelo.Bebida import Bebida
 from Modelo.Comida import Comida
 
 from Modelo.Validaciones import Validaciones
+
 # Importar Vista
 from Vista.Entradas import Introducciones, Menus_Entradas
 from Vista.Salidas import Menus_Salidas, Resultados
@@ -57,10 +60,22 @@ def constructor_inicial():
     Resultados.verificar_datos_objetos_creados(plantilla)
     # Se muestra la antigüedad de los trabajadores, calculada por un método de la clase padre (no es un atributo)
     print("-"*50,"\nA.2 - Se muestra la antigüedad de cada uno calculada (no es un atributo de la clase):")
-    for i in plantilla:
-        print(f'Antigüedad del {type(i)} {i.nombre}: {i.tiempo_trabajado()} días (alta: {i.fecha_alta} / baja: {i.fecha_baja})')
+    
 
-    print("-"*50,"\nA.3 - RESULTADO: detalle de los objetos trabajador (CAMARERO y COCINERO) y sus atributos modificados:")
+    #Se modifica la fecha de alta de dos trabajadores para que tengan una antigüedad mayor a 3 años y se muestran:")
+    plantilla[1].fecha_alta = datetime.strptime("1999-01-01", "%Y-%m-%d").date()
+    plantilla[2].fecha_alta = datetime.strptime("1980-01-01", "%Y-%m-%d").date()
+    trabajadores_antiguos = []
+    string_antiguedad = ""
+    for i in plantilla:
+        string_antiguedad += f'Antigüedad del Trabajador {i.nombre}: {i.tiempo_trabajado()} días (alta: {i.fecha_alta} / baja: {i.fecha_baja})\n'
+        if (i.tiempo_trabajado() >= (365*3)):
+            trabajadores_antiguos.append(i) # Se muestra en A.3
+    print(f"Antigüedad de la plantilla\n{string_antiguedad}\n",'-'*40)
+    print("\nA.3 - Se crea una nueva lista para obtener los trabajadores que tengan una antigüedad mayor a 3 años y se muestran:")
+    for j in trabajadores_antiguos:
+        print(f'- Trabajador: {j.nombre} - antigüedad de {int(j.tiempo_trabajado()/365)} años (fecha alta: {j.fecha_alta}/fecha baja: {j.fecha_baja})')
+    print("-"*50,"\nA.4 - RESULTADO: detalle de los objetos trabajador (CAMARERO y COCINERO) y sus atributos modificados:")
     Resultados.mostrar_listados(plantilla)
 
     # CREAR Y MOSTRAR LOS OBJETOS PRODUCTO
