@@ -52,7 +52,7 @@ def constructor_inicial():
     print("\n","-"*20,"A) CONSTRUCTOR TRABAJADORES:")
     # Plantilla inicial
     plantilla.append(Camarero("Pepe Pérez Pérez", "123456A", 1205.32, []))
-    plantilla.append(Camarero("Manolo Martínez Martínez", "12345678B", 1132.45, []))
+    plantilla.append(Camarero("Manolo Martínez Martínez", "12345678b", 1132.45, []))
     plantilla.append(Cocinero("Luisa López López", "12345678C", 1300.45))
     plantilla.append(Cocinero("Francisca Fernández Fernández", "12345678D", 1700.20))
     plantilla[0].password = "abc"
@@ -68,13 +68,13 @@ def constructor_inicial():
     trabajadores_antiguos = []
     string_antiguedad = ""
     for i in plantilla:
-        string_antiguedad += f'Antigüedad del Trabajador {i.nombre}: {i.tiempo_trabajado()} días (alta: {i.fecha_alta} / baja: {i.fecha_baja})\n'
+        string_antiguedad += f'Antigüedad del {type(i).__name__} {i.nombre}: {i.tiempo_trabajado()} días (alta: {i.fecha_alta} / baja: {i.fecha_baja})\n'
         if (i.tiempo_trabajado() >= (365*3)):
             trabajadores_antiguos.append(i) # Se muestra en A.3
     print(f"Antigüedad de la plantilla\n{string_antiguedad}\n",'-'*40)
     print("\nA.3 - Se crea una nueva lista para obtener los trabajadores que tengan una antigüedad mayor a 3 años y se muestran:")
     for j in trabajadores_antiguos:
-        print(f'- Trabajador: {j.nombre} - antigüedad de {int(j.tiempo_trabajado()/365)} años (fecha alta: {j.fecha_alta}/fecha baja: {j.fecha_baja})')
+        print(f'- {type(j).__name__}: {j.nombre} - antigüedad de {int(j.tiempo_trabajado()/365)} años (fecha alta: {j.fecha_alta}/fecha baja: {j.fecha_baja})')
     print("-"*50,"\nA.4 - RESULTADO: detalle de los objetos trabajador (CAMARERO y COCINERO) y sus atributos modificados:")
     Resultados.mostrar_listados(plantilla)
 

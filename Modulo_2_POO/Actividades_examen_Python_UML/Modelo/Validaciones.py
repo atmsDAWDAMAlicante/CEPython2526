@@ -43,7 +43,7 @@ class Validaciones:
 
     @staticmethod
     def validar_dni(dni): # Validar que se ha introducido un DNI de 8 números y una mayúscula
-        patron_dni = r'^\d{8}[A-Z]$'
+        patron_dni = r'^\d{8}[A-Za-z]$'
         
         if (re.match(patron_dni, dni)):
             return True
