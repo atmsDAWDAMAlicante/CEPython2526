@@ -25,7 +25,7 @@ class Cliente:
         print(f'El ciente {self.nombre} ha encargado al camarero {camarero.nombre}')
         print(f'{unidades} de {producto.nombre}')
         print("-"*30)
-        print(f'Importe: {unidades * producto.precio} €')
+        print(f'Importe: {unidades * producto.precio} €') # Por aquí hay un bug que no localizo
         print("-"*30)
         print("Cesta de la compra:")
         for i in self.lista_productos:

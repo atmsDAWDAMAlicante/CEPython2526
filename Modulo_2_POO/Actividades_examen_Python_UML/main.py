@@ -174,6 +174,7 @@ def flujo_menu_principal(opcion):
         unidades = Controlador.preparar_pedido()
         
         # Método de la clase Cliente para realizar el pedido
+        # Por aquí hay un bug que no localizo
         cliente_seleccionado.realizar_pedido(producto_seleccionado, camarero_seleccionado, unidades)
         
 
