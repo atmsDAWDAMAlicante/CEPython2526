@@ -90,6 +90,18 @@ def constructor_inicial():
     clientes[2].realizar_pedido(stock[0],plantilla[1],5)
     print(plantilla[1].__dict__)
     print(clientes[2].__dict__)
+
+    print("-"*50,"\nD.2 - Pedidos varios")
+    print(f'\n--2 Pedidos de {clientes[0].nombre}:')
+    clientes[0].realizar_pedido(stock[0],plantilla[0],10)
+    clientes[0].realizar_pedido(stock[1],plantilla[1],40)
+    print(f'\n--2 Pedidos de {clientes[1].nombre}:')
+    clientes[1].realizar_pedido(stock[2],plantilla[0],20)
+    clientes[1].realizar_pedido(stock[3],plantilla[1],70)
+    print(f'\n--2 Pedidos de {clientes[2].nombre}:')
+    clientes[2].realizar_pedido(stock[0],plantilla[0],85)
+    clientes[2].realizar_pedido(stock[3],plantilla[1],15)
+    
     Menus_Salidas.borrado_vuelta_menu_principal()
 
 class Estatico:
