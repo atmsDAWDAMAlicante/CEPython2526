@@ -51,12 +51,15 @@ class Controlador:
             trabajador["dni"] = Introducciones.reiterar_entrada("DNI")
             dni_valido = Validaciones.validar_dni(trabajador["dni"])
 
+        sueldo_valido = Validaciones.validar_float(trabajador["sueldo"])
+        while (sueldo_valido == False):
+            trabajador["sueldo"] = Introducciones.reiterar_entrada ("sueldo")
+            sueldo_valido = Validaciones.validar_float(trabajador["sueldo"])
+
         if (tipo == 1):
             nuevo_trabajador = Camarero(trabajador["nombre"], trabajador["dni"],trabajador["sueldo"], trabajador["lista_clientes"])
         else:
             nuevo_trabajador = Cocinero(trabajador["nombre"], trabajador["dni"],trabajador["sueldo"])
-
-        #plantilla.append(nuevo_trabajador)
 
         return nuevo_trabajador
     
