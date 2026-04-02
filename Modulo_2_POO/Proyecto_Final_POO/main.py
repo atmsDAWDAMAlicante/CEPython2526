@@ -1,11 +1,11 @@
 import os
-
+from Vista.mensajes import Mensajes
 
 
 
 
 def main():
-    print("Empezamos")
+    print(Mensajes.TITULO)
     pass
 
 
