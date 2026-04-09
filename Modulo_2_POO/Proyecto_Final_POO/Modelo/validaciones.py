@@ -6,11 +6,11 @@ class Validaciones:
     try:
       menu_validado = int(opcion_menu)
     except ValueError:
-      print(f'Introduce un número entero dentro del 1 al {lim}')
+      print(f'Introduce un número entero entre el 0 y el {lim}')
       return False
     else:
-      if (menu_validado > lim):
-        print(f'Introduce un número entero dentro entre 1 y {lim}')
+      if ((menu_validado < 0) or (menu_validado > lim)):
+        print(f'Introduce un número entero dentro entre el 0 y el {lim}')
         return False
       else:
         return True
