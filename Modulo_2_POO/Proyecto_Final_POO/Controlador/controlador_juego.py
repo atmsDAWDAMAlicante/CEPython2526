@@ -1,28 +1,31 @@
-from Vista.vista_cli import Menus
+from Vista.vista_cli import Vista_CLI
 
 
 class Controlador_juego:
-    def __init__(self, vista1):
-        self.vista = vista1
 
-    def iniciar_juego():
-        print(f"Dentro del {self.vista1}")
+    def __init__(self, vista):
+        self.vista = vista
+
+    def iniciar_juego(self):
+        print(f"Dentro del {self.vista}")
 
         while True:
 
-            opcion = Menus.menu_principal(Menus.menu_iniciar_juego)
+            opcion = self.vista.menu_iniciar_juego()
 
             if opcion == 1:
-                self.nueva_partida()
+                self.nuevo_juego()
 
             elif opcion == 2:
-                #self.cargar_partida()
-                pass
+                self.guardar_partida()
+
             elif opcion == 0:
-                self.vista.mostrar("Hasta pronto")
+                self.vista.imprimir_mensaje("Adiós")
                 break
-    def nuevo_juego():
-        print("EMPEZAMOS")
-    def cargar_partida():
-        print("Selecciona el archivo JSON")
+
+    def nuevo_juego(self):
+        self.vista.imprimir_mensaje("Empezamos el juego")
+
+    def guardar_partida(self):
+        self.vista.imprimir_mensaje("Partida guardada")
     

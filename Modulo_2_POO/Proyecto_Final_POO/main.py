@@ -8,7 +8,7 @@ from Modelo.validaciones import Validaciones
 
 #Vista
 from Vista.mensajes import Mensajes
-from Vista.vista_cli import Menus
+from Vista.vista_cli import Menus, Vista_CLI
 
 
 
@@ -20,7 +20,7 @@ def main():
     
     while True: # Bucle provisional ---- ES PROVISIONAL
         if (interfaz == 1):
-            vista = vista_cli.Menus
+            vista = Vista_CLI()
             break
         elif (interfaz == 2):
             print("GUI")
@@ -28,7 +28,8 @@ def main():
         else:
             print("Adiós")
             break
-    iniciar_juego()
+    controlador = Controlador_juego(vista)
+    controlador.iniciar_juego()
 
 if __name__ == "__main__":
     main()

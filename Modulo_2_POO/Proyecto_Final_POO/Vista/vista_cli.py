@@ -3,11 +3,11 @@
 from Modelo.validaciones import Validaciones
 
 
-class Menus:
+class Menus: #Métodos estáticos
   
   menu_interfaz = {"texto": "Elige: 1-CLI / 2-GUI / 0-Salir", "lim": 2} # tipo de menu
   menu_iniciar_juego = {"texto": "Elige: 1-Iniciar juego / 2-Cargar partida / 0 - Salir", "lim": 2} # Controlador 
-  menu_guardar_cargar = {"texto": "Elige: 1-Guardar / 2-Cargar", "lim": 2} # Guardar/Cargar - JSON
+  menu_el_otro = {"texto": "Elige: 1-Guardar / 2-Cargar", "lim": 2} # Guardar/Cargar - JSON
 
 
 
@@ -24,9 +24,20 @@ class Menus:
       opcion_menu = input(f'{menu_activo['texto']}{sufijo}')
       tipo_validado = Validaciones.validar_menu_en_rango(opcion_menu, menu_activo['lim'])
     return int(opcion_menu)
+  
 
-  @staticmethod
-  def imprimir_mensaje(mensaje):
-    print(mensaje)
+class Vista_CLI:
+
+    def menu_interfaz(self):
+      return Menus.menu(Menus.menu_interfaz)
+
+    def menu_iniciar_juego(self):
+      return Menus.menu(Menus.menu_iniciar_juego)
+
+    def menu_el_otro(self):
+      pass
+
+    def imprimir_mensaje(self, mensaje):
+      print(mensaje)
 
   
