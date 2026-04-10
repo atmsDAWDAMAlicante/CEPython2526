@@ -24,3 +24,9 @@ class Menus:
       opcion_menu = input(f'{menu_activo['texto']}{sufijo}')
       tipo_validado = Validaciones.validar_menu_en_rango(opcion_menu, menu_activo['lim'])
     return int(opcion_menu)
+
+  @staticmethod
+  def imprimir_mensaje(mensaje):
+    print(mensaje)
+
+  

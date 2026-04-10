@@ -1,7 +1,7 @@
 import os
 
 #Controlador
-from Controlador.controlador_juego import iniciar_juego
+from Controlador.controlador_juego import Controlador_juego
 
 #Modelo
 from Modelo.validaciones import Validaciones
@@ -20,7 +20,7 @@ def main():
     
     while True: # Bucle provisional ---- ES PROVISIONAL
         if (interfaz == 1):
-            print("GUI")
+            vista = vista_cli.Menus
             break
         elif (interfaz == 2):
             print("GUI")
