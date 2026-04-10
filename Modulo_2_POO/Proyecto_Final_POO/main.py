@@ -18,7 +18,7 @@ def main():
     
     interfaz = Menus.menu(Menus.menu_interfaz)
     
-    while True:
+    while True: # Bucle provisional ---- ES PROVISIONAL
         if (interfaz == 1):
             print("GUI")
             break

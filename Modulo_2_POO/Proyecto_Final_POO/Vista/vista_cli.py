@@ -6,7 +6,7 @@ from Modelo.validaciones import Validaciones
 class Menus:
   
   menu_interfaz = {"texto": "Elige: 1-CLI / 2-GUI / 0-Salir", "lim": 2} # tipo de menu
-  menu_iniciar_juego = {"texto": "Elige: 1-Guardar / 2-Cargar", "lim": 2} # Guardar/Cargar - JSON
+  menu_iniciar_juego = {"texto": "Elige: 1-Iniciar juego / 2-Cargar partida / 0 - Salir", "lim": 2} # Controlador 
   menu_guardar_cargar = {"texto": "Elige: 1-Guardar / 2-Cargar", "lim": 2} # Guardar/Cargar - JSON
 
 
