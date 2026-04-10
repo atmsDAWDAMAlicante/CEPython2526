@@ -1,7 +1,12 @@
 import os
 
+#Controlador
+from Controlador.controlador_juego import iniciar_juego
+
+#Modelo
 from Modelo.validaciones import Validaciones
 
+#Vista
 from Vista.mensajes import Mensajes
 from Vista.vista_cli import Menus
 
@@ -15,7 +20,7 @@ def main():
     
     while True:
         if (interfaz == 1):
-            print("CLI")
+            print("GUI")
             break
         elif (interfaz == 2):
             print("GUI")
@@ -23,6 +28,7 @@ def main():
         else:
             print("Adiós")
             break
+    iniciar_juego()
 
 if __name__ == "__main__":
     main()
