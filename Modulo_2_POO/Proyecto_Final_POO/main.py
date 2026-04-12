@@ -9,6 +9,7 @@ from Modelo.validaciones import Validaciones
 #Vista
 from Vista.mensajes import Mensajes
 from Vista.vista_cli import Menus, Vista_CLI
+from Vista.vista_gui import Vista_GUI
 
 
 
@@ -23,7 +24,8 @@ def main():
             vista = Vista_CLI()
             break
         elif (interfaz == 2):
-            print("GUI")
+            #vista = Vista_GUI()
+            print("¡¡¡En obras: GUI!!!")
             break
         else:
             print("Adiós")
