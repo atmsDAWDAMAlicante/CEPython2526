@@ -9,7 +9,7 @@ class Menus: #Métodos estáticos
   menu_interfaz = {"texto": "Elige: 1-CLI / 2-GUI / 0-Salir", "lim": 2} # tipo de menu
   menu_iniciar_juego = {"texto": "Elige: 1-Iniciar juego / 2-Cargar partida / 0 - Salir", "lim": 2} # Controlador 
   menu_el_otro = {"texto": "Elige: 1-Guardar / 2-Cargar", "lim": 2} # Guardar/Cargar - JSON
-
+  menu_personajes = {"texto": None, "lim": 0}
 
   # Método estático: generador de menús que llama a las validaciones en el Modelo
   @staticmethod
@@ -35,8 +35,10 @@ class Vista_CLI:
     def menu_iniciar_juego(self):
       return Menus.menu(Menus.menu_iniciar_juego)
 
-    def menu_el_otro(self):
-      pass
+
+    def menu_elegir_jugador(self,menu):
+      #return Menus.menu(Menus.menu_personajes)
+      return Menus.menu(menu)
 
     def imprimir_mensaje(self, mensaje): # En esta clase está el método para IMPRIMIR POR PANTALLA
       print(mensaje)
