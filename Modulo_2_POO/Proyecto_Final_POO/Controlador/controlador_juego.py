@@ -29,6 +29,8 @@ class Controlador_juego:
                 break
 
     def nuevo_juego(self):
+
+        # ELECCIÓN DEL JUGADOR
         self.vista.imprimir_mensaje("Empezamos el juego: ELIJE TU JUGADOR: ")
 
         #PRIMERA PARTE: El menú para obtener el índice del personaje que será el jugador
@@ -39,12 +41,14 @@ class Controlador_juego:
         resto_enemigos = PERSONAJES
         jugador = resto_enemigos.pop(numero_jugador-1)
         
-        self.vista.imprimir_mensaje(f'EL JUGADOR ES: {jugador["nombre"]}')
-        los_otros = "LOS ENEMIGOS SON: "
+        
+        self.vista.imprimir_mensaje(f'Has elegido al/a la: {jugador["nombre"]}')
+        los_otros = "Te vas a enfrentar a: "
         for i in resto_enemigos:
             los_otros += f'- {i["nombre"]}\n'
         self.vista.imprimir_mensaje(los_otros)
 
+        # FORMACIÓN DE LOS OBJETOS JUGADOR Y ENEMIGOS
 
 
     def guardar_partida(self):
