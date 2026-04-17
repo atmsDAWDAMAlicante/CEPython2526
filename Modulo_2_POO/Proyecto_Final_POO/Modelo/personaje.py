@@ -20,4 +20,29 @@ PERSONAJES = [
     {"nombre": "Caballero", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True}
 ]
 
+# Clase padre Personaje
+class Personaje:
+  def __init__(self, nombre, vida, vida_max, ataque, pociones, estoyVivo):
+    self.nombre = nombre
+    self.vida = vida
+    self.vida_max = vida_max
+    self.ataque = ataque
+    self.pociones = pociones
+    self.estoyVivo = estoyVivo
+
+  def recibir_daño():
+    pass
+
+  def curarse():
+    pass
+
+  def estar_vivo(self, vida): #Este método informa si el personaje sigue vivo o ha muerto
+    if (self.vida <= 0):
+      return False
+    else:
+      return True
+
+# Probando el constructor
+nuevo = Personaje("guerrero",1,2,3,4,True)
+print(nuevo.__dict__)
 
