@@ -19,7 +19,7 @@ class Personaje:
   def recibir_daño():
     pass
 
-  def curarse():
+  def usar_pocion():
     pass
 
   def estar_vivo(self, vida): #Este método informa si el personaje sigue vivo o ha muerto

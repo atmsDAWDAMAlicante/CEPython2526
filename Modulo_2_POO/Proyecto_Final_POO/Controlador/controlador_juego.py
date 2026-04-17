@@ -1,7 +1,7 @@
 # CONTROLADOR QUE GESTIONA EL JUEGO
 
 # Modelo
-from Modelo.administrador_juego import Administrador_juego, obtener_personajes_para_menu, PERSONAJES
+from Modelo.combate import PERSONAJES, obtener_personajes_para_menu, Combate
 
 # Vista
 from Vista.vista_cli import Vista_CLI
@@ -50,7 +50,7 @@ class Controlador_juego:
         self.vista.imprimir_mensaje(los_otros)
 
         # ENVIO AL ADMINISTRADOR DEL JUEGO DE LOS OBJETOS JUGADOR Y ENEMIGOS
-        nueva_partida = Administrador_juego(jugador,enemigo, resto_enemigos) 
+        nueva_partida = Combate(jugador,enemigo, resto_enemigos) 
         print(nueva_partida.__dict__)
 
 
