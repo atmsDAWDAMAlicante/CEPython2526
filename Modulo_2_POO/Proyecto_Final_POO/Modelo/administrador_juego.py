@@ -4,12 +4,12 @@
 # Los personajes de Dragones y Mazmorras
 
 PERSONAJES = [
-    {"nombre": "Arquero", "ataque": 12, "defensa": 10, "vida": 100},
-    {"nombre": "Barbaro", "ataque": 15, "defensa": 8, "vida": 90},
-    {"nombre": "Acróbata", "ataque": 13, "defensa": 9, "vida": 95},
-    {"nombre": "Mago", "ataque": 12, "defensa": 10, "vida": 100},
-    {"nombre": "Ladrona", "ataque": 15, "defensa": 8, "vida": 90},
-    {"nombre": "Caballero", "ataque": 13, "defensa": 9, "vida": 95}
+    {"nombre": "Arquero", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
+    {"nombre": "Barbaro", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
+    {"nombre": "Acróbata", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
+    {"nombre": "Mago",  "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
+    {"nombre": "Ladrona", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
+    {"nombre": "Caballero", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True}
 ]
 
 def obtener_personajes_para_menu():
@@ -25,7 +25,6 @@ def obtener_personajes_para_menu():
 
 class Administrador_juego:
     def __init__(self):
-
         self.jugador = None
         self.enemigos = []
         self.enemigo_actual = None

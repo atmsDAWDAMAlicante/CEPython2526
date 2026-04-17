@@ -17,3 +17,22 @@ PERSONAJES = [
     {"nombre": "Ladrona", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
     {"nombre": "Caballero", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True}
 ]
+
+# Clase Gestor_Personajes
+class Gestor_Personajes: # no hereda de personaje
+  def __init__(self,lista_personajes):
+    self.lista_personajes = lista_personajes
+
+  def obtener_personaje(self, numero):
+    try:
+      int(numero)
+    except ValueError:
+      print(f'Introduce un número entero')
+      return False
+    else:
+      jugador = self.lista_personajes.pop(numero)
+      return jugador
+
+  def listar_personajes(self):
+    for elemento in self.lista_personajes:
+      print(elemento["nombre"])
