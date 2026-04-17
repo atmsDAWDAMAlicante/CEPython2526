@@ -1,5 +1,6 @@
 
-
+# Modelo
+from Modelo.jugador import Jugador
 
 # Los personajes de Dragones y Mazmorras
 
@@ -24,7 +25,7 @@ def obtener_personajes_para_menu():
 
 
 class Administrador_juego:
-    def __init__(self):
-        self.jugador = None
+    def __init__(self, jugador):
+        self.jugador = jugador
         self.enemigos = []
         self.enemigo_actual = None

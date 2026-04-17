@@ -48,8 +48,9 @@ class Controlador_juego:
             los_otros += f'- {i["nombre"]}\n'
         self.vista.imprimir_mensaje(los_otros)
 
-        # FORMACIÓN DE LOS OBJETOS JUGADOR Y ENEMIGOS
-
+        # ENVIO AL ADMINISTRADOR DEL JUEGO DE LOS OBJETOS JUGADOR Y ENEMIGOS
+        nueva_partida = Administrador_juego(jugador) 
+        print(nueva_partida.__dict__)
 
     def guardar_partida(self):
         self.vista.imprimir_mensaje("Partida guardada")
