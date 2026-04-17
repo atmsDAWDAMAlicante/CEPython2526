@@ -1,3 +1,5 @@
+from Modelo.personaje import Personaje
+
 
 # Clase Enemigo
 

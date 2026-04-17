@@ -40,17 +40,19 @@ class Controlador_juego:
         # Se saca al jugador del cesto de personajes
         resto_enemigos = PERSONAJES
         jugador = resto_enemigos.pop(numero_jugador-1)
+        enemigo = resto_enemigos.pop(0)
         
         
-        self.vista.imprimir_mensaje(f'Has elegido al/a la: {jugador["nombre"]}')
-        los_otros = "Te vas a enfrentar a: "
+        self.vista.imprimir_mensaje(f'Has elegido al/a la: {jugador["nombre"]}\nAhora vas a luchar contra {enemigo["nombre"]}')
+        los_otros = "y después te enfrentarás:\n"
         for i in resto_enemigos:
             los_otros += f'- {i["nombre"]}\n'
         self.vista.imprimir_mensaje(los_otros)
 
         # ENVIO AL ADMINISTRADOR DEL JUEGO DE LOS OBJETOS JUGADOR Y ENEMIGOS
-        nueva_partida = Administrador_juego(jugador) 
+        nueva_partida = Administrador_juego(jugador,enemigo, resto_enemigos) 
         print(nueva_partida.__dict__)
+
 
     def guardar_partida(self):
         self.vista.imprimir_mensaje("Partida guardada")
