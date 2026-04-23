@@ -44,7 +44,12 @@ class Controlador_juego:
         # Se saca al jugador del cesto de personajes
         jugador = Jugador(**personajes_partida.obtener_jugador(numero_jugador-1))
         enemigo = Enemigo(**personajes_partida.obtener_enemigo())
-        resto_enemigos = personajes_partida.obtener_resto()
+        #resto_enemigos = personajes_partida.obtener_resto()
+        resto_enemigos = [ #Para recuperar objetos y no diccionarios
+            Enemigo(**datos)
+            for datos in personajes_partida.obtener_resto()
+        ]
+        print(type(resto_enemigos[1]))
         self.vista.imprimir_mensaje(f'Has escogido a: {jugador.nombre}')
         self.vista.imprimir_mensaje(f'Tu adversario es: {enemigo.nombre}')
 
