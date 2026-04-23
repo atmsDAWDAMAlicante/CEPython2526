@@ -26,21 +26,21 @@ class Controlador_juego:
             elif opcion == 0:
                 self.vista.imprimir_mensaje("Adiós")
                 break
+            
     def guardar_partida(self):
         self.vista.imprimir_mensaje("Partida guardada")
-    
 
-    def nuevo_juego(self):
-        # ELECCIÓN DEL JUGADOR
+    def preparar_personajes(self):
+        #PRIMERA PARTE: Menú
         self.vista.imprimir_mensaje("Empezamos el juego: ELIJE TU JUGADOR: ")
-
-        
-        #PRIMERA PARTE: Obtención de los personajes:
+      
         personajes_partida = Gestor_personajes(PERSONAJES)
-        # Se obtiene el menú
+        
         todos_los_personajes = personajes_partida.obtener_personajes_para_menu_CLI()
         # Aquí se recoge el índice del jugador desde la vista
         numero_jugador = self.vista.menu_elegir_jugador(todos_los_personajes)
+
+        #SEGUNDA PARTE: separar jugador, enemigo (activo) y resto
         # Se saca al jugador del cesto de personajes
         jugador = Jugador(**personajes_partida.obtener_jugador(numero_jugador-1))
         enemigo = Enemigo(**personajes_partida.obtener_enemigo())
@@ -49,12 +49,20 @@ class Controlador_juego:
             Enemigo(**datos)
             for datos in personajes_partida.obtener_resto()
         ]
+        # Esto de abajo para borrar cuando vea que va
         print(type(resto_enemigos[1]))
-        self.vista.imprimir_mensaje(f'Has escogido a: {jugador.nombre}')
-        self.vista.imprimir_mensaje(f'Tu adversario es: {enemigo.nombre}')
+        self.vista.imprimir_mensaje(f'Has escogido a: {jugador.nombre} vida {jugador.vida}')
+        self.vista.imprimir_mensaje(f'Tu adversario es: {enemigo.nombre} vida {enemigo.vida}')
 
-        # ENVIO AL ADMINISTRADOR DEL JUEGO DE LOS OBJETOS JUGADOR Y ENEMIGOS
+        # Retornamos los jugadores
+        return jugador, enemigo, resto_enemigos
+
+    def nuevo_juego(self):
+        # Cogemos los jugadores
+        jugador, enemigo, resto_enemigos = self.preparar_personajes()
+        # IMPORTANTE ENVIO AL ADMINISTRADOR DEL JUEGO DE LOS OBJETOS JUGADOR Y ENEMIGOS
         combate = Combate(jugador,enemigo, resto_enemigos) 
+        # EMPIEZA LA BATALLA
         self.bucle_combate(combate)
 
 
