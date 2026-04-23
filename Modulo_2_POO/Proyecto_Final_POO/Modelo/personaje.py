@@ -23,7 +23,7 @@ class Personaje:
     pass
 
   def estar_vivo(self, vida): #Este método informa si el personaje sigue vivo o ha muerto
-    if (self.vida <= 0):
+    if (vida <= 0):
       return False
     else:
       return True

@@ -9,14 +9,12 @@ class Combate:
         self.resto_enemigos = resto_enemigos
 
     def nuevo_enemigo(self):
-        if self.resto_enemigos:
-            self.enemigo = self.resto_enemigos.pop(0)
-            return True
-        return False
+        if len(self.resto_enemigos) > 0:
+            return  self.resto_enemigos.pop(0)
+            #return True
+        #return False
 
-    def ejecutar_accion(self, atacante,accion):
-        print(f'--El {atacante.nombre} hace {accion}')
-
+'''
     def turno_enemigo(self, turno):
         turno = not turno
 
@@ -28,6 +26,4 @@ class Combate:
 
 
         return turno
-
-    def comprobar_enemigo():
-        print(f'xx tiene x vida')
+'''

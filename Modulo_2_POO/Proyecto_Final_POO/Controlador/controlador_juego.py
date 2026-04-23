@@ -3,7 +3,7 @@
 # Modelo
 from Modelo.gestor_personajes import PERSONAJES, Gestor_personajes
 from Modelo.combate import Combate
-from Modelo.accion import Accion, Ataque, Ataque_Cargado, Usar_Pocion
+from Modelo.accion import Accion, Ataque, Ataque_Cargado, Usar_Pocion,Kame_Hame
 from Modelo.jugador import Jugador
 from Modelo.enemigo import Enemigo
 
@@ -69,78 +69,92 @@ class Controlador_juego:
     def bucle_combate(self, combate):
         self.combate = combate
         turno = True # Empieza siempre el jugador
-        activo = None
         accion = None
         contador = 0 # contador de las jugadas
         while True:
             contador += 1 # vamos contando las jugadas a título informativo
-            
-            if (turno == True): # EL JUGADOR
-                
+            if (turno == True): # LE TOCA AL JUGADOR
+                # SE DEFINEN LOS ROLES
                 atacante = self.combate.jugador
                 defensor = self.combate.enemigo
+                # MOSTRAR INFORMACIÓN
                 self.vista.imprimir_mensaje(f"Jugada nº {contador}: {atacante.nombre} contra {defensor.nombre}")
-                
-                acto = Menus.menu(Menus.menu_combate) # Hay que poner un Kame-Hame
-
+                # SE PIDE UNA ACCIÓN
+                acto = Menus.menu(Menus.menu_combate) 
 
                 # Opciones del Menú
                 if (acto == 1):
-                    #defensor.vida = Ataque().ejecucion(defensor)
-                    #accion = "ataque"
                     accion = Ataque()
                     accion.ejecutar(atacante, defensor)
-                ''' 
+                
                 elif (acto == 2):
-                    activo.vida = Ataque_Cargado().ejecucion(activo)
-                    accion = "ataque cargado"
+                    accion = Ataque_Cargado()
+                    accion.ejecutar(atacante, defensor)
+
                 elif (acto == 3):
-                    activo.vida = Usar_Pocion().ejecucion(activo)
-                    accion = "poción"
+                    accion = Usar_Pocion()
+                    accion.ejecutar(atacante, defensor)
+
                 elif (acto == 4):
                     print("Partida guardada")
                     print("Fin")
                     break
+
+                elif (acto == 5):
+                    accion = Kame_Hame()
+                    accion.ejecutar(atacante, defensor)
+
                 else: # SALIR DEL JUGADOR
                     print("Fin")
                     break
-                '''
-                
-                self.combate.ejecutar_accion(atacante,accion) # Jugador acciona
-                self.vista.imprimir_mensaje(f"--{atacante.nombre} vida: {atacante.vida}")
-                if (defensor.vida > 0):
-                    self.vista.imprimir_mensaje(f"--{defensor.nombre} vida: {defensor.vida}")
-                else:
-                    self.vista.imprimir_mensaje(f"--{defensor.nombre} ha muerto")
 
-                turno = self.combate.turno_enemigo(turno) # Cambia turno
+                # MOSTRAMOS EL STATUS TRAS LA ACCIÓN
+                self.mostrar_status(atacante, defensor)
+                # CAMBIAMOS EL TURNO
+                #turno = self.combate.turno_enemigo(turno) 
+                turno = not turno
 
             else: # Cambian las tornas
                 atacante = self.combate.enemigo
                 defensor = self.combate.jugador
-                self.vista.imprimir_mensaje(f"Jugada nº {contador}- ataca {atacante.nombre} a {defensor.nombre}")
+                self.vista.imprimir_mensaje(f"Jugada nº {contador}- {atacante.nombre} ataca a {defensor.nombre}")
 
                 atacante.decidir_accion() # Se lo piensa
                 defensor.vida -= 1 # De momento el jugador pierde 1 de vida
-                self.vista.imprimir_mensaje(f"{atacante.nombre} vida: {atacante.vida}")
-                self.vista.imprimir_mensaje(f"{defensor.nombre} vida: {defensor.vida}")
-                turno = self.combate.turno_enemigo(turno) # Cambia turno
+                self.mostrar_status(atacante, defensor)
+                #turno = self.combate.turno_enemigo(turno) # Cambia turno
+                turno = not turno
 
-            #print(f'---La vida de {activo.nombre} es {activo.vida} - TURNO: {turno}')
             # Ver si está vivo
-            '''
-            activo.estoyVivo = activo.estar_vivo(activo.vida)
+            
 
-
-            if (self.combate.jugador.estoyVivo == False):
-                print(f"{self.combate.jugador.nombre} pierde")
-                print("Fin")
+            if (combate.jugador.estar_vivo(combate.jugador.vida) == False):
+                print(f"{combate.jugador.nombre} HA MUERTO")
+                print("FIN DEL JUEGO")
                 break
-            elif (self.combate.enemigo.estoyVivo == False):
-                print(f"{self.combate.jugador.nombre} ha ganado al {self.combate.enemigo.nombre}")
-'''
+
+            elif not combate.enemigo.estar_vivo(combate.enemigo.vida):
+                print(f"{combate.enemigo.nombre} ha sido derrotado")
+                nuevo = combate.nuevo_enemigo()
+
+                if not nuevo:
+                    print("¡¡¡HAS DERROTADO A TODOS LOS ENEMIGOS!!!")
+                    break
+
+                combate.enemigo = nuevo
+
+            '''
+            elif (combate.enemigo.estar_vivo(combate.enemigo.vida) == False):
+                print(f"{combate.enemigo.nombre} ha sido derrotado")
+                combate.enemigo = combate.nuevo_enemigo()
+
             if not self.combate.nuevo_enemigo():
                 print(f'{len(self.combate.resto_enemigos)} enemigos restantes')
                 print("¡¡¡HAS DERROTADO A TODOS LOS ENEMIGOS!!!")
                 break
+            '''
 
+    def mostrar_status(self, atacante, defensor):
+            self.vista.imprimir_mensaje("---- STATUS:")
+            self.vista.imprimir_mensaje(f"--{atacante.nombre} vida: {atacante.vida}")
+            self.vista.imprimir_mensaje(f"--{defensor.nombre} vida: {defensor.vida}")
