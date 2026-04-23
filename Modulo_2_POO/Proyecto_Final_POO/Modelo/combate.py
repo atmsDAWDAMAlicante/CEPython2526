@@ -9,7 +9,10 @@ class Combate:
         self.resto_enemigos = resto_enemigos
 
     def nuevo_enemigo(self):
-        pass
+        if self.resto_enemigos:
+            self.enemigo = self.resto_enemigos.pop(0)
+            return True
+        return False
 
     def ejecutar_accion(self, accion):
         print(f'El {self.jugador.nombre} hace {accion}')

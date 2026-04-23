@@ -112,11 +112,9 @@ class Controlador_juego:
                 break
             elif (self.combate.enemigo.estoyVivo == False):
                 print(f"{self.combate.jugador.nombre} ha ganado al {self.combate.enemigo.nombre}")
-            
-            if (len(self.combate.resto_enemigos)>0):
-                self.combate.enemigo = None
-                self.combate.enemigo = Enemigo(**self.combate.resto_enemigos.pop(0))
-            else:
-                print("Fin del juego")
+
+            if not self.combate.nuevo_enemigo():
+                print(f'{len(self.combate.resto_enemigos)} enemigos restantes')
+                print("¡¡¡HAS DERROTADO A TODOS LOS ENEMIGOS!!!")
                 break
 
