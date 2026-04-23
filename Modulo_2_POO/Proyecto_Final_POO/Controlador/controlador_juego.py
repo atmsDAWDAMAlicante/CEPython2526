@@ -68,19 +68,29 @@ class Controlador_juego:
 
     def bucle_combate(self, combate):
         self.combate = combate
-        turno = True
+        turno = True # Empieza siempre el jugador
         activo = None
         accion = None
-        contador = 0
+        contador = 0 # contador de las jugadas
         while True:
-            contador += 1
-            print(f"nº {contador} - vuelta del bucle")
+            contador += 1 # vamos contando las jugadas a título informativo
+            
             if (turno == True): # EL JUGADOR
-                acto = Menus.menu(Menus.menu_combate)
-                activo = self.combate.enemigo
+                
+                atacante = self.combate.jugador
+                defensor = self.combate.enemigo
+                self.vista.imprimir_mensaje(f"Jugada nº {contador}: {atacante.nombre} contra {defensor.nombre}")
+                
+                acto = Menus.menu(Menus.menu_combate) # Hay que poner un Kame-Hame
+
+
+                # Opciones del Menú
                 if (acto == 1):
-                    activo.vida = Ataque().ejecucion(activo)
-                    accion = "ataque"
+                    #defensor.vida = Ataque().ejecucion(defensor)
+                    #accion = "ataque"
+                    accion = Ataque()
+                    accion.ejecutar(atacante, defensor)
+                ''' 
                 elif (acto == 2):
                     activo.vida = Ataque_Cargado().ejecucion(activo)
                     accion = "ataque cargado"
@@ -94,15 +104,31 @@ class Controlador_juego:
                 else: # SALIR DEL JUGADOR
                     print("Fin")
                     break
-                self.combate.ejecutar_accion(accion) # Jugador acciona
-                turno = self.combate.turno_enemigo(turno) # Cambia a enemigo
+                '''
+                
+                self.combate.ejecutar_accion(atacante,accion) # Jugador acciona
+                self.vista.imprimir_mensaje(f"--{atacante.nombre} vida: {atacante.vida}")
+                if (defensor.vida > 0):
+                    self.vista.imprimir_mensaje(f"--{defensor.nombre} vida: {defensor.vida}")
+                else:
+                    self.vista.imprimir_mensaje(f"--{defensor.nombre} ha muerto")
 
-            else: # Turno del ejemigo
-                activo = self.combate.jugador # Cambia activo
-                self.combate.enemigo.decidir_accion() # Se lo piensa
-                activo.vida -= 1
-                turno = self.combate.turno_enemigo(turno)
-            print(f'---La vida de {activo.nombre} es {activo.vida} - TURNO: {turno}')
+                turno = self.combate.turno_enemigo(turno) # Cambia turno
+
+            else: # Cambian las tornas
+                atacante = self.combate.enemigo
+                defensor = self.combate.jugador
+                self.vista.imprimir_mensaje(f"Jugada nº {contador}- ataca {atacante.nombre} a {defensor.nombre}")
+
+                atacante.decidir_accion() # Se lo piensa
+                defensor.vida -= 1 # De momento el jugador pierde 1 de vida
+                self.vista.imprimir_mensaje(f"{atacante.nombre} vida: {atacante.vida}")
+                self.vista.imprimir_mensaje(f"{defensor.nombre} vida: {defensor.vida}")
+                turno = self.combate.turno_enemigo(turno) # Cambia turno
+
+            #print(f'---La vida de {activo.nombre} es {activo.vida} - TURNO: {turno}')
+            # Ver si está vivo
+            '''
             activo.estoyVivo = activo.estar_vivo(activo.vida)
 
 
@@ -112,7 +138,7 @@ class Controlador_juego:
                 break
             elif (self.combate.enemigo.estoyVivo == False):
                 print(f"{self.combate.jugador.nombre} ha ganado al {self.combate.enemigo.nombre}")
-
+'''
             if not self.combate.nuevo_enemigo():
                 print(f'{len(self.combate.resto_enemigos)} enemigos restantes')
                 print("¡¡¡HAS DERROTADO A TODOS LOS ENEMIGOS!!!")

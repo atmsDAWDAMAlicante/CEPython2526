@@ -6,17 +6,19 @@ class Accion: # sin constructor
     return
 
 class Ataque(Accion):
-  def ejecucion(self, activo):
-    activo.vida -= 1
-    return activo.vida
-
+  def ejecutar(self, atacante, defensor):
+    defensor.vida -= 1
+    
 class Ataque_Cargado(Accion):
-  def ejecucion(self, activo):
-    activo.vida -=5
-    return activo.vida
+  def ejecutar(self, atacante, defensor):
+    defensor.vida -=5
+
 
 class Usar_Pocion(Accion):
-  def ejecucion(self, activo):
-    activo.vida +=3
-    return activo.vida
+  def ejecutar(self, atacante, defensor):
+    atacante.vida +=3
+    
+class Kame_Hame(Accion):
+  def ejecutar(self, atacante, defensor):
+    defensor.vida = 0
 

@@ -14,8 +14,8 @@ class Combate:
             return True
         return False
 
-    def ejecutar_accion(self, accion):
-        print(f'El {self.jugador.nombre} hace {accion}')
+    def ejecutar_accion(self, atacante,accion):
+        print(f'--El {atacante.nombre} hace {accion}')
 
     def turno_enemigo(self, turno):
         turno = not turno
