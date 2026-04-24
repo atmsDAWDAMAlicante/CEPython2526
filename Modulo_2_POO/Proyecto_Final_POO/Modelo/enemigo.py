@@ -17,8 +17,8 @@ class Enemigo(Personaje):
     elif (atacante.vida + 3 > atacante.vida_max) and (atacante.pociones > 0) and (atacante.contador_ataques >= 3):
       return 2 # Tira el Ataque Cargado
     
-    elif (atacante.pociones > 0) and (atacante.contador_ataques < 3):
-      return 3 # Tómate la poción que te quede
+    #elif (atacante.pociones > 0) and (atacante.contador_ataques < 3):
+      #return 3 # Tómate la poción que te quede
     
     else: # En los demás casos ¡ATACA!
       return 1
