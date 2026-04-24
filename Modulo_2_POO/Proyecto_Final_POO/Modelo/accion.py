@@ -22,11 +22,15 @@ class Ataque_Cargado(Accion):
 
 class Usar_Pocion(Accion):
   def ejecutar(self, atacante, defensor):
-    atacante.pociones -= 1
-    atacante.vida +=3
-    if (atacante.vida > atacante.vida_max):
-        atacante.vida = atacante.vida_max
-    print(f"Te quedan {atacante.pociones} pociones")
+    if (atacante.pociones > 0):
+      atacante.pociones -= 1
+      atacante.vida +=3
+      if (atacante.vida > atacante.vida_max):
+          atacante.vida = atacante.vida_max
+      print(f"Te quedan {atacante.pociones} pociones")
+    else:
+      print(f"No te quedan pociones")
+      
     
     
 class Kame_Hame(Accion):
