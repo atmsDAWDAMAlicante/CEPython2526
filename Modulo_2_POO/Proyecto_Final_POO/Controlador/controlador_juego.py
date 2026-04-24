@@ -50,10 +50,10 @@ class Controlador_juego:
             for datos in personajes_partida.obtener_resto()
         ]
         # Esto de abajo para borrar cuando vea que va
-        print(type(resto_enemigos[1]))
+        print(enemigo.contador_ataques)
         self.vista.imprimir_mensaje(f'Has escogido a: {jugador.nombre} vida {jugador.vida}')
         self.vista.imprimir_mensaje(f'Tu adversario es: {enemigo.nombre} vida {enemigo.vida}')
-
+        self.vista.imprimir_mensaje(f"{'='*50}\nEMPIEZA EL JUEGO\n{'='*50}")
         # Retornamos los jugadores
         return jugador, enemigo, resto_enemigos
 
@@ -72,21 +72,27 @@ class Controlador_juego:
         accion = None
         contador = 0 # contador de las jugadas
         while True:
+
+
+
             contador += 1 # vamos contando las jugadas a título informativo
             if (turno == True): # LE TOCA AL JUGADOR
                 # SE DEFINEN LOS ROLES
                 atacante = self.combate.jugador
                 defensor = self.combate.enemigo
-                # MOSTRAR INFORMACIÓN
-                self.vista.imprimir_mensaje(f"Jugada nº {contador}: {atacante.nombre} contra {defensor.nombre}")
-                # SE PIDE UNA ACCIÓN
+
+                # MOSTRAR INFORMACIÓN DEL TURNO JUGADOR
+                self.vista.imprimir_mensaje(f"{'='*50}\nJugada nº {contador}: turno de {atacante.nombre}")
+                self.mostrar_status(atacante, defensor)
+
+                # EMPIEZA EL JUGADOR: SE LE PIDE UNA ACCIÓN
                 acto = Menus.menu(Menus.menu_combate) 
 
-                # Opciones del Menú
+                # Opciones del Menú PARA EL JUGADOR
                 if (acto == 1):
                     accion = Ataque()
                     accion.ejecutar(atacante, defensor)
-                
+
                 elif (acto == 2):
                     accion = Ataque_Cargado()
                     accion.ejecutar(atacante, defensor)
@@ -102,34 +108,49 @@ class Controlador_juego:
                 else: # SALIR DEL JUGADOR
                     print("Fin")
                     break
+                
 
-                # MOSTRAMOS EL STATUS TRAS LA ACCIÓN
-                self.mostrar_status(atacante, defensor)
                 # CAMBIAMOS EL TURNO
-                #turno = self.combate.turno_enemigo(turno) 
                 turno = not turno
 
+            # AHORA LE TOCA AL ENEMIGO
             else: # Cambian las tornas
                 atacante = self.combate.enemigo
                 defensor = self.combate.jugador
-                self.vista.imprimir_mensaje(f"Jugada nº {contador}- {atacante.nombre} ataca a {defensor.nombre}")
 
-                atacante.decidir_accion() # Se lo piensa
-                defensor.vida -= 1 # De momento el jugador pierde 1 de vida
+                # MOSTRAR INFORMACIÓN DEL TURNO ENEMIGO
+                self.vista.imprimir_mensaje(f"{'='*50}\nJugada nº {contador}: turno de {atacante.nombre}")
                 self.mostrar_status(atacante, defensor)
-                #turno = self.combate.turno_enemigo(turno) # Cambia turno
+                
+                acto = atacante.decidir_accion(atacante) # Se lo piensa
+                if (acto == 1):
+                    accion = Ataque()
+                    accion.ejecutar(atacante, defensor)
+                
+                elif (acto == 2):
+                    accion = Ataque_Cargado()
+                    accion.ejecutar(atacante, defensor)
+
+                elif (acto == 3):
+                    accion = Usar_Pocion()
+                    accion.ejecutar(atacante, defensor)
+
                 turno = not turno
 
-            # Ver si está vivo
+            #MOSTRAMOS LA ACCIÓN Y EL RESULTADO
+            self.vista.imprimir_mensaje(f"================ RESULTADO: TURNO {turno}")
+            self.vista.imprimir_mensaje(f"--->El {atacante.nombre} ha hecho {accion.__class__.__name__}")
+            self.mostrar_status(atacante, defensor)
             
-
+            
+            # HAY QUE VER SI ESTÁ VIVO
             if (combate.jugador.estar_vivo(combate.jugador.vida) == False):
-                print(f"{combate.jugador.nombre} HA MUERTO")
+                print(f"{combate.jugador.nombre} HAS MUERTO")
                 print("FIN DEL JUEGO")
                 break
 
             elif not combate.enemigo.estar_vivo(combate.enemigo.vida):
-                print(f"{combate.enemigo.nombre} ha sido derrotado")
+                print(f">>>>>>>>EL POBRE {combate.enemigo.nombre} HA MUERTO")
                 nuevo = combate.nuevo_enemigo()
 
                 if not nuevo:
@@ -138,16 +159,7 @@ class Controlador_juego:
 
                 combate.enemigo = nuevo
 
-            '''
-            elif (combate.enemigo.estar_vivo(combate.enemigo.vida) == False):
-                print(f"{combate.enemigo.nombre} ha sido derrotado")
-                combate.enemigo = combate.nuevo_enemigo()
 
-            if not self.combate.nuevo_enemigo():
-                print(f'{len(self.combate.resto_enemigos)} enemigos restantes')
-                print("¡¡¡HAS DERROTADO A TODOS LOS ENEMIGOS!!!")
-                break
-            '''
 
     def mostrar_status(self, atacante, defensor):
             self.vista.imprimir_mensaje("---- STATUS:")

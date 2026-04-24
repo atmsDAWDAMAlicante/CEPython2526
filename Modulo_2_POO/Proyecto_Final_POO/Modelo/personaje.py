@@ -15,6 +15,7 @@ class Personaje:
     self.ataque = ataque
     self.pociones = pociones
     self.estoyVivo = estoyVivo
+    self.contador_ataques = 0
 
   def recibir_daño():
     pass

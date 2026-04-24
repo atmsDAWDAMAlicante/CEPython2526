@@ -13,6 +13,7 @@ class Jugador(Personaje):
     self.vida_max = 100
     self.ataque = 10
     self.pociones = 5
+    #self.contador_ataques = 0
 
   def ataque_cargado(self):
     print(f"{self.nombre} dispone de ataque cargado")
