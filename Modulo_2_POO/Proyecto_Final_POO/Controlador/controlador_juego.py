@@ -96,11 +96,6 @@ class Controlador_juego:
                     accion.ejecutar(atacante, defensor)
 
                 elif (acto == 4):
-                    print("Partida guardada")
-                    print("Fin")
-                    break
-
-                elif (acto == 5):
                     accion = Kame_Hame()
                     accion.ejecutar(atacante, defensor)
 

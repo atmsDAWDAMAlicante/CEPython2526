@@ -13,17 +13,3 @@ class Combate:
             return  self.resto_enemigos.pop(0)
             #return True
         #return False
-
-'''
-    def turno_enemigo(self, turno):
-        turno = not turno
-
-        if (turno == True):
-            print(f'Ahora le toca a {self.jugador.nombre}')
-
-        else:
-            print(f'Ahora le toca a {self.enemigo.nombre}')
-
-
-        return turno
-'''

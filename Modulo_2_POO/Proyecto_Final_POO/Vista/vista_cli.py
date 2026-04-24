@@ -8,7 +8,7 @@ class Menus: #Métodos estáticos
   # Variables que contienen los menús para ejecutar con el método de esta clase y validaciones del Modelo
   menu_interfaz = {"texto": "Elige: 1-CLI / 2-GUI / 0-Salir", "lim": 2} # tipo de menu
   menu_iniciar_juego = {"texto": "Elige: 1-Iniciar juego / 2-Cargar partida / 0 - Salir", "lim": 2} # Controlador 
-  menu_combate = {"texto": "Elige: 1-Ataque / 2-Ataque Cargado / 3-Pocion / 4-Guardar / 0-Salir", "lim": 4} # Guardar/Cargar - JSON
+  menu_combate = {"texto": "Elige: 1-Ataque / 2-Ataque Cargado / 3-Pocion / 4-Kame-Hame / 0-Salir", "lim": 4} # Guardar/Cargar - JSON
   menu_personajes = {"texto": None, "lim": 0}
 
   # Método estático: generador de menús que llama a las validaciones en el Modelo
