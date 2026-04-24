@@ -10,15 +10,15 @@ class Enemigo(Personaje):
 
 
   def decidir_accion(self,atacante): # Aquí viene lo bueno
-    print(f'El {atacante.nombre} se está pensando qué hacer...')
-    if (atacante.vida + 3 < atacante.vida_max) and (atacante.pociones > 0) and (atacante.contador_ataques < 3):
+
+    if (atacante.vida + 3 < atacante.vida_max) and (atacante.pociones > 0):
       return 3 # Tomate la poción
 
-    elif (atacante.vida + 3 > atacante.vida_max) and (atacante.pociones > 0) and (atacante.contador_ataques >= 3):
+    elif (atacante.contador_ataques >= 3):
       return 2 # Tira el Ataque Cargado
     
-    #elif (atacante.pociones > 0) and (atacante.contador_ataques < 3):
-      #return 3 # Tómate la poción que te quede
+    elif (atacante.vida + 3 > atacante.vida_max) and (atacante.pociones > 0) and (atacante.contador_ataques >=3):
+      return 2 # Tira el Ataque Cargado
     
     else: # En los demás casos ¡ATACA!
       return 1

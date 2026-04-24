@@ -138,7 +138,6 @@ class Controlador_juego:
                 turno = not turno
 
             #MOSTRAMOS LA ACCIÓN Y EL RESULTADO
-            self.vista.imprimir_mensaje(f"================ RESULTADO: TURNO {turno}")
             self.vista.imprimir_mensaje(f"--->El {atacante.nombre} ha hecho {accion.__class__.__name__}")
             self.mostrar_status(atacante, defensor)
             
@@ -162,6 +161,5 @@ class Controlador_juego:
 
 
     def mostrar_status(self, atacante, defensor):
-            self.vista.imprimir_mensaje("---- STATUS:")
             self.vista.imprimir_mensaje(f"--{atacante.nombre} vida: {atacante.vida}")
             self.vista.imprimir_mensaje(f"--{defensor.nombre} vida: {defensor.vida}")
