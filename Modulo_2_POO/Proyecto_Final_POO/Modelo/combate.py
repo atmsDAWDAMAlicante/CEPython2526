@@ -7,6 +7,7 @@ class Combate:
         self.jugador = jugador
         self.enemigo = enemigo
         self.resto_enemigos = resto_enemigos
+        self.contador_turnos = 0
 
     def nuevo_enemigo(self):
         if len(self.resto_enemigos) > 0:

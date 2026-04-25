@@ -15,6 +15,7 @@ class Controlador_juego:
 
     def __init__(self, vista):
         self.vista = vista
+        self.combate = None
 
     def iniciar_juego(self):
         while True:
@@ -23,6 +24,15 @@ class Controlador_juego:
                 self.nuevo_juego()
             elif opcion == 2:
                 self.guardar_partida()
+            elif opcion == 3:
+                if not hasattr(self, "combate") or self.combate is None:
+                #if (self.combate == None):
+                    self.vista.imprimir_mensaje("No hay ninguna partida iniciada\nIniciando...")
+                    self.nuevo_juego()
+                else:
+                    self.bucle_combate(self.combate)
+            elif opcion == 4:
+                pass #self.cargar_partida()
             elif opcion == 0:
                 self.vista.imprimir_mensaje("Adiós")
                 break
@@ -61,21 +71,23 @@ class Controlador_juego:
         # Cogemos los jugadores
         jugador, enemigo, resto_enemigos = self.preparar_personajes()
         # IMPORTANTE ENVIO AL ADMINISTRADOR DEL JUEGO DE LOS OBJETOS JUGADOR Y ENEMIGOS
-        combate = Combate(jugador,enemigo, resto_enemigos) 
+        self.combate = Combate(jugador,enemigo, resto_enemigos) 
         # EMPIEZA LA BATALLA
-        self.bucle_combate(combate)
+        self.bucle_combate(self.combate)
 
 
-    def bucle_combate(self, combate):
+    def bucle_combate(self,combate):
         self.combate = combate
         turno = True # Empieza siempre el jugador
         accion = None
-        contador = 0 # contador de las jugadas
+        #contador = 0 # contador de las jugadas
+
+
         while True:
+            self.combate.contador_turnos += 1 # vamos contando las jugadas a título informativo
+            contador = self.combate.contador_turnos
+            
 
-
-
-            contador += 1 # vamos contando las jugadas a título informativo
             if (turno == True): # LE TOCA AL JUGADOR
                 # SE DEFINEN LOS ROLES
                 atacante = self.combate.jugador
