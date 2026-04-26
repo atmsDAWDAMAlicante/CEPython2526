@@ -7,7 +7,7 @@ from Modelo.enemigo import Enemigo
 PERSONAJES = [
     {"nombre": "Arquero", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
     {"nombre": "Barbaro", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
-    {"nombre": "Acróbata", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
+    {"nombre": "Acrobata", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
     {"nombre": "Mago",  "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
     {"nombre": "Ladrona", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
     {"nombre": "Caballero", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True}
