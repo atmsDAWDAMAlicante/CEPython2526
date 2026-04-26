@@ -1,5 +1,9 @@
 import json
 
+from Modelo.jugador import Jugador
+from Modelo.enemigo import Enemigo
+from Modelo.combate import Combate
+
 class GestorGuardado:
     #MÉTODO ÉSTÁTICO PARA GUARDAR
     @staticmethod
