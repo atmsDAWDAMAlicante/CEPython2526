@@ -6,6 +6,7 @@ from Modelo.combate import Combate
 from Modelo.accion import Accion, Ataque, Ataque_Cargado, Usar_Pocion,Kame_Hame
 from Modelo.jugador import Jugador
 from Modelo.enemigo import Enemigo
+from Modelo.gestor_guardado import GestorGuardado
 
 # Vista
 from Vista.mensajes import Mensajes
@@ -38,7 +39,12 @@ class Controlador_juego:
                 break
             
     def guardar_partida(self):
-        self.vista.imprimir_mensaje("Partida guardada")
+        #self.vista.imprimir_mensaje("Partida guardada")
+        if self.combate is None:
+            self.vista.imprimir_mensaje("No hay partida que guardar")
+        else:
+            GestorGuardado.guardar(self.combate)
+            self.vista.imprimir_mensaje("Partida guardada")
 
     def preparar_personajes(self):
         #PRIMERA PARTE: Menú
