@@ -48,7 +48,7 @@ class Controlador_juego:
     def cargar_partida(self):
         try:
             self.combate = GestorGuardado.cargar()
-            self.vista.imprimir_mensaje("Partida cargada")
+            self.vista.imprimir_mensaje("Partida cargada; ahora selecciona continuar partida")
         except FileNotFoundError:
             self.vista.imprimir_mensaje("No hay partida guardada")
 
@@ -57,7 +57,6 @@ class Controlador_juego:
         #PRIMERA PARTE: Menú
         self.vista.imprimir_mensaje("Empezamos el juego: ELIJE TU JUGADOR: ")
         personajes_partida = Gestor_personajes()
-        print(personajes_partida.lista_personajes)
         todos_los_personajes = personajes_partida.obtener_personajes_para_menu_CLI()
         # Aquí se recoge el índice del jugador desde la vista
         numero_jugador = self.vista.menu_elegir_jugador(todos_los_personajes)
@@ -65,6 +64,7 @@ class Controlador_juego:
         #SEGUNDA PARTE: separar jugador, enemigo (activo) y resto
         # Se saca al jugador del cesto de personajes
         jugador = Jugador(**personajes_partida.obtener_jugador(numero_jugador-1))
+        self.tope_power_para_el_jugador(jugador)
         enemigo = Enemigo(**personajes_partida.obtener_enemigo())
         #resto_enemigos = personajes_partida.obtener_resto()
         resto_enemigos = [ #Para recuperar objetos y no diccionarios
@@ -78,6 +78,11 @@ class Controlador_juego:
         self.vista.imprimir_mensaje(f"{'='*50}\nEMPIEZA EL JUEGO\n{'='*50}")
         # Retornamos los jugadores
         return jugador, enemigo, resto_enemigos
+    
+    def tope_power_para_el_jugador(self,jugador):
+        jugador.vida = 100
+        jugador.vida_max = 100
+        jugador.pociones = 5
 
     def nuevo_juego(self):
         # Cogemos los jugadores

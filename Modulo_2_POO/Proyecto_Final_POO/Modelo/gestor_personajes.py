@@ -5,7 +5,7 @@ from Modelo.enemigo import Enemigo
 # Los personajes de Dragones y Mazmorras
 
 PERSONAJES = [
-    {"nombre": "Arquero", "vida":100, "vida_max":100, "ataque":2, "pociones":4,"estoyVivo": True},
+    {"nombre": "Arquero", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
     {"nombre": "Barbaro", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
     {"nombre": "Acrobata", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
     {"nombre": "Mago",  "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
@@ -15,7 +15,7 @@ PERSONAJES = [
 
 class Gestor_personajes:
     def __init__(self):
-        self.lista_personajes = PERSONAJES
+        self.lista_personajes = self.lista_personajes = [p.copy() for p in PERSONAJES]
         
     def obtener_personajes_para_menu_CLI(self):
         texto_menu = ""
@@ -38,6 +38,6 @@ class Gestor_personajes:
     # Devuelve el resto de la lista actualizada
     def obtener_resto(self):
         if (len(self.lista_personajes) > 0):
-            return self.lista_personajes
+            return self.lista_personajes.copy()
         else:
             return None
