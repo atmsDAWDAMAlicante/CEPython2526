@@ -17,3 +17,17 @@ class Jugador(Personaje):
 
   def ataque_cargado(self):
     print(f"{self.nombre} dispone de ataque cargado")
+
+  def to_dict(self):
+    return {
+        "nombre": self.nombre,
+        "vida": self.vida,
+        "vida_max": self.vida_max,
+        "ataque": self.ataque,
+        "pociones": self.pociones,
+        "contador_ataques": self.contador_ataques
+    }
+
+  @staticmethod
+  def from_dict(la_partida_guardada):
+      return Jugador(**la_partida_guardada)

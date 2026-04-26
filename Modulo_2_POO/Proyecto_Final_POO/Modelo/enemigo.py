@@ -22,3 +22,18 @@ class Enemigo(Personaje):
     
     else: # En los demás casos ¡ATACA!
       return 1
+
+
+  def to_dict(self):
+    return {
+        "nombre": self.nombre,
+        "vida": self.vida,
+        "vida_max": self.vida_max,
+        "ataque": self.ataque,
+        "pociones": self.pociones,
+        "contador_ataques": self.contador_ataques
+    }
+
+  @staticmethod
+  def from_dict(la_partida_guardada):
+      return Enemigo(**la_partida_guardada)
