@@ -31,6 +31,7 @@ class Enemigo(Personaje):
         "vida_max": self.vida_max,
         "ataque": self.ataque,
         "pociones": self.pociones,
+        "estoyVivo": self.estoyVivo,
         "contador_ataques": self.contador_ataques
     }
 

@@ -10,7 +10,7 @@ class GestorGuardado:
     def guardar(combate, ruta ="partida.json"): # RUTA: donde está el main
         la_partida_guardada = {
             "jugador": combate.jugador.to_dict(),
-            "enemigo": combate.jugador.to_dict(),
+            "enemigo": combate.enemigo.to_dict(),
             "resto_enemigos":[el_resto.to_dict() for el_resto in combate.resto_enemigos],
             "contador": combate.contador_turnos
         }

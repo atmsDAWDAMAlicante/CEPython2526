@@ -8,14 +8,14 @@
 
 # Clase padre Personaje
 class Personaje:
-  def __init__(self, nombre, vida, vida_max, ataque, pociones, estoyVivo):
+  def __init__(self, nombre, vida, vida_max, ataque, pociones, estoyVivo, contador_ataques=0):
     self.nombre = nombre
     self.vida = vida
     self.vida_max = vida_max
     self.ataque = ataque
     self.pociones = pociones
     self.estoyVivo = estoyVivo
-    self.contador_ataques = 0
+    self.contador_ataques = contador_ataques
 
   def recibir_daño():
     pass

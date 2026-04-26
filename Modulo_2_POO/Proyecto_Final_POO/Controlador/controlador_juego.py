@@ -33,25 +33,31 @@ class Controlador_juego:
                 else:
                     self.bucle_combate(self.combate)
             elif opcion == 4:
-                pass #self.cargar_partida()
+                self.cargar_partida()
             elif opcion == 0:
                 self.vista.imprimir_mensaje("Adiós")
                 break
             
     def guardar_partida(self):
-        #self.vista.imprimir_mensaje("Partida guardada")
         if self.combate is None:
             self.vista.imprimir_mensaje("No hay partida que guardar")
         else:
             GestorGuardado.guardar(self.combate)
             self.vista.imprimir_mensaje("Partida guardada")
 
+    def cargar_partida(self):
+        try:
+            self.combate = GestorGuardado.cargar()
+            self.vista.imprimir_mensaje("Partida cargada")
+        except FileNotFoundError:
+            self.vista.imprimir_mensaje("No hay partida guardada")
+
+
     def preparar_personajes(self):
         #PRIMERA PARTE: Menú
         self.vista.imprimir_mensaje("Empezamos el juego: ELIJE TU JUGADOR: ")
-      
-        personajes_partida = Gestor_personajes(PERSONAJES)
-        
+        personajes_partida = Gestor_personajes()
+        print(personajes_partida.lista_personajes)
         todos_los_personajes = personajes_partida.obtener_personajes_para_menu_CLI()
         # Aquí se recoge el índice del jugador desde la vista
         numero_jugador = self.vista.menu_elegir_jugador(todos_los_personajes)
@@ -76,6 +82,7 @@ class Controlador_juego:
     def nuevo_juego(self):
         # Cogemos los jugadores
         jugador, enemigo, resto_enemigos = self.preparar_personajes()
+        
         # IMPORTANTE ENVIO AL ADMINISTRADOR DEL JUEGO DE LOS OBJETOS JUGADOR Y ENEMIGOS
         self.combate = Combate(jugador,enemigo, resto_enemigos) 
         # EMPIEZA LA BATALLA

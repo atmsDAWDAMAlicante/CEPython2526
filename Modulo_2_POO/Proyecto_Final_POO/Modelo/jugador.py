@@ -9,10 +9,11 @@ class Jugador(Personaje):
   def __init__(self,**kwargs):
     #super().__init__(nombre, vida, vida_max, ataque, defensa, pociones)
     super().__init__(**kwargs) # Recoge los valores de la clase padre
-    self.vida = 100
-    self.vida_max = 100
-    self.ataque = 10
-    self.pociones = 5
+    # No sobreescribir
+    #self.vida = 100
+    #self.vida_max = 100
+    #self.ataque = 10
+    #self.pociones = 5
     #self.contador_ataques = 0
 
   def ataque_cargado(self):
@@ -25,6 +26,7 @@ class Jugador(Personaje):
         "vida_max": self.vida_max,
         "ataque": self.ataque,
         "pociones": self.pociones,
+        "estoyVivo": self.estoyVivo,
         "contador_ataques": self.contador_ataques
     }
 

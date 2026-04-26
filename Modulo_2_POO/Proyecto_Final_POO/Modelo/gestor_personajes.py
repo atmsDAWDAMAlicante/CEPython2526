@@ -5,7 +5,7 @@ from Modelo.enemigo import Enemigo
 # Los personajes de Dragones y Mazmorras
 
 PERSONAJES = [
-    {"nombre": "Arquero", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
+    {"nombre": "Arquero", "vida":100, "vida_max":100, "ataque":2, "pociones":4,"estoyVivo": True},
     {"nombre": "Barbaro", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
     {"nombre": "Acrobata", "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
     {"nombre": "Mago",  "vida":10, "vida_max":10, "ataque":2, "pociones":2,"estoyVivo": True},
@@ -14,9 +14,9 @@ PERSONAJES = [
 ]
 
 class Gestor_personajes:
-    def __init__(self, lista_personajes):
-        self.lista_personajes = lista_personajes
-
+    def __init__(self):
+        self.lista_personajes = PERSONAJES
+        
     def obtener_personajes_para_menu_CLI(self):
         texto_menu = ""
         # Usamos enumerate para obtener el índice y el diccionario del personaje
