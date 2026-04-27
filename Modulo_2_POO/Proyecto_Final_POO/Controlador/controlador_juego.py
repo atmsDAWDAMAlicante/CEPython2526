@@ -116,7 +116,8 @@ class Controlador_juego:
                 self.mostrar_status(atacante, defensor)
 
                 # EMPIEZA EL JUGADOR: SE LE PIDE UNA ACCIÓN
-                acto = Menus.menu(Menus.menu_combate) 
+                # ARREGLADO PARA GUI
+                acto = self.vista.menu_combate() 
 
                 # Opciones del Menú PARA EL JUGADOR
                 if (acto == 1):
