@@ -53,7 +53,7 @@ class Vista_GUI:
         for texto, valor in opciones:
             b = tk.Button(self.frame, text=texto,
                           command=lambda v=valor: self.seleccionar(v))
-            b.pack(pady=2)
+            b.pack(side="left", padx=5, pady=5)
 
         self.root.wait_variable(self.var)
 
