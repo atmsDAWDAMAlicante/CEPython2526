@@ -75,6 +75,9 @@ class Vista_GUI:
         ])
 
         return self.opcion
+    
+    def elegir_personaje(self, nombres):
+      return self.vista.menu_elegir_jugador(nombres)
 
     def menu_elegir_jugador(self, lista):
         self.imprimir_mensaje("Elige personaje")
@@ -85,15 +88,14 @@ class Vista_GUI:
         return self.opcion
 
     def menu_combate(self):
-        self.crear_botones([
-            ("Ataque", 1),
-            ("Ataque cargado", 2),
-            ("Poción", 3),
-            ("Kame", 4),
-            ("Salir", 0)
-        ])
-
-        return self.opcion
+      self.crear_botones([
+          ("Ataque", 1),
+          ("Ataque cargado", 2),
+          ("Poción", 3),
+          ("Kame", 4),
+          ("Salir", 0)
+      ])
+      return self.opcion
 
     def iniciar(self):
         self.root.mainloop()

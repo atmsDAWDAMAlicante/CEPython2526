@@ -1,21 +1,21 @@
 {
     "jugador": {
         "nombre": "Arquero",
-        "vida": 93,
+        "vida": 97,
         "vida_max": 100,
         "ataque": 2,
-        "pociones": 4,
+        "pociones": 5,
         "estoyVivo": true,
-        "contador_ataques": 1
+        "contador_ataques": 3
     },
     "enemigo": {
         "nombre": "Barbaro",
         "vida": 9,
         "vida_max": 10,
         "ataque": 2,
-        "pociones": 0,
+        "pociones": 1,
         "estoyVivo": true,
-        "contador_ataques": 2
+        "contador_ataques": 3
     },
     "resto_enemigos": [
         {
@@ -55,5 +55,5 @@
             "contador_ataques": 0
         }
     ],
-    "contador": 17
+    "contador": 9
 }
