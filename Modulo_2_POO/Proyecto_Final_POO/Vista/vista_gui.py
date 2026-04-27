@@ -11,13 +11,27 @@ class Vista_GUI:
         self.root = tk.Tk()
         self.root.title("RPG")
 
-        # LOG
-        self.label = tk.Label(self.root, text="", justify="left", anchor="w")
-        self.label.pack(padx=10, pady=10)
+        # LOG PRIMITIVO SIN SCROLL - MUY FEO
+        #self.label = tk.Label(self.root, text="", justify="left", anchor="w")
+        #self.label.pack(padx=10, pady=10)
+
+        # FRAME PRINCIPAL DEL LOG
+        frame_log = tk.Frame(self.root)
+        frame_log.pack(padx=10, pady=10)
+
+        # TEXT (log)
+        self.texto = tk.Text(frame_log, height=20, width=60)
+        self.texto.pack(side="left")
+
+        # SCROLL
+        scroll = tk.Scrollbar(frame_log, command=self.texto.yview)
+        scroll.pack(side="right", fill="y")
+
+        self.texto.config(yscrollcommand=scroll.set)
 
         # BOTONES
         self.frame = tk.Frame(self.root)
-        self.frame.pack()
+        self.frame.pack(pady=10)
 
         self.opcion = None
         self.var = tk.IntVar()
