@@ -1,23 +1,32 @@
 {
     "jugador": {
         "nombre": "Arquero",
-        "vida": 84,
+        "vida": 93,
         "vida_max": 100,
         "ataque": 2,
         "pociones": 4,
         "estoyVivo": true,
-        "contador_ataques": 0
-    },
-    "enemigo": {
-        "nombre": "Acrobata",
-        "vida": 10,
-        "vida_max": 10,
-        "ataque": 2,
-        "pociones": 2,
-        "estoyVivo": true,
         "contador_ataques": 1
     },
+    "enemigo": {
+        "nombre": "Barbaro",
+        "vida": 9,
+        "vida_max": 10,
+        "ataque": 2,
+        "pociones": 0,
+        "estoyVivo": true,
+        "contador_ataques": 2
+    },
     "resto_enemigos": [
+        {
+            "nombre": "Acrobata",
+            "vida": 10,
+            "vida_max": 10,
+            "ataque": 2,
+            "pociones": 2,
+            "estoyVivo": true,
+            "contador_ataques": 0
+        },
         {
             "nombre": "Mago",
             "vida": 10,
@@ -46,5 +55,5 @@
             "contador_ataques": 0
         }
     ],
-    "contador": 27
+    "contador": 17
 }

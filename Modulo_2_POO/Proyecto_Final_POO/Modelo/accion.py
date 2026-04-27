@@ -1,3 +1,6 @@
+
+from Vista.mensajes import Mensajes
+
 # Módulo para gestionar las acciones: ataques y curarse con la poción
 
 # clase padre Accion(combate)
@@ -43,6 +46,5 @@ class Usar_Pocion(Accion):
     
 class Kame_Hame(Accion): # El Easter Egg para pasar el juego rapidito
   def ejecutar(self, atacante, defensor):
-    print("KAAAAAAME HAAAAAME HAAAAA!!!!!!!")
     defensor.vida = 0
 

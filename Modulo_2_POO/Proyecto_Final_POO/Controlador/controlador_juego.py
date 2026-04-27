@@ -134,6 +134,7 @@ class Controlador_juego:
 
                 elif (acto == 4):
                     accion = Kame_Hame()
+                    self.vista.imprimir_mensaje("KAAAAAAME HAAAAAME HAAAAA!!!!!!!")
                     accion.ejecutar(atacante, defensor)
 
                 else: # SALIR DEL JUGADOR
@@ -175,16 +176,15 @@ class Controlador_juego:
             
             # HAY QUE VER SI ESTÁ VIVO
             if (combate.jugador.estar_vivo(combate.jugador.vida) == False):
-                print(f"{combate.jugador.nombre} HAS MUERTO")
-                print("FIN DEL JUEGO")
+                self.vista.imprimir_mensaje(f"{combate.jugador.nombre} HAS MUERTO\nFIN DEL JUEGO")
                 break
 
             elif not combate.enemigo.estar_vivo(combate.enemigo.vida):
-                print(f">>>>>>>>EL POBRE {combate.enemigo.nombre} HA MUERTO")
+                self.vista.imprimir_mensaje(f">>>>>>>>EL POBRE {combate.enemigo.nombre} HA MUERTO")
                 nuevo = combate.nuevo_enemigo()
 
                 if not nuevo:
-                    print("¡¡¡HAS DERROTADO A TODOS LOS ENEMIGOS!!!")
+                    self.vista.imprimir_mensaje("¡¡¡HAS DERROTADO A TODOS LOS ENEMIGOS!!!")
                     break
 
                 combate.enemigo = nuevo
