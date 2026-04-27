@@ -36,7 +36,9 @@ class Controlador_juego:
                 self.cargar_partida()
             elif opcion == 0:
                 self.vista.imprimir_mensaje("Adiós")
-                break
+                if hasattr(self.vista, "cerrar"):#Para cerrar la GUI
+                    self.vista.cerrar()
+                    break
             
     def guardar_partida(self):
         if self.combate is None:
@@ -126,11 +128,11 @@ class Controlador_juego:
 
                 elif (acto == 2):
                     accion = Ataque_Cargado()
-                    accion.ejecutar(atacante, defensor)
+                    accion.ejecutar(atacante, defensor,self.vista)
 
                 elif (acto == 3):
                     accion = Usar_Pocion()
-                    accion.ejecutar(atacante, defensor)
+                    accion.ejecutar(atacante, defensor,self.vista)
 
                 elif (acto == 4):
                     accion = Kame_Hame()
@@ -161,11 +163,11 @@ class Controlador_juego:
                 
                 elif (acto == 2):
                     accion = Ataque_Cargado()
-                    accion.ejecutar(atacante, defensor)
+                    accion.ejecutar(atacante, defensor, self.vista)
 
                 elif (acto == 3):
                     accion = Usar_Pocion()
-                    accion.ejecutar(atacante, defensor)
+                    accion.ejecutar(atacante, defensor, self.vista)
 
                 turno = not turno
 

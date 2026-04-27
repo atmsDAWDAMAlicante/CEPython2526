@@ -80,7 +80,7 @@ class Vista_GUI:
       return self.vista.menu_elegir_jugador(nombres)
 
     def menu_elegir_jugador(self, lista):
-        self.imprimir_mensaje("Elige personaje")
+        self.imprimir_mensaje("En la GUI haz click en 'Texto' y llevarás al ARQUERO y empiezas contra el BÁRBARO SÍ O SÍ\no haz click en 'lim' y llevarás al BÁRBARO y empezarás contra el ARQUERO\n\nLO HA DICHO EL AMO DEL CALABOZO, TU VERÁS QUÉ ELIGES")
 
         opciones = [(nombre, i+1) for i, nombre in enumerate(lista)]
 
@@ -99,3 +99,6 @@ class Vista_GUI:
 
     def iniciar(self):
         self.root.mainloop()
+
+    def cerrar(self):
+      self.root.destroy()

@@ -19,28 +19,30 @@ class Ataque(Accion):
       atacante.contador_ataques += 1
     
 class Ataque_Cargado(Accion):
-  def ejecutar(self, atacante, defensor):
+  def ejecutar(self, atacante, defensor,vista):
     # Si tienes el ataque cargado entonces le quitas 5 puntos de vida al oponente
     # y se te pone a cero el marcador
     if (atacante.contador_ataques > 2):
       defensor.vida -=5
       atacante.contador_ataques = 0
     else: # En caso contrario, no hace nada y pierdes el turno
-      print(f"Te falta {3-atacante.contador_ataques} Petit-Suis")
-      defensor.vida -= 1
-      #atacante.contador_ataques += 1
+      vista.imprimir_mensaje(f"Te falta/n {3-atacante.contador_ataques} Petit-Suis para tener el ataque cargado\nY pierdes el turno")
+      #defensor.vida -= 1
+      atacante.contador_ataques += 1
 
 class Usar_Pocion(Accion):
-  def ejecutar(self, atacante, defensor):
+  def ejecutar(self, atacante, defensor,vista):
     # Sólo hay dos pociones que devuelven 3 puntos de vida
     if (atacante.pociones > 0):
       atacante.pociones -= 1
-      print(f"Has gastado una poción. Te quedan {atacante.pociones} pociones")
+      vista.imprimir_mensaje(f"Has gastado una poción. Te quedan {atacante.pociones} pociones")
       atacante.vida +=3
       if (atacante.vida > atacante.vida_max): # La poción no da más vida que la máxima
           atacante.vida = atacante.vida_max
+      
     else:
-      print(f"No te quedan pociones") # Sin pociones pierdes el turno
+      #print(f"No te quedan pociones") # Sin pociones pierdes el turno
+      vista.imprimir_mensaje("No te quedan pociones")
       
     
     
