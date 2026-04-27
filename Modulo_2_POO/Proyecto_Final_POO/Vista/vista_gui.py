@@ -37,7 +37,9 @@ class Vista_GUI:
         self.var = tk.IntVar()
 
     def imprimir_mensaje(self, mensaje):
-        self.label.config(text=self.label.cget("text") + "\n" + mensaje)
+        #self.label.config(text=self.label.cget("text") + "\n" + mensaje)
+        self.texto.insert(tk.END, mensaje + "\n")
+        self.texto.see(tk.END)
 
     def limpiar_botones(self):
         for w in self.frame.winfo_children():
