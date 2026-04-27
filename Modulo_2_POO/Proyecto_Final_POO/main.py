@@ -27,6 +27,7 @@ def main():
     if (interfaz == 1):
         vista = Vista_CLI()
         controlador = Controlador_juego(vista)
+        controlador.iniciar_juego()
         
     elif (interfaz == 2):
         vista = Vista_GUI()

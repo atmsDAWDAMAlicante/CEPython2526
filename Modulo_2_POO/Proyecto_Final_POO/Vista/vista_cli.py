@@ -39,6 +39,9 @@ class Vista_CLI:
     def menu_elegir_jugador(self,menu):
       #return Menus.menu(Menus.menu_personajes)
       return Menus.menu(menu)
+    
+    def menu_combate(self):
+      return Menus.menu(Menus.menu_combate)
 
     def imprimir_mensaje(self, mensaje): # En esta clase está el método para IMPRIMIR POR PANTALLA
       print(mensaje)
