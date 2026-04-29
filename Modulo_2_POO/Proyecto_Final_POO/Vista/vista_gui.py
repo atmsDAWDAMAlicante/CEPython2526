@@ -9,7 +9,7 @@ class Vista_GUI:
 
     def __init__(self):
         self.root = tk.Tk()
-        self.root.title("RPG")
+        self.root.title("DRAGONES Y MAZMORRAS (el de los 80)")
 
         # LOG PRIMITIVO SIN SCROLL - MUY FEO
         #self.label = tk.Label(self.root, text="", justify="left", anchor="w")
@@ -64,7 +64,7 @@ class Vista_GUI:
     # -------- MENÚS --------
 
     def menu_iniciar_juego(self):
-        self.imprimir_mensaje("Menú principal")
+        self.imprimir_mensaje("DRAGONES Y MAZMORRAS (el de los 80)")
 
         self.crear_botones([
             ("Nuevo juego", 1),

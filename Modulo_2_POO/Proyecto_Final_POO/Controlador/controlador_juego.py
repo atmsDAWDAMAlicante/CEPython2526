@@ -19,6 +19,7 @@ class Controlador_juego:
         self.combate = None
 
     def iniciar_juego(self):
+        print("DRAGONES Y MAZMORRAS (el de los 80)")
         while True:
             opcion = self.vista.menu_iniciar_juego()
             if opcion == 1:
@@ -38,7 +39,7 @@ class Controlador_juego:
                 self.vista.imprimir_mensaje("Adiós")
                 if hasattr(self.vista, "cerrar"):#Para cerrar la GUI
                     self.vista.cerrar()
-                    break
+                break
             
     def guardar_partida(self):
         if self.combate is None:
