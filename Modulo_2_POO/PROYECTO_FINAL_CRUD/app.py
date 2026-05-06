@@ -6,10 +6,11 @@ app = Flask(__name__)
 # Configuración de la base de datos
 def get_connection():
     return pymysql.connect(
-        host="localhost",
-        user="root",       # cambia si usas otro usuario
-        password="",       # en XAMPP suele estar vacío
+        host="127.0.0.1",   # CAMBIAR Y QUITAR LOCALHOST
+        user="root",
+        password="",
         database="biblioteca_db",
+        port=3306,         # PONER EL PUERTO ESTE QUE ME ESTÁ VOLVIENDO LOCO
         cursorclass=pymysql.cursors.DictCursor
     )
 
