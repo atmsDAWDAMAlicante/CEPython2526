@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template # render para renderizar HTML
 import pymysql
 
 app = Flask(__name__)
@@ -20,6 +20,7 @@ def home():
     return "<h1>Aplicación Biblioteca funcionando</h1>"
 
 # Ruta para probar conexión a BD
+''' ANTES DE ECHARLO TODO A PERDER
 @app.route("/libros")
 def ver_libros():
     connection = get_connection()
@@ -37,6 +38,19 @@ def ver_libros():
     resultado += "</ul>"
 
     return resultado
+    '''
+# Ruta para probar QUE RENDERIZA
+@app.route("/libros")
+def ver_libros():
+    connection = get_connection()
+
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT * FROM libros")
+        libros = cursor.fetchall()
+
+    connection.close()
+
+    return render_template("libros.html", libros=libros)
 
 if __name__ == "__main__":
     app.run(debug=True)
