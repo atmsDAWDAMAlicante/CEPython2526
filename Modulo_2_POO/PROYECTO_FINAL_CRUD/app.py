@@ -1,4 +1,4 @@
-from flask import Flask, render_template # render para renderizar HTML
+from flask import Flask, render_template, request, redirect # render para renderizar HTML
 import pymysql
 
 app = Flask(__name__)
@@ -51,6 +51,32 @@ def ver_libros():
     connection.close()
 
     return render_template("libros.html", libros=libros)
+
+
+@app.route("/nuevo_libro", methods=["GET", "POST"])
+def nuevo_libro():
+
+    if request.method == "POST":
+
+        titulo = request.form["titulo"]
+        autor = request.form["autor"]
+
+        connection = get_connection()
+
+        with connection.cursor() as cursor:
+            sql = "INSERT INTO libros (titulo, autor) VALUES (%s, %s)"
+            cursor.execute(sql, (titulo, autor))
+
+        connection.commit()
+        connection.close()
+
+        return redirect("/libros")
+
+    return render_template("nuevo_libro.html")
+
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
