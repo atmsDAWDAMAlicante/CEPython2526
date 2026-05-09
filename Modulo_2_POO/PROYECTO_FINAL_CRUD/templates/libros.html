@@ -20,6 +20,9 @@
             <td>{{ libro.id }}</td>
             <td>{{ libro.titulo }}</td>
             <td>{{ libro.autor }}</td>
+            <td>
+                <a href="/eliminar_libro/{libro['id']}">Eliminar</a>
+            </td>
         </tr>
         {% endfor %}
 
