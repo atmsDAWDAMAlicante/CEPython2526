@@ -75,6 +75,33 @@ def nuevo_libro():
     return render_template("nuevo_libro.html")
 
 
+# NUEVA RUTA: PARA ELIMINAR
+
+@app.route("/eliminar_libro/<int:id>")
+def eliminar_libro(id):
+
+    connection = get_connection()
+    
+    with connection.cursor() as cursor:
+        sql = "DELETE FROM libros WHERE id = %s"
+        cursor.execute(sql, (id,))
+    
+    connection.commit()
+    connection.close()
+
+    return redirect("/libros")
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
