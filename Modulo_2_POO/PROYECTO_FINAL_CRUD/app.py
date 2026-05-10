@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, redirect # render para renderizar HTML
+
+
 import pymysql
 
 app = Flask(__name__)
@@ -92,7 +94,42 @@ def eliminar_libro(id):
     return redirect("/libros")
 
 
+@app.route("/editar_libro/<int:id>", methods=["GET", "POST"])
+def editar_libro(id):
 
+    connection = get_connection()
+
+    if request.method == "POST":
+
+        titulo = request.form["titulo"]
+        autor = request.form["autor"]
+
+        with connection.cursor() as cursor:
+            sql = """
+            UPDATE libros
+            SET titulo = %s, autor = %s
+            WHERE id = %s
+            """
+            cursor.execute(sql, (titulo, autor, id))
+
+        connection.commit()
+        connection.close()
+
+        return redirect("/libros")
+
+    else:
+
+        with connection.cursor() as cursor:
+            sql = "SELECT * FROM libros WHERE id = %s"
+            cursor.execute(sql, (id,))
+            libro = cursor.fetchone()
+
+        connection.close()
+
+        return render_template(
+            "editar_libro.html",
+            libro=libro
+        )
 
 
 
