@@ -1,9 +1,12 @@
-from flask import Flask, render_template, request, redirect # render para renderizar HTML
-
+# vamos añadiendio
+# render para renderizar HTML
+# para el login añadimos session
+from flask import Flask, render_template, request, redirect, session
 
 import pymysql
 
 app = Flask(__name__)
+app.secret_key = "mi_clave_secreta"
 
 # Configuración de la base de datos
 def get_connection():
@@ -130,6 +133,48 @@ def editar_libro(id):
             "editar_libro.html",
             libro=libro
         )
+
+
+
+
+# PARA EL LOGIN
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+
+    if request.method == "POST":
+
+        username = request.form["username"]
+        password = request.form["password"]
+
+        connection = get_connection()
+
+        with connection.cursor() as cursor:
+
+            sql = """
+                SELECT * FROM usuarios
+                WHERE username = %s AND password = %s
+            """
+
+            cursor.execute(sql, (username, password))
+
+            usuario = cursor.fetchone()
+
+        connection.close()
+
+        if usuario:
+
+            session["usuario"] = usuario["username"]
+
+            return redirect("/libros")
+
+        else:
+
+            return "Credenciales incorrectas"
+
+    return render_template("login.html")
+
+
 
 
 
