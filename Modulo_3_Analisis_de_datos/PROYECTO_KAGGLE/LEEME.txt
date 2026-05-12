@@ -1,0 +1,8 @@
+Aquí van a ir los archivos del proyecto de Kaggle de final de curso
+
+link a la carpeta:
+https://drive.google.com/drive/folders/1gQ9h-reIUz8cW46XLbeSZJEfQBEaTXgi?usp=drive_link
+
+
+link al proyecto:
+https://colab.research.google.com/drive/1wa-QdOkXddc1wQ7ETkZTbiUG3EdtjtWa
