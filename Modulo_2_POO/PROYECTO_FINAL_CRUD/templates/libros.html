@@ -2,17 +2,33 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Listado de libros</title>
+    <title>Biblioteca</title>
+    <style>
+        table, th, td {border: 1px solid black;border-collapse: collapse; padding: 5px;}
+        body {font-family: Arial;}
+        a {margin-right: 10px;}
+    </style>
 </head>
 <body>
 
-    <h1>Listado de libros</h1>
+    <h1>Gestión de Biblioteca</h1>
+
+    <hr>
+
+    <a href="/libros">Ver libros</a> |
+    <a href="/nuevo_libro">Añadir libro</a> |
+    <a href="/login">Login</a>
+
+    <hr>
+
+    <h2>Listado de libros</h2>
 
     <table>
         <tr>
             <th>ID</th>
             <th>Título</th>
             <th>Autor</th>
+            <th>Acciones</th>
         </tr>
 
         {% for libro in libros %}
@@ -23,13 +39,12 @@
             <td>
                 <a href="/editar_libro/{{ libro.id }}">Editar</a>
                 |
-                <a href="/eliminar_libro/{{ libro.id }}">Eliminar</a>
+                <a href="/eliminar_libro/{{ libro.id }}">
+                    Eliminar
+                </a>
             </td>
-                <!--<a href="/eliminar_libro/{{ libro.id }}">Eliminar</a> ESTE IBA -->
-            
         </tr>
         {% endfor %}
-
     </table>
 
 </body>
