@@ -185,7 +185,13 @@ def login():
 
 
 
+### TEMPORAL PARA CARGARME LA SESIÓN Y VER QUE VA FUNCIONANDO 
+@app.route("/logout")
+def logout():
 
+    session.pop("usuario", None)
+
+    return redirect("/login")
 
 
 
