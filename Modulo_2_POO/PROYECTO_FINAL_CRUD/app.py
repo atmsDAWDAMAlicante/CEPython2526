@@ -68,6 +68,10 @@ def ver_libros():
 @app.route("/nuevo_libro", methods=["GET", "POST"])
 def nuevo_libro():
 
+    # REUTILIZANDO--- PROTECCIÓN PARA QUE ESTÉ LOGGEADO 
+    if "usuario" not in session:
+        return redirect("/login")
+
     if request.method == "POST":
 
         titulo = request.form["titulo"]
@@ -92,6 +96,10 @@ def nuevo_libro():
 @app.route("/eliminar_libro/<int:id>")
 def eliminar_libro(id):
 
+    # REUTILIZANDO--- PROTECCIÓN PARA QUE ESTÉ LOGGEADO 
+    if "usuario" not in session:
+        return redirect("/login")
+
     connection = get_connection()
     
     with connection.cursor() as cursor:
@@ -106,6 +114,10 @@ def eliminar_libro(id):
 
 @app.route("/editar_libro/<int:id>", methods=["GET", "POST"])
 def editar_libro(id):
+
+    # REUTILIZANDO--- PROTECCIÓN PARA QUE ESTÉ LOGGEADO 
+    if "usuario" not in session:
+        return redirect("/login")
 
     connection = get_connection()
 
