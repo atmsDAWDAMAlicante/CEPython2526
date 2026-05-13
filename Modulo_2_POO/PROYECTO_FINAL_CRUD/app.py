@@ -48,6 +48,12 @@ def ver_libros():
 # Ruta para probar QUE RENDERIZA
 @app.route("/libros")
 def ver_libros():
+
+    # PROTECCIÓN PARA QUE ESTÉ LOGGEADO --- ESTO SE REUTILIZARÁ
+    if "usuario" not in session:
+        return redirect("/login")
+    # VALE, HA FUNCIONADO, TE PIDE QUE TE LOGUEES ANTES DE VER LA BIBLIOTECA
+
     connection = get_connection()
 
     with connection.cursor() as cursor:
