@@ -76,6 +76,9 @@ def nuevo_libro():
     # REUTILIZANDO--- PROTECCIÓN PARA QUE ESTÉ LOGGEADO 
     if "usuario" not in session:
         return redirect("/login")
+    
+    if not es_admin(): #REUTILIZADO PARA TODAS LAS POSIBILIDADES
+        return "No tienes permisos"
 
     if request.method == "POST":
 
@@ -104,6 +107,9 @@ def eliminar_libro(id):
     # REUTILIZANDO--- PROTECCIÓN PARA QUE ESTÉ LOGGEADO 
     if "usuario" not in session:
         return redirect("/login")
+    
+    if not es_admin(): #REUTILIZADO PARA TODAS LAS POSIBILIDADES
+        return "No tienes permisos"
 
     connection = get_connection()
     
@@ -123,6 +129,10 @@ def editar_libro(id):
     # REUTILIZANDO--- PROTECCIÓN PARA QUE ESTÉ LOGGEADO 
     if "usuario" not in session:
         return redirect("/login")
+    
+
+    if not es_admin(): #REUTILIZADO PARA TODAS LAS POSIBILIDADES
+        return "No tienes permisos"
 
     connection = get_connection()
 
@@ -189,7 +199,7 @@ def login():
         if usuario:
 
             session["usuario"] = usuario["username"]
-
+            session["rol"] = usuario["rol_id"] 
             return redirect("/libros")
 
         else:
@@ -213,7 +223,8 @@ def logout():
 
 
 
-
+def es_admin():
+    return "rol" in session and session["rol"] == 1
 
 
 
