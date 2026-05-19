@@ -1,13 +1,17 @@
 # vamos añadiendio
 # render para renderizar HTML
 # para el login añadimos session
+
 from flask import Flask, render_template, request, redirect, session #Esto crece
-
-
 import pymysql
+# y subiendo las importaciones
 
+
+
+# Crear la aplicación Flask principal
 app = Flask(__name__)
-app.secret_key = "clave_secreta" #mas corta
+# Clave para mantener la sesión iniciada del usuario
+app.secret_key = "clave_secreta" #mas corta sin pasarse
 
 # Configuración de la base de datos
 def get_connection():
