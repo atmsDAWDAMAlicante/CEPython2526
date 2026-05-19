@@ -16,11 +16,12 @@ app.secret_key = "clave_secreta" #mas corta sin pasarse
 # Configuración de la base de datos
 def get_connection():
     return pymysql.connect(
-        host="127.0.0.1",   # CAMBIAR Y QUITAR LOCALHOST
+        host="127.0.0.1",   # CAMBIAR Y QUITAR LO DEL LOCALHOST
         user="root",
         password="",
         database="biblioteca_db",
         port=3306,         # PONER EL PUERTO ESTE QUE ME ESTÁ VOLVIENDO LOCO
+        # Puerto de MariaDB/MySQL en XAMPP
         cursorclass=pymysql.cursors.DictCursor
     )
 
