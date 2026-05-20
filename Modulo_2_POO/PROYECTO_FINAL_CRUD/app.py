@@ -2,9 +2,10 @@
 # render para renderizar HTML
 # para el login añadimos session
 
-from flask import Flask, render_template, request, redirect, session #Esto crece
+#from flask import Flask, render_template, request, redirect, session #Esto crece
 import pymysql
 # y subiendo las importaciones
+from flask import Flask, render_template, request, redirect, session, jsonify
 
 
 
