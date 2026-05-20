@@ -229,5 +229,34 @@ def es_admin():
 
 
 
+# ESTA ES PARA EXPORTAR EL JSON TRAS LA ÚLTIMA IMPORT (que tiene su commit)
+# al html para probar le pongo un link para probarlo no muy bonito
+
+@app.route("/exportar_json")
+def exportar_json():
+
+    if "usuario" not in session:
+        return redirect("/login")
+
+    connection = get_connection()
+
+    with connection.cursor() as cursor:
+
+        sql = "SELECT * FROM libros"
+
+        cursor.execute(sql)
+
+        libros = cursor.fetchall()
+
+    connection.close()
+
+    return jsonify(libros)
+
+
+
+
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
