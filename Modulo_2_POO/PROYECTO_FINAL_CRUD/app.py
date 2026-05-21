@@ -253,7 +253,36 @@ def exportar_json():
     return jsonify(libros)
 
 
+# ESTA ES PARA EXPORTAR EL TXT 
 
+@app.route("/exportar_txt")
+def exportar_txt():
+
+    if "usuario" not in session:
+        return redirect("/login")
+
+    connection = get_connection()
+
+    with connection.cursor() as cursor:
+
+        sql = "SELECT * FROM libros"
+
+        cursor.execute(sql)
+
+        libros = cursor.fetchall()
+
+    connection.close()
+
+    contenido = ""
+
+    for libro in libros:
+
+        contenido += f"ID: {libro['id']}\n"
+        contenido += f"Título: {libro['titulo']}\n"
+        contenido += f"Autor: {libro['autor']}\n"
+        contenido += "-------------------\n"
+
+    return contenido
 
 
 
