@@ -6,7 +6,8 @@
 import pymysql
 # y subiendo las importaciones
 from flask import Flask, render_template, request, redirect, session, jsonify
-
+# Importaciones para la contraseña cifrada
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
 # Crear la aplicación Flask principal
