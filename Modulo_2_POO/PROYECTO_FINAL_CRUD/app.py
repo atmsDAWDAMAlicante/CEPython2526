@@ -186,20 +186,20 @@ def login():
         connection = get_connection()
 
         with connection.cursor() as cursor:
-
+# ATENCIÓN CAMBIO CRÍTICO EN EL WHERE CUANDO LA PASSWORD QUE SERÁ 9876
             sql = """
                 SELECT * FROM usuarios
-                WHERE username = %s AND password = %s
+                WHERE username = %s
             """
 
-            cursor.execute(sql, (username, password))
-
+            #cursor.execute(sql, (username, password)) CAMBIO MUY CRITICO CON FALLO
+            cursor.execute(sql, (username,))
             usuario = cursor.fetchone()
 
         connection.close()
 
-        if usuario:
-
+        #if usuario: ESTE ES OTRO CAMBIO CRÍTICO -  RECUERDA PASS 9876
+        if usuario and check_password_hash(usuario["password"], password):
             session["usuario"] = usuario["username"]
             session["rol"] = usuario["rol_id"] 
             return redirect("/libros")
