@@ -27,10 +27,12 @@ def get_connection():
         cursorclass=pymysql.cursors.DictCursor
     )
 
-# Ruta principal
+# Ruta principal arreglada y más bonita
 @app.route("/")
 def home():
-    return "<h1>Aplicación Biblioteca funcionando</h1>"
+    if "usuario" not in session:
+        return redirect("/login")
+    return redirect("/libros")
 
 # Ruta para probar conexión a BD
 ''' ANTES DE ECHARLO TODO A PERDER
