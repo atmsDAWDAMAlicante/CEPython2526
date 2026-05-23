@@ -94,8 +94,8 @@ INSERT INTO categorias (nombre) VALUES
 
 -- LIBROS
 INSERT INTO libros (titulo, autor, categoria_id) VALUES
-('Cien años de soledad', 'Gabriel García Márquez', 1),
-('Breve historia del tiempo', 'Stephen Hawking', 2),
+('Guia de telefonos', 'Varios autores', 1),
+('Paginas amarillas', 'Varios autores', 2),
 ('Manual de historia del derecho español', 'Alfonso Garcia Gallo', 3),
 ('Cocina para todos', 'Carlos Arquiñano', 4);
 

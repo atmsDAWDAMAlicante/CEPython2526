@@ -37,15 +37,33 @@ password: 0000
 
 Otro usuario normal:
 usuario: ana
-password: 123
+password: 1234
 
 Una vez autenticado el usuario, si se trata del administrador, este podrá crear libros nuevos, editar y eliminar de la biblioteca. Ver en el navegador una lista de los libros en txt o en JSON.
 
 
-El resto de usuarios sólo podrá verlos.
+El resto de usuarios sólo podrá verlos listados, en txt y en JSON pero no pueden añadir, editar ni eliminar libros.
 
 
-## Base de datos
+# Base de datos
+
+La aplicación utiliza una base de datos MySQL denominada `biblioteca_db`.
+
+Descripción de las tablas:
+
+- categorias
+- libros
+- prestamos
+- roles
+- usuarios
+**La tabla categorías es la que hace posible la relación MUCHOS A MUCHOS**
+
+
+
+La base de datos se encuentra definida en un script SQL que está en la carpeta `sql` del proyecto, que incluye:
+- creación de tablas
+- claves primarias y foráneas
+- y unos datos de prueba
 
 ## Sistema de login y roles
 
