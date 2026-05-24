@@ -6,6 +6,10 @@ Curso de Especialización programacion de aplicaciones en lenguaje Python y Anal
 IES Severo Ochoa, Elx  
 Temática: Una biblioteca particular  
 
+URL al repositorio de GitHub donde comprobar los commits hechos durante el desarrollo
+https://github.com/atmsDAWDAMAlicante/CEPython2526/tree/main/Modulo_2_POO/PROYECTO_FINAL_CRUD
+
+
 ## 1.- Tecnologías utilizadas  
 
 IDE: Visual Studio Code  
