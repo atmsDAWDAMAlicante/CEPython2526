@@ -79,11 +79,11 @@ INSERT INTO roles (nombre) VALUES
 ('ADMIN'),
 ('USUARIO');
 
--- USUARIOS (passwords en texto plano por ahora, luego los cifrarás en Flask)
+-- USUARIOS AQUÍ ESTABA EL ERRROR
 INSERT INTO usuarios (username, password, rol_id) VALUES
-('admin', 'admin123', 1),
-('juan', 'juan123', 2),
-('maria', 'maria123', 2);
+('admin', 'scrypt:32768:8:1$QTiNaVgWoBoescas$a0ba6770365ac573895e904b3e48728171a9e823680c8cd3169b73ffa0bd0af6464d4d3797e49e28c139fe1021b86cfb69f2b016b1793b695a042cf4d4363032', 1),
+('pepe', 'scrypt:32768:8:1$KzAqXZ6TSxF3cqXc$0340b8cb9f2b2d3cb590bc7f6184abc2cf795efd9d97f7a17253c354548d970f90581513ec62a6dcca3c545a033f798aff3bf4da3987b5a0d7e806823cfac005', 2),
+('ana', 'scrypt:32768:8:1$juTxnk74xjicruy8$6ac4436d037ac596e2ea282609f5a1147e13c0aa1a2671764c72d676cc2a809748eb36ffa611c243dd5240a5cfa63392f8fd93b898eb80fcc9ea465039a90874', 2);
 
 -- CATEGORIAS
 INSERT INTO categorias (nombre) VALUES
