@@ -174,7 +174,7 @@ def editar_libro(id):
 
 
 
-
+# LA SEGUNDA PARTE
 # PARA EL LOGIN
 
 @app.route("/login", methods=["GET", "POST"])
@@ -232,6 +232,119 @@ def es_admin():
 
 
 
+
+# LA TERCERA PARTE
+# GESTIÓN DE USUSARIOS Y ADMIN
+
+# USUARIOS RASOS
+@app.route("/usuarios")
+def ver_usuarios():
+
+    if "usuario" not in session:
+        return redirect("/login")
+
+    if not es_admin():
+        return "No tienes permisos"
+
+    connection = get_connection()
+
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT * FROM usuarios")
+        usuarios = cursor.fetchall()
+
+    connection.close()
+
+    return render_template("usuarios.html", usuarios=usuarios)
+
+
+
+@app.route("/nuevo_usuario", methods=["GET", "POST"])
+def nuevo_usuario():
+
+    if "usuario" not in session:
+        return redirect("/login")
+
+    if not es_admin():
+        return "No tienes permisos"
+
+    if request.method == "POST":
+
+        username = request.form["username"]
+        password = request.form["password"]
+        rol_id = request.form["rol_id"]
+
+        connection = get_connection()
+
+        with connection.cursor() as cursor:
+            sql = """
+                INSERT INTO usuarios (username, password, rol_id)
+                VALUES (%s, %s, %s)
+            """
+            cursor.execute(sql, (username, password, rol_id))
+
+        connection.commit()
+        connection.close()
+
+        return redirect("/usuarios")
+
+    return render_template("nuevo_usuario.html")
+
+
+@app.route("/editar_usuario/<int:id>", methods=["GET", "POST"])
+def editar_usuario(id):
+
+    if "usuario" not in session:
+        return redirect("/login")
+
+    if not es_admin():
+        return "No tienes permisos"
+
+    connection = get_connection()
+
+    if request.method == "POST":
+
+        username = request.form["username"]
+        password = request.form["password"]
+        rol_id = request.form["rol_id"]
+
+        with connection.cursor() as cursor:
+            sql = """
+                UPDATE usuarios
+                SET username=%s, password=%s, rol_id=%s
+                WHERE id=%s
+            """
+            cursor.execute(sql, (username, password, rol_id, id))
+
+        connection.commit()
+        connection.close()
+
+        return redirect("/usuarios")
+
+    else:
+
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM usuarios WHERE id=%s", (id,))
+            usuario = cursor.fetchone()
+
+        connection.close()
+
+        return render_template("editar_usuario.html", usuario=usuario)
+
+# LA CUARTA PARTE
+# RESERVAS
+
+
+
+
+
+
+
+
+
+
+
+
+# LA QUINTA PARTE
 # ESTA ES PARA EXPORTAR EL JSON TRAS LA ÚLTIMA IMPORT (que tiene su commit)
 # al html para probar le pongo un link para probarlo no muy bonito
 

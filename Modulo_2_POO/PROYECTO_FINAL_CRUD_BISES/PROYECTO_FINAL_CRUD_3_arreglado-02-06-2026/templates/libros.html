@@ -17,17 +17,17 @@
 
     <p>Usuario conectado: {{ session["usuario"] }}</p>
 
-    <a href="/logout">Cerrar sesión</a>
-    <br><br>
-
-    <a href="/nuevo_libro">Nuevo libro</a>
-
-
     <a href="/libros">Ver libros</a> |
     <a href="/nuevo_libro">Añadir libro</a> |
+
+    {% if session.get('rol') == 1 %}
+        <a href="/usuarios">Usuarios</a> |
+    {% endif %}
+
     <a href="/exportar_txt">Exportar TXT</a> |
     <a href="/exportar_json">Exportar JSON</a> |
-    <a href="/logout">Logout</a>
+
+    <a href="/logout">Cerrar sesión</a>
 
     <hr>
 
