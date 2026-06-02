@@ -289,7 +289,6 @@ def nuevo_usuario():
 
     return render_template("nuevo_usuario.html")
 
-
 @app.route("/editar_usuario/<int:id>", methods=["GET", "POST"])
 def editar_usuario(id):
 
@@ -301,11 +300,22 @@ def editar_usuario(id):
 
     connection = get_connection()
 
+    
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT * FROM usuarios WHERE id=%s", (id,))
+        usuario = cursor.fetchone()
+
     if request.method == "POST":
 
         username = request.form["username"]
         password = request.form["password"]
         rol_id = request.form["rol_id"]
+
+        # lógica correcta de password
+        if password:
+            password_final = generate_password_hash(password)
+        else:
+            password_final = usuario["password"]
 
         with connection.cursor() as cursor:
             sql = """
@@ -313,22 +323,17 @@ def editar_usuario(id):
                 SET username=%s, password=%s, rol_id=%s
                 WHERE id=%s
             """
-            cursor.execute(sql, (username, password, rol_id, id))
+            cursor.execute(sql, (username, password_final, rol_id, id))
 
         connection.commit()
         connection.close()
 
         return redirect("/usuarios")
 
-    else:
+    connection.close()
 
-        with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM usuarios WHERE id=%s", (id,))
-            usuario = cursor.fetchone()
+    return render_template("editar_usuario.html", usuario=usuario)
 
-        connection.close()
-
-        return render_template("editar_usuario.html", usuario=usuario)
 
 # LA CUARTA PARTE
 # RESERVAS
