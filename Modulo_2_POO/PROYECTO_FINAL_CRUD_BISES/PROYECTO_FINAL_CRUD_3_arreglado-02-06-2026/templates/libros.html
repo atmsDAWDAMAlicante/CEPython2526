@@ -47,6 +47,7 @@
             <td>{{ libro.titulo }}</td>
             <td>{{ libro.autor }}</td>
             <td>
+                <a href="/reservar/{{ libro.id }}">Reservar</a>
                 <a href="/editar_libro/{{ libro.id }}">Editar</a>
                 |
                 <a href="/eliminar_libro/{{ libro.id }}">

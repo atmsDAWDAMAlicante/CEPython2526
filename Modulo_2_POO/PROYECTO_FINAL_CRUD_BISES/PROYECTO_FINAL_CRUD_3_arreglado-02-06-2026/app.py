@@ -338,7 +338,33 @@ def editar_usuario(id):
 # LA CUARTA PARTE
 # RESERVAS
 
+@app.route("/reservar/<int:id>")
+def reservar(id):
 
+    if "usuario" not in session:
+        return redirect("/login")
+
+    connection = get_connection()
+
+    # obtener id del usuario logueado
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT id FROM usuarios WHERE username=%s", (session["usuario"],))
+        usuario = cursor.fetchone()
+
+    usuario_id = usuario["id"]
+
+    # insertar préstamo
+    with connection.cursor() as cursor:
+        sql = """
+            INSERT INTO prestamos (usuario_id, libro_id, fecha_inicio)
+            VALUES (%s, %s, CURDATE())
+        """
+        cursor.execute(sql, (usuario_id, id))
+
+    connection.commit()
+    connection.close()
+
+    return redirect("/libros")
 
 
 
