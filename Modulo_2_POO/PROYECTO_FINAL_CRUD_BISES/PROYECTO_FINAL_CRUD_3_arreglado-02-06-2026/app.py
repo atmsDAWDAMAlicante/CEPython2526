@@ -89,6 +89,10 @@ def nuevo_libro():
         titulo = request.form["titulo"]
         autor = request.form["autor"]
 
+        #para que no entre nada vacío
+        if not titulo.strip() or not autor.strip():
+            return "Título y autor son obligatorios"
+
         connection = get_connection()
 
         with connection.cursor() as cursor:
@@ -333,6 +337,28 @@ def editar_usuario(id):
     connection.close()
 
     return render_template("editar_usuario.html", usuario=usuario)
+
+@app.route("/eliminar_usuario/<int:id>")
+def eliminar_usuario(id):
+
+    if "usuario" not in session:
+        return redirect("/login")
+
+    if not es_admin():
+        return "No tienes permisos"
+
+    connection = get_connection()
+
+    with connection.cursor() as cursor:
+        cursor.execute(
+            "DELETE FROM usuarios WHERE id=%s",
+            (id,)
+        )
+
+    connection.commit()
+    connection.close()
+
+    return redirect("/usuarios")
 
 
 # LA CUARTA PARTE
