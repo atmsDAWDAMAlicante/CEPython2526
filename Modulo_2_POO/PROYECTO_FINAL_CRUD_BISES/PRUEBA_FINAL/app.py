@@ -277,6 +277,9 @@ def nuevo_usuario():
         password = request.form["password"]
         rol_id = request.form["rol_id"]
 
+        if not username or not password or not rol_id:
+            return "Todos los campos son obligatorios"
+
         password = generate_password_hash(password)
 
         connection = get_connection()
