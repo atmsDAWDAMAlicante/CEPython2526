@@ -1,0 +1,25 @@
+<h1>Gestión de usuarios</h1>
+
+<a href="/nuevo_usuario">Crear usuario</a>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Usuario</th>
+        <th>Rol</th>
+        <th>Acciones</th>
+    </tr>
+
+    {% for u in usuarios %}
+    <tr>
+        <td>{{ u.id }}</td>
+        <td>{{ u.username }}</td>
+        <td>{{ u.rol_id }}</td>
+
+        <td>
+            <a href="/editar_usuario/{{ u.id }}">Editar</a>
+            <a href="/eliminar_usuario/{{ u.id }}">Eliminar</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>

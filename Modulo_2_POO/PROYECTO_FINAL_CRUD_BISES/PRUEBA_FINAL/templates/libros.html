@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        table, th, td {border: 1px solid black;border-collapse: collapse; padding: 5px;}
+        body {font-family: Arial;}
+        a {margin-right: 10px;}
+    </style>
+</head>
+<body>
+
+    <h1>Gestión de Biblioteca</h1>
+
+    <hr>
+
+    <p>Usuario conectado: {{ session["usuario"] }}</p>
+
+    <a href="/libros">Ver libros</a> |
+    <a href="/nuevo_libro">Añadir libro</a> |
+
+    {% if session.get('rol') == 1 %}
+        <a href="/usuarios">Usuarios</a> |
+    {% endif %}
+
+    <a href="/exportar_txt">Exportar TXT</a> |
+    <a href="/exportar_json">Exportar JSON</a> |
+
+    <a href="/logout">Cerrar sesión</a>
+
+    <hr>
+
+    <h2>Listado de libros</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Acciones</th>
+        </tr>
+
+        {% for libro in libros %}
+        <tr>
+            <td>{{ libro.id }}</td>
+            <td>{{ libro.titulo }}</td>
+            <td>{{ libro.autor }}</td>
+            <td>
+                <a href="/reservar/{{ libro.id }}">Reservar</a>
+                <a href="/editar_libro/{{ libro.id }}">Editar</a>
+                |
+                <a href="/eliminar_libro/{{ libro.id }}">
+                    Eliminar
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
